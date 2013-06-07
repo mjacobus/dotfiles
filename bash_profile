@@ -6,6 +6,12 @@ if [ -f $HOME/.bashrc ]; then
     . $HOME/.bashrc
 fi
 
+# allows Ctrl+S to save on vim
+stty ixany
+stty ixoff -ixon
+stty stop undef
+stty start undef
+
 # Only "exit" or "logout" will log off the system.
 # set -o ignoreeof
 
