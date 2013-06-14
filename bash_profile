@@ -39,6 +39,8 @@ export PROMPT_COMMAND='history -a'
 # alias find_source='find . -type f -not -path "*/target/*" -not -path "*/.svn/*" -not -path "*/.git/*" -not -name ".DS_Store" -not -iname "*.jar" -not -iname "*.gif" -not -iname "*.jpg" -not -iname "*.png"'
 # alias jrake='jruby -S rake'
 alias l='ls -alF'
+alias gs='git status -sb'
+alias gc='git commit'
 
 #Functions.
 function gitrm {
@@ -68,7 +70,9 @@ case "$TERM" in
 esac
 if [ "$color_prompt" = yes ]; then
     # export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\n\[\033[00m\]\$ ' #No date
-    export PS1="\[\033[01;32m\][\$(date +%Y%m%d_%H%M%S)] \u@\h\[\033[00m\]:\[\033[01;34m\]\w\n\[\033[00m\]\$ "
+    # export PS1="\[\033[01;32m\][\$(date +%Y%m%d_%H%M%S)] \u@\h\[\033[00m\]:\[\033[01;34m\]\w\n\[\033[00m\]\$ "
+    source /etc/bash_completion.d/git
+    export PS1="\[\033[01;32m\][\$(date +%Y%m%d_%H%M%S)] \u@\h\[\033[00m\]:\[\033[01;34m\]\w\033[01;31m $(__git_ps1 "(%s)")\n\[\033[00m\]\$ "
 else
     # export PS1='\u@\h:\w\n\$ ' #No date
     export PS1="[\$(date +%Y%m%d_%H%M%S)] \u@\h:\w\n\$ "

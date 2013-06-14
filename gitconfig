@@ -1,0 +1,20 @@
+[user]
+	name = Marcelo Jacobus
+	email = marcelo.jacobus@gmail.com
+[core]
+	excludesfile = /home/marcelo/.gitignore_global
+	autocrlf = input
+[color]
+	ui = true
+[push]
+	default = current
+[alias]
+  # http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/
+	s = status -sb
+	ci = commit
+	ls = log --pretty=format:\"%C(yellow)%h%Cred%d  | %Creset%s%Cblue [%cn]\" --decorate
+	ll = log --pretty=format:\"%C(yellow)%h%Cred%d  | %Creset%s%Cblue [%cn]\" --decorate --numstat
+	lds = log --pretty=format:\"%C(yellow)%h | %ad%Cred%d | %Creset%s%Cblue | [%cn]\" --decorat --date=short
+	ld = log --pretty=format:\"%C(yellow)%h | %ad%Cred%d | %Creset%s%Cblue | [%cn]\" --decorate --date=relative
+	le = log --oneline --decorate
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
