@@ -4,6 +4,7 @@
 [core]
 	excludesfile = /home/marcelo/.gitignore_global
 	autocrlf = input
+	editor = vim
 [color]
 	ui = true
 [push]
