@@ -1,0 +1,9 @@
+# Aliases.
+# alias alert='growlnotify -s'
+# alias clear='ruby -e "puts %Q{\n} * 80"'
+# alias find_source='find . -type f -not -path "*/target/*" -not -path "*/.svn/*" -not -path "*/.git/*" -not -name ".DS_Store" -not -iname "*.jar" -not -iname "*.gif" -not -iname "*.jpg" -not -iname "*.png"'
+# alias jrake='jruby -S rake'
+alias ls='ls --color'
+alias l='ls -alF'
+alias gs='git status -sb'
+alias gc='git commit'

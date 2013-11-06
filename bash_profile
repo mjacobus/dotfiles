@@ -27,15 +27,6 @@ export HISTFILESIZE=100000
 shopt -s histappend
 export PROMPT_COMMAND='history -a'
 
-# Aliases.
-# alias alert='growlnotify -s'
-# alias clear='ruby -e "puts %Q{\n} * 80"'
-# alias find_source='find . -type f -not -path "*/target/*" -not -path "*/.svn/*" -not -path "*/.git/*" -not -name ".DS_Store" -not -iname "*.jar" -not -iname "*.gif" -not -iname "*.jpg" -not -iname "*.png"'
-# alias jrake='jruby -S rake'
-alias l='ls -alF'
-alias gs='git status -sb'
-alias gc='git commit'
-
 #Functions.
 function gitrm {
     git status | grep 'deleted' | awk '{print $3}' | xargs git rm
@@ -83,3 +74,7 @@ fi
 
 #Set up fasd.
 #eval "$(fasd --init auto)"
+
+
+source "$HOME/.dotfiles/aliases"
+
