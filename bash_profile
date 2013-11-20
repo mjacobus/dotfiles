@@ -15,7 +15,7 @@ export VISUAL=$EDITOR
 export PAGER=less
 # export LESS='-i-P%f (%i/%m) Line %lt/%L' #Better prompt, case-insensitive search by default.
 
-TERM=xterm-256color
+TERM=screen-256color
 
 export ENV=$HOME/.bashrc
 
@@ -53,6 +53,7 @@ case "$TERM" in
     xterm) color_prompt=yes;;
     xterm-color) color_prompt=yes;;
     xterm-256color) color_prompt=yes;;
+    screen-256color) color_prompt=yes;;
 esac
 if [ "$color_prompt" = yes ]; then
     # export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\n\[\033[00m\]\$ ' #No date
