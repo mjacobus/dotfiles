@@ -24,7 +24,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want to disable command autocorrection
 # DISABLE_CORRECTION="true"
@@ -42,6 +42,18 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
+
+
+# save a ton of history
+HISTSIZE=20000
+HISTFILE=~/.zsh_history
+SAVEHIST=20000
+
+
+# disable flow control commands (keeps C-s from freezing everything)
+stty start undef
+stty stop undef
+
 source $ZSH/oh-my-zsh.sh
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -50,5 +62,11 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # Customize to your needs...
 
 source ~/.dotfiles/aliases
-source ~/.dotfiles/functions/project.zsh
-source ~/.dotfiles/functions/enable_vim.zsh
+source ~/.dotfiles/zsh/functions.zsh
+
+# Always work in a tmux session if tmux is installed
+if which tmux 2>&1 >/dev/null; then
+  if [ $TERM != "screen-256color"  ] && [ $TERM != "screen"  ]; then
+    tmux attach -t hack || tmux new -s hack; exit
+  fi
+fi
