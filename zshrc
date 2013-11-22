@@ -48,3 +48,31 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$PATH:/home/marcelo/.rvm/gems/ruby-2.0.0-p247/bin:/home/marcelo/.rvm/gems/ruby-2.0.0-p247@global/bin:/home/marcelo/.rvm/rubies/ruby-2.0.0-p247/bin:/home/marcelo/.rvm/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/marcelo/.rvm/bin
 
 source ~/.dotfiles/aliases
+
+# https://gist.github.com/pda/5417593/raw/44d412568d0ae09c4c32bef31745cc1283c638a0/vim.zsh
+vim()
+{
+  # Save current stty options.
+  local STTYOPTS="$(stty -g)"
+
+  # Disable intercepting of ctrl-s and ctrl-q as flow control.
+  stty stop '' -ixoff -ixon
+
+  # Execute vim.
+  vim_command "$@"
+
+  # Restore saved stty options.
+  stty "$STTYOPTS"
+
+}
+
+vim_command()
+{
+  if (( $+commands[reattach-to-user-namespace]  )); then
+    # See: https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
+    command reattach-to-user-namespace vim "$@"
+  else
+    command vim "$@"
+  fi
+
+}
