@@ -50,6 +50,7 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # Customize to your needs...
 
 source ~/.dotfiles/aliases
+source ~/.dotfiles/functions/project.zsh
 
 # https://gist.github.com/pda/5417593/raw/44d412568d0ae09c4c32bef31745cc1283c638a0/vim.zsh
 vim()
