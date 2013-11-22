@@ -44,8 +44,10 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
 # Customize to your needs...
-export PATH=$PATH:/home/marcelo/.rvm/gems/ruby-2.0.0-p247/bin:/home/marcelo/.rvm/gems/ruby-2.0.0-p247@global/bin:/home/marcelo/.rvm/rubies/ruby-2.0.0-p247/bin:/home/marcelo/.rvm/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/marcelo/.rvm/bin
 
 source ~/.dotfiles/aliases
 
@@ -76,3 +78,4 @@ vim_command()
   fi
 
 }
+
