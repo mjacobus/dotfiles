@@ -19,6 +19,9 @@ Bundle "vim-scripts/Align"
 Bundle "rking/ag.vim"
 Bundle "groenewege/vim-less"
 " Bundle "shawncplus/php.vim"
+" Bundle "joonty/vim-phpunitqf"
+" Bundle "joonty/vim-phpqa"
+
 
 " snippets
 Bundle "MarcWeber/vim-addon-mw-utils"
