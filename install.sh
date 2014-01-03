@@ -11,3 +11,5 @@ ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/zshrc ~/.zshrc
 ln -s ~/.dotfiles/irbrc ~/.irbrc
+ln -s ~/.dotfiles/vim ~/.vim
+ln -s ~/.dotfiles/vimrc ~/.vimrc
