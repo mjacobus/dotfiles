@@ -4,9 +4,6 @@
 
 Bundle "tpope/vim-bundler"
 Bundle "vim-ruby/vim-ruby"
-Bundle "tomtom/tlib_vim"
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "garbas/vim-snipmate"
 Bundle "kchmck/vim-coffee-script"
 Bundle "jiangmiao/auto-pairs"
 Bundle "tpope/vim-surround"
@@ -21,7 +18,13 @@ Bundle "mattn/webapi-vim"
 Bundle "vim-scripts/Align"
 Bundle "rking/ag.vim"
 Bundle "groenewege/vim-less"
-Bundle "shawncplus/php.vim"
+" Bundle "shawncplus/php.vim"
+
+" snippets
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
 
 " ------------------------------------------------------------------------------
 Bundle "godlygeek/tabular"
