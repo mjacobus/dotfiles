@@ -40,3 +40,5 @@ set undofile
 if filewritable(&undodir) == 0
   call mkdir(&undodir, "p")
 endif
+
+set showcmd
