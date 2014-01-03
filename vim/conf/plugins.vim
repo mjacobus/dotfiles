@@ -21,6 +21,14 @@ Bundle "mattn/webapi-vim"
 Bundle "vim-scripts/Align"
 Bundle "rking/ag.vim"
 Bundle "groenewege/vim-less"
+Bundle "shawncplus/php.vim"
+
+" ------------------------------------------------------------------------------
+Bundle "godlygeek/tabular"
+nmap a= :Tabularize /=<CR>
+vmap a= :Tabularize /=<CR>
+nmap a: :Tabularize /:\zs<CR>
+vmap a: :Tabularize /:\zs<CR>
 
 
 " ------------------------------------------------------------------------------
