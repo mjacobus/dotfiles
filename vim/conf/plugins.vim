@@ -19,7 +19,6 @@ Bundle "vim-scripts/Align"
 Bundle "rking/ag.vim"
 Bundle "groenewege/vim-less"
 " Bundle "shawncplus/php.vim"
-" Bundle "joonty/vim-phpunitqf"
 " Bundle "joonty/vim-phpqa"
 
 
@@ -102,3 +101,13 @@ map <Leader>gc :Gcommit -m ""<LEFT>
 map <Leader>gs :Gstatus<CR>
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 
+
+
+" ------------------------------------------------------------------------------
+Bundle "joonty/vim-phpunitqf"
+map <leader>t :Test<cr>
+
+" let g:phpunit_cmd = "/usr/bin/mytest"
+let g:phpunit_args = "--configuration tests/phpunit.xml"
+" let g:phpunit_args_append = "--repeat"
+" let g:phpunit_tmpfile = "/my/new/tmp/file"
