@@ -67,3 +67,6 @@ map <C-F> <ESC>gg/
 
 " laptop
 map <leader>lap <esc>:set mouse=<cr><esc>:colorscheme solarized<cr>
+
+" php specific
+autocmd FileType php inoremap .. ->
