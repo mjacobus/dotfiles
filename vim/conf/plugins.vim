@@ -2,6 +2,7 @@
 " Plugin config
 " ##############################################################################
 
+Bundle "gmarik/vundle"
 Bundle "tpope/vim-bundler"
 Bundle "vim-ruby/vim-ruby"
 Bundle "kchmck/vim-coffee-script"
@@ -10,7 +11,6 @@ Bundle "tpope/vim-surround"
 Bundle "tomtom/tcomment_vim"
 Bundle "altercation/vim-colors-solarized"
 Bundle "chriskempson/base16-vim"
-Bundle "mattn/emmet-vim"
 Bundle "tsaleh/vim-matchit"
 Bundle "Lokaltog/vim-easymotion"
 Bundle "mattn/gist-vim"
@@ -19,7 +19,6 @@ Bundle "vim-scripts/Align"
 Bundle "rking/ag.vim"
 Bundle "groenewege/vim-less"
 " Bundle "shawncplus/php.vim"
-" Bundle "joonty/vim-phpqa"
 
 
 " snippets
@@ -27,6 +26,11 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
+
+" ------------------------------------------------------------------------------
+Bundle "mattn/emmet-vim"
+" let g:user_emmet_install_global = 0
+" autocmd FileType html,css EmmetInstall
 
 " ------------------------------------------------------------------------------
 Bundle "godlygeek/tabular"
@@ -111,3 +115,12 @@ map <leader>t :Test<cr>
 let g:phpunit_args = "--configuration tests/phpunit.xml"
 " let g:phpunit_args_append = "--repeat"
 " let g:phpunit_tmpfile = "/my/new/tmp/file"
+
+
+" ------------------------------------------------------------------------------
+" Causing hang ups
+" Bundle "joonty/vim-phpqa"
+" " Clover code coverage XML file
+" let g:phpqa_codecoverage_file = "coverage/coverage.xml"
+" " Show markers for lines that ARE covered by tests (default = 1)
+" let g:phpqa_codecoverage_showcovered = 0
