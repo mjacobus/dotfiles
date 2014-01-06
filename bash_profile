@@ -55,6 +55,9 @@ case "$TERM" in
     xterm-256color) color_prompt=yes;;
     screen-256color) color_prompt=yes;;
 esac
+
+source ~/.dotfiles/git-prompt.sh
+
 if [ "$color_prompt" = yes ]; then
     # export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\n\[\033[00m\]\$ ' #No date
     # export PS1="\[\033[01;32m\][\$(date +%Y%m%d_%H%M%S)] \u@\h\[\033[00m\]:\[\033[01;34m\]\w\n\[\033[00m\]\$ "
