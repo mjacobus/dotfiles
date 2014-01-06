@@ -20,7 +20,6 @@ Bundle "rking/ag.vim"
 Bundle "groenewege/vim-less"
 " Bundle "shawncplus/php.vim"
 Bundle "shawncplus/phpcomplete.vim"
-Bundle "majutsushi/tagbar"
 
 
 " snippets
@@ -126,3 +125,8 @@ let g:phpunit_args = "--configuration tests/phpunit.xml"
 " let g:phpqa_codecoverage_file = "coverage/coverage.xml"
 " " Show markers for lines that ARE covered by tests (default = 1)
 " let g:phpqa_codecoverage_showcovered = 0
+
+
+" ------------------------------------------------------------------------------
+Bundle "majutsushi/tagbar"
+map <leader>tb :TagbarToggle<cr>
