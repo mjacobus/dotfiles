@@ -20,6 +20,7 @@ Bundle "rking/ag.vim"
 Bundle "groenewege/vim-less"
 " Bundle "shawncplus/php.vim"
 Bundle "shawncplus/phpcomplete.vim"
+Bundle "majutsushi/tagbar"
 
 
 " snippets
@@ -63,7 +64,7 @@ inoremap <C-n> :NERDTreeToggle<CR>
 " -----------------------------------------------------------------------------
 Bundle "kien/ctrlp.vim"
 
-set wildignore+=*/tmp/*,*/coverage/*
+set wildignore+=*/tmp/*,*/coverage/*,*/netbeans/*
 
 " ------------------------------------------------------------------------------
 Bundle "bling/vim-airline"
