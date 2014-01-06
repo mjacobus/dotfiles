@@ -1,0 +1,6 @@
+--recurse=yes
+--tag-relative=yes
+--exclude=.git
+
+# PHP
+--langmap=php:.engine.inc.module.theme.install.php --PHP-kinds=+cf-v
