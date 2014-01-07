@@ -4,6 +4,13 @@
 
 let mapleader = ","         " set leader key to comma
 
+" escape alias
+imap jj  <esc>
+
+" buffer changing
+map <leader>bn :bn<cr>
+map <leader>bp :bp<cr>
+
 " delete all trailing whitespace in current file
 map <leader>w :%s/\s\+$//gce \| w<cr>
 
@@ -31,6 +38,7 @@ imap <C-q> <ESC>:bd<cr>
 "Ctrl + e enters insert mode in the end of the phrase
 " imap <C-e> <ESC>A
 imap <C-e> <Esc>wa
+" imap <C-e><C-e> <Esc>$a
 
 " buffer switching
 map <F12> :bn<cr>
