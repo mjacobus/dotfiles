@@ -21,6 +21,7 @@ Bundle "groenewege/vim-less"
 " Bundle "shawncplus/php.vim"
 Bundle "shawncplus/phpcomplete.vim"
 
+Bundle "benmills/vimux"
 
 " snippets
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -131,4 +132,16 @@ let g:phpunit_args = "--configuration tests/phpunit.xml"
 
 " ------------------------------------------------------------------------------
 Bundle "majutsushi/tagbar"
+
 map <leader>tb :TagbarToggle<cr>
+
+
+" ------------------------------------------------------------------------------
+Bundle "pgr0ss/vimux-ruby-test"
+
+map <leader>rt :RunAllRubyTests<cr>
+
+" let g:vimux_ruby_cmd_unit_test = "bundle exec ruby"
+" let g:vimux_ruby_cmd_all_tests = "testdrb"
+" let g:vimux_ruby_cmd_context = "FOO=bar ruby"
+" let g:vimux_ruby_clear_console_on_run = 0

@@ -63,7 +63,7 @@ map <Leader>rr <esc>:wq<CR>
 
 " Open vim rc
 map <Leader>vim :edit $MYVIMRC<CR>
-map <Leader>reload :source $MYVIMRC<CR>u
+map <Leader>rel :source $MYVIMRC<CR>u
 
 " Fix anoying original K
 map K :echo "K remapped"
