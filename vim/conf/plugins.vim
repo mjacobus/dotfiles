@@ -79,8 +79,10 @@ let g:airline_right_sep = '◀'
 " ------------------------------------------------------------------------------
 Bundle "mjacobus/vim-rspec-focus"
 
-nnoremap <leader>f :AddFocusTag<CR>
-nnoremap <leader>uf :RemoveAllFocusTags<CR>
+nnoremap <leader>f  :AddFocusTag<CR>          " mark as focused
+nnoremap <leader>uf :RemoveAllFocusTags<CR>   " unmark all :focus tag
+nnoremap <leader>p  :AddPendingTag<CR>        " mark as pending
+nnoremap <leader>up :RemoveAllPendingTags<CR> " unmark all :pending tags
 
 
 " ------------------------------------------------------------------------------
