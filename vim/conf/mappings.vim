@@ -67,7 +67,7 @@ map <Leader>rel :source $MYVIMRC<CR>u
 
 " Fix anoying original K
 map K :echo "K remapped"
-unmap K
+map U :echo "U remapped"
 
 " Find
 imap <C-F> <ESC>gg/
@@ -78,3 +78,5 @@ map <leader>lap <esc>:set mouse=<cr><esc>:colorscheme solarized<cr>
 
 " php specific
 autocmd FileType php inoremap .. ->
+autocmd FileType php inoremap ;; <esc>$a;
+autocmd FileType php set nofoldenable

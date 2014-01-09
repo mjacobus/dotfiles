@@ -33,6 +33,7 @@ set wildmode=list:longest,full
 set nowrap                        " no wrap
 set number                        " line numbers
 set pastetoggle=<F3>              " for toggling tabulation on text pasting
+set backspace=2                   " make backspace work like most other apps"
 
 " undo per file
 set undodir=~/.vim/undodir

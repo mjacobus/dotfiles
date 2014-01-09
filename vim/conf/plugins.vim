@@ -145,3 +145,24 @@ map <leader>rt :RunAllRubyTests<cr>
 " let g:vimux_ruby_cmd_all_tests = "testdrb"
 " let g:vimux_ruby_cmd_context = "FOO=bar ruby"
 " let g:vimux_ruby_clear_console_on_run = 0
+
+
+" ------------------------------------------------------------------------------
+" Requires to be compiled with +clientserver
+" Bundle 'pydave/AsyncCommand'
+" Bundle 'mnick/vim-pomodoro'
+"
+" " Duration of a pomodoro in minutes (default: 25)
+" let g:pomodoro_time_work = 25
+"
+" " Duration of a break in minutes (default: 5)
+" let g:pomodoro_time_slack = 5
+"
+" " Log completed pomodoros, 0 = False, 1 = True (default: 0)
+" let g:pomodoro_do_log = 1
+"
+" " Path to the pomodoro log file (default: /tmp/pomodoro.log)
+" let g:pomodoro_log_file = "/tmp/pomodoro.log"
+"
+" " let g:pomodoro_notification_cmd = "mpg123 -q ~/.vim/pomodoro-notification.mp3"
+

@@ -8,3 +8,5 @@ alias gc='git commit'
 alias gp='git push origin'
 alias gpr='git pull --rebase'
 alias gpu='git pull'
+
+alias dotfiles='cd ~/.dotfiles'
