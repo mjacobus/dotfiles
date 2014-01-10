@@ -64,6 +64,10 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 source ~/.dotfiles/aliases
 source ~/.dotfiles/zsh/functions.zsh
 
+if [ -f ~/.zshrc.local ]; then
+  source ~/.zshrc.local
+fi
+
 # Always work in a tmux session if tmux is installed
 if which tmux 2>&1 >/dev/null; then
   if [ $TERM != "screen-256color"  ] && [ $TERM != "screen"  ]; then
