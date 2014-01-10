@@ -166,3 +166,11 @@ map <leader>rt :RunAllRubyTests<cr>
 "
 " " let g:pomodoro_notification_cmd = "mpg123 -q ~/.vim/pomodoro-notification.mp3"
 
+" ------------------------------------------------------------------------------
+Bundle "nathanaelkane/vim-indent-guides"
+
+hi IndentGuidesOdd  ctermbg=black
+hi IndentGuidesEven ctermbg=darkgrey
+let g:indent_guides_guide_size=1
+let g:indent_guides_start_level=2
+
