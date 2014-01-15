@@ -37,9 +37,9 @@ Bundle "mattn/emmet-vim"
 " ------------------------------------------------------------------------------
 Bundle "godlygeek/tabular"
 nmap a= :Tabularize /=<CR>
-vmap a= :Tabularize /=<CR>
+vnoremap a= :Tabularize /=<CR>
 nmap a: :Tabularize /:\zs<CR>
-vmap a: :Tabularize /:\zs<CR>
+vnoremap a: :Tabularize /:\zs<CR>
 
 
 " ------------------------------------------------------------------------------
@@ -107,13 +107,13 @@ Bundle "tpope/vim-fugitive"
 map <Leader>gac :Gcommit -m -a ""<LEFT>
 map <Leader>gc :Gcommit -m ""<LEFT>
 map <Leader>gs :Gstatus<CR>
-vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+vnoremap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 
 
 
 " ------------------------------------------------------------------------------
 Bundle "joonty/vim-phpunitqf"
-map <leader>t :Test<cr>
+noremap <leader>t :Test<cr>
 
 " let g:phpunit_cmd = "/usr/bin/mytest"
 let g:phpunit_args = "--configuration tests/phpunit.xml"
@@ -133,13 +133,13 @@ let g:phpunit_args = "--configuration tests/phpunit.xml"
 " ------------------------------------------------------------------------------
 Bundle "majutsushi/tagbar"
 
-map <leader>tb :TagbarToggle<cr>
+noremap <leader>tb :TagbarToggle<cr>
 
 
 " ------------------------------------------------------------------------------
 Bundle "pgr0ss/vimux-ruby-test"
 
-map <leader>rt :RunAllRubyTests<cr>
+noremap <leader>rt :RunAllRubyTests<cr>
 
 " let g:vimux_ruby_cmd_unit_test = "bundle exec ruby"
 " let g:vimux_ruby_cmd_all_tests = "testdrb"
