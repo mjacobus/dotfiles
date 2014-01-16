@@ -40,9 +40,11 @@ DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git debian bundler gitfast rails urltools web-search vi-mode)
 
-
+# Bind the reverse search to ctrl + R
+bindkey -v
+bindkey ^R history-incremental-search-backward
 
 # save a ton of history
 HISTSIZE=20000
