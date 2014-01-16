@@ -8,6 +8,7 @@ source ~/.vim/conf/functions.vim
 source ~/.vim/conf/mappings.vim
 source ~/.vim/conf/plugins.vim
 source ~/.vim/conf/appearence.vim
+source ~/.vim/conf/abbreviations.vim
 
 " ------------------------------------------------------------------------------
 " Calbacks
