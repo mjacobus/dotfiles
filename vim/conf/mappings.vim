@@ -66,8 +66,9 @@ noremap <Leader>vim :edit $MYVIMRC<CR>
 noremap <Leader>rel :source $MYVIMRC<CR>u
 
 " Fix anoying original K
-noremap K :echo "K remapped"
-noremap U :echo "U remapped"
+noremap K <nop>
+noremap U <nop>
+inoremap <Esc> <nop>
 
 " Find
 inoremap <C-F> <ESC>gg/
