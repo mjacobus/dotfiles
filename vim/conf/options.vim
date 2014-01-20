@@ -34,6 +34,8 @@ set nowrap                        " no wrap
 set number                        " line numbers
 set pastetoggle=<F3>              " for toggling tabulation on text pasting
 set backspace=2                   " make backspace work like most other apps"
+set nobackup                      " no backup. Too 70's
+set noswapfile                    " no backup. Too 70's
 
 " undo per file
 set undodir=~/.vim/undodir

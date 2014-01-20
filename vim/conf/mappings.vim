@@ -81,3 +81,13 @@ noremap <leader>lap <esc>:set mouse=<cr><esc>:colorscheme solarized<cr>
 autocmd FileType php inoremap .. ->
 autocmd FileType php inoremap ;; <esc>$a;
 autocmd FileType php set nofoldenable
+
+" convert file to latin1
+nnoremap <leader>lat1 :write ++enc=latin1<cr>
+
+" Use Q for formatting the current paragraph (or selection)
+vmap Q gq
+nmap Q gqap
+
+" clear search
+nmap <silent> ,/ :nohlsearch<CR>
