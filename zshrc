@@ -51,6 +51,13 @@ HISTSIZE=20000
 HISTFILE=~/.zsh_history
 SAVEHIST=20000
 
+LANG=en_US.utf-8
+LANGUAGE=en
+CLICOLOR=1 #Colorizes output of ls and others.
+EDITOR=vi
+VISUAL=$EDITOR
+PAGER=less
+
 
 # disable flow control commands (keeps C-s from freezing everything)
 stty start undef
