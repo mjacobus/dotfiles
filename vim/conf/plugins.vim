@@ -22,6 +22,7 @@ Bundle "groenewege/vim-less"
 Bundle "shawncplus/phpcomplete.vim"
 
 Bundle "benmills/vimux"
+Bundle "othree/html5.vim"
 
 " snippets
 Bundle "MarcWeber/vim-addon-mw-utils"
