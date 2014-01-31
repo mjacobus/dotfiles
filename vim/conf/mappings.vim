@@ -78,6 +78,7 @@ noremap <C-F> <ESC>gg/
 noremap <leader>lap <esc>:set mouse=<cr><esc>:colorscheme solarized<cr>
 
 " php specific
+autocmd FileType php inoremap ... ../
 autocmd FileType php inoremap .. ->
 autocmd FileType php inoremap ;; <esc>$a;
 autocmd FileType php set nofoldenable
@@ -91,3 +92,9 @@ nmap Q gqap
 
 " clear search
 nmap <silent> ,/ :nohlsearch<CR>
+
+" Avoid arrow keys in command mode
+cnoremap <C-h> <left>
+cnoremap <C-j> <down>
+cnoremap <C-k> <up>
+cnoremap <C-l> <right>
