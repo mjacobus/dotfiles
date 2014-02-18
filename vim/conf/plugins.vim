@@ -41,6 +41,8 @@ nmap a= :Tabularize /=<CR>
 vnoremap a= :Tabularize /=<CR>
 nmap a: :Tabularize /:\zs<CR>
 vnoremap a: :Tabularize /:\zs<CR>
+nmap ar :Tabularize /=><CR>
+vnoremap ar :Tabularize /=><CR>
 
 
 " ------------------------------------------------------------------------------
@@ -129,6 +131,15 @@ let g:phpunit_args = "--configuration tests/phpunit.xml"
 " let g:phpqa_codecoverage_file = "coverage/coverage.xml"
 " " Show markers for lines that ARE covered by tests (default = 1)
 " let g:phpqa_codecoverage_showcovered = 0
+
+" Set the codesniffer args
+" let g:phpqa_codesniffer_args = "--standard=Zend"
+
+" Don't run messdetector on save (default = 1)
+" let g:phpqa_messdetector_autorun = 0
+
+" Don't run codesniffer on save (default = 1)
+" let g:phpqa_codesniffer_autorun = 0"
 
 
 " ------------------------------------------------------------------------------
