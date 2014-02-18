@@ -10,3 +10,5 @@ alias gpr='git pull --rebase'
 alias gpu='git pull'
 
 alias dotfiles='cd ~/.dotfiles'
+
+alias ag='/usr/bin/ag'
