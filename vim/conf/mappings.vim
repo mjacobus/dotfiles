@@ -5,7 +5,7 @@
 let mapleader = ","         " set leader key to comma
 
 " escape alias
-inoremap jj  <esc>
+inoremap jj  <esc>l
 
 " buffer changing
 noremap <leader>bn :bn<cr>
@@ -14,18 +14,23 @@ noremap <leader>bp :bp<cr>
 " delete all trailing whitespace in current file
 noremap <leader>w :%s/\s\+$//gce \| w<cr>
 
+" Trim all trailing whitespaces no questions asked.
+nnoremap <leader>tw :call TrimWhiteSpace()<cr>
 
-" Ctrl + S saves
+
+" Ctrl + S saves or LEADER S saves
 " remember to put the following lines into your bashrc
 " stty ixany
 " stty ixoff -ixon
 " stty stop undef
 " stty start undef
 noremap <C-s> :w<cr>
+noremap <leader>s :w<cr>
 " saves and exits insert mode
 inoremap <C-s> <ESC>:w <cr>
+inoremap <leader>s <ESC>:w<cr>
 " saves and continue editing
-" imap <C-s> <ESC>:w<cr>a
+" inoremap <C-s> <ESC>:w<cr>a
 
 " Select all
 noremap <C-a> ggVG
@@ -98,3 +103,4 @@ cnoremap <C-h> <left>
 cnoremap <C-j> <down>
 cnoremap <C-k> <up>
 cnoremap <C-l> <right>
+cnoremap <C-x> <del>
