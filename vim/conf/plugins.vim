@@ -186,3 +186,6 @@ hi IndentGuidesEven ctermbg=darkgrey
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
 
+
+Bundle "wikitopian/hardmode"
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
