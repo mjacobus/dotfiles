@@ -12,3 +12,6 @@ alias gpu='git pull'
 alias dotfiles='cd ~/.dotfiles'
 
 alias ag='/usr/bin/ag'
+
+# conditional alias
+type vim.gnome >> /dev/null && alias vim=vim.gnome
