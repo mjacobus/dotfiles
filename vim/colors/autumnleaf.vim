@@ -17,36 +17,36 @@ let colors_name="AutumnLeaf"
 
 " Colors for the User Interface.
 
-hi Cursor	guibg=#aa7733   guifg=#ffeebb   gui=bold
-hi Normal	guibg=#fffdfa	guifg=black	gui=none
-hi NonText	guibg=#eafaea   guifg=#000099   gui=bold
-hi Visual	guibg=#fff8cc   guifg=black	gui=none
+hi Cursor	guibg=#aa7733 ctermbg=137   guifg=#ffeebb ctermfg=229   gui=bold
+hi Normal	guibg=#fffdfa	guifg=black	gui=none ctermbg=15
+hi NonText	guibg=#eafaea ctermbg=7   guifg=#000099 ctermfg=18   gui=bold
+hi Visual	guibg=#fff8cc ctermbg=230   guifg=black	gui=none
 " hi VisualNOS
 
-hi Linenr	guibg=bg	guifg=#999999 gui=none
+hi Linenr	guibg=bg	guifg=#999999 ctermfg=246 gui=none
 
 " Uncomment these if you use Diff...??
-" hi DiffText	guibg=#cc0000	guifg=white gui=none
-" hi DiffAdd	guibg=#0000cc	guifg=white gui=none
-" hi DiffChange	guibg=#990099	guifg=white gui=none
-" hi DiffDelete	guibg=#888888	guifg=#333333 gui=none
+" hi DiffText	guibg=#cc0000	guifg=white ctermbg=1 gui=none
+" hi DiffAdd	guibg=#0000cc	guifg=white ctermbg=20 gui=none
+" hi DiffChange	guibg=#990099	guifg=white ctermbg=90 gui=none
+" hi DiffDelete	guibg=#888888	guifg=#333333 ctermbg=102 gui=none
 
-hi Directory	guibg=bg	guifg=#337700   gui=none
+hi Directory	guibg=bg	guifg=#337700 ctermfg=64   gui=none
 
-hi IncSearch	guibg=#c8e8ff	guifg=black	gui=none
-hi Search	guibg=#c8e8ff	guifg=black	gui=none
+hi IncSearch	guibg=#c8e8ff	guifg=black	gui=none ctermbg=189
+hi Search	guibg=#c8e8ff	guifg=black	gui=none ctermbg=189
 hi SpecialKey	guibg=bg	guifg=fg    	gui=none
 hi Titled	guibg=bg	guifg=fg	gui=none
 
-hi ErrorMsg	    guibg=bg	guifg=#cc0000   gui=bold
-hi ModeMsg	    guibg=bg	guifg=#003399   gui=none
+hi ErrorMsg	    guibg=bg	guifg=#cc0000 ctermfg=1   gui=bold
+hi ModeMsg	    guibg=bg	guifg=#003399 ctermfg=24   gui=none
 hi link	MoreMsg	    ModeMsg
 hi link Question    ModeMsg
-hi WarningMsg	    guibg=bg	guifg=#cc0000   gui=bold
+hi WarningMsg	    guibg=bg	guifg=#cc0000 ctermfg=1   gui=bold
 
-hi StatusLine	guibg=#ffeebb	guifg=black	gui=bold
-hi StatusLineNC	guibg=#aa8866	guifg=#f8e8cc	gui=none
-hi VertSplit	guibg=#aa8866	guifg=#ffe0bb	gui=none
+hi StatusLine	guibg=#ffeebb	guifg=black	gui=bold ctermbg=229
+hi StatusLineNC	guibg=#aa8866	guifg=#f8e8cc	gui=none ctermbg=137
+hi VertSplit	guibg=#aa8866	guifg=#ffe0bb	gui=none ctermbg=137
 
 " hi Folded
 " hi FoldColumn
@@ -55,50 +55,50 @@ hi VertSplit	guibg=#aa8866	guifg=#ffe0bb	gui=none
 
 " Colors for Syntax Highlighting.
 
-hi Comment guibg=#ddeedd guifg=#002200 gui=none
+hi Comment guibg=#ddeedd ctermbg=7 guifg=#002200 ctermfg=233 gui=none
 
-hi Constant	guibg=bg    guifg=#003399 gui=bold
-hi String	guibg=bg    guifg=#003399 gui=italic
-hi Character	guibg=bg    guifg=#003399 gui=italic
-hi Number	guibg=bg    guifg=#003399 gui=bold
-hi Boolean	guibg=bg    guifg=#003399 gui=bold
-hi Float	guibg=bg    guifg=#003399 gui=bold
+hi Constant	guibg=bg    guifg=#003399 ctermfg=24 gui=bold
+hi String	guibg=bg    guifg=#003399 ctermfg=24 gui=italic
+hi Character	guibg=bg    guifg=#003399 ctermfg=24 gui=italic
+hi Number	guibg=bg    guifg=#003399 ctermfg=24 gui=bold
+hi Boolean	guibg=bg    guifg=#003399 ctermfg=24 gui=bold
+hi Float	guibg=bg    guifg=#003399 ctermfg=24 gui=bold
 
-hi Identifier	guibg=bg    guifg=#003399 gui=none
-hi Function	guibg=bg    guifg=#0055aa gui=bold
-hi Statement	guibg=bg    guifg=#003399 gui=none
+hi Identifier	guibg=bg    guifg=#003399 ctermfg=24 gui=none
+hi Function	guibg=bg    guifg=#0055aa ctermfg=25 gui=bold
+hi Statement	guibg=bg    guifg=#003399 ctermfg=24 gui=none
 
-hi Conditional	guibg=bg    guifg=#aa7733 gui=bold
-hi Repeat	guibg=bg    guifg=#aa5544 gui=bold
+hi Conditional	guibg=bg    guifg=#aa7733 ctermfg=137 gui=bold
+hi Repeat	guibg=bg    guifg=#aa5544 ctermfg=131 gui=bold
 hi link	Label	Conditional
-hi Operator	guibg=bg    guifg=#aa7733 gui=bold
+hi Operator	guibg=bg    guifg=#aa7733 ctermfg=137 gui=bold
 hi link Keyword	Statement
-hi Exception	guibg=bg    guifg=#228877 gui=bold
+hi Exception	guibg=bg    guifg=#228877 ctermfg=30 gui=bold
 
-hi PreProc	    guibg=bg	guifg=#aa7733 gui=bold
-hi Include	    guibg=bg	guifg=#558811 gui=bold
+hi PreProc	    guibg=bg	guifg=#aa7733 ctermfg=137 gui=bold
+hi Include	    guibg=bg	guifg=#558811 ctermfg=64 gui=bold
 hi link Define	    Include
 hi link Macro	    Include
 hi link PreCondit   Include
 
-hi Type			guibg=bg    guifg=#007700 gui=bold
+hi Type			guibg=bg    guifg=#007700 ctermfg=28 gui=bold
 hi link StorageClass	Type
 hi link Structure	Type
-hi Typedef		guibg=bg    guifg=#009900 gui=italic
+hi Typedef		guibg=bg    guifg=#009900 ctermfg=28 gui=italic
 
 hi Special	    guibg=bg	    guifg=fg	    gui=none
 hi SpecialChar	    guibg=bg	    guifg=fg	    gui=bold
-hi Tag		    guibg=bg	    guifg=#003399   gui=bold
+hi Tag		    guibg=bg	    guifg=#003399 ctermfg=24   gui=bold
 hi link Delimiter   Special
-hi SpecialComment   guibg=#dddddd   guifg=#aa0000   gui=none
+hi SpecialComment   guibg=#dddddd ctermbg=253   guifg=#aa0000 ctermfg=124   gui=none
 hi link Debug	    Special
 
 hi Underlined guibg=bg guifg=blue gui=underline
 
 hi Title    guibg=bg	guifg=fg    	gui=bold
-hi Ignore   guibg=bg	guifg=#999999	gui=none
+hi Ignore   guibg=bg	guifg=#999999	gui=none ctermfg=246
 hi Error    guibg=red	guifg=white	gui=none
-hi Todo	    guibg=bg	guifg=#aa0000   gui=none
+hi Todo	    guibg=bg	guifg=#aa0000 ctermfg=124   gui=none
 
 
 

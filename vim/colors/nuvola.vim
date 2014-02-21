@@ -15,59 +15,61 @@ endif
 let g:colors_name = "nuvola"
 
 " Normal {{{1
-hi Normal ctermfg=black ctermbg=NONE guifg=black guibg=#F9F5F9
+hi Normal ctermfg=black ctermbg=NONE guifg=black guibg=#F9F5F9 ctermbg=15
 
 " Search {{{1
-hi IncSearch cterm=UNDERLINE ctermfg=Black ctermbg=brown gui=UNDERLINE guifg=Black guibg=#FFE568
-hi Search term=reverse cterm=UNDERLINE ctermfg=Black ctermbg=brown gui=NONE guifg=Black guibg=#FFE568
+hi IncSearch cterm=UNDERLINE ctermfg=Black ctermbg=brown gui=UNDERLINE guifg=Black guibg=#FFE568 ctermbg=221
+hi Search term=reverse cterm=UNDERLINE ctermfg=Black ctermbg=brown gui=NONE guifg=Black guibg=#FFE568 ctermbg=221
 
 " Messages {{{1
-hi ErrorMsg gui=BOLD guifg=#EB1513 guibg=NONE
+hi ErrorMsg gui=BOLD guifg=#EB1513 ctermfg=9 guibg=NONE
 hi! link WarningMsg ErrorMsg
-hi ModeMsg gui=BOLD guifg=#0070ff guibg=NONE
+hi ModeMsg gui=BOLD guifg=#0070ff ctermfg=27 guibg=NONE
 hi MoreMsg guibg=NONE guifg=seagreen
 hi! link Question MoreMsg
 
 " Split area {{{1
-hi StatusLine term=BOLD,reverse cterm=NONE ctermfg=Yellow ctermbg=DarkGray gui=BOLD guibg=#56A0EE guifg=white
-hi StatusLineNC gui=NONE guibg=#56A0EE guifg=#E9E9F4
+hi StatusLine term=BOLD,reverse cterm=NONE ctermfg=Yellow ctermbg=DarkGray gui=BOLD guibg=#56A0EE ctermbg=75 guifg=white
+hi StatusLineNC gui=NONE guibg=#56A0EE ctermbg=75 guifg=#E9E9F4 ctermfg=7
 hi! link VertSplit StatusLineNC
-hi WildMenu gui=UNDERLINE guifg=#56A0EE guibg=#E9E9F4
+hi WildMenu gui=UNDERLINE guifg=#56A0EE ctermfg=75 guibg=#E9E9F4 ctermbg=7
 
 " Diff {{{1
-hi DiffText   gui=NONE guifg=#f83010 guibg=#ffeae0
-hi DiffChange gui=NONE guifg=#006800 guibg=#d0ffd0
-hi DiffDelete gui=NONE guifg=#2020ff guibg=#c8f2ea
+hi DiffText   gui=NONE guifg=#f83010 ctermfg=202 guibg=#ffeae0 ctermbg=224
+hi DiffChange gui=NONE guifg=#006800 ctermfg=22 guibg=#d0ffd0 ctermbg=194
+hi DiffDelete gui=NONE guifg=#2020ff ctermfg=21 guibg=#c8f2ea ctermbg=194
 hi! link DiffAdd DiffDelete
 
 " Cursor {{{1
 hi Cursor       gui=none guifg=black guibg=orange
-"hi lCursor      gui=NONE guifg=#f8f8f8 guibg=#8000ff
-hi CursorIM     gui=NONE guifg=#f8f8f8 guibg=#8000ff
+"hi lCursor      gui=NONE guifg=#f8f8f8 ctermfg=15 guibg=#8000ff ctermbg=93
+hi CursorIM     gui=NONE guifg=#f8f8f8 ctermfg=15 guibg=#8000ff ctermbg=93
+hi CursorLine cterm=NONE ctermbg=253
+
 
 " Fold {{{1
-hi Folded gui=NONE guibg=#B5EEB5 guifg=black
-"hi FoldColumn gui=NONE guibg=#9FD29F guifg=black
+hi Folded gui=NONE guibg=#B5EEB5 ctermbg=157 guifg=black
+"hi FoldColumn gui=NONE guibg=#9FD29F ctermbg=151 guifg=black
 hi! link FoldColumn Folded
 
 " Other {{{1
-hi Directory    gui=NONE guifg=#0000ff guibg=NONE
-hi LineNr       gui=NONE guifg=#8080a0 guibg=NONE
-hi NonText      gui=BOLD guifg=#4000ff guibg=#EFEFF7
-"hi SpecialKey   gui=NONE guifg=#A35B00 guibg=NONE
-hi Title        gui=BOLD guifg=#1014AD guibg=NONE
-hi Visual term=reverse ctermfg=yellow ctermbg=black gui=NONE guifg=Black guibg=#BDDFFF
-hi VisualNOS term=reverse ctermfg=yellow ctermbg=black gui=UNDERLINE guifg=Black guibg=#BDDFFF
+hi Directory    gui=NONE guifg=#0000ff ctermfg=21 guibg=NONE
+hi LineNr       gui=NONE guifg=#8080a0 ctermfg=103 guibg=NONE
+hi NonText      gui=BOLD guifg=#4000ff ctermfg=57 guibg=#EFEFF7 ctermbg=7
+"hi SpecialKey   gui=NONE guifg=#A35B00 ctermfg=130 guibg=NONE
+hi Title        gui=BOLD guifg=#1014AD ctermfg=19 guibg=NONE
+hi Visual term=reverse ctermfg=yellow ctermbg=black gui=NONE guifg=Black guibg=#BDDFFF ctermbg=153
+hi VisualNOS term=reverse ctermfg=yellow ctermbg=black gui=UNDERLINE guifg=Black guibg=#BDDFFF ctermbg=153
 
 " Syntax group {{{1
-hi Comment term=BOLD ctermfg=darkgray guifg=#3F6B5B
-hi Constant term=UNDERLINE ctermfg=red guifg=#B91F49
+hi Comment term=BOLD ctermfg=darkgray guifg=#3F6B5B ctermfg=240
+hi Constant term=UNDERLINE ctermfg=red guifg=#B91F49 ctermfg=125
 hi Error term=REVERSE ctermfg=15 ctermbg=9 guibg=Red guifg=White
 hi Identifier term=UNDERLINE ctermfg=Blue guifg=Blue
-hi Number   term=UNDERLINE ctermfg=red gui=NONE guifg=#00C226
-hi PreProc term=UNDERLINE ctermfg=darkblue guifg=#1071CE
+hi Number   term=UNDERLINE ctermfg=red gui=NONE guifg=#00C226 ctermfg=2
+hi PreProc term=UNDERLINE ctermfg=darkblue guifg=#1071CE ctermfg=26
 hi Special term=BOLD ctermfg=darkmagenta guifg=red2
-hi Statement term=BOLD ctermfg=DarkRed gui=NONE guifg=#F06F00
+hi Statement term=BOLD ctermfg=DarkRed gui=NONE guifg=#F06F00 ctermfg=202
 hi Tag term=BOLD ctermfg=DarkGreen guifg=DarkGreen
 hi Todo term=STANDOUT ctermbg=Yellow ctermfg=blue guifg=Blue guibg=Yellow
 hi Type term=UNDERLINE ctermfg=Blue gui=NONE guifg=Blue
@@ -95,7 +97,7 @@ hi! link SpecialComment Special
 hi! link Debug		Special
 
 " HTML {{{1
-hi htmlLink                 gui=UNDERLINE guifg=#0000ff guibg=NONE
+hi htmlLink                 gui=UNDERLINE guifg=#0000ff ctermfg=21 guibg=NONE
 hi htmlBold                 gui=BOLD
 hi htmlBoldItalic           gui=BOLD,ITALIC
 hi htmlBoldUnderline        gui=BOLD,UNDERLINE

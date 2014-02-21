@@ -7,7 +7,8 @@ syntax on                         " show syntax highlighting
 set t_Co=256
 set cursorline
 set background=dark
-colorscheme kolor
+" colorscheme kolor
+colorscheme jellybeans
 
 " hint to keep lines short
 if exists('+colorcolumn')
