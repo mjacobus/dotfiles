@@ -52,8 +52,10 @@ Bundle "thoughtbot/vim-rspec"
 " let g:rspec_command = "Dispatch zeus rspec {spec}"
 let g:rspec_command = "!rspec --drb {spec}"
 map <C-t> :call RunCurrentSpecFile()<CR>
+map <leader>t :call RunCurrentSpecFile()<CR>
 map <C-n> :call RunNearestSpec()<CR>
 map <C-l> :call RunLastSpec()<CR>
+map <leader>l :call RunLastSpec()<CR>
 map <Leader>o :w<cr>:call RunCurrentLineInTest()<CR>
 
 " ------------------------------------------------------------------------------
@@ -116,7 +118,7 @@ vnoremap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=lin
 
 " ------------------------------------------------------------------------------
 Bundle "joonty/vim-phpunitqf"
-noremap <leader>t :Test<cr>
+noremap <leader><leader>t :Test<cr>
 
 " let g:phpunit_cmd = "/usr/bin/mytest"
 let g:phpunit_args = "--configuration tests/phpunit.xml"
