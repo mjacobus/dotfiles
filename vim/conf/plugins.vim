@@ -122,6 +122,9 @@ noremap <leader><leader>t :Test<cr>
 
 " let g:phpunit_cmd = "/usr/bin/mytest"
 let g:phpunit_args = "--configuration tests/phpunit.xml"
+map <leader>pu :let g:phpunit_args = "--configuration tests/phpunit.xml"<cr>
+map <leader>pf :let g:phpunit_args = "--configuration tests/phpunit.xml --group=focus"<cr>
+
 " let g:phpunit_args_append = "--repeat"
 " let g:phpunit_tmpfile = "/my/new/tmp/file"
 
