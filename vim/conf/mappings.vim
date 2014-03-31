@@ -76,8 +76,10 @@ noremap U <nop>
 inoremap <Esc> <nop>
 
 " Find
-inoremap <C-F> <ESC>gg/
-noremap <C-F> <ESC>gg/
+inoremap <C-F> <ESC>/
+inoremap <leader>f <ESC>/
+noremap <C-F> <ESC>/
+noremap <leader>f <ESC>/
 
 " laptop
 noremap <leader>lap <esc>:set mouse=<cr><esc>:colorscheme solarized<cr>
