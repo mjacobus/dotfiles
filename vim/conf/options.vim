@@ -46,3 +46,6 @@ if filewritable(&undodir) == 0
 endif
 
 set showcmd
+
+" for git commits
+autocmd Filetype gitcommit setlocal spell textwidth=72

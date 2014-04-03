@@ -8,8 +8,8 @@ set t_Co=256
 set cursorline
 set background=dark
 " colorscheme kolor
-" colorscheme jellybeans " causes ctrlP to crash
-colorscheme railscasts
+colorscheme jellybeans " causes ctrlP to crash
+" colorscheme railscasts
 
 " hint to keep lines short
 if exists('+colorcolumn')
