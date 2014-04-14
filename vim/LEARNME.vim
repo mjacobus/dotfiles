@@ -36,351 +36,6 @@ finish
 
 = Study
 
-gi
-if you left insert mode to go look at something elsewhere in the file, how can you get back to where you were and also back into insert mode?
-
-H
-go to the top of the screen
-
-o
-in visual mode, exchange cursor position with the start/end of highlighting
-
-M
-go to the middle of the window
-
-L
-go to the bottom of the window
-
-<c-d>
-Go down half a screen
-
-<c-u>
-Go up half a screen
-
-:set ignorecase (or :set ic)
-ignore case when searching
-
-R
-enter replace mode to repeatedly replace the character under the cursor
-
-ge
-Go to end of previous word
-
-g_
-move to the last non-whitespace character on a line
-
-ciw
-change a word without necessarily being selected on the first letter of the word
-
-daw
-change the phrase "foo hello" to just "hello" (with cursor located at f*oo hello)
-
-gu
-make the selected text lower case
-
-gU
-make the selected text upper case
-
-'A
-mark: return to a globally set mark, even if in another buffer
-
-<c-o>
-e switch to normal mode for one command
-
-gqap
-format the current paragraph
-
-:history
-list your recent commands
-
-guu
-lower case the whole line
-
-gUU
-upper case the whole line
-
-g;
-go backward in the change list in a file
-
-g,
-go forward in the change list in a file
-
-aw
-in visual mode, select a whole word
-
-as
-in visual mode, select a whole sentence
-
-gm
-go to the center of the screen on the current line
-
-]p
-Paste below the current line, adjusting indentation to match current line
-
-gP
-paste register above current line, leaving cursor after new text
-
-gp
-paste register below current line, leaving cursor after new text
-
-<c-r>a
-insert the content of register a while in insert mode
-
-[p
-Paste above the current line, adjusting indentation to match current line
-
-:%norm @x
-Execute the macro recorded in register x on all lines of the current file
-
-:norm @x
-Execute the macro recorded in register x on a visually selected set of lines
-
-<c-r>=5*5
-in the #vim_command_line and in insert mode, insert the result of a 5*5 calculation
-
-gk
-move cursor one *screen* line up, regardless of line wrapping
-
-gj
-move cursor one *screen* line down, regardless of line wrapping
-
-qQ ... added commands ... q
-append more commands to a pre-existing @q register macro
-
-:Rextract _partial_name.erb
-rails.vim: extract some functionality into a partial
-
-:Rintegrationtest
-open the cucumber feature with that name [tag:setup_specific:gem]
-
-<c-p>
-(while searching or ex mode) do previous search or command
-
-<c-n>
-(while searching or ex mode) do next search or command
-
-<c-f>
-(while searching or ex mode) see previous searches or commands
-
-:%s/forward//gn
-count the number of occurrences of "forward" in a file
-
-q:
-see previous commands in a "command-line window"
-
-q/
-see previous searches
-
-{
-back a paragraph
-
-}
-forward a paragraph
-
-(
-back a sentence
-
-)
-forward a sentence
-
-%
-find matching parenthesis
-
-J
-join two lines
-
-gq
-reformat the selected text
-
-xp
-transpose two letters (delete and paste, technically)
-
-e
-move to the end of the word
-
-ea
-append at end of word
-
-w
-move the cursor forward by a word
-
-b
-move the cursor backward by a word
-
-<c-v>
-in insert or the #vim_command_line this turns the next thing typed into a literal
-
-:set spell
-Switch on spell checking
-
-<c-x><c-s>
-in insert mode correct the spelling of the current word
-
-<c-v>jjjI//<esc>
-block comment the next three JavaScript lines
-
-"+y
-copy the current selection to a clipboard where other programs can use it
-
-ci"
-change all the words in between two quotes
-
-/<c-r><c-w>
-switch to search command mode, then copy in the word under the cursor
-
-:cn
-Go to the next item in the quickfix list
-
-:cp
-Go to the previous item in the quickfix list
-
-i<c-r>:
-insert last #vim_command_line command
-
-i<c-r>/
-insert last search command
-
-:10,30w foo.txt
-write lines 10-30 to a file named foo.txt
-
-:10,30w>>foo.txt
-append lines 10-30 to a file named foo.txt
-
-:r !ls
-insert results of ls external command below cursor
-
-:r file
-insert content of file below cursor
-
-&
-repeat last substitution
-
-:bm
-go to next modified buffer
-
-:w !sudo tee %
-save the current file as root (in case you opened it up without sudo accidentally and made changes to it)
-
-<c-r>:
-in Ex mode, insert the last command
-
-<c-y>
-In insert mode, insert the character right above the cursor
-
-<c-u>
-In insert mode, delete the current line from the cursor position to the beginning of the line
-
-<c-a>
-In insert mode, re-insert the text inserted in the previous insert session
-
-<c-r>/
-in Ex mode, insert the last search
-
-<c-f>
-When typing something into the #vim_command_line, switch to the editable command-line mode where the command line becomes a fully vim-compatible text area
-
-o
-when in a visual selection, which key will toggle to the other end of the selection?
-
-:h i_CTRL-R
-get help for how control r is used in insert mode
-
-:h c_CTRL-R
-get help for how control r is used in command mode
-
-:s/\%V //g
-remove all the spaces from the current visual selection, which is only a partial line, not a full line
-
-:retab
-if expandtab is set, this will change all the tabs to spaces, expanding them as appropriate
-
-<c-w>_
-maximize size of window split
-
-I
-insert at the beginning of the line
-
-gv
-remark area that was just marked
-
-ZZ
-same as :wq
-
-<c-l>
-redraw the screen
-
-<c-x><c-f>
-completes using filenames from the current directory.
-
-<c-v>
-block selection (column editing)
-
-zo
-fold: open a fold at the cursor
-
-D
-delete to the end of the line
-
-C
-change to the end of the line
-
-:so $MYVIMRC
-reload the vimrc file (or ":so %" if you happen to be editing the file)
-
-A
-append at the end of the line
-
-<c-x>
-decrement a number on the same line when in normal mode (can be used with n before it)
-
-<c-a>
-increment a number on the same line when in normal mode (can be used with n before it)
-
-m
-NERDTree: opens the filesystem menu for a file, allowing you to remove, rename, etc
-
-ma
-mark: set a mark in the 'a' register in the current buffer
-
-`a
-mark: return to the 'a' mark in the current buffer
-
-<c-i>
-next
-
-<c-o>
-old
-
-~
-uppercase or lowercase the character under the cursor
-
-.
-repeat the last command
-
-<c-w><c-w>
-switch between windows
-
-[I
-show lines containing the word under the cursor
-
-redir @a
-redirect the output of an Ex command into buffer a
-
-g?
-reverse the characters in a visual selection
-
-:gui
-switch to the gui version
-
-:g/foo/p
-list all the matches with prepended line numbers in ex command output
-
-<c-a>
-insert previously inserted text (in insert mode)
-
-<c-w>
-delete word before cursor in insert mode
-
 <c-u>
 delete all inserted text on the line (in insert mode)
 
@@ -777,7 +432,352 @@ fold: increase the fold level by one
 <c-6>
 toggle between last two buffers
 
+gi
+if you left insert mode to go look at something elsewhere in the file, how can you get back to where you were and also back into insert mode?
+
+o
+in visual mode, exchange cursor position with the start/end of highlighting
+
+<c-d>
+Go down half a screen
+
+<c-u>
+Go up half a screen
+
+R
+enter replace mode to repeatedly replace the character under the cursor
+
+ge
+Go to end of previous word
+
+g_
+move to the last non-whitespace character on a line
+
+daw
+change the phrase "foo hello" to just "hello" (with cursor located at f*oo hello)
+
+gu
+make the selected text lower case
+
+gU
+make the selected text upper case
+
+'A
+mark: return to a globally set mark, even if in another buffer
+
+<c-o>
+e switch to normal mode for one command
+
+gqap
+format the current paragraph
+
+:history
+list your recent commands
+
+guu
+lower case the whole line
+
+gUU
+upper case the whole line
+
+g;
+go backward in the change list in a file
+
+g,
+go forward in the change list in a file
+
+aw
+in visual mode, select a whole word
+
+as
+in visual mode, select a whole sentence
+
+gm
+go to the center of the screen on the current line
+
+]p
+Paste below the current line, adjusting indentation to match current line
+
+gP
+paste register above current line, leaving cursor after new text
+
+gp
+paste register below current line, leaving cursor after new text
+
+<c-r>a
+insert the content of register a while in insert mode
+
+[p
+Paste above the current line, adjusting indentation to match current line
+
+:%norm @x
+Execute the macro recorded in register x on all lines of the current file
+
+:norm @x
+Execute the macro recorded in register x on a visually selected set of lines
+
+<c-r>=5*5
+in the #vim_command_line and in insert mode, insert the result of a 5*5 calculation
+
+gk
+move cursor one *screen* line up, regardless of line wrapping
+
+gj
+move cursor one *screen* line down, regardless of line wrapping
+
+qQ ... added commands ... q
+append more commands to a pre-existing @q register macro
+
+:Rextract _partial_name.erb
+rails.vim: extract some functionality into a partial
+
+:Rintegrationtest
+open the cucumber feature with that name [tag:setup_specific:gem]
+
+<c-p>
+(while searching or ex mode) do previous search or command
+
+<c-n>
+(while searching or ex mode) do next search or command
+
+<c-f>
+(while searching or ex mode) see previous searches or commands
+
+:%s/forward//gn
+count the number of occurrences of "forward" in a file
+
+q:
+see previous commands in a "command-line window"
+
+q/
+see previous searches
+
+{
+back a paragraph
+
+}
+forward a paragraph
+
+(
+back a sentence
+
+)
+forward a sentence
+
+%
+find matching parenthesis
+
+e
+move to the end of the word
+
+<c-v>
+in insert or the #vim_command_line this turns the next thing typed into a literal
+
+:set spell
+Switch on spell checking
+
+<c-x><c-s>
+in insert mode correct the spelling of the current word
+
+<c-v>jjjI//<esc>
+block comment the next three JavaScript lines
+
+"+y
+copy the current selection to a clipboard where other programs can use it
+
+/<c-r><c-w>
+switch to search command mode, then copy in the word under the cursor
+
+:cn
+Go to the next item in the quickfix list
+
+:cp
+Go to the previous item in the quickfix list
+
+i<c-r>:
+insert last #vim_command_line command
+
+i<c-r>/
+insert last search command
+
+:10,30w foo.txt
+write lines 10-30 to a file named foo.txt
+
+:10,30w>>foo.txt
+append lines 10-30 to a file named foo.txt
+
+:r !ls
+insert results of ls external command below cursor
+
+:r file
+insert content of file below cursor
+
+&
+repeat last substitution
+
+:bm
+go to next modified buffer
+
+:w !sudo tee %
+save the current file as root (in case you opened it up without sudo accidentally and made changes to it)
+
+<c-r>:
+in Ex mode, insert the last command
+
+<c-y>
+In insert mode, insert the character right above the cursor
+
+<c-u>
+In insert mode, delete the current line from the cursor position to the beginning of the line
+
+<c-a>
+In insert mode, re-insert the text inserted in the previous insert session
+
+<c-r>/
+in Ex mode, insert the last search
+
+<c-f>
+When typing something into the #vim_command_line, switch to the editable command-line mode where the command line becomes a fully vim-compatible text area
+
+o
+when in a visual selection, which key will toggle to the other end of the selection?
+
+:h i_CTRL-R
+get help for how control r is used in insert mode
+
+:h c_CTRL-R
+get help for how control r is used in command mode
+
+:s/\%V //g
+remove all the spaces from the current visual selection, which is only a partial line, not a full line
+
+<c-w>_
+maximize size of window split
+
+<c-v>
+block selection (column editing)
+
+zo
+fold: open a fold at the cursor
+
+<c-x>
+decrement a number on the same line when in normal mode (can be used with n before it)
+
+<c-a>
+increment a number on the same line when in normal mode (can be used with n before it)
+
+ma
+mark: set a mark in the 'a' register in the current buffer
+
+`a
+mark: return to the 'a' mark in the current buffer
+
+[I
+show lines containing the word under the cursor
+
+redir @a
+redirect the output of an Ex command into buffer a
+
+g?
+reverse the characters in a visual selection
+
+:gui
+switch to the gui version
+
+:g/foo/p
+list all the matches with prepended line numbers in ex command output
+
+<c-a>
+insert previously inserted text (in insert mode)
+
+<c-w>
+delete word before cursor in insert mode
+
 = Known
+
+<c-w><c-w>
+switch between windows
+
+.
+repeat the last command
+
+~
+uppercase or lowercase the character under the cursor
+
+<c-o>
+old
+
+<c-i>
+next
+
+m
+NERDTree: opens the filesystem menu for a file, allowing you to remove, rename, etc
+
+A
+append at the end of the line
+
+:so $MYVIMRC
+reload the vimrc file (or ":so %" if you happen to be editing the file)
+
+C
+change to the end of the line
+
+D
+delete to the end of the line
+
+<c-x><c-f>
+completes using filenames from the current directory.
+
+<c-l>
+redraw the screen
+
+ZZ
+same as :wq
+
+gv
+remark area that was just marked
+
+I
+insert at the beginning of the line
+
+:retab
+if expandtab is set, this will change all the tabs to spaces, expanding them as appropriate
+
+ci"
+change all the words in between two quotes
+
+b
+move the cursor backward by a word
+
+w
+move the cursor forward by a word
+
+ea
+append at end of word
+
+xp
+transpose two letters (delete and paste, technically)
+
+gq
+reformat the selected text
+
+J
+join two lines
+
+ciw
+change a word without necessarily being selected on the first letter of the word
+
+:set ignorecase (or :set ic)
+ignore case when searching
+
+L
+go to the bottom of the window
+
+M
+go to the middle of the window
+
+H
+go to the top of the screen
 
 :reg
 show the content of all registers
