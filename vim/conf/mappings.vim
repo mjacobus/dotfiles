@@ -43,6 +43,7 @@ inoremap <C-q> <ESC>:bd<cr>
 "Ctrl + e enters insert mode in the end of the phrase
 " imap <C-e> <ESC>A
 inoremap <C-e> <Esc>wa
+inoremap <leader>e <Esc>wa
 " imap <C-e><C-e> <Esc>$a
 
 " buffer switching
