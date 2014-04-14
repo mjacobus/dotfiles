@@ -18,38 +18,69 @@ map <leader>bu :BundleUpdate<cr>
 " Plugin config
 " ##############################################################################
 
-Bundle "tpope/vim-bundler"
+" Bundle "tpope/vim-bundler"
+
+" TODO: Find out what it does
 Bundle "vim-ruby/vim-ruby"
+
 Bundle "kchmck/vim-coffee-script"
+
 Bundle "jiangmiao/auto-pairs"
+
 Bundle "tpope/vim-surround"
+
 Bundle "tomtom/tcomment_vim"
-Bundle "altercation/vim-colors-solarized"
-Bundle "chriskempson/base16-vim"
+" Bundle "altercation/vim-colors-solarized"
+" Bundle "chriskempson/base16-vim"
 " Bundle "tsaleh/vim-matchit"
+
+" % matches more than a single char
 Bundle "tmhedberg/matchit"
+
+" easy motion with ,,f<char>
 Bundle "Lokaltog/vim-easymotion"
+
+" gist file
 Bundle "mattn/gist-vim"
+
+" necessary for gist-vim
 Bundle "mattn/webapi-vim"
-Bundle "vim-scripts/Align"
+
+
+" Finds files using Ag search
 Bundle "rking/ag.vim"
+
+" less syntax highlight
 Bundle "groenewege/vim-less"
+
 " Bundle "shawncplus/php.vim"
 Bundle "shawncplus/phpcomplete.vim"
 
-Bundle "benmills/vimux"
+" new tmux windows for specs, etc
+" Bundle "benmills/vimux"
+
+" Html autocomplete and stuff... not sure if it works great.
 Bundle "othree/html5.vim"
 
 " snippets
-Bundle "MarcWeber/vim-addon-mw-utils"
+
+" No idea. Perhaps dependency
+" Bundle "MarcWeber/vim-addon-mw-utils"
+
+" Probably dependency
 Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "honza/vim-snippets"
+
+" Temporarily disabled. Seems to mess up a few movements
+" Bundle "garbas/vim-snipmate"
+" Bundle "honza/vim-snippets"
 
 " ------------------------------------------------------------------------------
 Bundle "mattn/emmet-vim"
 " let g:user_emmet_install_global = 0
 " autocmd FileType html,css EmmetInstall
+
+" aligns strings
+Bundle "vim-scripts/Align"
 
 " ------------------------------------------------------------------------------
 Bundle "godlygeek/tabular"
@@ -217,10 +248,8 @@ nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 Bundle "tpope/vim-repeat"
 
 " ------------------------------------------------------------------------------
-Bundle "tpope/vim-abolish"
+"  Eases the process of creating aliases
+" Bundle "tpope/vim-abolish"
 
 " ------------------------------------------------------------------------------
 Bundle "nelstrom/vim-visual-star-search"
-
-
-
