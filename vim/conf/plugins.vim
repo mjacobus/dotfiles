@@ -1,8 +1,23 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+" set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/vundle/
+
+call vundle#rc()
+
+" let Vundle manage Vundle, required
+" Bundle 'gmarik/vundle'
+
+map <leader>bi :BundleInstall<cr>
+map <leader>bc :BundleClean<cr>
+map <leader>bu :BundleUpdate<cr>
+
 " ##############################################################################
 " Plugin config
 " ##############################################################################
 
-Bundle "gmarik/vundle"
 Bundle "tpope/vim-bundler"
 Bundle "vim-ruby/vim-ruby"
 Bundle "kchmck/vim-coffee-script"
@@ -11,7 +26,8 @@ Bundle "tpope/vim-surround"
 Bundle "tomtom/tcomment_vim"
 Bundle "altercation/vim-colors-solarized"
 Bundle "chriskempson/base16-vim"
-Bundle "tsaleh/vim-matchit"
+" Bundle "tsaleh/vim-matchit"
+Bundle "tmhedberg/matchit"
 Bundle "Lokaltog/vim-easymotion"
 Bundle "mattn/gist-vim"
 Bundle "mattn/webapi-vim"

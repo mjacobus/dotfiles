@@ -4,7 +4,7 @@ func! vundle#installer#new(bang, ...) abort
         \ map(copy(a:000), 'vundle#config#bundle(v:val, {})')
 
   let names = vundle#scripts#bundle_names(map(copy(bundles), 'v:val.name_spec'))
-  call vundle#scripts#view('Installer',['" Installing plugins to '.expand(g:bundle_dir, 1)], names +  ['Helptags'])
+  call vundle#scripts#view('Installer',['" Installing bundles to '.expand(g:bundle_dir, 1)], names +  ['Helptags'])
 
   call s:process(a:bang, (a:bang ? 'add!' : 'add'))
 
@@ -30,7 +30,7 @@ func! s:process(bang, cmd)
     endif
 
     if 'updated' == g:vundle_last_status && empty(msg)
-      let msg = 'Plugins updated; press u to view changelog'
+      let msg = 'Bundles updated; press u to view changelog'
     endif
 
     " goto next one
@@ -81,7 +81,7 @@ func! vundle#installer#run(func_name, name, ...) abort
   return status
 endf
 
-func! s:sign(status)
+func! s:sign(status) 
   if (!has('signs'))
     return
   endif
@@ -100,14 +100,7 @@ endf
 func! vundle#installer#install(bang, name) abort
   if !isdirectory(g:bundle_dir) | call mkdir(g:bundle_dir, 'p') | endif
 
-  let n = substitute(a:name,"['".'"]\+','','g')
-  let matched = filter(copy(g:bundles), 'v:val.name_spec == n')
-
-  if len(matched) > 0
-    let b = matched[0]
-  else
-    let b = vundle#config#init_bundle(a:name, {})
-  endif
+  let b = vundle#config#init_bundle(a:name, {})
 
   return s:sync(a:bang, b)
 endf
@@ -130,21 +123,21 @@ func! vundle#installer#helptags(bundles) abort
   let statuses = map(copy(help_dirs), 's:helptags(v:val)')
   let errors = filter(statuses, 'v:val == 0')
 
-  call s:log('Helptags: '.len(help_dirs).' plugins processed')
+  call s:log('Helptags: '.len(help_dirs).' bundles processed')
 
   return len(errors)
 endf
 
 func! vundle#installer#list(bang) abort
   let bundles = vundle#scripts#bundle_names(map(copy(g:bundles), 'v:val.name_spec'))
-  call vundle#scripts#view('list', ['" My Plugins'], bundles)
+  call vundle#scripts#view('list', ['" My Bundles'], bundles)
   redraw
-  echo len(g:bundles).' plugins configured'
+  echo len(g:bundles).' bundles configured'
 endf
 
 
 func! vundle#installer#clean(bang) abort
-  let bundle_dirs = map(copy(g:bundles), 'v:val.path()')
+  let bundle_dirs = map(copy(g:bundles), 'v:val.path()') 
   let all_dirs = (v:version > 702 || (v:version == 702 && has("patch51")))
   \   ? split(globpath(g:bundle_dir, '*', 1), "\n")
   \   : split(globpath(g:bundle_dir, '*'), "\n")
@@ -154,7 +147,7 @@ func! vundle#installer#clean(bang) abort
     let headers = ['" All clean!']
     let names = []
   else
-    let headers = ['" Removing Plugins:']
+    let headers = ['" Removing bundles:']
     let names = vundle#scripts#bundle_names(map(copy(x_dirs), 'fnamemodify(v:val, ":t")'))
   end
 
@@ -181,12 +174,12 @@ func! vundle#installer#delete(bang, dir_name) abort
   \           'rm -rf'
 
   let bundle = vundle#config#init_bundle(a:dir_name, {})
-  let cmd .= ' '.vundle#installer#shellesc(bundle.path())
+  let cmd .= ' '.shellescape(bundle.path())
 
   let out = s:system(cmd)
 
   call s:log('')
-  call s:log('Plugin '.a:dir_name)
+  call s:log('Bundle '.a:dir_name)
   call s:log('$ '.cmd)
   call s:log('> '.out)
 
@@ -206,11 +199,10 @@ func! s:has_doc(rtp) abort
 endf
 
 func! s:helptags(rtp) abort
-  " it is important to keep trailing slash here
-  let doc_path = resolve(a:rtp . '/doc/')
+  let doc_path = a:rtp.'/doc/'
   call s:log(':helptags '.doc_path)
   try
-    execute 'helptags ' . doc_path
+    execute 'helptags ' . resolve(doc_path)
   catch
     call s:log("> Error running :helptags ".doc_path)
     return 0
@@ -222,21 +214,21 @@ func! s:sync(bang, bundle) abort
   let git_dir = expand(a:bundle.path().'/.git/', 1)
   if isdirectory(git_dir) || filereadable(expand(a:bundle.path().'/.git', 1))
     if !(a:bang) | return 'todate' | endif
-    let cmd = 'cd '.vundle#installer#shellesc(a:bundle.path()).' && git pull && git submodule update --init --recursive'
+    let cmd = 'cd '.shellescape(a:bundle.path()).' && git pull && git submodule update --init --recursive'
 
     let cmd = g:shellesc_cd(cmd)
 
-    let get_current_sha = 'cd '.vundle#installer#shellesc(a:bundle.path()).' && git rev-parse HEAD'
+    let get_current_sha = 'cd '.shellescape(a:bundle.path()).' && git rev-parse HEAD'
     let get_current_sha = g:shellesc_cd(get_current_sha)
     let initial_sha = s:system(get_current_sha)[0:15]
   else
-    let cmd = 'git clone --recursive '.vundle#installer#shellesc(a:bundle.uri).' '.vundle#installer#shellesc(a:bundle.path())
+    let cmd = 'git clone --recursive '.shellescape(a:bundle.uri).' '.shellescape(a:bundle.path())
     let initial_sha = ''
   endif
 
   let out = s:system(cmd)
   call s:log('')
-  call s:log('Plugin '.a:bundle.name_spec)
+  call s:log('Bundle '.a:bundle.name_spec)
   call s:log('$ '.cmd)
   call s:log('> '.out)
 
@@ -258,16 +250,19 @@ func! s:sync(bang, bundle) abort
   return 'updated'
 endf
 
-func! vundle#installer#shellesc(cmd) abort
+func! g:shellesc(cmd) abort
   if ((has('win32') || has('win64')) && empty(matchstr(&shell, 'sh')))
-    return '"' . substitute(a:cmd, '"', '\\"', 'g') . '"'
+    if &shellxquote != '('                           " workaround for patch #445
+      return '"'.a:cmd.'"'                          " enclose in quotes so && joined cmds work
+    endif
   endif
-  return shellescape(a:cmd)
+  return a:cmd
 endf
 
 func! g:shellesc_cd(cmd) abort
   if ((has('win32') || has('win64')) && empty(matchstr(&shell, 'sh')))
     let cmd = substitute(a:cmd, '^cd ','cd /d ','')  " add /d switch to change drives
+    let cmd = g:shellesc(cmd)
     return cmd
   else
     return a:cmd

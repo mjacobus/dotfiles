@@ -1,8 +1,5 @@
 " .vimrc
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
 source ~/.vim/conf/options.vim
 source ~/.vim/conf/functions.vim
 source ~/.vim/conf/mappings.vim
