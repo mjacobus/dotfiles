@@ -46,12 +46,6 @@ inoremap <C-e> <Esc>wa
 inoremap <leader>e <Esc>wa
 " imap <C-e><C-e> <Esc>$a
 
-" buffer switching
-noremap <F12> :bn<cr>
-inoremap <F12> :bn<cr>
-noremap <C-F12> :bp<cr>
-inoremap <C-F12> :bp<cr>
-
 " Ruby old style hashes to new style hashes
 " vnoremap <leader>h :s/:\(\w*\) *=>/\1:/g<cr> " die hash rockets, die!
 
