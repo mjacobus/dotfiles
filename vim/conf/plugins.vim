@@ -64,15 +64,15 @@ Bundle "othree/html5.vim"
 
 " snippets
 
-" No idea. Perhaps dependency
-" Bundle "MarcWeber/vim-addon-mw-utils"
-
 " Probably dependency
 Bundle "tomtom/tlib_vim"
 
+" No idea. Dependency for snipmate
+Bundle "MarcWeber/vim-addon-mw-utils"
+
 " Temporarily disabled. Seems to mess up a few movements
-" Bundle "garbas/vim-snipmate"
-" Bundle "honza/vim-snippets"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
 
 " ------------------------------------------------------------------------------
 Bundle "mattn/emmet-vim"
