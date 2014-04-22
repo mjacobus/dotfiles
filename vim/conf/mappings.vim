@@ -34,6 +34,7 @@ inoremap <leader>s <ESC>:w<cr>
 
 " Select all
 noremap <C-a> ggVG
+noremap <leader>a ggVG
 inoremap <C-a> <ESC>ggVG
 
 " Ctrl + q closes buffer
