@@ -41,11 +41,8 @@ inoremap <C-a> <ESC>ggVG
 noremap <C-q> :bd<cr>
 inoremap <C-q> <ESC>:bd<cr>
 
-"Ctrl + e enters insert mode in the end of the phrase
-" imap <C-e> <ESC>A
-inoremap <C-e> <Esc>wa
-inoremap <leader>e <Esc>wa
-" imap <C-e><C-e> <Esc>$a
+" jumps to the next position after the closest closing char
+inoremap <leader>e <Esc>/[\]})"']<cr>a
 
 " Ruby old style hashes to new style hashes
 " vnoremap <leader>h :s/:\(\w*\) *=>/\1:/g<cr> " die hash rockets, die!
