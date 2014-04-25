@@ -103,6 +103,6 @@ cnoremap <C-x> <del>
 " Control Ctrl and Ctrl V
 vnoremap <C-c> "+y
 vnoremap <leader>c "+y
-" inoremap <C-v> <esc>:set paste<cr>"+p:set nopaste<cr>i
-" nnoremap <leader>v :set paste<cr>"+p:set nopaste<cr>i
+inoremap <C-v> <esc>:set paste<cr>"+p:set nopaste<cr>i
+nnoremap <leader>v  :set paste<cr>"+p:set nopaste<cr>i
 
