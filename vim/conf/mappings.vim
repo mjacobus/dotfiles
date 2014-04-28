@@ -26,9 +26,11 @@ nnoremap <leader>tw :call TrimWhiteSpace()<cr>
 " stty start undef
 noremap <C-s> :w<cr>
 noremap <leader>s :w<cr>
+noremap <leader>S :w<cr>
 " saves and exits insert mode
 inoremap <C-s> <ESC>:w <cr>
 inoremap <leader>s <ESC>:w<cr>
+inoremap <leader>S <ESC>:w<cr>
 " saves and continue editing
 " inoremap <C-s> <ESC>:w<cr>a
 
@@ -42,7 +44,8 @@ noremap <C-q> :bd<cr>
 inoremap <C-q> <ESC>:bd<cr>
 
 " jumps to the next position after the closest closing char
-inoremap <leader>e <Esc>/[\]})"']<cr>a
+inoremap <leader>e <Esc>/[\]})"']<cr><Esc>:nohlsearch<cr>a
+nnoremap <leader>e <Esc>/[\]})"']<cr><Esc>:nohlsearch<cr>a
 
 " Ruby old style hashes to new style hashes
 " vnoremap <leader>h :s/:\(\w*\) *=>/\1:/g<cr> " die hash rockets, die!
