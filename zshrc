@@ -72,10 +72,13 @@ PATH=$PATH:$HOME/.bin
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+
 # Customize to your needs...
 
 source ~/.dotfiles/aliases
 source ~/.dotfiles/zsh/functions.zsh
+
+TERM="screen-256color"
 
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
