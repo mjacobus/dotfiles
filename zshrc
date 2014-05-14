@@ -65,9 +65,9 @@ stty stop undef
 
 source $ZSH/oh-my-zsh.sh
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.dotfiles/bin
-PATH=$PATH:$HOME/.bin
+PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
+PATH=$HOME/.dotfiles/bin:$PATH
+PATH=$HOME/.bin:$PATH
 # PATH=$PATH:$HOME/.rubinius/bin
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
