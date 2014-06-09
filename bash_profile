@@ -1,12 +1,3 @@
-# Keep OS dotfile
-if [ -f $HOME/.bash_profile ]; then
-    . $HOME/.bash_profile
-fi
-
-if [ -f $HOME/.bashrc ]; then
-    . $HOME/.bashrc
-fi
-
 # allows Ctrl+S to save on vim
 stty ixany
 stty ixoff -ixon
