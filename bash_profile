@@ -1,3 +1,12 @@
+# Keep OS dotfile
+if [ -f $HOME/.bash_profile ]; then
+    . $HOME/.bash_profile
+fi
+
+if [ -f $HOME/.bashrc ]; then
+    . $HOME/.bashrc
+fi
+
 # allows Ctrl+S to save on vim
 stty ixany
 stty ixoff -ixon
@@ -57,6 +66,15 @@ case "$TERM" in
 esac
 
 source ~/.dotfiles/git-prompt.sh
+
+# Add RM to PATH for scripting
+PATH=$HOME/.rvm/bin:$PATH
+
+# add versioned bin files
+PATH=$HOME/.dotfiles/bin:$PATH
+
+# add custom bin
+PATH=$HOME/.bin:$PATH
 
 if [ "$color_prompt" = yes ]; then
     # export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\n\[\033[00m\]\$ ' #No date
