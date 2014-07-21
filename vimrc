@@ -1,6 +1,28 @@
 " ========================================================================
-" Vundle stuff
+" Vundle config
 " ========================================================================
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/Vundle.vim
+call vundle#begin()
+
+
+" ========================================================================
+" Plugins
+" ========================================================================
+Bundle "scrooloose/nerdtree"
+	noremap <c-n> :NERDTreeToggle<CR>
+	nmap g :NERDTree \| NERDTreeToggle \| NERDTreeFind<CR>
+
+Bundle "kien/ctrlp.vim"
+	let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+
+Bundle "tomtom/tcomment_vim"
+
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " ========================================================================
 " Options
@@ -133,9 +155,17 @@ noremap <leader>tn :tabnext<cr>
 noremap <leader>tp :tabprev<cr>
 
 " ========================================================================
-" Plugins
-" ========================================================================
-
-" ========================================================================
 " Functions
 " ========================================================================
+
+" remove trailing white spaces before saving rb files
+function! TrimWhiteSpace()
+" Save cursor position
+  let l = line(".")
+  let c = col(".")
+
+  %s/\s\+$//e
+
+" Restore cursor position
+  call cursor(l, c)
+endfunction
