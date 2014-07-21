@@ -8,78 +8,6 @@ filetype off                  " required
 set rtp+=~/.vim/Vundle.vim
 call vundle#begin()
 
-
-" ========================================================================
-" Plugins
-" ========================================================================
-Bundle "rking/ag.vim"
-Bundle "tomtom/tcomment_vim"
-Bundle "Lokaltog/vim-easymotion"
-Bundle "jiangmiao/auto-pairs"
-Bundle "mattn/webapi-vim.git"
-Bundle "mattn/gist-vim.git"
-  if has("mac")
-    let g:gist_clip_command = 'pbcopy'
-  elseif has("unix")
-    let g:gist_clip_command = 'xclip -selection clipboard'
-  endif
-
-  let g:gist_detect_filetype = 1
-  let g:gist_open_browser_after_post = 1
-
-Bundle "scrooloose/nerdtree"
-    noremap <c-n> :NERDTreeToggle<CR>
-    " nmap g :NERDTree \| NERDTreeToggle \| NERDTreeFind<CR>
-
-Bundle "kien/ctrlp.vim"
-    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
-
-" Tabular
-Bundle "godlygeek/tabular"
-    function! CustomTabularPatterns()
-      if exists('g:tabular_loaded')
-        AddTabularPattern! symbols / :/l0
-        AddTabularPattern! hash /^[^>]*\zs=>/
-        AddTabularPattern! chunks / \S\+/l0
-        AddTabularPattern! assignment / = /l0
-        AddTabularPattern! comma /^[^,]*,/l1
-        AddTabularPattern! colon /:\zs /l0
-        AddTabularPattern! options_hashes /:\w\+ =>/
-      endif
-    endfunction
-
-    autocmd VimEnter * call CustomTabularPatterns()
-
-    nmap a= :Tabularize /=<CR>
-    vnoremap a= :Tabularize /=<CR>
-    nmap a: :Tabularize /:\zs<CR>
-    vnoremap a: :Tabularize /:\zs<CR>
-    nmap ar :Tabularize /=><CR>
-    vnoremap ar :Tabularize /=><CR>
-
-  Bundle "scrooloose/syntastic"
-    let g:syntastic_enable_signs=1
-    let g:syntastic_quiet_messages = {'level': 'warning'}
-    let g:syntastic_php_phpcs_args="--standard=PSR2"
-    " syntastic is too slow for haml and sass
-    let g:syntastic_mode_map = { 'mode': 'active',
-                               \ 'active_filetypes': [],
-                               \ 'passive_filetypes': ['haml','scss','sass'] }
-" PHP Plugins
-Bundle "shawncplus/phpcomplete.vim"
-Bundle 'stephpy/vim-php-cs-fixer'
-Bundle "joonty/vim-phpunitqf"
-    noremap <leader>t <esc>:Test<cr>
-    let g:phpunit_cmd = "clear && phpunit"
-    let g:phpunit_args = "--configuration tests/phpunit.xml"
-    map <leader>pu :let g:phpunit_args = "--configuration tests/phpunit.xml"<cr>
-    map <leader>pf :let g:phpunit_args = "--configuration tests/phpunit.xml --group=focus"<cr>
-
-
-" ending vundle
-call vundle#end()            " required
-filetype plugin indent on    " required
-
 " ========================================================================
 " Options
 " ========================================================================
@@ -220,6 +148,80 @@ filetype plugin indent on    " required
 
   " different color for each paren pairs
   let vimclojure#ParenRainbow = 1
+
+
+" ========================================================================
+" Plugins
+" ========================================================================
+Bundle "rking/ag.vim"
+Bundle "tomtom/tcomment_vim"
+Bundle "Lokaltog/vim-easymotion"
+Bundle "jiangmiao/auto-pairs"
+Bundle "mattn/webapi-vim.git"
+Bundle "mattn/gist-vim.git"
+  if has("mac")
+    let g:gist_clip_command = 'pbcopy'
+  elseif has("unix")
+    let g:gist_clip_command = 'xclip -selection clipboard'
+  endif
+
+  let g:gist_detect_filetype = 1
+  let g:gist_open_browser_after_post = 1
+
+Bundle "scrooloose/nerdtree"
+    noremap <c-n> :NERDTreeToggle<CR>
+    " nmap g :NERDTree \| NERDTreeToggle \| NERDTreeFind<CR>
+
+Bundle "kien/ctrlp.vim"
+    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+
+" Tabular
+Bundle "godlygeek/tabular"
+    function! CustomTabularPatterns()
+      if exists('g:tabular_loaded')
+        AddTabularPattern! symbols / :/l0
+        AddTabularPattern! hash /^[^>]*\zs=>/
+        AddTabularPattern! chunks / \S\+/l0
+        AddTabularPattern! assignment / = /l0
+        AddTabularPattern! comma /^[^,]*,/l1
+        AddTabularPattern! colon /:\zs /l0
+        AddTabularPattern! options_hashes /:\w\+ =>/
+      endif
+    endfunction
+
+    autocmd VimEnter * call CustomTabularPatterns()
+
+    nmap a= :Tabularize /=<CR>
+    vnoremap a= :Tabularize /=<CR>
+    nmap a: :Tabularize /:\zs<CR>
+    vnoremap a: :Tabularize /:\zs<CR>
+    nmap ar :Tabularize /=><CR>
+    vnoremap ar :Tabularize /=><CR>
+
+  Bundle "scrooloose/syntastic"
+    let g:syntastic_enable_signs=1
+    let g:syntastic_quiet_messages = {'level': 'warning'}
+    let g:syntastic_php_phpcs_args="--standard=PSR2"
+    " syntastic is too slow for haml and sass
+    let g:syntastic_mode_map = { 'mode': 'active',
+                               \ 'active_filetypes': [],
+                               \ 'passive_filetypes': ['haml','scss','sass'] }
+" PHP Plugins
+Bundle "shawncplus/phpcomplete.vim"
+Bundle 'stephpy/vim-php-cs-fixer'
+Bundle "joonty/vim-phpunitqf"
+    noremap <leader>t <esc>:Test<cr> " wont work for some reason
+    noremap tt <esc>:Test<cr>
+    let g:phpunit_cmd = "clear && phpunit"
+    let g:phpunit_args = "--configuration tests/phpunit.xml"
+    map <leader>pu :let g:phpunit_args = "--configuration tests/phpunit.xml"<cr>
+    map <leader>pf :let g:phpunit_args = "--configuration tests/phpunit.xml --group=focus"<cr>
+
+
+" ending vundle
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 
 " ========================================================================
 " Mappings
