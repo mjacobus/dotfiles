@@ -210,7 +210,7 @@ Bundle "godlygeek/tabular"
 Bundle "shawncplus/phpcomplete.vim"
 Bundle 'stephpy/vim-php-cs-fixer'
 Bundle "joonty/vim-phpunitqf"
-    noremap <leader>t <esc>:Test<cr> " wont work for some reason
+    noremap <leader>t <esc>:Test<cr>
     noremap tt <esc>:Test<cr>
     let g:phpunit_cmd = "clear && phpunit"
     let g:phpunit_args = "--configuration tests/phpunit.xml"
