@@ -12,6 +12,7 @@ call vundle#begin()
 " ========================================================================
 " Plugins
 " ========================================================================
+Bundle "rking/ag.vim"
 Bundle "tomtom/tcomment_vim"
 Bundle "Lokaltog/vim-easymotion"
 Bundle "jiangmiao/auto-pairs"
