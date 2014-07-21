@@ -215,8 +215,8 @@
       noremap tt <esc>:Test<cr>
       let g:phpunit_cmd = "clear && phpunit"
       let g:phpunit_args = "--configuration tests/phpunit.xml"
-      map <leader>pu :let g:phpunit_args = "--configuration tests/phpunit.xml"<cr>
-      map <leader>pf :let g:phpunit_args = "--configuration tests/phpunit.xml --group=focus"<cr>
+      noremap <leader>pu :let g:phpunit_args = "--configuration tests/phpunit.xml"<cr>
+      noremap <leader>pf :let g:phpunit_args = "--configuration tests/phpunit.xml --group=focus"<cr>
 
 
   " ending vundle
@@ -294,8 +294,8 @@
   autocmd FileType php inoremap ;; <esc>$a;
   autocmd FileType php set nofoldenable
 
-  " convert file to latin1
-  nnoremap <leader>lat1 :write ++enc=latin1<cr>
+  " convert file to latin1 and reloads
+  nnoremap <leader>lat1 :write ++enc=latin1<cr>:e<cr>
 
   " Use Q for formatting the current paragraph (or selection)
   vmap Q gq
