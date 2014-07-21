@@ -258,6 +258,9 @@ inoremap <leader>,qq <ESC> :bd!<cr>
 inoremap <leader>e <Esc>/[\]})"']<cr><Esc>:nohlsearch<cr>a
 nnoremap <leader>e <Esc>/[\]})"']<cr><Esc>:nohlsearch<cr>a
 
+" adds arrow
+inoremap <C-l> <Space>=><Space>
+
 " Ruby old style hashes to new style hashes
 " vnoremap <leader>h :s/:\(\w*\) *=>/\1:/g<cr> " die hash rockets, die!
 
