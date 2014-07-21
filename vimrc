@@ -153,6 +153,7 @@
 " ========================================================================
 " Plugins
 " ========================================================================
+  Bundle "tpope/vim-fugitive"
   Bundle "rking/ag.vim"
   Bundle "tomtom/tcomment_vim"
   Bundle "Lokaltog/vim-easymotion"
