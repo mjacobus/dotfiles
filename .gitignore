@@ -1,3 +1,4 @@
 .netrwhist
 undodir
 vim/bundle/**
+vim/Vundle.vim

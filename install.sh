@@ -13,6 +13,7 @@ if [ -f $HOME/.bashrc ]; then
     ln -s ~/.dotfiles/bash_profile ~/.bashrc
 fi
 
+
 # git config
 ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
@@ -26,3 +27,6 @@ ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/vimrc ~/.vimrc
 ln -s ~/.dotfiles/ctags ~/.ctags
 ln -s ~/.dotfiles/agignore ~/.agignore
+
+# install vundle
+cd ~/.vim/ && git clone https://github.com/gmarik/Vundle.vim.git
