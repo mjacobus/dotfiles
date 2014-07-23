@@ -343,3 +343,9 @@
   " Restore cursor position
     call cursor(l, c)
   endfunction
+
+" ========================================================================
+" Abbreviations
+" ========================================================================
+  ab phpu PHPUnit_Framework_TestCase
+  ab funciton function
