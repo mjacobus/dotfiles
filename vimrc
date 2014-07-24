@@ -150,6 +150,10 @@
 " ========================================================================
 " Plugins
 " ========================================================================
+  Bundle "bling/vim-airline"
+    let g:airline#extensions#tabline#enabled = 1
+    " let g:airline_powerline_fonts = 1
+    let g:airline_theme = 'simple'
   Bundle "tpope/vim-fugitive"
   Bundle "rking/ag.vim"
   Bundle "tomtom/tcomment_vim"
