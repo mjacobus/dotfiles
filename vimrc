@@ -18,7 +18,7 @@
 
   let mapleader = ","
   set pastetoggle=<F3>
-  set clipboard=unnamedplus   " use the system clipboard
+  set clipboard+=unnamedplus   " use the system clipboard
   set backspace=2             " make backspace work like most other apps
   set nobackup                " no backup. Too 70's
   set noswapfile              " no backup. Too 70's
@@ -218,6 +218,21 @@
       let g:phpunit_args = "--configuration tests/phpunit.xml"
       noremap <leader>pu :let g:phpunit_args = "--configuration tests/phpunit.xml"<cr>
       noremap <leader>pf :let g:phpunit_args = "--configuration tests/phpunit.xml --group=focus"<cr>
+
+  " Ruby Plugins
+  Bundle "tpope/vim-rails"
+    nnoremap <leader>av :AV<cr>
+    nnoremap <leader>as :AS<cr>
+
+  Bundle "thoughtbot/vim-rspec"
+    let g:rspec_command = "!rspec --drb {spec}"
+    map <C-t> :call RunCurrentSpecFile()<CR>
+    map <leader>t :call RunCurrentSpecFile()<CR>
+    map <C-n> :call RunNearestSpec()<CR>
+    map <C-l> :call RunLastSpec()<CR>
+    map <leader>l :call RunLastSpec()<CR>
+    map <Leader>o :w<cr>:call RunCurrentLineInTest()<CR>
+
 
 
   " ending vundle
