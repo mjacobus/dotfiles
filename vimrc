@@ -153,9 +153,25 @@
   Bundle "bling/vim-airline"
     let g:airline#extensions#tabline#enabled = 1
     " let g:airline_powerline_fonts = 1
-    let g:airline_theme = 'simple'
+    let g:airline_left_sep = '▶'
+    let g:airline_right_sep = '◀'
+
   Bundle "tpope/vim-fugitive"
+    autocmd BufReadPost fugitive://* set bufhidden=delete
+    noremap <Leader>gac :Gcommit -am ""<LEFT>
+    noremap <Leader>gc :Gcommit -m ""<LEFT>
+    noremap <Leader>gs :Gstatus<CR>
+    vnoremap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+
   Bundle "rking/ag.vim"
+    nmap g/ :Ag!<space>
+    nmap g* :Ag! -w <C-R><C-W><space>
+    nmap ga :AgAdd!<space>
+    nmap gn :cnext<CR>
+    nmap gp :cprev<CR>
+    nmap gq :ccl<CR>
+    nmap gl :cwindow<CR>
+
   Bundle "tomtom/tcomment_vim"
   Bundle "Lokaltog/vim-easymotion"
   Bundle "jiangmiao/auto-pairs"
@@ -221,14 +237,25 @@
 
   " Ruby Plugins
   Bundle "tpope/vim-rails"
-    nnoremap <leader>av :AV<cr>
-    nnoremap <leader>as :AS<cr>
+    noremap <leader>av :AV<cr>
+    noremap <leader>as :AS<cr>
+    noremap <Leader>va :AV<cr>
+    noremap <Leader>sa :AS<cr>
+    noremap <Leader>vc :RVcontroller<cr>
+    noremap <Leader>sc :RScontroller<cr>
+    noremap <Leader>vu :RVunittest<CR>
+    noremap <Leader>su :RSunittest<CR>
+    noremap <Leader>vv :RVview<cr>
+    noremap <Leader>sv :RSview<cr>
+    noremap <Leader>m :Rmodel<cr>
+    noremap <Leader>sm :RSmodel<cr>
+    noremap <Leader>vm :RVmodel<cr>
 
   Bundle "thoughtbot/vim-rspec"
     let g:rspec_command = "!rspec --drb {spec}"
     map <C-t> :call RunCurrentSpecFile()<CR>
     map <leader>t :call RunCurrentSpecFile()<CR>
-    map <C-n> :call RunNearestSpec()<CR>
+    map <leader>n :call RunNearestSpec()<CR>
     map <C-l> :call RunLastSpec()<CR>
     map <leader>l :call RunLastSpec()<CR>
     map <Leader>o :w<cr>:call RunCurrentLineInTest()<CR>
