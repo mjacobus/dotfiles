@@ -172,6 +172,14 @@
     nmap gq :ccl<CR>
     nmap gl :cwindow<CR>
 
+  " snippets
+    Bundle "MarcWeber/vim-addon-mw-utils"
+    Bundle "tomtom/tlib_vim"
+    Bundle "garbas/vim-snipmate"
+
+    " Optional:
+    Bundle "honza/vim-snippets"
+
   Bundle "tomtom/tcomment_vim"
   Bundle "Lokaltog/vim-easymotion"
   Bundle "jiangmiao/auto-pairs"
