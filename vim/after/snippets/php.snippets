@@ -5,9 +5,10 @@ snippet pt
 
 	namespace ${1:FooTests\Bar};
 
-	use ${2:Foo\Bar}\\${3:`vim_snippets#Filename()`};
+	use ${2:Foo\Bar}\\${3:FooBar};
+	use PHPUnit_Framework_TestCase;
 
-	class $3Test extends PHPUnit_Framework_TestCase
+	class `vim_snippets#Filename()` extends PHPUnit_Framework_TestCase
 	{
 	    protected $object;
 	
@@ -15,17 +16,19 @@ snippet pt
 	    {
 	        $this->object = new $3();
 	    }
-
-	    public function testSomething()
-	    {
-	        $this->assertFalse(true);
-	    }
 	}
 snippet pc
 	<?php
 
 	namespace ${1:Foo\Bar};
 
-	class ${2:`vim_snippets#Filename()`};
+	class ${2:`vim_snippets#Filename()`}
 	{
+		${3}
 	}
+snippet php
+	<?php ${1} ?>
+snippet phpend
+	?>
+snippet phend
+	?>
