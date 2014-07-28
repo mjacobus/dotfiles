@@ -18,7 +18,7 @@
 
   let mapleader = ","
   set pastetoggle=<F3>
-  set clipboard+=unnamedplus   " use the system clipboard
+  set clipboard=unnamedplus   " use the system clipboard
   set backspace=2             " make backspace work like most other apps
   set nobackup                " no backup. Too 70's
   set noswapfile              " no backup. Too 70's
