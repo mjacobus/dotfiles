@@ -150,6 +150,9 @@
 " ========================================================================
 " Plugins
 " ========================================================================
+  Bundle "wikitopian/hardmode"
+    autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+    nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
   Bundle "bling/vim-airline"
     let g:airline#extensions#tabline#enabled = 1
     " let g:airline_powerline_fonts = 1
