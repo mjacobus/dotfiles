@@ -290,8 +290,8 @@
   noremap <leader>bp :bp<cr>
 
   " saves from normal mode
-  noremap <leader>s <esc>:w<cr>
-  noremap <leader>S <esc>:w<cr>
+  nnoremap <leader>s :w<cr>
+  nnoremap <leader>S :w<cr>
 
   " saves and exits insert mode
   inoremap <leader>s <ESC>:w<cr>
