@@ -151,7 +151,7 @@
 " Plugins
 " ========================================================================
   Bundle "wikitopian/hardmode"
-    autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+    " autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
     nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
   Bundle "bling/vim-airline"
     let g:airline#extensions#tabline#enabled = 1
@@ -406,3 +406,10 @@
 " ========================================================================
   ab phpu PHPUnit_Framework_TestCase
   ab funciton function
+
+" ------------------------------------------------------------------------------
+" Allow overriding these settings
+" ------------------------------------------------------------------------------
+  if filereadable(expand("~/.vimrc.local"))
+    source ~/.vimrc.local
+  endif
