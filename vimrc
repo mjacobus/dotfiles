@@ -161,19 +161,19 @@
 
   Bundle "tpope/vim-fugitive"
     autocmd BufReadPost fugitive://* set bufhidden=delete
-    noremap <Leader>gac :Gcommit -am ""<LEFT>
-    noremap <Leader>gc :Gcommit -m ""<LEFT>
-    noremap <Leader>gs :Gstatus<CR>
+    nnoremap <Leader>gac :Gcommit -am ""<LEFT>
+    nnoremap <Leader>gc :Gcommit -m ""<LEFT>
+    nnoremap <Leader>gs :Gstatus<CR>
     vnoremap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 
   Bundle "rking/ag.vim"
-    nmap g/ :Ag!<space>
-    nmap g* :Ag! -w <C-R><C-W><space>
-    nmap ga :AgAdd!<space>
-    nmap gn :cnext<CR>
-    nmap gp :cprev<CR>
-    nmap gq :ccl<CR>
-    nmap gl :cwindow<CR>
+    nnoremap g/ :Ag!<space>
+    nnoremap g* :Ag! -w <C-R><C-W><space>
+    nnoremap ga :AgAdd!<space>
+    nnoremap gn :cnext<CR>
+    nnoremap gp :cprev<CR>
+    nnoremap gq :ccl<CR>
+    nnoremap gl :cwindow<CR>
 
   " snippets
     Bundle "MarcWeber/vim-addon-mw-utils"
@@ -198,7 +198,7 @@
     let g:gist_open_browser_after_post = 1
 
   Bundle "scrooloose/nerdtree"
-      noremap <c-n> :NERDTreeToggle<CR>
+      nnoremap <c-n> :NERDTreeToggle<CR>
       " nmap g :NERDTree \| NERDTreeToggle \| NERDTreeFind<CR>
 
   Bundle "kien/ctrlp.vim"
@@ -220,11 +220,11 @@
 
       autocmd VimEnter * call CustomTabularPatterns()
 
-      nmap a= :Tabularize /=<CR>
+      nnoremap a= :Tabularize /=<CR>
       vnoremap a= :Tabularize /=<CR>
-      nmap a: :Tabularize /:\zs<CR>
+      nnoremap a: :Tabularize /:\zs<CR>
       vnoremap a: :Tabularize /:\zs<CR>
-      nmap ar :Tabularize /=><CR>
+      nnoremap ar :Tabularize /=><CR>
       vnoremap ar :Tabularize /=><CR>
 
     Bundle "scrooloose/syntastic"
@@ -239,37 +239,37 @@
   Bundle "shawncplus/phpcomplete.vim"
   Bundle 'stephpy/vim-php-cs-fixer'
   Bundle "joonty/vim-phpunitqf"
-      noremap <leader>t <esc>:Test<cr>
-      noremap tt <esc>:Test<cr>
+      nnoremap <leader>t <esc>:Test<cr>
+      nnoremap tt <esc>:Test<cr>
       let g:phpunit_cmd = "clear && phpunit"
       let g:phpunit_args = "--configuration tests/phpunit.xml"
-      noremap <leader>pu :let g:phpunit_args = "--configuration tests/phpunit.xml"<cr>
-      noremap <leader>pf :let g:phpunit_args = "--configuration tests/phpunit.xml --group=focus"<cr>
+      nnoremap <leader>pu :let g:phpunit_args = "--configuration tests/phpunit.xml"<cr>
+      nnoremap <leader>pf :let g:phpunit_args = "--configuration tests/phpunit.xml --group=focus"<cr>
 
   " Ruby Plugins
   Bundle "tpope/vim-rails"
-    noremap <leader>av :AV<cr>
-    noremap <leader>as :AS<cr>
-    noremap <Leader>va :AV<cr>
-    noremap <Leader>sa :AS<cr>
-    noremap <Leader>vc :RVcontroller<cr>
-    noremap <Leader>sc :RScontroller<cr>
-    noremap <Leader>vu :RVunittest<CR>
-    noremap <Leader>su :RSunittest<CR>
-    noremap <Leader>vv :RVview<cr>
-    noremap <Leader>sv :RSview<cr>
-    noremap <Leader>m :Rmodel<cr>
-    noremap <Leader>sm :RSmodel<cr>
-    noremap <Leader>vm :RVmodel<cr>
+    nnoremap <leader>av :AV<cr>
+    nnoremap <leader>as :AS<cr>
+    nnoremap <Leader>va :AV<cr>
+    nnoremap <Leader>sa :AS<cr>
+    nnoremap <Leader>vc :RVcontroller<cr>
+    nnoremap <Leader>sc :RScontroller<cr>
+    nnoremap <Leader>vu :RVunittest<CR>
+    nnoremap <Leader>su :RSunittest<CR>
+    nnoremap <Leader>vv :RVview<cr>
+    nnoremap <Leader>sv :RSview<cr>
+    nnoremap <Leader>m :Rmodel<cr>
+    nnoremap <Leader>sm :RSmodel<cr>
+    nnoremap <Leader>vm :RVmodel<cr>
 
   Bundle "thoughtbot/vim-rspec"
     let g:rspec_command = "!rspec --drb {spec}"
-    map <C-t> :call RunCurrentSpecFile()<CR>
-    map <leader>t :call RunCurrentSpecFile()<CR>
-    map <leader>n :call RunNearestSpec()<CR>
-    map <C-l> :call RunLastSpec()<CR>
-    map <leader>l :call RunLastSpec()<CR>
-    map <Leader>o :w<cr>:call RunCurrentLineInTest()<CR>
+    nnoremap <C-t> :call RunCurrentSpecFile()<CR>
+    nnoremap <leader>t :call RunCurrentSpecFile()<CR>
+    nnoremap <leader>n :call RunNearestSpec()<CR>
+    nnoremap <C-l> :call RunLastSpec()<CR>
+    nnoremap <leader>l :call RunLastSpec()<CR>
+    nnoremap <Leader>o :w<cr>:call RunCurrentLineInTest()<CR>
 
 
 
@@ -286,8 +286,8 @@
   inoremap jj <esc>l
 
   " buffer changing
-  noremap <leader>bn :bn<cr>
-  noremap <leader>bp :bp<cr>
+  nnoremap <leader>bn :bn<cr>
+  nnoremap <leader>bp :bp<cr>
 
   " saves from normal mode
   nnoremap <leader>s :w<cr>
@@ -298,14 +298,14 @@
   inoremap <leader>S <ESC>:w<cr>
 
   " Select all
-  noremap <C-a> ggVG
-  noremap <leader>a ggVG
+  nnoremap <C-a> ggVG
+  nnoremap <leader>a ggVG
   inoremap <C-a> <ESC>ggVG
 
   " Ctrl + q closes buffer
-  noremap <leader>,bd :bd<cr>
-  noremap <leader>,q :bd<cr>
-  noremap <leader>,qq :bd!<cr>
+  nnoremap <leader>,bd :bd<cr>
+  nnoremap <leader>,q :bd<cr>
+  nnoremap <leader>,qq :bd!<cr>
   inoremap <leader>,q <ESC> :bd<cr>
   inoremap <leader>,qq <ESC> :bd!<cr>
 
@@ -320,27 +320,27 @@
   " vnoremap <leader>h :s/:\(\w*\) *=>/\1:/g<cr> " die hash rockets, die!
 
   " Rails specific
-  noremap <Leader>ac :sp app/controllers/application_controller.rb<cr>
+  nnoremap <Leader>ac :sp app/controllers/application_controller.rb<cr>
   vnoremap <leader>h :s/\:\([a-zA-Z_]\+\)\s\+=>/\=printf("%s:", submatch(1))/g<CR><ESC>:let @/ = ""<CR>
-  noremap <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
-  noremap <Leader>quit <ESC>:q<cr>
+  nnoremap <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
+  nnoremap <Leader>quit <ESC>:q<cr>
 
 
   " save and quit Run Ruby, for interactive editor
-  noremap <Leader>rr <esc>:wq<CR>
+  nnoremap <Leader>rr <esc>:wq<CR>
 
   " Open vim rc
-  noremap <Leader>vim :edit $MYVIMRC<CR>
-  noremap <Leader>rel :source $MYVIMRC<CR>
+  nnoremap <Leader>vim :edit $MYVIMRC<CR>
+  nnoremap <Leader>rel :source $MYVIMRC<CR>
 
   " Fix anoying original K
-  noremap K <nop>
-  noremap U <nop>
+  nnoremap K <nop>
+  nnoremap U <nop>
   inoremap <Esc> <nop>
 
   " Find
   inoremap <leader>f <ESC>/
-  noremap <leader>f <ESC>/
+  nnoremap <leader>f <ESC>/
 
   " php specific
   autocmd FileType php inoremap ... ../
@@ -352,11 +352,11 @@
   nnoremap <leader>lat1 :write ++enc=latin1<cr>:e<cr>
 
   " Use Q for formatting the current paragraph (or selection)
-  vmap Q gq
-  nmap Q gqap
+  vnoremap Q gq
+  nnoremap Q gqap
 
   " clear search
-  nmap <silent> ,/ :nohlsearch<CR>
+  nnoremap <silent> ,/ :nohlsearch<CR>
 
   " Avoid arrow keys in command mode
   cnoremap <C-h> <left>
@@ -382,8 +382,8 @@
   nnoremap <leader>tw :call TrimWhiteSpace()<cr>
 
   " Tab management
-  noremap <leader>tn :tabnext<cr>
-  noremap <leader>tp :tabprev<cr>
+  nnoremap <leader>tn :tabnext<cr>
+  nnoremap <leader>tp :tabprev<cr>
 
 " ========================================================================
 " Functions
