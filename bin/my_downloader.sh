@@ -25,6 +25,6 @@ download_file() {
 if [ -f $OUTPUT_FILE ]; then
   echo "File ${OUTPUT_FILE} was already downloaded."
 else
-  ssh_command "wget -c $URL -O $OUTPUT_FILE" && \
+  ssh_command "wget --no-check-certificate -c $URL -O $OUTPUT_FILE" && \
   download_file "$DOWNLOAD_PATH/$OUTPUT_FILE"
 fi
