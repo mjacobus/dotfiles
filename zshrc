@@ -6,8 +6,17 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="candy"
-ZSH_THEME="robbyrussell"
-# ZSH_THEME="avit"
+# ZSH_THEME="alanpeabody"
+# ZSH_THEME="gentoo"
+# ZSH_THEME="kphoen"
+# ZSH_THEME="jreese"
+# ZSH_THEME="juanghurtado"
+ZSH_THEME="kafeitu"
+# ZSH_THEME="mortalscumbag" # tells when it is ssh
+# ZSH_THEME="pygmalion"
+# ZSH_THEME="tjkirch"
+# ZSH_THEME="xiong-chiamiov-plus"
+
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -35,6 +44,7 @@ DISABLE_AUTO_TITLE="true"
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment following line if you want to disable marking untracked files under
+#
 # VCS as dirty. This makes repository status check for large repositories much,
 # much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
