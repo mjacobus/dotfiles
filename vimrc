@@ -203,6 +203,7 @@
 
   Bundle "kien/ctrlp.vim"
       let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+      let g:ctrlp_working_path_mode = 'c'
 
   " Tabular
   Bundle "godlygeek/tabular"
@@ -289,6 +290,11 @@
   nnoremap <leader>bn :bn<cr>
   nnoremap <leader>bp :bp<cr>
 
+  " closes buffer
+  nnoremap <leader>bd :bd<cr>
+  nnoremap <leader>bdd :bd!<cr>
+  nnoremap <leader>bda :bufdo %bd!<cr>
+
   " saves from normal mode
   nnoremap <leader>s :w<cr>
   nnoremap <leader>S :w<cr>
@@ -301,13 +307,6 @@
   nnoremap <C-a> ggVG
   nnoremap <leader>a ggVG
   inoremap <C-a> <ESC>ggVG
-
-  " Ctrl + q closes buffer
-  nnoremap <leader>,bd :bd<cr>
-  nnoremap <leader>,q :bd<cr>
-  nnoremap <leader>,qq :bd!<cr>
-  inoremap <leader>,q <ESC> :bd<cr>
-  inoremap <leader>,qq <ESC> :bd!<cr>
 
   " jumps to the next position after the closest closing char
   inoremap <leader>e <Esc>/[\]})"']<cr><Esc>:nohlsearch<cr>a
