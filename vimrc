@@ -150,15 +150,24 @@
 " ========================================================================
 " Plugins
 " ========================================================================
+" There is a bug and i think it is plugin related.
+" Plugins marked with whitelisted are plugins that did not cause the issue
+" Issue in the link bellow:
+"
+" http://stackoverflow.com/questions/25027137/sometimes-vim-mappings-inserts-chars-instead-of-executing-commands
+
+  " Whitelisted
   Bundle "wikitopian/hardmode"
     " autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
     nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+  " Whitelisted
   Bundle "bling/vim-airline"
     let g:airline#extensions#tabline#enabled = 1
     " let g:airline_powerline_fonts = 1
     let g:airline_left_sep = '▶'
     let g:airline_right_sep = '◀'
 
+  " Whitelisted
   Bundle "tpope/vim-fugitive"
     autocmd BufReadPost fugitive://* set bufhidden=delete
     nnoremap <Leader>gac :Gcommit -am ""<LEFT>
@@ -176,12 +185,16 @@
     nnoremap gl :cwindow<CR>
 
   " snippets
+    " Whitelisted
     Bundle "MarcWeber/vim-addon-mw-utils"
+    " Whitelisted
     Bundle "tomtom/tlib_vim"
+    " Whitelisted
     Bundle "garbas/vim-snipmate"
 
     " Optional:
-    Bundle "honza/vim-snippets"
+    " Whitelisted
+    " Bundle "honza/vim-snippets"
 
   Bundle "tomtom/tcomment_vim"
   Bundle "Lokaltog/vim-easymotion"
@@ -248,6 +261,7 @@
       nnoremap <leader>pf :let g:phpunit_args = "--configuration tests/phpunit.xml --group=focus"<cr>
 
   " Ruby Plugins
+  " Whitelisted
   Bundle "tpope/vim-rails"
     nnoremap <leader>av :AV<cr>
     nnoremap <leader>as :AS<cr>
@@ -263,6 +277,7 @@
     nnoremap <Leader>sm :RSmodel<cr>
     nnoremap <Leader>vm :RVmodel<cr>
 
+  " Whitelisted
   Bundle "thoughtbot/vim-rspec"
     let g:rspec_command = "!rspec --drb {spec}"
     nnoremap <C-t> :call RunCurrentSpecFile()<CR>
