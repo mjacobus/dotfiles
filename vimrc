@@ -198,7 +198,7 @@
 
   Bundle "tomtom/tcomment_vim"
   Bundle "Lokaltog/vim-easymotion"
-  Bundle "jiangmiao/auto-pairs"
+  " Bundle "jiangmiao/auto-pairs"
   Bundle "mattn/webapi-vim.git"
   Bundle "mattn/gist-vim.git"
     if has("mac")
@@ -250,6 +250,7 @@
                                  \ 'active_filetypes': [],
                                  \ 'passive_filetypes': ['haml','scss','sass'] }
   " PHP Plugins
+  " Whitelisted
   Bundle "shawncplus/phpcomplete.vim"
   Bundle 'stephpy/vim-php-cs-fixer'
   Bundle "joonty/vim-phpunitqf"
