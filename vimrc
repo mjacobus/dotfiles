@@ -289,6 +289,8 @@
     nnoremap <leader>l :call RunLastSpec()<CR>
     nnoremap <Leader>o :w<cr>:call RunCurrentLineInTest()<CR>
 
+  Bundle "shawncplus/Vim-toCterm"
+    nnoremap tocterm :source ~/.vim/bundle/Vim-toCterm/tocterm.vim<CR>
 
 
   " ending vundle
