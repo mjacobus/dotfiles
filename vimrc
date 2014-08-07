@@ -194,11 +194,12 @@
 
     " Optional:
     " Whitelisted
-    " Bundle "honza/vim-snippets"
+    Bundle "honza/vim-snippets"
 
   Bundle "tomtom/tcomment_vim"
   Bundle "Lokaltog/vim-easymotion"
   " Bundle "jiangmiao/auto-pairs"
+  Bundle "yukunlin/auto-pairs"
   Bundle "mattn/webapi-vim.git"
   Bundle "mattn/gist-vim.git"
     if has("mac")
