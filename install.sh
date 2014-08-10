@@ -31,4 +31,4 @@ ln -s ~/.dotfiles/agignore ~/.agignore
 
 # install vundle
 cd ~/.vim/ && git clone https://github.com/gmarik/Vundle.vim.git
-vim +BundleInstall +BundleClean +quitall
+vim +BundleInstall +BundleClean +BundleClean +quitall
