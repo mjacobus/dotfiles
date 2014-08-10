@@ -156,6 +156,7 @@
 "
 " http://stackoverflow.com/questions/25027137/sometimes-vim-mappings-inserts-chars-instead-of-executing-commands
 
+  Bundle "mattn/emmet-vim"
   " Whitelisted
   Bundle "wikitopian/hardmode"
     " autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
@@ -264,6 +265,10 @@
 
   " Ruby Plugins
   " Whitelisted
+  Bundle "vim-scripts/ruby-matchit"
+  Bundle "nelstrom/vim-textobj-rubyblock"
+  Bundle "mjacobus/vim-rspec-focus"
+  Bundle "vim-ruby/vim-ruby"
   Bundle "tpope/vim-rails"
     nnoremap <leader>av :AV<cr>
     nnoremap <leader>as :AS<cr>
