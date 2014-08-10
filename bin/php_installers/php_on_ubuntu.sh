@@ -17,14 +17,23 @@ mecho "Installing vim-gnome..."
 mecho "Installing git..."
   sudo apt-get install -y git
 
-mecho "Installing curl..."
-  sudo apt-get install -y curl
+mecho "Installing mysql-server..."
+  sudo apt-get install -y mysql-server mysql-client
 
-mecho "Installing PHP..."
+mecho "Installing curl, php-curl..."
+  sudo apt-get install -y curl libcurl3 libcurl3-dev php5-curl
+
+mecho "Installing php5..."
   sudo apt-get install -y php5
 
 mecho "Installing php5-curl..."
   sudo apt-get install -y php5-curl
+
+mecho "Installing php5-gd..."
+  sudo apt-get install -y php5-gd
+
+mecho "Installing php5-mysql mysql"
+  sudo apt-get install -y php5-mysql
 
 mecho "Installing php5-dev, pear, xdebug..."
   sudo apt-get install -y php5-dev php-pear
