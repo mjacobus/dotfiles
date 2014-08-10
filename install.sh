@@ -3,31 +3,23 @@
 # TODO: Check whether the inclusion of .dotfiles/bash_profile exists in either
 # ~/.bashrc or ~/.bash_profile and write it otherwise
 
-if [ -f $HOME/.bash_profile ]; then
-    rm $HOME/.bash_profile
-    ln -s ~/.dotfiles/bash_profile ~/.bash_profile
-fi
-
-if [ -f $HOME/.bashrc ]; then
-    rm $HOME/.bashrc
-    ln -s ~/.dotfiles/bash_profile ~/.bashrc
-fi
-
+ln -sf ~/.dotfiles/bash_profile ~/.bash_profile
+ln -sf ~/.dotfiles/bash_profile ~/.bashrc
 
 # git config
-ln -s ~/.dotfiles/gitconfig ~/.gitconfig
-ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
+ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
+ln -sf ~/.dotfiles/gitignore_global ~/.gitignore_global
 
 
 # tmux config
-ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
-ln -s ~/.dotfiles/zshrc ~/.zshrc
-ln -s ~/.dotfiles/irbrc ~/.irbrc
-ln -s ~/.dotfiles/vim ~/.vim
-ln -s ~/.dotfiles/vimrc ~/.vimrc
-ln -s ~/.dotfiles/gvimrc ~/.gvimrc
-ln -s ~/.dotfiles/ctags ~/.ctags
-ln -s ~/.dotfiles/agignore ~/.agignore
+ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
+ln -sf ~/.dotfiles/zshrc ~/.zshrc
+ln -sf ~/.dotfiles/irbrc ~/.irbrc
+ln -sf ~/.dotfiles/vim ~/.vim
+ln -sf ~/.dotfiles/vimrc ~/.vimrc
+ln -sf ~/.dotfiles/gvimrc ~/.gvimrc
+ln -sf ~/.dotfiles/ctags ~/.ctags
+ln -sf ~/.dotfiles/agignore ~/.agignore
 
 # install vundle
 cd ~/.vim/ && git clone https://github.com/gmarik/Vundle.vim.git
