@@ -286,7 +286,6 @@
   " Whitelisted
   Bundle "thoughtbot/vim-rspec"
     let g:rspec_command = "!rspec --drb {spec}"
-    nnoremap <C-t> :call RunCurrentSpecFile()<CR>
     nnoremap <leader>t :call RunCurrentSpecFile()<CR>
     nnoremap <leader>n :call RunNearestSpec()<CR>
     nnoremap <C-l> :call RunLastSpec()<CR>
