@@ -213,55 +213,56 @@
     let g:gist_open_browser_after_post = 1
 
   Bundle "scrooloose/nerdtree"
-      nnoremap <c-n> :NERDTreeToggle<CR>
-      " nmap g :NERDTree \| NERDTreeToggle \| NERDTreeFind<CR>
+    nnoremap <c-n> :NERDTreeToggle<CR>
+    " nmap g :NERDTree \| NERDTreeToggle \| NERDTreeFind<CR>
 
   Bundle "kien/ctrlp.vim"
-      let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
-      " let g:ctrlp_working_path_mode = 'c'
+    let g:ctrlp_max_height = 30
+    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+    " let g:ctrlp_working_path_mode = 'c'
 
   " Tabular
   Bundle "godlygeek/tabular"
-      function! CustomTabularPatterns()
-        if exists('g:tabular_loaded')
-          AddTabularPattern! symbols / :/l0
-          AddTabularPattern! hash /^[^>]*\zs=>/
-          AddTabularPattern! chunks / \S\+/l0
-          AddTabularPattern! assignment / = /l0
-          AddTabularPattern! comma /^[^,]*,/l1
-          AddTabularPattern! colon /:\zs /l0
-          AddTabularPattern! options_hashes /:\w\+ =>/
-        endif
-      endfunction
+    function! CustomTabularPatterns()
+      if exists('g:tabular_loaded')
+        AddTabularPattern! symbols / :/l0
+        AddTabularPattern! hash /^[^>]*\zs=>/
+        AddTabularPattern! chunks / \S\+/l0
+        AddTabularPattern! assignment / = /l0
+        AddTabularPattern! comma /^[^,]*,/l1
+        AddTabularPattern! colon /:\zs /l0
+        AddTabularPattern! options_hashes /:\w\+ =>/
+      endif
+    endfunction
 
-      autocmd VimEnter * call CustomTabularPatterns()
+    autocmd VimEnter * call CustomTabularPatterns()
 
-      nnoremap a= :Tabularize /=<CR>
-      vnoremap a= :Tabularize /=<CR>
-      nnoremap a: :Tabularize /:\zs<CR>
-      vnoremap a: :Tabularize /:\zs<CR>
-      nnoremap ar :Tabularize /=><CR>
-      vnoremap ar :Tabularize /=><CR>
+    nnoremap a= :Tabularize /=<CR>
+    vnoremap a= :Tabularize /=<CR>
+    nnoremap a: :Tabularize /:\zs<CR>
+    vnoremap a: :Tabularize /:\zs<CR>
+    nnoremap ar :Tabularize /=><CR>
+    vnoremap ar :Tabularize /=><CR>
 
-    Bundle "scrooloose/syntastic"
-      let g:syntastic_enable_signs=1
-      let g:syntastic_quiet_messages = {'level': 'warning'}
-      let g:syntastic_php_phpcs_args="--standard=PSR2"
-      " syntastic is too slow for haml and sass
-      let g:syntastic_mode_map = { 'mode': 'active',
-                                 \ 'active_filetypes': [],
-                                 \ 'passive_filetypes': ['haml','scss','sass'] }
+  Bundle "scrooloose/syntastic"
+    let g:syntastic_enable_signs=1
+    let g:syntastic_quiet_messages = {'level': 'warning'}
+    let g:syntastic_php_phpcs_args="--standard=PSR2"
+    " syntastic is too slow for haml and sass
+    let g:syntastic_mode_map = { 'mode': 'active',
+                               \ 'active_filetypes': [],
+                               \ 'passive_filetypes': ['haml','scss','sass'] }
   " PHP Plugins
   " Whitelisted
   Bundle "shawncplus/phpcomplete.vim"
   Bundle 'stephpy/vim-php-cs-fixer'
   Bundle "joonty/vim-phpunitqf"
-      nnoremap <leader>t <esc>:Test<cr>
-      nnoremap tt <esc>:Test<cr>
-      let g:phpunit_cmd = "clear && phpunit"
-      let g:phpunit_args = "--configuration tests/phpunit.xml"
-      nnoremap <leader>pu :let g:phpunit_args = "--configuration tests/phpunit.xml"<cr>
-      nnoremap <leader>pf :let g:phpunit_args = "--configuration tests/phpunit.xml --group=focus"<cr>
+    nnoremap <leader>t <esc>:Test<cr>
+    nnoremap tt <esc>:Test<cr>
+    let g:phpunit_cmd = "clear && phpunit"
+    let g:phpunit_args = "--configuration tests/phpunit.xml"
+    nnoremap <leader>pu :let g:phpunit_args = "--configuration tests/phpunit.xml"<cr>
+    nnoremap <leader>pf :let g:phpunit_args = "--configuration tests/phpunit.xml --group=focus"<cr>
 
   " Ruby Plugins
   " Whitelisted
