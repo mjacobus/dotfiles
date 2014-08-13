@@ -156,6 +156,8 @@
 "
 " http://stackoverflow.com/questions/25027137/sometimes-vim-mappings-inserts-chars-instead-of-executing-commands
 
+
+  Bundle 'vim-scripts/ScrollColors'
   Bundle "mattn/emmet-vim"
   " Whitelisted
   Bundle "wikitopian/hardmode"
