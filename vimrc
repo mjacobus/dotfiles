@@ -159,6 +159,7 @@
 
   Bundle 'vim-scripts/ScrollColors'
   Bundle "mattn/emmet-vim"
+  Bundle "tpope/vim-surround"
   " Whitelisted
   Bundle "wikitopian/hardmode"
     " autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
@@ -408,6 +409,12 @@
   " Tab management
   nnoremap <leader>tn :tabnext<cr>
   nnoremap <leader>tp :tabprev<cr>
+
+  " quotes
+  " Single quote word
+  nnoremap <leader>sq ciw''<esc><left>p
+  " double quote word
+  nnoremap <leader>dq ciw""<esc><left>p
 
 " ========================================================================
 " Functions
