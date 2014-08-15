@@ -156,7 +156,9 @@
 "
 " http://stackoverflow.com/questions/25027137/sometimes-vim-mappings-inserts-chars-instead-of-executing-commands
 
-
+  Bundle "altercation/vim-colors-solarized"
+    let g:solarized_termcolors=256
+    " call togglebg#map("<F5>")
   Bundle 'vim-scripts/ScrollColors'
   Bundle "mattn/emmet-vim"
   Bundle "tpope/vim-surround"
@@ -168,8 +170,8 @@
   Bundle "bling/vim-airline"
     let g:airline#extensions#tabline#enabled = 1
     " let g:airline_powerline_fonts = 1
-    let g:airline_left_sep = '▶'
-    let g:airline_right_sep = '◀'
+    let g:airline_left_sep = ''
+    let g:airline_right_sep = ''
 
   " Whitelisted
   Bundle "tpope/vim-fugitive"
@@ -308,6 +310,10 @@
 " ========================================================================
 " Mappings
 " ========================================================================
+
+  " tab/shift for indenting multiple lines
+  vnoremap <tab> >gv
+  vnoremap <s-tab> <gv
 
   " escape alias
   inoremap jj <esc>l
