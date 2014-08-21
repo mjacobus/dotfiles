@@ -24,3 +24,28 @@ Vim - Resources
 - [vim for php programmers](http://www.slideshare.net/ZendCon/vim-for-php-programmers-presentation)
 - [Vim for a php developer](http://blog.lenss.nl/2011/04/vim-for-a-php-developer/)
 - [Vim for php programmers](http://www.slideshare.net/andreizm/vim-for-php-programmers-pdf)
+
+To memorize
+--------------
+
+
+#### Normal Mode
+
+- ```gi``` - go to the last edit in insert mode
+- ```-``` - goes previous line first char
+- ```q:``` - history, for editing (enter executes ```Ctrl-F``` puts in the command bar)
+- ```zR``` - opens all folded code
+- ```zW``` - closes all folded code
+- ```is``` - _inside_ sentence
+- ```gT``` - last tab
+- ```Ctrl-R w``` - inserts the w register
+
+#### Visual Mode
+
+- ```o``` - switches cursor position between beggining and end of selection
+
+
+#### Saving session
+- ```:mksession filename``` - saves session
+- ```:source filename``` - restores session
+- ```vim -S filename``` - restores session
