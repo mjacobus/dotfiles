@@ -11,14 +11,9 @@ cd ~/.dotfiles
 ./install.sh
 ```
 
-
-And in your ~/.bashrc:
-
-```bash
-```
-
-Vim
+Vim - Resources
 -----------------
+
 - [Graphical cheat sheet tutorial](http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html)
 - [Vim tutorial Videos](http://www.derekwyatt.org/vim/vim-tutorial-videos)
 - [Vim Classes](https://github.com/shawncplus/vim-classes)
