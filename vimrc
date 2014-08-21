@@ -311,10 +311,6 @@
 " Mappings
 " ========================================================================
 
-  " tab/shift for indenting multiple lines
-  vnoremap <tab> >gv
-  vnoremap <s-tab> <gv
-
   " escape alias
   inoremap jj <esc>l
 
