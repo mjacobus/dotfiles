@@ -311,6 +311,9 @@
 " Mappings
 " ========================================================================
 
+  " tags
+  nnoremap <f4> :! ctags <cr> | let tags='tags'
+
   " escape alias
   inoremap jj <esc>l
 
@@ -332,9 +335,7 @@
   inoremap <leader>S <ESC>:w<cr>
 
   " Select all
-  nnoremap <C-a> ggVG
   nnoremap <leader>a ggVG
-  inoremap <C-a> <ESC>ggVG
 
   " jumps to the next position after the closest closing char
   inoremap <leader>e <Esc>/[\]})"']<cr><Esc>:nohlsearch<cr>a
