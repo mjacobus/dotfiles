@@ -1,0 +1,22 @@
+snippet comp
+	{
+		"name": "${1:foo/bar}",
+		"description": "${2:description of your awesome lib}",
+		"license": "MIT",
+		"authors": [
+			{
+				"name": "Marcelo Jacobus",
+				"email": "marcelo.jacobus@gmail.com"
+			}
+		],
+		"require": {
+			"php" : ">=5.3.3"
+		},
+		"require-dev": {
+			"phpunit/phpunit": "*",
+			"satooshi/php-coveralls": "dev-master"
+		},
+		"autoload": {
+			"psr-0": {"${3:Foo}\\\\": "lib"}
+		}
+	}
