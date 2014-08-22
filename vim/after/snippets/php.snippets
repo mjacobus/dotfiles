@@ -8,6 +8,9 @@ snippet pt
 	use ${2:Foo\Bar}\\${3:FooBar};
 	use PHPUnit_Framework_TestCase;
 
+	/**
+	 * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
+	 */
 	class `vim_snippets#Filename()` extends PHPUnit_Framework_TestCase
 	{
 	    protected $object;
@@ -22,6 +25,9 @@ snippet pc
 
 	namespace ${1:Foo\Bar};
 
+	/**
+	 * @author Marcelo Jacobus <marcelo.jacobus@gmail.com>
+	 */
 	class ${2:`vim_snippets#Filename()`}
 	{
 		${3}
