@@ -265,9 +265,9 @@
     nnoremap <leader>t <esc>:Test<cr>
     nnoremap tt <esc>:Test<cr>
     let g:phpunit_cmd = "clear && phpunit"
-    let g:phpunit_args = "--configuration tests/phpunit.xml"
-    nnoremap <leader>pu :let g:phpunit_args = "--configuration tests/phpunit.xml"<cr>
-    nnoremap <leader>pf :let g:phpunit_args = "--configuration tests/phpunit.xml --group=focus"<cr>
+    let g:phpunit_args = "--colors --configuration tests/phpunit.xml"
+    nnoremap <leader>pu :let g:phpunit_args = "--colors --configuration tests/phpunit.xml"<cr>
+    nnoremap <leader>pf :let g:phpunit_args = "--colors --configuration tests/phpunit.xml --group=focus"<cr>
 
   " Ruby Plugins
   " Whitelisted

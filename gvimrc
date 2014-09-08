@@ -3,6 +3,7 @@
 
 " kill the menubar
   set guioptions-=T
+  set guioptions-=m
 
 " kill the scrollbars
   set guioptions-=r
@@ -45,3 +46,9 @@ endif
   colors molokai
 
 map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
+
+" PHPunit mappings
+    let g:phpunit_cmd = "phpunit"
+    let g:phpunit_args = "--configuration tests/phpunit.xml"
+    nnoremap <leader>pu :let g:phpunit_args = "--configuration tests/phpunit.xml"<cr>
+    nnoremap <leader>pf :let g:phpunit_args = "--configuration tests/phpunit.xml --group=focus"<cr>

@@ -15,3 +15,4 @@ alias ag='/usr/bin/ag'
 
 # conditional alias
 type vim.gnome >> /dev/null && alias vim=vim.gnome
+# type gvim >> /dev/null && alias vim=gvim
