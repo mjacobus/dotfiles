@@ -45,6 +45,8 @@ endif
   set background=dark
   colors molokai
 
+" full screen
+" http://superuser.com/questions/264693/how-can-i-open-gvim-in-full-screen-mode-in-gnome
 map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 
 " PHPunit mappings
