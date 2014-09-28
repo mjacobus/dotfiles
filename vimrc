@@ -174,6 +174,7 @@
     let g:airline_right_sep = ''
 
   " Whitelisted
+  Bundle "airblade/vim-gitgutter"
   Bundle "tpope/vim-fugitive"
     autocmd BufReadPost fugitive://* set bufhidden=delete
     nnoremap <Leader>gac :Gcommit -am ""<LEFT>
