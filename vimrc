@@ -14,7 +14,7 @@
   " color railscasts256
   " color molokai256
   " color github256
-  " color mjdark
+  color mjdark
 
   let mapleader = ","
   set pastetoggle=<F3>
@@ -378,7 +378,7 @@
   autocmd FileType php inoremap ... ../
   autocmd FileType php inoremap .. ->
   autocmd FileType php inoremap ;; <esc>$a;
-  autocmd FileType php set nofoldenable
+  " autocmd FileType php set nofoldenable
 
   " convert file to latin1 and reloads
   nnoremap <leader>lat1 :write ++enc=latin1<cr>:e<cr>
