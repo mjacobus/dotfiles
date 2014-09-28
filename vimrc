@@ -14,7 +14,7 @@
   " color railscasts256
   " color molokai256
   " color github256
-  color mjdark
+  " color mjdark
 
   let mapleader = ","
   set pastetoggle=<F3>
@@ -156,6 +156,7 @@
 "
 " http://stackoverflow.com/questions/25027137/sometimes-vim-mappings-inserts-chars-instead-of-executing-commands
 
+  Bundle "w0ng/vim-hybrid"
   Bundle "altercation/vim-colors-solarized"
     let g:solarized_termcolors=256
     " call togglebg#map("<F5>")
@@ -306,7 +307,6 @@
   " ending vundle
   call vundle#end()            " required
   filetype plugin indent on    " required
-
 
 " ========================================================================
 " Mappings
