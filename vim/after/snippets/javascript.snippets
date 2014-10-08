@@ -20,3 +20,24 @@ snippet comp
 			"psr-0": {"${3:Foo}\\\\": "lib"}
 		}
 	}
+snippet desc
+	describe("${1:description}", function () {
+		it("${2:does something}", function () {
+			${3}
+		});
+	});
+
+snippet it
+	it("${1:description}", function () {
+		${2}
+	});
+snippet bef
+	beforeEach(function () {
+		${1}
+	});
+snippet pcm
+	/**
+	 * ${1:TODO: description}
+	 * @param ${2:object obj}
+	 * @return ${3:self}
+	 */

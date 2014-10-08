@@ -313,7 +313,7 @@
 " ========================================================================
 
   " execute jasmine tests
-  autocmd FileType javascript nnoremap <buffer> tt :! clear && jasmine-node specs<cr>
+  autocmd FileType javascript nnoremap <buffer> tt :! clear && npm test<cr>
 
   " tags
   nnoremap <f4> :! ctags <cr> | let tags='tags'
