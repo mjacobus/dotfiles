@@ -162,6 +162,8 @@
     " call togglebg#map("<F5>")
   Bundle 'vim-scripts/ScrollColors'
   Bundle "mattn/emmet-vim"
+  Bundle "othree/html5.vim"
+  Bundle "tpope/vim-repeat"
   Bundle "tpope/vim-surround"
   " Whitelisted
   Bundle "wikitopian/hardmode"
