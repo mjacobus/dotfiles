@@ -263,13 +263,6 @@
   " Whitelisted
   Bundle "shawncplus/phpcomplete.vim"
   Bundle 'stephpy/vim-php-cs-fixer'
-  Bundle "joonty/vim-phpunitqf"
-    nnoremap <leader>t <esc>:Test<cr>
-    autocmd FileType php nnoremap <buffer> tt <esc>:Test<cr>
-    let g:phpunit_cmd = "clear && phpunit"
-    let g:phpunit_args = "--colors --configuration tests/phpunit.xml"
-    nnoremap <leader>pu :let g:phpunit_args = "--colors --configuration tests/phpunit.xml"<cr>
-    nnoremap <leader>pf :let g:phpunit_args = "--colors --configuration tests/phpunit.xml --group=focus"<cr>
 
   " Ruby Plugins
   " Whitelisted
@@ -438,6 +431,18 @@
   " Restore cursor position
     call cursor(l, c)
   endfunction
+
+  function PHPUnit()
+    execute "! clear && " . g:phpunit_cmd . ' ' . g:phpunit_args . ' ' .  g:phpunit_args_append
+  endfunction
+
+    nnoremap <leader>t <esc>:Test<cr>
+    autocmd FileType php nnoremap <buffer> tt <esc>:call PHPUnit()<cr>
+    let g:phpunit_cmd         = "phpunit"
+    let g:phpunit_args        = "--colors --configuration tests/phpunit.xml"
+    let g:phpunit_args_append = ""
+    nnoremap <leader>pu :let g:phpunit_args_append = ""<cr>
+    nnoremap <leader>pf :let g:phpunit_args_append = "--group=focus"<cr>
 
 " ========================================================================
 " Abbreviations
