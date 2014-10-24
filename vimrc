@@ -14,7 +14,7 @@
   " color railscasts256
   " color molokai256
   " color github256
-  color mjdark
+  " color mjdark
 
   let mapleader = ","
   set pastetoggle=<F3>
@@ -157,6 +157,7 @@
 " http://stackoverflow.com/questions/25027137/sometimes-vim-mappings-inserts-chars-instead-of-executing-commands
 
   Bundle "w0ng/vim-hybrid"
+  Bundle "jonathanfilip/vim-lucius"
   Bundle "altercation/vim-colors-solarized"
     let g:solarized_termcolors=256
     " call togglebg#map("<F5>")
@@ -434,7 +435,7 @@
     call cursor(l, c)
   endfunction
 
-  function PHPUnit()
+  function! PHPUnit()
     execute "! clear && " . g:phpunit_cmd . ' ' . g:phpunit_args . ' ' .  g:phpunit_args_append
   endfunction
 
@@ -458,3 +459,6 @@
   if filereadable(expand("~/.vimrc.local"))
     source ~/.vimrc.local
   endif
+
+  set background=dark
+  colorscheme lucius
