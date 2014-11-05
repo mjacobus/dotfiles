@@ -14,7 +14,7 @@
   " color railscasts256
   " color molokai256
   " color github256
-  " color mjdark
+  color mjdark
 
   let mapleader = ","
   set pastetoggle=<F3>

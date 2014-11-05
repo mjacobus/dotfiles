@@ -14,7 +14,7 @@ snippet pt
 	class `vim_snippets#Filename()` extends PHPUnit_Framework_TestCase
 	{
 	    protected $object;
-	
+
 	    public function setUp()
 	    {
 	        $this->object = new $3();
@@ -85,3 +85,17 @@ snippet pn
 	 */
 	${1:protected} \$${2:property};
 	
+snippet pri
+	/**
+	 * @var ${1:string}
+	 */
+	private \$${2:property};
+	
+snippet pr
+	/**
+	 * @var ${1:string}
+	 */
+	protected \$${2:property};
+
+snippet j
+	$this->${1:property}
