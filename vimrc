@@ -459,6 +459,3 @@
   if filereadable(expand("~/.vimrc.local"))
     source ~/.vimrc.local
   endif
-
-  set background=dark
-  colorscheme lucius
