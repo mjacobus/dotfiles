@@ -337,6 +337,9 @@
   " Select all
   nnoremap <leader>a ggVG
 
+  " new tab
+  nnoremap <c-w>t :tabnew<cr>
+
   " jumps to the next position after the closest closing char
   inoremap <leader>e <Esc>/[\]})"']<cr><Esc>:nohlsearch<cr>a
   nnoremap <leader>e <Esc>/[\]})"']<cr><Esc>:nohlsearch<cr>a
@@ -439,7 +442,6 @@
     execute "! clear && " . g:phpunit_cmd . ' ' . g:phpunit_args . ' ' .  g:phpunit_args_append
   endfunction
 
-    nnoremap <leader>t <esc>:Test<cr>
     autocmd FileType php nnoremap <buffer> tt <esc>:call PHPUnit()<cr>
     let g:phpunit_cmd         = "phpunit"
     let g:phpunit_args        = "--colors --configuration tests/phpunit.xml"
