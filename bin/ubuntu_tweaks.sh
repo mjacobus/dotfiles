@@ -8,5 +8,5 @@ function mecho() {
   echo -e "\033[0m"
 }
 
-mecho "Installing silversearcher-ag, tmux"
-  sudo apt-get install silversearcher-ag tmux
+mecho "Installing silversearcher-ag, tmux, ctags"
+  sudo apt-get install silversearcher-ag tmux ctags
