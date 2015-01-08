@@ -438,16 +438,25 @@
     call cursor(l, c)
   endfunction
 
-  function! PHPUnit()
-    execute "! clear && " . g:phpunit_cmd . ' ' . g:phpunit_args . ' ' .  g:phpunit_args_append
+  function! PHPUnit(args)
+    execute "! clear && phpunit -c phpunit.xml " . a:args
   endfunction
 
-    autocmd FileType php nnoremap <buffer> tt <esc>:call PHPUnit()<cr>
-    let g:phpunit_cmd         = "phpunit"
-    let g:phpunit_args        = "--colors --configuration tests/phpunit.xml"
-    let g:phpunit_args_append = ""
-    nnoremap <leader>pu :let g:phpunit_args_append = ""<cr>
-    nnoremap <leader>pf :let g:phpunit_args_append = "--group=focus"<cr>
+  function! PHPUnitCurrentFile()
+    :call PHPUnit("%")
+  endfunction
+
+  function! PHPUnitAll()
+    :call PHPUnit("")
+  endfunction
+
+  function! PHPUnitFocused()
+    :call PHPUnit("--group=focus")
+  endfunction
+
+    auto FileType php nnoremap <buffer> tt <esc>:call PHPUnitCurrentFile()<cr>
+    auto FileType php nnoremap <buffer> <leader>ta <esc>:call PHPUnitAll()<cr>
+    auto FileType php nnoremap <buffer> <leader>tf <esc>:call PHPUnitFocused()<cr>
 
 " ========================================================================
 " Abbreviations
