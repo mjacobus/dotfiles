@@ -35,6 +35,9 @@ mecho "Installing php5-gd..."
 mecho "Installing php5-mysql mysql"
   sudo apt-get install -y php5-mysql
 
+mecho "Installing php5-intl"
+  sudo apt-get install php5-intl
+
 mecho "Installing php5-dev, pear, xdebug..."
   sudo apt-get install -y php5-dev php-pear
   sudo pecl install xdebug
