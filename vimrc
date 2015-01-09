@@ -439,7 +439,7 @@
   endfunction
 
   function! PHPUnit(args)
-    execute "! clear && phpunit -c tests/phpunit.xml " . a:args
+    execute "! clear && phpunit -c " . fnamemodify('tests/phpunit.xml', ':p') . " " . a:args
   endfunction
 
   function! PHPUnitCurrentFile()
