@@ -265,8 +265,8 @@
   " PHP Plugins
   " Whitelisted
   Bundle "shawncplus/phpcomplete.vim"
-    let g:php_cs_fixer_level = "psr2"
   Bundle 'stephpy/vim-php-cs-fixer'
+    let g:php_cs_fixer_level = "psr2"
   Bundle 'joonty/vim-phpqa'
     let g:phpqa_messdetector_ruleset = "~/.dotfiles/php/phpmd_ggs.xml"
     let g:phpqa_codesniffer_args = "--standard=PSR2"
