@@ -266,6 +266,8 @@
   " Whitelisted
   Bundle "shawncplus/phpcomplete.vim"
   Bundle 'stephpy/vim-php-cs-fixer'
+  Bundle 'joonty/vim-phpqa'
+    let g:phpqa_messdetector_ruleset = "~/.dotfiles/php/phpmd_ggs.xml"
 
   " Ruby Plugins
   " Whitelisted

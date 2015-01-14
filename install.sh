@@ -20,6 +20,7 @@ ln -sf ~/.dotfiles/vimrc ~/.vimrc
 ln -sf ~/.dotfiles/gvimrc ~/.gvimrc
 ln -sf ~/.dotfiles/ctags ~/.ctags
 ln -sf ~/.dotfiles/agignore ~/.agignore
+ln -sf ~/.dotfiles/composer ~/.composer
 
 # install vundle
 cd ~/.vim/ && git clone https://github.com/gmarik/Vundle.vim.git
