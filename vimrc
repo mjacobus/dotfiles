@@ -230,6 +230,13 @@
     " let g:ctrlp_max_height = 30
     let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
     " let g:ctrlp_working_path_mode = 'c'
+    " set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+    " set wildignore+='\v[\/]\.(git|hg|svn)$'
+    let g:ctrlp_custom_ignore = {
+      \ 'dir':  '\v[\/](\.(git|hg|svn)|data|vendor|tmp|log)$',
+      \ 'file': '\v\.(exe|so|dll)$',
+      \ 'link': 'some_bad_symbolic_links',
+      \ }
 
   " Tabular
   Bundle "godlygeek/tabular"
