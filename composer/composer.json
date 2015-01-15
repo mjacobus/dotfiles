@@ -1,6 +1,15 @@
 {
     "require": {
-        "squizlabs/php_codesniffer": "*",
-        "phpmd/phpmd" : "@stable"
+      "behat/behat" : "*",
+      "fabpot/php-cs-fixer" : "*",
+      "pdepend/pdepend" : "*",
+      "phploc/phploc": "*",
+      "phpmd/phpmd" : "@stable",
+      "phpunit/phpunit":"*",
+      "sebastian/hhvm-wrapper": "*",
+      "sebastian/phpcpd" : "*",
+      "sebastian/phpdcd" : "*",
+      "squizlabs/php_codesniffer": "*",
+      "theseer/phpdox" : "*"
     }
 }
