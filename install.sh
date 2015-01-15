@@ -17,6 +17,7 @@ ln -sf ~/.dotfiles/zshrc ~/.zshrc
 ln -sf ~/.dotfiles/irbrc ~/.irbrc
 ln -sf ~/.dotfiles/vim ~/.vim
 ln -sf ~/.dotfiles/vimrc ~/.vimrc
+ln -sf ~/.dotfiles/ideavimrc ~/.ideavimrc
 ln -sf ~/.dotfiles/gvimrc ~/.gvimrc
 ln -sf ~/.dotfiles/ctags ~/.ctags
 ln -sf ~/.dotfiles/agignore ~/.agignore
