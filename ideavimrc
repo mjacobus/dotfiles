@@ -19,51 +19,51 @@
   inoremap jj <esc>l
 
   " buffer changing
-  nnoremap <leader>bn :bn<cr>
-  nnoremap <leader>bp :bp<cr>
+  nnoremap ,bn :bn<cr>
+  nnoremap ,bp :bp<cr>
 
   " closes buffer
-  nnoremap <leader>bd :bd<cr>
-  nnoremap <leader>bdd :bd!<cr>
-  nnoremap <leader>bda :bufdo %bd!<cr>
+  nnoremap ,bd :bd<cr>
+  nnoremap ,bdd :bd!<cr>
+  nnoremap ,bda :bufdo %bd!<cr>
 
   " saves from normal mode
-  nnoremap <leader>s :w<cr>
-  nnoremap <leader>S :w<cr>
+  nnoremap ,s :w<cr>
+  nnoremap ,S :w<cr>
 
   " saves and exits insert mode
-  inoremap <leader>s <ESC>:w<cr>
-  inoremap <leader>S <ESC>:w<cr>
+  inoremap ,s <ESC>:w<cr>
+  inoremap ,S <ESC>:w<cr>
 
   " Select all
-  nnoremap <leader>a ggVG
+  nnoremap ,a ggVG
 
   " new tab
   nnoremap <c-w>t :tabnew<cr>
 
   " jumps to the next position after the closest closing char
-  inoremap <leader>e <Esc>/[\]})"']<cr><Esc>:nohlsearch<cr>a
-  nnoremap <leader>e <Esc>/[\]})"']<cr><Esc>:nohlsearch<cr>a
+  inoremap ,e <Esc>/[\]})"']<cr><Esc>:nohlsearch<cr>a
+  nnoremap ,e <Esc>/[\]})"']<cr><Esc>:nohlsearch<cr>a
 
   " adds arrow
   inoremap <C-l> <Space>=><Space>
 
   " Ruby old style hashes to new style hashes
-  vnoremap <leader>h :s/:\(\w*\) *=>/\1:/g<cr>
+  vnoremap ,h :s/:\(\w*\) *=>/\1:/g<cr>
 
   " Rails specific
-  nnoremap <Leader>ac :sp app/controllers/application_controller.rb<cr>
-  vnoremap <leader>h :s/\:\([a-zA-Z_]\+\)\s\+=>/\=printf("%s:", submatch(1))/g<CR><ESC>:let @/ = ""<CR>
-  nnoremap <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
-  nnoremap <Leader>quit <ESC>:q<cr>
+  nnoremap ,ac :sp app/controllers/application_controller.rb<cr>
+  vnoremap ,h :s/\:\([a-zA-Z_]\+\)\s\+=>/\=printf("%s:", submatch(1))/g<CR><ESC>:let @/ = ""<CR>
+  nnoremap ,p :set paste<CR>o<esc>"*]p:set nopaste<cr>
+  nnoremap ,quit <ESC>:q<cr>
 
 
   " save and quit Run Ruby, for interactive editor
-  nnoremap <Leader>rr <esc>:wq<CR>
+  nnoremap ,rr <esc>:wq<CR>
 
   " Open vim rc
-  nnoremap <Leader>vim :edit $MYVIMRC<CR>
-  nnoremap <Leader>rel :source $MYVIMRC<CR>
+  nnoremap ,vim :edit $MYVIMRC<CR>
+  nnoremap ,rel :source $MYVIMRC<CR>
 
   " Fix anoying original K
   nnoremap K <nop>
@@ -71,8 +71,8 @@
   inoremap <Esc> <nop>
 
   " Find
-  inoremap <leader>f <ESC>/
-  nnoremap <leader>f <ESC>/
+  inoremap ,f <ESC>/
+  nnoremap ,f <ESC>/
 
   " php specific
   autocmd FileType php inoremap ... ../
