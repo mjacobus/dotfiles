@@ -150,11 +150,6 @@
 " ========================================================================
 " Plugins
 " ========================================================================
-" There is a bug and i think it is plugin related.
-" Plugins marked with whitelisted are plugins that did not cause the issue
-" Issue in the link bellow:
-"
-" http://stackoverflow.com/questions/25027137/sometimes-vim-mappings-inserts-chars-instead-of-executing-commands
 
   Bundle "w0ng/vim-hybrid"
   Bundle "jonathanfilip/vim-lucius"
