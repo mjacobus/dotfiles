@@ -233,7 +233,7 @@
     " set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
     " set wildignore+='\v[\/]\.(git|hg|svn)$'
     let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\v[\/](\.(git|hg|svn)|data|vendor|tmp|log)$',
+      \ 'dir':  '\v[\/](\.(git|hg|svn)|data|tmp|log)$',
       \ 'file': '\v\.(exe|so|dll)$',
       \ 'link': 'some_bad_symbolic_links',
       \ }
