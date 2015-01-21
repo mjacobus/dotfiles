@@ -166,18 +166,15 @@
   Bundle "othree/html5.vim"
   Bundle "tpope/vim-repeat"
   Bundle "tpope/vim-surround"
-  " Whitelisted
   Bundle "wikitopian/hardmode"
     " autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
     nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
-  " Whitelisted
   Bundle "bling/vim-airline"
     let g:airline#extensions#tabline#enabled = 1
     " let g:airline_powerline_fonts = 1
     let g:airline_left_sep = ''
     let g:airline_right_sep = ''
 
-  " Whitelisted
   Bundle "airblade/vim-gitgutter"
   Bundle "tpope/vim-fugitive"
     autocmd BufReadPost fugitive://* set bufhidden=delete
@@ -196,15 +193,11 @@
     nnoremap gl :cwindow<CR>
 
   " snippets
-    " Whitelisted
     Bundle "MarcWeber/vim-addon-mw-utils"
-    " Whitelisted
     Bundle "tomtom/tlib_vim"
-    " Whitelisted
     Bundle "garbas/vim-snipmate"
 
     " Optional:
-    " Whitelisted
     Bundle "honza/vim-snippets"
 
   Bundle "tomtom/tcomment_vim"
@@ -270,7 +263,6 @@
                                \ 'active_filetypes': [],
                                \ 'passive_filetypes': ['haml','scss','sass'] }
   " PHP Plugins
-  " Whitelisted
   Bundle "shawncplus/phpcomplete.vim"
   Bundle 'stephpy/vim-php-cs-fixer'
     let g:php_cs_fixer_level = "psr2"
@@ -279,7 +271,6 @@
     let g:phpqa_codesniffer_args = "--standard=PSR2"
 
   " Ruby Plugins
-  " Whitelisted
   Bundle "vim-scripts/ruby-matchit"
   Bundle "mjacobus/vim-rspec-focus"
   Bundle "vim-ruby/vim-ruby"
@@ -298,7 +289,6 @@
     nnoremap <Leader>sm :RSmodel<cr>
     nnoremap <Leader>vm :RVmodel<cr>
 
-  " Whitelisted
   Bundle "thoughtbot/vim-rspec"
     let g:rspec_command = "!rspec --drb {spec}"
     nnoremap <leader>t :call RunCurrentSpecFile()<CR>
