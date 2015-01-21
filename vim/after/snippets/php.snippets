@@ -104,3 +104,23 @@ snippet pro
 
 snippet j
 	$this->${1:property}
+
+snippet pgs
+	/**
+	 * @return ${1:array}
+	 */
+	public function get${2:Property}()
+	{
+		return $this->$3;
+	}
+
+	/**
+	 * @param $1
+	 * @return self
+	 */
+	public function set$2($1 \$${3:property})
+	{
+		$this->$3 = \$$3;
+
+		return $this;
+	}
