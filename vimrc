@@ -150,7 +150,6 @@
 " ========================================================================
 " Plugins
 " ========================================================================
-
   Bundle "w0ng/vim-hybrid"
   Bundle "jonathanfilip/vim-lucius"
   Bundle "altercation/vim-colors-solarized"
@@ -188,8 +187,8 @@
     nnoremap gl :cwindow<CR>
 
     " autocomplete
-    Bundle "Valloric/YouCompleteMe"
-      let g:ycm_collect_identifiers_from_tags_files = 1
+    " Bundle "Valloric/YouCompleteMe"
+    "   let g:ycm_collect_identifiers_from_tags_files = 1
 
   " snippets
     " Bundle "sirver/ultisnips"
@@ -200,7 +199,7 @@
 
     " Optional:
     Bundle "honza/vim-snippets"
-    "
+
     " " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
     " let g:UltiSnipsExpandTrigger="<tab>"
     " let g:UltiSnipsJumpForwardTrigger="<c-b>"
