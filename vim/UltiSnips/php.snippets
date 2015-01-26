@@ -1,0 +1,62 @@
+global !p
+
+def namespace(snip, path):
+    import os
+    namespace = pathToNamespace(path)
+    if (len(namespace) == 0):
+        return ''
+    return namespace
+
+def pathToNamespace(path):
+    import re
+    path = path.replace('\\', '/')
+
+    parts = []
+    for part in path.split('/'):
+        if re.match('^[A-Z]', part):
+            parts.append(part)
+        else:
+            parts = []
+    parts.pop()
+
+    return '\\'.join(parts)
+
+endglobal
+
+snippet gc "GGS class" !
+<?php
+
+namespace ${1:`!p snip.rv = namespace(snip, path)`};
+
+/**
+ * $1\\$2
+ *
+ * @package php-marketingbackend\Base\Chart\Feature
+ * @version $Id$
+ */
+class ${2:`!p snip.rv = snip.basename`}
+{
+	${0}
+}
+endsnippet
+
+snippet gi "GGS interface" !
+<?php
+
+namespace ${1:`!p snip.rv = namespace(snip, path)`};
+
+/**
+ * $1\\$2
+ *
+ * @package php-marketingbackend\Base\Chart\Feature
+ * @version $Id$
+ */
+interface ${2:`!p snip.rv = snip.basename`}
+{
+	${0}
+}
+endsnippet
+
+snippet gv "GGS var doc" !
+/** @var ${1:Type} \$${2:foo}
+endsnippet
