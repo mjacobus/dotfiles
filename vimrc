@@ -433,7 +433,8 @@
   endfunction
 
   function! PHPUnit(args)
-    execute "! clear && phpunit -c " . fnamemodify('tests/phpunit.xml', ':p') . " " . a:args
+    let cmd = "phpunit -c " . fnamemodify('tests/phpunit.xml', ':p') . " " . a:args
+    execute "! clear && echo '" . cmd . "' && " . cmd
   endfunction
 
   function! PHPUnitCurrentFile()
