@@ -7,6 +7,9 @@ def namespace(snip, path):
         return ''
     return namespace
 
+def testedclass(snip, path):
+    return path.split('/').pop().split('Test.php')[0]
+
 def pathToNamespace(path):
     import re
     path = path.replace('\\', '/')
@@ -37,6 +40,73 @@ namespace ${1:`!p snip.rv = namespace(snip, path)`};
 class ${2:`!p snip.rv = snip.basename`}
 {
 	${0}
+}
+endsnippet
+
+snippet gct "GGS controller test" !
+<?php
+
+namespace ${3:`!p snip.rv = namespace(snip, path)`};
+
+use Zend\Test\PHPUnit\Controller\AbstractHttpControllerTestCase;
+
+/**
+ * $3\\$4
+ *
+ * @package php-marketingbackend\\$3
+ * @version $Id$
+ */
+class ${4:`!p snip.rv = snip.basename`} extends AbstractHttpControllerTestCase
+{
+
+	public function setUp()
+	{
+		$this->setApplicationConfig(
+			include APPLICATION_PATH . '/config/application.config.php'
+		);
+		parent::setUp();
+	}
+
+	/**
+	 * @test
+	 */
+	public function ${1:dosomething}()
+	{
+		${2://do something}
+	}
+}
+endsnippet
+
+snippet gt "GGS test" !
+<?php
+
+namespace ${4:`!p snip.rv = namespace(snip, path)`};
+
+use PHPUnit_Framework_TestCase;
+
+/**
+ * $4\\$5
+ *
+ * @package php-marketingbackend\\$4
+ * @version $Id$
+ */
+class ${5:`!p snip.rv = snip.basename`} extends PHPUnit_Framework_TestCase
+{
+
+	protected $fixture;
+
+	public function setUp()
+	{
+		$this->fixture = new ${1:`!p snip.rv = testedclass(snip, path)`}();
+	}
+
+	/**
+	 * @test
+	 */
+	public function ${2:dosomething}()
+	{
+		${3://do something}
+	}
 }
 endsnippet
 
