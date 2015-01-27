@@ -345,7 +345,7 @@
   vnoremap <leader>h :s/:\(\w*\) *=>/\1:/g<cr>
 
   " Rails specific
-  nnoremap <Leader>ac :sp app/controllers/application_controller.rb<cr>
+  " nnoremap <Leader>ac :sp app/controllers/application_controller.rb<cr>
   vnoremap <leader>h :s/\:\([a-zA-Z_]\+\)\s\+=>/\=printf("%s:", submatch(1))/g<CR><ESC>:let @/ = ""<CR>
   nnoremap <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
   nnoremap <Leader>quit <ESC>:q<cr>
