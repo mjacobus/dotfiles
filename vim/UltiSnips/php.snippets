@@ -130,3 +130,11 @@ endsnippet
 snippet gv "GGS var doc" !
 /** @var ${1:Type} \$${2:foo}
 endsnippet
+
+snippet pae "Assert Equals" !
+$this->assertEquals(${1:\$foo}, ${2:\$bar});
+endsnippet
+
+snippet pai "AssertInstanceOf Equals" !
+$this->assertInstanceOf('${1:ClassName}', ${2:\$object});
+endsnippet
