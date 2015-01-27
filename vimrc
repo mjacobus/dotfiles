@@ -311,6 +311,10 @@
   " escape alias
   inoremap jj <esc>l
 
+  " navigation
+  noremap <space> 10j
+  noremap <leader><space> 10k
+
   " buffer changing
   nnoremap <leader>bn :bn<cr>
   nnoremap <leader>bp :bp<cr>
