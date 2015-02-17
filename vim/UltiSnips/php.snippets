@@ -9,6 +9,11 @@ def namespace(snip, path):
 
 def testedclass(snip, path):
     return path.split('/').pop().split('Test.php')[0]
+def testedclass_namespace(snip, path):
+    ns = path.split('tests/').pop()
+    ns = ns.split(testedclass(snip, path))[0]
+    ns = ns.replace("/", "\\").strip("\\").replace("Test","")
+    return ns
 
 def pathToNamespace(path):
     import re
@@ -83,6 +88,7 @@ snippet gt "GGS test" !
 namespace ${4:`!p snip.rv = namespace(snip, path)`};
 
 use PHPUnit_Framework_TestCase;
+use ${1:`!p snip.rv = testedclass_namespace(snip, path)`}\\$1;
 
 /**
  * $4\\$5
