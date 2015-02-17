@@ -74,7 +74,7 @@
 
   Bundle "kien/ctrlp.vim"
     " let g:ctrlp_max_height = 30
-    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --others']
     " let g:ctrlp_working_path_mode = 'c'
     " set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
     " set wildignore+='\v[\/]\.(git|hg|svn)$'
