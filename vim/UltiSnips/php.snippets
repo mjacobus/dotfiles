@@ -149,3 +149,33 @@ snippet gp "GGS Class property"
 /** @var ${3:array} */
 ${4:protected} \$${1:foo} = ${2:array()};
 endsnippet
+
+snippet test "test method"
+/**
+ * @test
+ */
+public function ${1:doSomething}()
+{
+	${2:// do something}
+}
+endsnippet
+
+snippet ai "assert instance of"
+$this->assertInstanceOf(${1:'Foo\Class'}, ${2:\$object});
+endsnippet
+
+snippet as "assert false"
+$this->assertFalse(${1:\$object});
+endsnippet
+
+snippet at "assert true"
+$this->assertTrue(${1:\$object});
+endsnippet
+
+snippet as "assert same"
+$this->assertSame(${1:\$expected}, ${2:\$actual});
+endsnippet
+
+snippet ae "assert equals"
+$this->assertEquals(${1:\$expected}, ${2:\$actual});
+endsnippet
