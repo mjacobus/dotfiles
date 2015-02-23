@@ -245,6 +245,9 @@
   " show status line
   set laststatus=2
 
+  " indicates fast terminal connection
+  set ttyfast
+
   " augment status line
   function! ETry(function, ...)
     if exists('*'.a:function)
