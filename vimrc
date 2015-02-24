@@ -425,6 +425,9 @@
   " double quote word
   nnoremap <leader>dq ciw""<esc><left>p
 
+  " Execute last command over a visual selection
+  vnoremap . :norm.<CR>
+
 " ========================================================================
 " Functions
 " ========================================================================
