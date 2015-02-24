@@ -428,6 +428,13 @@
   " Execute last command over a visual selection
   vnoremap . :norm.<CR>
 
+  " Resolving conflics
+  " Vimcasts #33
+  nnoremap <leader>gd :Gdiff<cr>
+  " get target version: diff get target
+  nnoremap <leader>dgt :diffget //2 \| :diffupdate<cr>
+  " get branch version: diff get branch
+  nnoremap <leader>dgb :diffget //3 \| :diffupdate<cr>
 " ========================================================================
 " Functions
 " ========================================================================
