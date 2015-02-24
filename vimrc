@@ -49,7 +49,7 @@
 
   " snippets
   Bundle "sirver/ultisnips"
-  Bundle "honza/vim-snippets"
+  Bundle "mjacobus/vim-snippets"
     " If you want :UltiSnipsEdit to split your window.
     let g:UltiSnipsEditSplit="vertical"
 
