@@ -24,11 +24,11 @@
   Bundle "wikitopian/hardmode"
     " autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
     nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
-  Bundle "bling/vim-airline"
-    let g:airline#extensions#tabline#enabled = 1
-    " let g:airline_powerline_fonts = 1
-    let g:airline_left_sep = ''
-    let g:airline_right_sep = ''
+  " Bundle "bling/vim-airline"
+  "   let g:airline#extensions#tabline#enabled = 1
+  "   " let g:airline_powerline_fonts = 1
+  "   let g:airline_left_sep = ''
+  "   let g:airline_right_sep = ''
 
   Bundle "airblade/vim-gitgutter"
   Bundle "tpope/vim-fugitive"
@@ -179,6 +179,7 @@
   " set relativenumber
   set colorcolumn=80
   set mouse=""                " disable mouse
+  set wildmenu
 
   " undo per file
   set undodir=~/.vim/undodir
