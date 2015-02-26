@@ -76,8 +76,8 @@ stty start undef
 stty stop undef
 
 source $ZSH/oh-my-zsh.sh
-source shell/configs.sh
-source shell/zsh/functions.zsh
+source ~/.dotfiles/shell/configs.sh
+source ~/.dotfiles/shell/zsh/functions.zsh
 
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local

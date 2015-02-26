@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # TODO: Check whether the inclusion of .dotfiles/bash_profile exists in either
-# ~/.bashrc or ~/.bash_profile and write it otherwise
+# ~/.bashrc or ~/bashrc and write it otherwise
 
-ln -sf ~/.dotfiles/bash_profile ~/.bash_profile
-ln -sf ~/.dotfiles/bash_profile ~/.bashrc
+ln -sf ~/.dotfiles/bashrc ~/.bash_profile
+ln -sf ~/.dotfiles/bashrc ~/.bashrc
 
 # git config
 ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
