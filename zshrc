@@ -69,31 +69,15 @@ CLICOLOR=1 #Colorizes output of ls and others.
 EDITOR=vi
 VISUAL=$EDITOR
 PAGER=less
-
+TERM="screen-256color"
 
 # disable flow control commands (keeps C-s from freezing everything)
 stty start undef
 stty stop undef
 
 source $ZSH/oh-my-zsh.sh
-
-PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
-PATH=$HOME/.dotfiles/bin:$PATH
-PATH=./vendor/bin:$PATH # for php composer binaries
-PATH=$HOME/node_modules/.bin:$PATH
-PATH=$HOME/.composer/vendor/bin:$PATH
-PATH=$HOME/.bin:$PATH
-# PATH=$PATH:$HOME/.rubinius/bin
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-
-# Customize to your needs...
-
-source ~/.dotfiles/aliases
-source ~/.dotfiles/zsh/functions.zsh
-
-TERM="screen-256color"
+source shell/configs.sh
+source shell/zsh/functions.zsh
 
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local

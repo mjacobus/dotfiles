@@ -57,15 +57,7 @@ case "$TERM" in
 esac
 
 source ~/.dotfiles/git-prompt.sh
-
-# Add RM to PATH for scripting
-PATH=$HOME/.rvm/bin:$PATH
-
-# add versioned bin files
-PATH=$HOME/.dotfiles/bin:$PATH
-
-# add custom bin
-PATH=$HOME/.bin:$PATH
+source shell/configs.sh
 
 if [ "$color_prompt" = yes ]; then
     # export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\n\[\033[00m\]\$ ' #No date
