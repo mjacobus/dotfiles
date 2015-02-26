@@ -79,7 +79,3 @@ fi
 
 #Set up fasd.
 #eval "$(fasd --init auto)"
-
-
-source "$HOME/.dotfiles/aliases"
-
