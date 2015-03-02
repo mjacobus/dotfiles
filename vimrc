@@ -429,6 +429,8 @@
   " Execute last command over a visual selection
   vnoremap . :norm.<CR>
 
+  nnoremap <leader>gw :Gwrite<cr>
+  nnoremap <leader>gb :Gblame<cr>
   " Resolving conflics
   " Vimcasts #33
   nnoremap <leader>gd :Gdiff<cr>
