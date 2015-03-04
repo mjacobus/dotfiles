@@ -11,6 +11,7 @@
 " ========================================================================
 " Plugins
 " ========================================================================
+  Bundle "joonty/vdebug"
   Bundle "w0ng/vim-hybrid"
   Bundle "jonathanfilip/vim-lucius"
   Bundle "altercation/vim-colors-solarized"
