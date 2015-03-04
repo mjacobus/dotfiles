@@ -70,8 +70,8 @@ else
 fi
 
 #Keep this last so it can override general settings!
-if [ -f $HOME/.dotfiles_local/bash_profile ]; then
-    . $HOME/.dotfiles_local/bash_profile
+if [ -f $HOME/.bashrc.local ]; then
+    source $HOME/.bashrc.local
 fi
 
 #Set starting directory.
