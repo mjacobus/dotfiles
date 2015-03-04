@@ -76,6 +76,7 @@ stty start undef
 stty stop undef
 
 source $ZSH/oh-my-zsh.sh
+source ~/.dotfiles/shell/rvm.sh
 source ~/.dotfiles/shell/configs.sh
 source ~/.dotfiles/shell/zsh/functions.zsh
 
