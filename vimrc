@@ -450,6 +450,14 @@
   " sort block
   nnoremap <leader>sb vip:sort<cr>
   nnoremap <leader>sa vi(:sort<cr>
+
+  " wrap selection inside caracter
+  vnoremap ( "zdi(<C-R>z)<ESC>
+  vnoremap { "zdi{<C-R>z}<ESC>
+  vnoremap [ "zdi[<C-R>z]<ESC>
+  vnoremap ' "zdi'<C-R>z'<ESC>
+  vnoremap " "zdi"<C-R>z"<ESC>
+
 " ========================================================================
 " Functions
 " ========================================================================
