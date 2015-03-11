@@ -439,6 +439,14 @@
   nnoremap <leader>dgt :diffget //2 \| :diffupdate<cr>
   " get branch version: diff get branch
   nnoremap <leader>dgb :diffget //3 \| :diffupdate<cr>
+
+  " quotes
+  nnoremap <leader>qw ciw''<esc>P
+  nnoremap <leader>qw ciw""<esc>P
+
+  " sort block
+  nnoremap <leader>sb vip:sort<cr>
+  nnoremap <leader>sa vi(:sort<cr>
 " ========================================================================
 " Functions
 " ========================================================================
