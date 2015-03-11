@@ -117,6 +117,9 @@
     let g:syntastic_mode_map = { 'mode': 'active',
                                \ 'active_filetypes': [],
                                \ 'passive_filetypes': ['haml','scss','sass'] }
+  Bundle "weierophinney/argumentrewrap"
+    nnoremap <silent> <leader>wa :call argumentrewrap#RewrapArguments()<CR>
+
   " PHP Plugins
   Bundle "shawncplus/phpcomplete.vim"
   Bundle 'stephpy/vim-php-cs-fixer'
