@@ -118,7 +118,6 @@
                                \ 'active_filetypes': [],
                                \ 'passive_filetypes': ['haml','scss','sass'] }
   Bundle "weierophinney/argumentrewrap"
-    nnoremap <silent> <leader>wa :call argumentrewrap#RewrapArguments()<CR>
 
   " PHP Plugins
   Bundle "shawncplus/phpcomplete.vim"
@@ -169,10 +168,12 @@
 " ========================================================================
 " Options
 " ========================================================================
+  set background=dark
   " color railscasts256
   " color molokai256
   " color github256
-  color mjdark
+  " color mjdark
+  color lucius
 
   let mapleader = ","
   set pastetoggle=<F3>
@@ -369,7 +370,7 @@
   nnoremap <Leader>rr <esc>:wq<CR>
 
   " Open vim rc
-  nnoremap <Leader>vim :edit $MYVIMRC<CR>
+  nnoremap <Leader>vim :vsplit $MYVIMRC<CR>
   nnoremap <Leader>rel :source $MYVIMRC<CR>
 
   " Fix anoying original K
@@ -458,6 +459,8 @@
   vnoremap ' "zdi'<C-R>z'<ESC>
   vnoremap " "zdi"<C-R>z"<ESC>
 
+  " does not work right after the plugin
+  nnoremap <leader>wa :call argumentrewrap#RewrapArguments()<CR>
 " ========================================================================
 " Functions
 " ========================================================================
@@ -507,3 +510,6 @@
   if filereadable(expand("~/.vimrc.local"))
     source ~/.vimrc.local
   endif
+
+" highlight ajustment
+  highligh MatchParen cterm=bold ctermbg=none ctermfg=green
