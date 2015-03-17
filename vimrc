@@ -123,6 +123,7 @@
   Bundle "shawncplus/phpcomplete.vim"
   Bundle 'stephpy/vim-php-cs-fixer'
     let g:php_cs_fixer_level = "psr2"
+    let g:php_cs_fixer_fixers_list="-concat_without_spaces"
   Bundle 'joonty/vim-phpqa'
     let g:phpqa_messdetector_ruleset = "~/.dotfiles/php/phpmd_ggs.xml"
     let g:phpqa_codesniffer_args = "--standard=PSR2"
