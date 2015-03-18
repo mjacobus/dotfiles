@@ -321,6 +321,7 @@
 
   " escape alias
   inoremap jj <esc>l
+  inoremap kj <esc>l
 
   " navigation
   noremap <space> 10j
