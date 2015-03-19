@@ -496,9 +496,20 @@
     :call PHPUnit("--group=focus")
   endfunction
 
+  function! PHPUnitZendModule()
+    let module = ZendGetModuleName()
+    let cmd = "phpunit -c module/" . module . "/tests/phpunit.xml"
+    execute "! clear && echo '" . cmd . "' && " . cmd
+  endfunction
+
+  function! ZendGetModuleName()
+    return split(split(expand('%'),'module/')[0], '/')[0]
+  endfunction
+
     auto FileType php nnoremap <buffer> tt <esc>:call PHPUnitCurrentFile()<cr>
     auto FileType php nnoremap <buffer> <leader>ta <esc>:call PHPUnitAll()<cr>
     auto FileType php nnoremap <buffer> <leader>tf <esc>:call PHPUnitFocused()<cr>
+    auto FileType php nnoremap <buffer> <leader>tm <esc>:call PHPUnitZendModule()<cr>
 
 " ========================================================================
 " Abbreviations
