@@ -57,8 +57,14 @@ mecho "Installing composer..."
   sudo ln -s /usr/bin/composer.phar /usr/bin/composer
 
 
-mecho "Installing tmux..."
-  sudo apt-get install -y tmux
+mecho "Installing silversearcher-ag, tmux, ctags"
+  sudo apt-get install -y silversearcher-ag tmux ctags
+
+mecho "Installing build-essential cmake"
+  sudo apt-get install -y build-essential cmake
+
+mecho "Installing python-dev"
+  sudo apt-get install -y python-dev
 
 mecho "Installing zshell..."
   sudo apt-get install -y zsh
@@ -68,3 +74,4 @@ mecho "Installing oh-my-zsh..."
 
 mecho "Setting shell to zshell..."
   chsh -s `which zsh`
+
