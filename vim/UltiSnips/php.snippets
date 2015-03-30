@@ -40,7 +40,6 @@ namespace ${1:`!p snip.rv = namespace(snip, path)`};
  * $1\\$2
  *
  * @package php-marketingbackend\\$1
- * @version $Id$
  */
 class ${2:`!p snip.rv = snip.basename`}
 {
@@ -59,7 +58,6 @@ use Zend\Test\PHPUnit\Controller\AbstractHttpControllerTestCase;
  * $3\\$4
  *
  * @package php-marketingbackend\\$3
- * @version $Id$
  */
 class ${4:`!p snip.rv = snip.basename`} extends AbstractHttpControllerTestCase
 {
@@ -94,7 +92,6 @@ use ${1:`!p snip.rv = testedclass_namespace(snip, path)`}\\$1;
  * $4\\$5
  *
  * @package php-marketingbackend\\$4
- * @version $Id$
  */
 class ${5:`!p snip.rv = snip.basename`} extends PHPUnit_Framework_TestCase
 {
@@ -125,7 +122,6 @@ namespace ${1:`!p snip.rv = namespace(snip, path)`};
  * $1\\$2
  *
  * @package php-marketingbackend\\$1
- * @version $Id$
  */
 interface ${2:`!p snip.rv = snip.basename`}
 {
@@ -137,11 +133,7 @@ snippet gv "GGS var doc" !
 /** @var ${1:Type} \$${2:foo} */
 endsnippet
 
-snippet pae "Assert Equals" !
-$this->assertEquals(${1:\$foo}, ${2:\$bar});
-endsnippet
-
-snippet pai "AssertInstanceOf Equals" !
+snippet aio "AssertInstanceOf Equals" !
 $this->assertInstanceOf('${1:ClassName}', ${2:\$object});
 endsnippet
 
@@ -181,11 +173,7 @@ public function ${1:doSomething}()
 }
 endsnippet
 
-snippet ai "assert instance of"
-$this->assertInstanceOf(${1:'Foo\Class'}, ${2:\$object});
-endsnippet
-
-snippet as "assert false"
+snippet af "assert false"
 $this->assertFalse(${1:\$object});
 endsnippet
 
