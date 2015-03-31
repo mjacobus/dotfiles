@@ -208,6 +208,8 @@
   set colorcolumn=80
   set mouse=""                " disable mouse
   set wildmenu
+  set foldmethod=syntax
+  set foldlevel=1
 
   " undo per file
   set undodir=~/.vim/undodir
