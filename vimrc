@@ -11,6 +11,8 @@
 " ========================================================================
 " Plugins
 " ========================================================================
+
+  Bundle "austintaylor/vim-commaobject"
   Bundle "joonty/vdebug"
   Bundle "w0ng/vim-hybrid"
   Bundle "jonathanfilip/vim-lucius"
