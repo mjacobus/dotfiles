@@ -467,6 +467,14 @@
 " Functions
 " ========================================================================
 
+  " create directory for the current buffer
+  function! <sid>MkdirsIfNotExists(directory)
+    if(!isdirectory(a:directory))
+      call system('mkdir -p '.shellescape(a:directory))
+    endif
+  endfunction
+  au BufWrite * :call <sid>MkdirsIfNotExists(expand('<afile>:h'))
+
   " remove trailing white spaces before saving rb files
   function! TrimWhiteSpace()
   " Save cursor position
