@@ -12,6 +12,25 @@
 " Plugins
 " ========================================================================
 
+  Bundle "docteurklein/php-getter-setter.vim"
+    autocmd FileType php nnoremap <leader>pg :InsertGetterOnly<cr>
+    autocmd FileType php nnoremap <leader>ps :InsertSetterOnly<cr>
+    autocmd FileType php nnoremap <leader>pgs :InsertBothGetterSetter<cr>
+
+      let b:phpgetset_setterTemplate =
+        \ "\n" .
+        \ "    public function %funcname%($%varname%)\n" .
+        \ "    {\n" .
+        \ "        $this->%varname% = $%varname%;\n" .
+        \ "    }"
+
+      let b:phpgetset_getterTemplate =
+          \ "\n" .
+          \ "    public function %funcname%()\n" .
+          \ "    {\n" .
+          \ "        return $this->%varname%;\n" .
+          \ "    }"
+
   Bundle "austintaylor/vim-commaobject"
   Bundle "joonty/vdebug"
   Bundle "w0ng/vim-hybrid"
@@ -19,7 +38,6 @@
   Bundle "altercation/vim-colors-solarized"
     let g:solarized_termcolors=256
     " call togglebg#map("<F5>")
-  Bundle 'vim-scripts/ScrollColors'
   Bundle "mattn/emmet-vim"
   Bundle "othree/html5.vim"
   Bundle "tpope/vim-repeat"
@@ -39,7 +57,8 @@
     nnoremap <Leader>gac :Gcommit -am ""<LEFT>
     nnoremap <Leader>gc :Gcommit -m ""<LEFT>
     nnoremap <Leader>gs :Gstatus<CR>
-    vnoremap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+    nnoremap <leader>gw :Gwrite<cr>
+    nnoremap <leader>gb :Gblame<cr>
 
   Bundle "rking/ag.vim"
     nnoremap g/ :Ag!<space>
@@ -366,7 +385,6 @@
   " Rails specific
   " nnoremap <Leader>ac :sp app/controllers/application_controller.rb<cr>
   vnoremap <leader>h :s/\:\([a-zA-Z_]\+\)\s\+=>/\=printf("%s:", submatch(1))/g<CR><ESC>:let @/ = ""<CR>
-  nnoremap <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
   nnoremap <Leader>quit <ESC>:q<cr>
 
 
@@ -438,8 +456,6 @@
   " Execute last command over a visual selection
   vnoremap . :norm.<CR>
 
-  nnoremap <leader>gw :Gwrite<cr>
-  nnoremap <leader>gb :Gblame<cr>
   " Resolving conflics
   " Vimcasts #33
   nnoremap <leader>gd :Gdiff<cr>
