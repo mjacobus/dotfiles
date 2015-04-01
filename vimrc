@@ -143,6 +143,7 @@
   " PHP Plugins
   Bundle "shawncplus/phpcomplete.vim"
   Bundle 'arnaud-lb/vim-php-namespace'
+    nnoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
   Bundle 'stephpy/vim-php-cs-fixer'
     let g:php_cs_fixer_level = "psr2"
     let g:php_cs_fixer_fixers_list="-concat_without_spaces"
