@@ -1,17 +1,4 @@
---recurse=yes
---tag-relative=yes
---exclude=.git
---exclude=.svn
---exclude=coverage
---exclude=log
---exclude=logs
---totals=yes
-
-# PHP http://mwop.net/blog/134-exuberant-ctags-with-PHP-in-Vim.html
---PHP-kinds=+cfiv
-# --regex-PHP='/abstract class ([^ ]*)/\1/c/' \
-# --regex-PHP='/interface ([^ ]*)/\1/c/' \
-# --regex-PHP='/(public |static |abstract |protected |private )+function ([^ (]*)/\2/f/''])'
---regex-PHP=/abstract\s+class\s+([^ ]+)/\1/c/
---regex-PHP=/interface\s+([^ ]+)/\1/c/
---regex-PHP=/(public\s+|static\s+|abstract\s+|protected\s+|private\s+)function\s+\&?\s*([^ (]+)/\2/f/])
+-R
+--fields=+aimS
+--languages=php
+--PHP-kinds=+cf

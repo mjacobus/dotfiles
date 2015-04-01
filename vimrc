@@ -142,6 +142,7 @@
 
   " PHP Plugins
   Bundle "shawncplus/phpcomplete.vim"
+  Bundle 'arnaud-lb/vim-php-namespace'
   Bundle 'stephpy/vim-php-cs-fixer'
     let g:php_cs_fixer_level = "psr2"
     let g:php_cs_fixer_fixers_list="-concat_without_spaces"
