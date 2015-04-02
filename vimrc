@@ -224,6 +224,13 @@
 " Autocommands:
 " ========================================================================
   autocmd BufWrite * :call <sid>MkdirsIfNotExists(expand('<afile>:h'))
+  " TODO: find out why it wont work when the function is not herer
+  function! <SID>MkdirsIfNotExists(directory)
+    if(!isdirectory(a:directory))
+      call system('mkdir -p '.shellescape(a:directory))
+    endif
+  endfunction
+
   autocmd FileType php nnoremap <buffer> tt <esc>:call PHPUnitCurrentFile()<cr>
   autocmd FileType php nnoremap <buffer> <leader>ta <esc>:call PHPUnitAll()<cr>
   autocmd FileType php nnoremap <buffer> <leader>tf <esc>:call PHPUnitFocused()<cr>
