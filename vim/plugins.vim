@@ -1,3 +1,5 @@
+" Bundle "ervandew/supertab"
+Bundle "vim-scripts/ZoomWin"
 Bundle "austintaylor/vim-commaobject"
 Bundle "w0ng/vim-hybrid"
 Bundle "jonathanfilip/vim-lucius"
