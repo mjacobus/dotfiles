@@ -26,3 +26,6 @@ ln -sf ~/.dotfiles/composer ~/.composer
 # install vundle
 cd ~/.vim/ && git clone https://github.com/gmarik/Vundle.vim.git
 vim +BundleInstall +BundleClean +BundleClean +quitall
+
+cd ~/.dotfiles/composer && composer install
+cd -
