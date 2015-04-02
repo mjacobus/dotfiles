@@ -6,6 +6,7 @@ Bundle "jonathanfilip/vim-lucius"
 Bundle "altercation/vim-colors-solarized"
   let g:solarized_termcolors=256
   " call togglebg#map("<F5>")
+" TODO: consider using tristen/vim-sparkup instead of emmet
 Bundle "mattn/emmet-vim"
 Bundle "othree/html5.vim"
 Bundle "tpope/vim-repeat"
