@@ -22,7 +22,7 @@ mecho "Installing RVM (Ruby Version Manager) and Latest Ruby, which becomes the 
   curl -L https://get.rvm.io | bash -s stable --ruby
 
 mecho "Adding rvm path to the ~/.bashrc file ..."
-  source ~/.dotfiles/shell/rvm.sh
+  source ~/.dotfiles/shells/rvm.sh
 
 mecho "Installing critical Ruby gems for Rails development ..."
   gem install bundler rails pg foreman thin --no-rdoc --no-ri
