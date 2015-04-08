@@ -14,7 +14,7 @@ ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 # tmux config
 ln -sf ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 ln -sf ~/.dotfiles/shells/zshrc ~/.zshrc
-ln -sf ~/.dotfiles/irbrc ~/.irbrc
+ln -sf ~/.dotfiles/ruby/irbrc ~/.irbrc
 ln -sf ~/.dotfiles/vim ~/.vim
 ln -sf ~/.dotfiles/vim/vimrc ~/.vimrc
 # vim mode for jet brains editor
