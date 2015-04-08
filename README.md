@@ -10,5 +10,5 @@ cd ~/.dotfiles
 ```
 Here you will find (among other configs):
 
-[VIM](vim/README.md)
-[TMUX](tmux/README.md)
+- [VIM](vim/README.md)
+- [TMUX](tmux/README.md)
