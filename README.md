@@ -1,7 +1,5 @@
 # My .dotfiles
 
-And in your ~/.bash_profile:
-
 Instalation
 -------------
 
@@ -11,11 +9,13 @@ cd ~/.dotfiles
 ./install.sh
 ```
 
+
 Vim - Resources
 -----------------
 - [Vim Tutor](http://www.openvim.com/tutorial.html)
 - [Vim Adventures](http://vim-adventures.com/)
 - [Graphical cheat sheet tutorial](http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html)
+- [Vim Movements](https://bitbucket.org/tednaleid/vim-shortcut-wallpaper/raw/tip/vim-shortcuts.png)
 - [Vim tutorial Videos](http://www.derekwyatt.org/vim/vim-tutorial-videos)
 - [Vim Classes](https://github.com/shawncplus/vim-classes)
 - [8 essential vim editor navigation fundamentals](http://www.thegeekstuff.com/2009/03/8-essential-vim-editor-navigation-fundamentals/)
@@ -26,9 +26,9 @@ Vim - Resources
 - [Vim for a php developer](http://blog.lenss.nl/2011/04/vim-for-a-php-developer/)
 - [Vim for php programmers](http://www.slideshare.net/andreizm/vim-for-php-programmers-pdf)
 
+
 To memorize
 --------------
-
 
 #### Normal Mode
 
@@ -40,6 +40,7 @@ To memorize
 - ```is``` - _inside_ sentence
 - ```gT``` - last tab
 - ```Ctrl-R w``` - inserts the w register
+
 
 #### Visual Mode
 
