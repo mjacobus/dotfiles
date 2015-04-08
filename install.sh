@@ -3,8 +3,8 @@
 # TODO: Check whether the inclusion of .dotfiles/bash_profile exists in either
 # ~/.bashrc or ~/bashrc and write it otherwise
 
-ln -sf ~/.dotfiles/bashrc ~/.bash_profile
-ln -sf ~/.dotfiles/bashrc ~/.bashrc
+ln -sf ~/.dotfiles/shell/bashrc ~/.bash_profile
+ln -sf ~/.dotfiles/shell/bashrc ~/.bashrc
 
 # git config
 ln -sf ~/.dotfiles/git/gitconfig ~/.gitconfig
@@ -13,7 +13,7 @@ ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 
 # tmux config
 ln -sf ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
-ln -sf ~/.dotfiles/zshrc ~/.zshrc
+ln -sf ~/.dotfiles/shell/zshrc ~/.zshrc
 ln -sf ~/.dotfiles/irbrc ~/.irbrc
 ln -sf ~/.dotfiles/vim ~/.vim
 ln -sf ~/.dotfiles/vim/vimrc ~/.vimrc
