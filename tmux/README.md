@@ -1,6 +1,6 @@
 # Tmux
 
-# prefixed by CTRL B
+# prefixed by CTRL-A (Default is CTRL-B)
 - c - New window
 - n - next
 - p - preview
