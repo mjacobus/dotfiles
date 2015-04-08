@@ -7,8 +7,8 @@ ln -sf ~/.dotfiles/bashrc ~/.bash_profile
 ln -sf ~/.dotfiles/bashrc ~/.bashrc
 
 # git config
-ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
-ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
+ln -sf ~/.dotfiles/git/gitconfig ~/.gitconfig
+ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 
 
 # tmux config
