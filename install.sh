@@ -18,8 +18,8 @@ ln -sf ~/.dotfiles/irbrc ~/.irbrc
 ln -sf ~/.dotfiles/vim ~/.vim
 ln -sf ~/.dotfiles/vim/vimrc ~/.vimrc
 # vim mode for jet brains editor
-ln -sf ~/.dotfiles/ideavimrc ~/.ideavimrc
-ln -sf ~/.dotfiles/gvimrc ~/.gvimrc
+ln -sf ~/.dotfiles/vim/ideavimrc ~/.ideavimrc
+ln -sf ~/.dotfiles/vim/gvimrc ~/.gvimrc
 ln -sf ~/.dotfiles/ctags ~/.ctags
 ln -sf ~/.dotfiles/agignore ~/.agignore
 ln -sf ~/.dotfiles/composer ~/.composer
