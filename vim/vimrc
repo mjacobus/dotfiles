@@ -253,6 +253,10 @@
   " execute jasmine tests
   autocmd FileType javascript nnoremap <buffer> tt :! clear && npm test<cr>
 
+  " enable spell check
+  autocmd FileType gitcommit setlocal spell spelllang=en_us,pt_br
+  autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us,pt_br
+
 " ========================================================================
 " Abbreviations:
 " ========================================================================
