@@ -56,7 +56,7 @@ case "$TERM" in
     screen-256color) color_prompt=yes;;
 esac
 
-source ~/.dotfiles/git-prompt.sh
+source ~/.dotfiles/git/git-prompt.sh
 source ~/.dotfiles/shells/configs.sh
 
 if [ "$color_prompt" = yes ]; then
