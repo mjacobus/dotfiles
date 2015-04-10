@@ -137,7 +137,6 @@
   " Fix anoying original K
   nnoremap K <nop>
   nnoremap U <nop>
-  inoremap <Esc> <nop>
 
   " Find
   inoremap <leader>f <ESC>/
