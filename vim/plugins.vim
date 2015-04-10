@@ -31,7 +31,7 @@ Bundle "tpope/vim-fugitive"
 
 Bundle "rking/ag.vim"
   nnoremap g/ :Ag!<space>
-  nnoremap g* :Ag! -w <C-R><C-W><space>
+  nnoremap g# :Ag! -w <C-R><C-W><space>
   nnoremap ga :AgAdd!<space>
   nnoremap gn :cnext<CR>
   nnoremap gp :cprev<CR>
