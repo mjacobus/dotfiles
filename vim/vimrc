@@ -338,6 +338,7 @@
 
   " sparkup
   let g:sparkupExecuteMapping = '<C-Y>,'
+  let g:sparkupNextMapping = '<c-y>n'
 
   " solarized
   let g:solarized_termcolors=256
