@@ -156,7 +156,7 @@
   nnoremap <leader>e <Esc>/[\]})"']<cr><Esc>:nohlsearch<cr>a
 
   " adds arrow
-  inoremap <C-l> <Space>=><Space>
+  inoremap <C-l> <Space>=><Space>,<left>
 
   " Ruby old style hashes to new style hashes
   vnoremap <leader>h :s/:\(\w*\) *=>/\1:/g<cr>
@@ -344,7 +344,7 @@
   let g:solarized_termcolors=256
 
   " ctrl P
-  " let g:ctrlp_max_height = 30
+  let g:ctrlp_max_height = 30
   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
   " let g:ctrlp_working_path_mode = 'c'
   " set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
@@ -421,6 +421,8 @@
   autocmd FileType php nnoremap <buffer> <leader>ta <esc>:call PHPUnitAll()<cr>
   autocmd FileType php nnoremap <buffer> <leader>tf <esc>:call PHPUnitFocused()<cr>
   autocmd FileType php nnoremap <buffer> <leader>tm <esc>:call PHPUnitZendModule()<cr>
+  autocmd FileType php nnoremap <buffer> <leader>t <esc>:! clear && ./curl.sh<cr>
+  autocmd FileType php nnoremap <buffer> <leader>curl <esc>:vsplit curl.sh<cr>
 
   " remember last position in file
   autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
