@@ -9,7 +9,7 @@
   call vundle#begin()
 
   " Bundle "ervandew/supertab"
-  Bundle "vim-scripts/ZoomWin"
+  " Bundle "vim-scripts/ZoomWin"
   Bundle "austintaylor/vim-commaobject"
   Bundle "w0ng/vim-hybrid"
   Bundle "jonathanfilip/vim-lucius"
@@ -39,7 +39,6 @@
   Bundle "joonty/vdebug"
   Bundle "shawncplus/phpcomplete.vim"
   Bundle "arnaud-lb/vim-php-namespace"
-  Bundle "stephpy/vim-php-cs-fixer"
   Bundle "joonty/vim-phpqa"
   Bundle "vim-scripts/ruby-matchit"
   Bundle "mjacobus/vim-rspec-focus"
@@ -275,11 +274,11 @@
   let g:phpqa_codesniffer_args = "--standard=PSR2"
 
   " php cs fixer
-  let g:php_cs_fixer_level = "psr2"
-  let g:php_cs_fixer_fixers_list="-concat_without_spaces"
+  autocmd FileType php nnoremap <leader>pcf :!php-cs-fixer fix % --level=psr2 --fixers=-concat_without_spaces,-return,unused_use,align_double_arrow<cr>
 
   " php use
   nnoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
+
 
   " php-getter-setter
   autocmd FileType php nnoremap <leader>pg :InsertGetterOnly<cr>
