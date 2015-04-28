@@ -39,7 +39,6 @@
   Bundle "joonty/vdebug"
   Bundle "shawncplus/phpcomplete.vim"
   Bundle "arnaud-lb/vim-php-namespace"
-  Bundle "joonty/vim-phpqa"
   Bundle "vim-scripts/ruby-matchit"
   Bundle "mjacobus/vim-rspec-focus"
   Bundle "vim-ruby/vim-ruby"
@@ -268,10 +267,6 @@
   nnoremap <C-l> :call RunLastSpec()<CR>
   nnoremap <leader>l :call RunLastSpec()<CR>
   nnoremap <Leader>o :w<cr>:call RunCurrentLineInTest()<CR>
-
-  " phpqa
-  let g:phpqa_messdetector_ruleset = "~/.dotfiles/php/phpmd_ggs.xml"
-  let g:phpqa_codesniffer_args = "--standard=PSR2"
 
   " php cs fixer
   autocmd FileType php nnoremap <leader>pcf :!php-cs-fixer fix % --level=psr2 --fixers=-concat_without_spaces,-return,unused_use,align_double_arrow<cr>
