@@ -119,7 +119,7 @@
 
   " escape alias
   inoremap jj <esc>l
-  inoremap kj <esc>l
+  inoremap jJ <esc>l
 
   " navigation
   noremap <space> 10j
@@ -269,7 +269,7 @@
   nnoremap <Leader>o :w<cr>:call RunCurrentLineInTest()<CR>
 
   " php cs fixer
-  autocmd FileType php nnoremap <leader>pcf :!php-cs-fixer fix % --level=psr2 --fixers=-concat_without_spaces,-return,unused_use,align_double_arrow<cr>
+  autocmd FileType php nnoremap <leader>pcf :!php-cs-fixer fix % --level=symfony --fixers=-concat_without_spaces,-return,unused_use,align_double_arrow,phpdoc_indent,-phpdoc_short_description<cr>
 
   " php use
   nnoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
