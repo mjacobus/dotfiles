@@ -181,7 +181,33 @@
 
   " php specific
   autocmd FileType php inoremap ... ../
-  autocmd FileType php inoremap .. ->
+  " autocmd FileType php inoremap .. ->
+  autocmd FileType php inoremap .a ->a
+  autocmd FileType php inoremap .b ->b
+  autocmd FileType php inoremap .c ->c
+  autocmd FileType php inoremap .d ->d
+  autocmd FileType php inoremap .e ->e
+  autocmd FileType php inoremap .f ->f
+  autocmd FileType php inoremap .g ->g
+  autocmd FileType php inoremap .h ->h
+  autocmd FileType php inoremap .i ->i
+  autocmd FileType php inoremap .j ->j
+  autocmd FileType php inoremap .l ->l
+  autocmd FileType php inoremap .m ->m
+  autocmd FileType php inoremap .n ->n
+  autocmd FileType php inoremap .o ->o
+  autocmd FileType php inoremap .p ->p
+  autocmd FileType php inoremap .q ->q
+  autocmd FileType php inoremap .r ->r
+  autocmd FileType php inoremap .s ->s
+  autocmd FileType php inoremap .t ->t
+  autocmd FileType php inoremap .u ->u
+  autocmd FileType php inoremap .v ->v
+  autocmd FileType php inoremap .x ->x
+  autocmd FileType php inoremap .v ->v
+  autocmd FileType php inoremap .y ->y
+  autocmd FileType php inoremap .w ->w
+  autocmd FileType php inoremap ._ ->_
   autocmd FileType php inoremap ;; <esc>$a;
 
   " convert file to latin1 and reloads
