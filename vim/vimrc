@@ -181,7 +181,7 @@
 
   " php specific
   autocmd FileType php inoremap ... ../
-  " autocmd FileType php inoremap .. ->
+  autocmd FileType php inoremap .. ->
   autocmd FileType php inoremap .a ->a
   autocmd FileType php inoremap .b ->b
   autocmd FileType php inoremap .c ->c
