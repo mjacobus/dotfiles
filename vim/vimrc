@@ -180,35 +180,37 @@
   nnoremap <leader>f <ESC>/
 
   " php specific
-  autocmd FileType php inoremap ... ../
-  autocmd FileType php inoremap .. ->
-  autocmd FileType php inoremap .a ->a
-  autocmd FileType php inoremap .b ->b
-  autocmd FileType php inoremap .c ->c
-  autocmd FileType php inoremap .d ->d
-  autocmd FileType php inoremap .e ->e
-  autocmd FileType php inoremap .f ->f
-  autocmd FileType php inoremap .g ->g
-  autocmd FileType php inoremap .h ->h
-  autocmd FileType php inoremap .i ->i
-  autocmd FileType php inoremap .j ->j
-  autocmd FileType php inoremap .l ->l
-  autocmd FileType php inoremap .m ->m
-  autocmd FileType php inoremap .n ->n
-  autocmd FileType php inoremap .o ->o
-  autocmd FileType php inoremap .p ->p
-  autocmd FileType php inoremap .q ->q
-  autocmd FileType php inoremap .r ->r
-  autocmd FileType php inoremap .s ->s
-  autocmd FileType php inoremap .t ->t
-  autocmd FileType php inoremap .u ->u
-  autocmd FileType php inoremap .v ->v
-  autocmd FileType php inoremap .x ->x
-  autocmd FileType php inoremap .v ->v
-  autocmd FileType php inoremap .y ->y
-  autocmd FileType php inoremap .w ->w
-  autocmd FileType php inoremap ._ ->_
-  autocmd FileType php inoremap ;; <esc>$a;
+  "
+  autocmd FileType php inoremap <buffer> <C-.> .
+  autocmd FileType php inoremap <buffer> ... ../
+  autocmd FileType php inoremap <buffer> .. ->
+  autocmd FileType php inoremap <buffer> .a ->a
+  autocmd FileType php inoremap <buffer> .b ->b
+  autocmd FileType php inoremap <buffer> .c ->c
+  autocmd FileType php inoremap <buffer> .d ->d
+  autocmd FileType php inoremap <buffer> .e ->e
+  autocmd FileType php inoremap <buffer> .f ->f
+  autocmd FileType php inoremap <buffer> .g ->g
+  autocmd FileType php inoremap <buffer> .h ->h
+  autocmd FileType php inoremap <buffer> .i ->i
+  autocmd FileType php inoremap <buffer> .j ->j
+  autocmd FileType php inoremap <buffer> .l ->l
+  autocmd FileType php inoremap <buffer> .m ->m
+  autocmd FileType php inoremap <buffer> .n ->n
+  autocmd FileType php inoremap <buffer> .o ->o
+  autocmd FileType php inoremap <buffer> .p ->p
+  autocmd FileType php inoremap <buffer> .q ->q
+  autocmd FileType php inoremap <buffer> .r ->r
+  autocmd FileType php inoremap <buffer> .s ->s
+  autocmd FileType php inoremap <buffer> .t ->t
+  autocmd FileType php inoremap <buffer> .u ->u
+  autocmd FileType php inoremap <buffer> .v ->v
+  autocmd FileType php inoremap <buffer> .x ->x
+  autocmd FileType php inoremap <buffer> .v ->v
+  autocmd FileType php inoremap <buffer> .y ->y
+  autocmd FileType php inoremap <buffer> .w ->w
+  autocmd FileType php inoremap <buffer> ._ ->_
+  autocmd FileType php inoremap <buffer> ;; <esc>$a;
 
   " convert file to latin1 and reloads
   nnoremap <leader>lat1 :write ++enc=latin1<cr>:e<cr>
