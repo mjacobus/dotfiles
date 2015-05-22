@@ -95,20 +95,12 @@ use ${1:`!p snip.rv = testedclass_namespace(snip, path)`}\\$1;
  */
 class ${5:`!p snip.rv = snip.basename`} extends PHPUnit_Framework_TestCase
 {
-
+	/** @var ${2:$1} */
 	protected $fixture;
 
 	public function setUp()
 	{
 		$this->fixture = new ${1:`!p snip.rv = testedclass(snip, path)`}();
-	}
-
-	/**
-	 * @test
-	 */
-	public function ${2:dosomething}()
-	{
-		${3://do something}
 	}
 }
 endsnippet
