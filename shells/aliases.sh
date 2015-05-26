@@ -14,5 +14,4 @@ alias dotfiles='cd ~/.dotfiles'
 alias ag='/usr/bin/ag'
 
 # conditional alias
-type vim.gnome >> /dev/null && alias vim=vim.gnome
-# type gvim >> /dev/null && alias vim=gvim
+which vim.gnome > /dev/null 2>&1 && alias vim=vim.gnome
