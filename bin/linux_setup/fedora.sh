@@ -22,8 +22,8 @@ install ctags-etags
 install the_silver_searcher
 install yum install binutils gcc make patch libgomp glibc-headers glibc-devel kernel-headers kernel-devel dkms
 install php
-install php-mbstring php-xml
-nice to have php extensions according to composer
+install php-mbstring php-xml php-mysql php-pdo php-mcrypt php-mbstring php-gd
+# nice to have php extensions according to composer
 install php-soap.x86_64
 install php-pdo.x86_64
 install php-intl
