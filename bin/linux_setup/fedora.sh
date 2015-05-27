@@ -13,36 +13,50 @@ function install() {
   sudo yum install -y "$@"
 }
 
-# install vim-enhanced
-# install git git-svn
-# install tmux
-# install curl
-# install zsh
-# install ctags-etags
-# install the_silver_searcher
-# install yum install binutils gcc make patch libgomp glibc-headers glibc-devel kernel-headers kernel-devel dkms
-# install php
-# install php-mbstring php-xml
-# nice to have php extensions according to composer
-# install php-soap.x86_64
+install vim-enhanced
+install git git-svn
+install tmux
+install curl
+install zsh
+install ctags-etags
+install the_silver_searcher
+install yum install binutils gcc make patch libgomp glibc-headers glibc-devel kernel-headers kernel-devel dkms
+install php
+install php-mbstring php-xml
+nice to have php extensions according to composer
+install php-soap.x86_64
+install php-pdo.x86_64
+install php-intl
+# install php-pclzip.noarch
+install php-pecl-zip.x86_64
 
-# mecho "Installing composer..."
-#   curl -sS https://getcomposer.org/installer | php
-#   sudo mv composer.phar /usr/bin
-#   sudo ln -fs /usr/bin/composer.phar /usr/bin/composer
+mecho "Installing composer..."
+  curl -sS https://getcomposer.org/installer | php
+  sudo mv composer.phar /usr/bin
+  sudo ln -fs /usr/bin/composer.phar /usr/bin/composer
 
 
-# mecho "Setting up zshell as primary shell"
-#   chsh -s `which zsh`
-#
-# mecho "Installing oh-my-zsh..."
-#   wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+mecho "Setting up zshell as primary shell"
+  chsh -s `which zsh`
+
+mecho "Installing RVM (Ruby Version Manager) and Latest Ruby, which becomes the default ..."
+    gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+    curl -sSL https://get.rvm.io | bash -s stable --ruby
+
+mecho "Installing critical Ruby gems for Rails development ..."
+  gem install bundler vagrant rails pg foreman thin --no-rdoc --no-ri
+
 
 # GOOD TO HAVE
   # - Virtual box
-
-install skype
 #----------------------------
+
+# instal mysql-client zlib1g-dev libssl-dev libsqlite3-dev libmysqlclient-dev \
+#     imagemagick librmagick-ruby libxml2-dev libxslt1-dev build-essential openssl \
+#     libreadline6 libreadline6-dev zlib1g libyaml-dev libsqlite3-0 sqlite3 libxml2-dev \
+#     libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison libpq-dev libpq5 \
+#     libmysql-ruby libmysqlclient-dev
+#
 # mecho "Installing mysql-server..."
 #   sudo yum install -y mysql-server mysql-client
 #
