@@ -194,6 +194,7 @@
   autocmd FileType php inoremap <buffer> .h ->h
   autocmd FileType php inoremap <buffer> .i ->i
   autocmd FileType php inoremap <buffer> .j ->j
+  autocmd FileType php inoremap <buffer> .k ->k
   autocmd FileType php inoremap <buffer> .l ->l
   autocmd FileType php inoremap <buffer> .m ->m
   autocmd FileType php inoremap <buffer> .n ->n
