@@ -27,7 +27,14 @@ function! TrimWhiteSpace()
 endfunction
 
 function! PHPUnit(args)
-  let cmd = "phpunit -c " . fnamemodify('tests/phpunit.xml', ':p') . " " . a:args
+  let expected_config_file = fnamemodify('tests/phpunit.xml', ':p')
+  let config_param = ''
+
+  if filereadable(expected_config_file)
+    let config_param = ' -c ' . expected_config_file
+  endif
+
+  let cmd = "phpunit " . config_param . " " . a:args
   execute "! clear && echo '" . cmd . "' && " . cmd
 endfunction
 
