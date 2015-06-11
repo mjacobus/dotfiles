@@ -59,3 +59,14 @@ endfunction
 function! ZendGetModuleName()
   return split(split(expand('%'),'module/')[0], '/')[0]
 endfunction
+
+function! PhpCsFix(target)
+  let cmd = 'php-cs-fixer fix'
+  let options = '--level=symfony --fixers=-concat_without_spaces,-return,unused_use,align_double_arrow,phpdoc_indent,-phpdoc_short_description'
+  let full_command = cmd . " " . a:target . " " . options
+  call ClearEchoAndExecute(full_command)
+endfunction
+
+function! ClearEchoAndExecute(command)
+  execute "! clear && echo '" . a:command . "' && " . a:command
+endfunction
