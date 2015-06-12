@@ -9,6 +9,10 @@ def namespace(snip, path):
 
 def testedclass(snip, path):
     return path.split('/').pop().split('Test.php')[0]
+
+def factory_product(snip, path):
+    return path.split('/').pop().split('Factory.php')[0]
+
 def testedclass_namespace(snip, path):
     ns = path.split('tests/').pop()
     ns = ns.split(testedclass(snip, path))[0]
@@ -38,12 +42,35 @@ namespace ${1:`!p snip.rv = namespace(snip, path)`};
 
 /**
  * $1\\$2
- *
- * @package php-marketingbackend\\$1
  */
 class ${2:`!p snip.rv = snip.basename`}
 {
 	${0}
+}
+endsnippet
+
+snippet zf "Zend Factory" !
+<?php
+
+namespace ${1:`!p snip.rv = namespace(snip, path)`};
+
+use Zend\ServiceManager\ServiceLocatorInterface;
+use Zend\ServiceManager\FactoryInterface;
+
+/**
+ * $1\\$2
+ */
+class ${2:`!p snip.rv = snip.basename`} implements FactoryInterface
+{
+	/**
+	 * @return $3
+	 */
+	public function createService(ServiceLocatorInterface $serviceLocator)
+	{
+		$service = new ${3:`!p snip.rv = factory_product(snip, path)`}();
+
+		return $service;
+	}
 }
 endsnippet
 
@@ -56,8 +83,6 @@ use Zend\Test\PHPUnit\Controller\AbstractHttpControllerTestCase;
 
 /**
  * $3\\$4
- *
- * @package php-marketingbackend\\$3
  */
 class ${4:`!p snip.rv = snip.basename`} extends AbstractHttpControllerTestCase
 {
@@ -90,8 +115,6 @@ use ${1:`!p snip.rv = testedclass_namespace(snip, path)`}\\$1;
 
 /**
  * $4\\$5
- *
- * @package php-marketingbackend\\$4
  */
 class ${5:`!p snip.rv = snip.basename`} extends PHPUnit_Framework_TestCase
 {
@@ -112,8 +135,6 @@ namespace ${1:`!p snip.rv = namespace(snip, path)`};
 
 /**
  * $1\\$2
- *
- * @package php-marketingbackend\\$1
  */
 interface ${2:`!p snip.rv = snip.basename`}
 {
