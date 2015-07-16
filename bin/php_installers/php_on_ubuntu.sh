@@ -11,6 +11,9 @@ function mecho() {
 mecho "Installing vim..."
   sudo apt-get install -y vim
 
+mecho "Installing xclip..."
+  sudo apt-get install -y xclip
+
 mecho "Installing neovim..."
   sudo add-apt-repository -y ppa:neovim-ppa/unstable
   sudo apt-get update
