@@ -17,6 +17,8 @@ ln -sf ~/.dotfiles/shells/zshrc ~/.zshrc
 ln -sf ~/.dotfiles/ruby/irbrc ~/.irbrc
 ln -sf ~/.dotfiles/vim ~/.vim
 ln -sf ~/.dotfiles/vim/vimrc ~/.vimrc
+ln -sf ~/.dotfiles/nvim/vimrc ~/.nvimrc
+ln -sf ~/.dotfiles/nvim/ ~/.nvim
 # vim mode for jet brains editor
 ln -sf ~/.dotfiles/vim/ideavimrc ~/.ideavimrc
 ln -sf ~/.dotfiles/vim/gvimrc ~/.gvimrc
