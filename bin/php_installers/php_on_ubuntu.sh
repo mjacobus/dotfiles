@@ -18,6 +18,7 @@ mecho "Installing neovim..."
   sudo add-apt-repository -y ppa:neovim-ppa/unstable
   sudo apt-get update
   sudo apt-get -y install neovim
+  sudo apt-get -y install python3-pip
 
 mecho "Installing vim-gnome..."
   sudo apt-get install -y vim-gnome

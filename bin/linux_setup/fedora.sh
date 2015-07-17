@@ -13,6 +13,10 @@ function install() {
   sudo yum install -y "$@"
 }
 
+# install nvim
+# install python3-pip
+# install python3-devel
+# install xclip
 install vim-enhanced
 install git git-svn
 install tmux
