@@ -45,6 +45,7 @@
   Bundle "tpope/vim-rails"
   Bundle "thoughtbot/vim-rspec"
   Bundle "shawncplus/Vim-toCterm"
+  " Bundle "Valloric/YouCompleteMe"
 
   " ending vundle
   call vundle#end()            " required
