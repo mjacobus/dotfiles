@@ -118,6 +118,9 @@
   " tags
   nnoremap <f4> :! ctags <cr>
 
+  " rm file
+  nnoremap <leader>rm :! rm %<cr>
+
   " escape alias
   inoremap jj <esc>l
   inoremap jJ <esc>l
@@ -328,7 +331,8 @@
   " tabular
   let g:syntastic_enable_signs=1
   let g:syntastic_quiet_messages = {'level': 'warning'}
-  let g:syntastic_php_phpcs_args="--standard=PSR2"
+  let g:syntastic_php_checkers=['php', 'phpcs']
+  let g:syntastic_php_phpcs_args='--standard=PSR2 -n'
   " syntastic is too slow for haml and sass
   let g:syntastic_mode_map = { 'mode': 'active',
                              \ 'active_filetypes': [],

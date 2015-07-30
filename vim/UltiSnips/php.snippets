@@ -35,6 +35,10 @@ def pathToNamespace(path):
 
 endglobal
 
+snippet = "Template echo" !
+<?php echo ${1}; ?>
+endsnippet
+
 snippet gc "GGS class" !
 <?php
 
@@ -143,7 +147,7 @@ interface ${2:`!p snip.rv = snip.basename`}
 endsnippet
 
 snippet gv "GGS var doc" !
-/** @var ${1:Type} \$${2:foo} */
+/* @var ${1:Type} \$${2:foo} */
 endsnippet
 
 snippet aio "AssertInstanceOf Equals" !

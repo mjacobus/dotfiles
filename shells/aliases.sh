@@ -12,6 +12,7 @@ alias gpu='git pull'
 alias dotfiles='cd ~/.dotfiles'
 
 alias ag='/usr/bin/ag'
+alias t='phpunit'
 
 # conditional alias
 which vim.gnome > /dev/null 2>&1 && alias vim=vim.gnome
