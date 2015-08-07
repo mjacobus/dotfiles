@@ -452,6 +452,7 @@
   autocmd FileType php nnoremap <buffer> <leader>tf <esc>:call PHPUnitFocused()<cr>
   autocmd FileType php nnoremap <buffer> <leader>tm <esc>:call PHPUnitZendModule()<cr>
   autocmd FileType php nnoremap <buffer> <leader>t <esc>:! clear && ./curl.sh<cr>
+  autocmd FileType php nnoremap <buffer> <leader>ct <esc>:call PHPUnitCreateTestFile()<cr>
   autocmd FileType php nnoremap <buffer> <leader>pp <esc>:! clear && time php %<cr>
   autocmd FileType php nnoremap <buffer> <leader>curl <esc>:vsplit curl.sh<cr>
 

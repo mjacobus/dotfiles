@@ -39,7 +39,36 @@ function! PHPUnit(args)
 endfunction
 
 function! PHPUnitCurrentFile()
-  :call PHPUnit("%")
+  " if file is test run file
+  " else run test file
+  let file = expand('%')
+  let parts = split(file, 'Test')
+
+  if len(parts) > 1
+    :call PHPUnit("%")
+  else
+    :call PHPUnit(PHPUnitGetTestFileFor(file))
+  endif
+endfunction
+
+function! PHPUnitGetTestFileFor(file)
+  let file = a:file
+  let test_file = split(file, ".php")[0] . 'Test.php'
+  let test_file = substitute(test_file, "/src/", "/tests/", "")
+  let test_file = substitute(test_file, "/lib/", "/tests/", "")
+  let test_file = substitute(test_file, "/library/", "/tests/", "")
+  let parts = split(test_file, "/tests/")
+  let after_test_folder_parts = split(parts[1], "/")
+  let after_test_folder_parts[0] = after_test_folder_parts[0] . 'Test'
+  let parts[1] = join(after_test_folder_parts, "/")
+  let test_file = join(parts, "/tests/")
+
+  return  test_file
+endfunction
+
+function! PHPUnitCreateTestFile()
+  let test_file = PHPUnitGetTestFileFor(expand("%"))
+  execute "vsplit " . test_file
 endfunction
 
 function! PHPUnitAll()
