@@ -295,7 +295,7 @@
 
   " vim-rspec
   let g:rspec_command = "!rspec --drb {spec}"
-  autocmd FileType ruby nnoremap <buffer> tt :call RunCurrentSpecFile()<cr>
+  autocmd FileType ruby nnoremap <buffer> <leader>t :call RunCurrentSpecFile()<cr>
   nnoremap <leader>n :call RunNearestSpec()<CR>
   nnoremap <C-l> :call RunLastSpec()<CR>
   nnoremap <leader>l :call RunLastSpec()<CR>
@@ -447,12 +447,14 @@
     endif
   endfunction
 
-  autocmd FileType php nnoremap <buffer> tt <esc>:call PHPUnitCurrentFile()<cr>
+  autocmd FileType php nnoremap <buffer> <leader>t <esc>:call PHPUnitCurrentFile()<cr>
+  autocmd FileType php nnoremap <buffer> <leader>tt <esc>:call PHPUnitCurrentFile()<cr>
   autocmd FileType php nnoremap <buffer> <leader>ta <esc>:call PHPUnitAll()<cr>
   autocmd FileType php nnoremap <buffer> <leader>tf <esc>:call PHPUnitFocused()<cr>
   autocmd FileType php nnoremap <buffer> <leader>tm <esc>:call PHPUnitZendModule()<cr>
-  autocmd FileType php nnoremap <buffer> <leader>t <esc>:! clear && ./curl.sh<cr>
+  autocmd FileType php nnoremap <buffer> <leader>cu <esc>:! clear && ./curl.sh<cr>
   autocmd FileType php nnoremap <buffer> <leader>ct <esc>:call PHPUnitCreateTestFile()<cr>
+  autocmd FileType php nnoremap <buffer> <leader>ot <esc>:call PHPUnitCreateTestFile()<cr>
   autocmd FileType php nnoremap <buffer> <leader>pp <esc>:! clear && time php %<cr>
   autocmd FileType php nnoremap <buffer> <leader>curl <esc>:vsplit curl.sh<cr>
 
