@@ -52,16 +52,25 @@ function! PHPUnitCurrentFile()
 endfunction
 
 function! PHPUnitGetTestFileFor(file)
-  let file = a:file
+  let file = fnamemodify(a:file, ':p')
   let test_file = split(file, ".php")[0] . 'Test.php'
   let test_file = substitute(test_file, "/src/", "/tests/", "")
   let test_file = substitute(test_file, "/lib/", "/tests/", "")
   let test_file = substitute(test_file, "/library/", "/tests/", "")
   let parts = split(test_file, "/tests/")
-  let after_test_folder_parts = split(parts[1], "/")
-  let after_test_folder_parts[0] = after_test_folder_parts[0] . 'Test'
-  let parts[1] = join(after_test_folder_parts, "/")
+
+  " if a:append_test_to_first_test_folder
+    let after_test_folder_parts = split(parts[1], "/")
+    let after_test_folder_parts[0] = after_test_folder_parts[0] . 'Test'
+    let parts[1] = join(after_test_folder_parts, "/")
+  " endif
+
   let test_file = join(parts, "/tests/")
+
+  " sometimes the test folder is test instead of tests
+  if !isdirectory(parts[0] . "/tests")
+    let test_file = join(parts, "/test/")
+  endif
 
   return  test_file
 endfunction
