@@ -247,11 +247,7 @@
   nnoremap <Right> <c-w>>
 
   " Trim all trailing whitespaces no questions asked.
-  nnoremap <leader>tw :call TrimWhiteSpace()<cr>
-
-  " Tab management
-  nnoremap <leader>tn :tabnext<cr>
-  nnoremap <leader>tp :tabprev<cr>
+  nnoremap <leader>wt :call TrimWhiteSpace()<cr>
 
   " quotes
   " Single quote word
@@ -448,15 +444,14 @@
   endfunction
 
   autocmd FileType php nnoremap <buffer> <leader>t <esc>:call PHPUnitCurrentFile()<cr>
-  autocmd FileType php nnoremap <buffer> <leader>tt <esc>:call PHPUnitCurrentFile()<cr>
-  autocmd FileType php nnoremap <buffer> <leader>ta <esc>:call PHPUnitAll()<cr>
-  autocmd FileType php nnoremap <buffer> <leader>tf <esc>:call PHPUnitFocused()<cr>
-  autocmd FileType php nnoremap <buffer> <leader>tm <esc>:call PHPUnitZendModule()<cr>
+  autocmd FileType php nnoremap <buffer> <leader>at <esc>:call PHPUnitAll()<cr>
+  autocmd FileType php nnoremap <buffer> <leader>ft <esc>:call PHPUnitFocused()<cr>
+  autocmd FileType php nnoremap <buffer> <leader>mt <esc>:call PHPUnitZendModule()<cr>
   autocmd FileType php nnoremap <buffer> <leader>cu <esc>:! clear && ./curl.sh<cr>
   autocmd FileType php nnoremap <buffer> <leader>ct <esc>:call PHPUnitCreateTestFile()<cr>
   autocmd FileType php nnoremap <buffer> <leader>ot <esc>:call PHPUnitCreateTestFile()<cr>
   autocmd FileType php nnoremap <buffer> <leader>pp <esc>:! clear && time php %<cr>
-  autocmd FileType php nnoremap <buffer> <leader>curl <esc>:vsplit curl.sh<cr>
+  autocmd FileType php nnoremap <buffer> <leader>ce <esc>:vsplit curl.sh<cr>
 
   " remember last position in file
   autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
