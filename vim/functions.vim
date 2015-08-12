@@ -59,11 +59,15 @@ function! PHPUnitGetTestFileFor(file)
   let test_file = substitute(test_file, "/library/", "/tests/", "")
   let parts = split(test_file, "/tests/")
 
-  " if a:append_test_to_first_test_folder
-    let after_test_folder_parts = split(parts[1], "/")
-    let after_test_folder_parts[0] = after_test_folder_parts[0] . 'Test'
-    let parts[1] = join(after_test_folder_parts, "/")
-  " endif
+  let after_test_folder_parts = split(parts[1], "/")
+
+  " prefix or not to prefix test to the folder ?
+  let test_sufixed_folder = after_test_folder_parts[0] . 'Test'
+  if isdirectory(parts[0] . "/tests")
+    let after_test_folder_parts[0] = test_sufixed_folder
+  endif
+
+  let parts[1] = join(after_test_folder_parts, "/")
 
   let test_file = join(parts, "/tests/")
 
