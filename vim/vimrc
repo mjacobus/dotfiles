@@ -445,7 +445,7 @@
 
   autocmd FileType php nnoremap <buffer> <leader>t <esc>:call PHPUnitCurrentFile()<cr>
   autocmd FileType php nnoremap <buffer> <leader>at <esc>:call PHPUnitAll()<cr>
-  autocmd FileType php nnoremap <buffer> <leader>ft <esc>:call PHPUnitFocused()<cr>
+  autocmd FileType php nnoremap <buffer> <leader>nt <esc>:call PHPUnitFocused()<cr>
   autocmd FileType php nnoremap <buffer> <leader>mt <esc>:call PHPUnitZendModule()<cr>
   autocmd FileType php nnoremap <buffer> <leader>cu <esc>:! clear && ./curl.sh<cr>
   autocmd FileType php nnoremap <buffer> <leader>ct <esc>:call PHPUnitCreateTestFile()<cr>
