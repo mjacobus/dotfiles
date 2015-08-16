@@ -63,7 +63,7 @@ function! PHPUnitGetTestFileFor(file)
 
   " prefix or not to prefix test to the folder ?
   let test_sufixed_folder = after_test_folder_parts[0] . 'Test'
-  if isdirectory(parts[0] . "/tests")
+  if isdirectory(parts[0] . "Test")
     let after_test_folder_parts[0] = test_sufixed_folder
   endif
 
