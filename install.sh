@@ -7,7 +7,6 @@
 function ask_should_symlink() {
   while true; do
       read -p "Do you want to symlink $1 to $2 ? " yn
-      echo $yn
       case $yn in
           [Yy]* ) symlink_safe $1 $2; break;;
           [Nn]* ) return ;;
