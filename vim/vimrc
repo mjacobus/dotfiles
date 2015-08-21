@@ -64,10 +64,12 @@
   " different color for each paren pairs
   let vimclojure#ParenRainbow = 1
 
-  set undodir=~/.vim/undodir
-  set undofile
-  if filewritable(&undodir) == 0
-    call mkdir(&undodir, "p")
+  if exists('+undodir')
+    set undodir=~/.vim/undodir
+    set undofile
+    if filewritable(&undodir) == 0
+      call mkdir(&undodir, "p")
+    endif
   endif
 
   set autoindent
