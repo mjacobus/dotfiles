@@ -20,6 +20,8 @@ function symlink_or_ask() {
   if [ -f $2 ]; then
     ask_should_symlink $1 $2
   fi
+
+  ln -s $1 $2
 }
 
 function backup_move() {
@@ -29,10 +31,10 @@ function backup_move() {
 
 function symlink_safe() {
   if [ -f $2 ]; then
-    backup_move $2
+    backup_move $2 && ln -sf $1 $2
+  else
+    ln -sf $1 $2
   fi
-
-  ln -sf $1 $2
 }
 
 symlink_or_ask ~/.dotfiles/shells/bashrc ~/.bash_profile
