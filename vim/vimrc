@@ -72,12 +72,15 @@
     endif
   endif
 
+  if exists('+colorcolumn')
+    set colorcolumn=80
+  endif
+
   set autoindent
   set autoread
   set backspace=2
   set backspace=indent,eol,start
   set clipboard=unnamedplus
-  set colorcolumn=80
   set cursorline
   set directory=/tmp/
   set display=lastline
