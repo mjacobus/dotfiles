@@ -8,7 +8,7 @@
 [color]
   ui = true
 [push]
-;  default = simple
+  default = matching
 [pull]
   rebase = true
 [alias]
