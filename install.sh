@@ -10,7 +10,7 @@ function ask_should_symlink() {
       echo $yn
       case $yn in
           [Yy]* ) symlink_safe $1 $2; break;;
-          [Nn]* ) ;;
+          [Nn]* ) return ;;
           * ) echo "Please answer yes or no.";
       esac
   done
