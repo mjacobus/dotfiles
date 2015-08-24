@@ -117,3 +117,11 @@ endfunction
 function! ClearEchoAndExecute(command)
   execute "! clear && echo '" . a:command . "' && " . a:command
 endfunction
+
+function! SwitchSpecCommand()
+  if g:rspec_command == g:rspec_command_rspec
+    let g:rspec_command = g:rspec_command_minitest
+  else
+    let g:rspec_command = g:rspec_command_rspec
+  endif
+endfunction

@@ -296,7 +296,11 @@
   nnoremap tocterm :source ~/.vim/bundle/Vim-toCterm/tocterm.vim<CR>
 
   " vim-rspec
-  let g:rspec_command = "!rspec --drb {spec}"
+  let g:rspec_command_rspec = "!rspec --drb {spec}"
+  let g:rspec_command_minitest = "!rake test TEST={spec}"
+  let g:rspec_command = g:rspec_command_rspec
+  nnoremap <leader><leader>t :call SwitchSpecCommand()<cr>
+
   autocmd FileType ruby nnoremap <buffer> <leader>t :call RunCurrentSpecFile()<cr>
   nnoremap <leader>n :call RunNearestSpec()<CR>
   nnoremap <C-l> :call RunLastSpec()<CR>
