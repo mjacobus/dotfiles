@@ -29,8 +29,8 @@ mecho "Installing git..."
 mecho "Installing mysql-server..."
   sudo apt-get install -y mysql-server mysql-client
 
-mecho "Installing curl, php-curl..."
-  sudo apt-get install -y curl libcurl3 libcurl3-dev php5-curl
+mecho "Installing curl, php-curl, httpie..."
+  sudo apt-get install -y curl libcurl3 libcurl3-dev php5-curl httpie
 
 mecho "Installing php5..."
   sudo apt-get install -y php5

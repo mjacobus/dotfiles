@@ -21,6 +21,7 @@ install vim-enhanced
 install git git-svn
 install tmux
 install curl
+install httpie
 install zsh
 install ctags-etags
 install the_silver_searcher
