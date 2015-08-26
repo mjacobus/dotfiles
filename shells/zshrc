@@ -54,6 +54,8 @@ DISABLE_AUTO_TITLE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git git-fast git-extras debian bundler composer gitfast rails urltools web-search vi-mode)
 
+source $ZSH/oh-my-zsh.sh
+
 # Bind the reverse search to ctrl + R
 bindkey -v
 bindkey ^R history-incremental-search-backward
@@ -66,16 +68,16 @@ SAVEHIST=20000
 LANG=en_US.utf-8
 LANGUAGE=en
 CLICOLOR=1 #Colorizes output of ls and others.
-EDITOR=vi
+EDITOR=vim
 VISUAL=$EDITOR
 PAGER=less
 TERM="screen-256color"
+LESS='-R -g -w'
 
 # disable flow control commands (keeps C-s from freezing everything)
 stty start undef
 stty stop undef
 
-source $ZSH/oh-my-zsh.sh
 source ~/.dotfiles/shells/rvm.sh
 source ~/.dotfiles/shells/configs.sh
 source ~/.dotfiles/shells/zsh/functions.zsh
