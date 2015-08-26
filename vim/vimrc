@@ -384,7 +384,9 @@
   " let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files .']
   " let g:ctrlp_working_path_mode = 'c'
   " set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-  " set wildignore+='\v[\/]\.(git|hg|svn)$'
+
+  set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,*/coverage/*     " MacOSX/Linux
+
   let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/](\.(git|hg|svn)|data|tmp|log)$',
     \ 'file': '\v\.(exe|so|dll)$',
