@@ -62,6 +62,10 @@ if [ ! -f ~/.dotfiles/vim/Vundle.vim ]; then
   vim +BundleInstall +BundleClean +BundleClean +quitall
 fi
 
+if [ ! -d ~/.oh-my-zsh ]; then
+  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
+
 # cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
 
 cd ~/.dotfiles/composer && composer install
