@@ -8,9 +8,10 @@
 [color]
   ui = true
 [push]
-  default = matching
+  default = current
 [pull]
   rebase = true
+  default = current
 [alias]
   # http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/
   s = status -sb
@@ -26,6 +27,6 @@
 [github]
   user = mjacobus
 [rerere]
-	enabled = true
+  enabled = true
 [merge]
-	ff = false
+  ff = false
