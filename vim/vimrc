@@ -86,7 +86,8 @@
   set autoread
   set backspace=2
   set backspace=indent,eol,start
-  set clipboard=unnamedplus
+  " set clipboard=unnamedplus
+  set clipboard=unnamed
   set cursorline
   set directory=/tmp/
   set display=lastline
