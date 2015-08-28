@@ -46,6 +46,12 @@
   Bundle "thoughtbot/vim-rspec"
   Bundle "shawncplus/Vim-toCterm"
   " Bundle "Valloric/YouCompleteMe"
+  " Colors
+  Bundle "jscappini/material.vim"
+  Bundle "xero/sourcerer.vim"
+  Bundle "mhumeSF/one-dark.vim"
+  Bundle "zsoltf/vim-maui"
+  " Bundle "flazz/vim-colorschemes"
 
   " ending vundle
   call vundle#end()            " required
