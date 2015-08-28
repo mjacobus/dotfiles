@@ -51,7 +51,7 @@
   Bundle "xero/sourcerer.vim"
   Bundle "mhumeSF/one-dark.vim"
   Bundle "zsoltf/vim-maui"
-  " Bundle "flazz/vim-colorschemes"
+  Bundle "flazz/vim-colorschemes"
 
   " ending vundle
   call vundle#end()            " required
@@ -101,7 +101,7 @@
   set laststatus=2
   set list
   set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-  set mouse=""
+  " set mouse=""
   set nobackup
   set noincsearch
   set noswapfile
