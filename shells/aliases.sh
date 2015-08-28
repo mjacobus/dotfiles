@@ -1,5 +1,4 @@
 # Aliases.
-alias ls='ls --color'
 alias l='ls -alF'
 
 # git

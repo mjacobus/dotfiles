@@ -94,4 +94,5 @@ if which tmux 2>&1 >/dev/null; then
 fi
 
 # disable gnome effects
-gsettings set org.gnome.desktop.interface enable-animations false
+which ggsettings > /dev/null 2>&1 && set org.gnome.desktop.interface enable-animations false
+which rbenv > /dev/null 2>&1 && eval "$(rbenv init - --no-rehash zsh)"
