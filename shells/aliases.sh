@@ -15,4 +15,5 @@ alias t='phpunit'
 
 # conditional alias
 which vim.gnome > /dev/null 2>&1 && alias vim=vim.gnome
+which mvim > /dev/null 2>&1 && alias vim=mvim
 which nvim > /dev/null 2>&1 && alias vim=nvim
