@@ -11,8 +11,6 @@
   " Bundle "ervandew/supertab"
   " Bundle "vim-scripts/ZoomWin"
   Bundle "austintaylor/vim-commaobject"
-  Bundle "w0ng/vim-hybrid"
-  Bundle "jonathanfilip/vim-lucius"
   Bundle "altercation/vim-colors-solarized"
   Bundle "tristen/vim-sparkup"
   Bundle "othree/html5.vim"
@@ -47,11 +45,8 @@
   Bundle "shawncplus/Vim-toCterm"
   " Bundle "Valloric/YouCompleteMe"
   " Colors
-  Bundle "jscappini/material.vim"
-  Bundle "xero/sourcerer.vim"
-  Bundle "mhumeSF/one-dark.vim"
-  Bundle "zsoltf/vim-maui"
   Bundle "flazz/vim-colorschemes"
+  Bundle "jonathanfilip/vim-lucius"
 
   " ending vundle
   call vundle#end()            " required
@@ -114,6 +109,7 @@
   set number numberwidth=2
   set pastetoggle=<F3>
   set ruler rulerformat=%=%l/%L
+  set relativenumber
   set scrolloff=4 sidescrolloff=10
   set showcmd
   set showmatch
