@@ -45,8 +45,11 @@
   Bundle "tpope/vim-rails"
   Bundle "thoughtbot/vim-rspec"
   Bundle "shawncplus/Vim-toCterm"
+  Bundle "tpope/vim-eunuch"
+  Bundle "tpope/vim-vinegar"
   " Bundle "Valloric/YouCompleteMe"
   " Colors
+  " Bundle "chriskempson/base16-vim"
   Bundle "flazz/vim-colorschemes"
   Bundle "jonathanfilip/vim-lucius"
 
