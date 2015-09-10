@@ -81,6 +81,7 @@ stty stop undef
 source ~/.dotfiles/shells/rvm.sh
 source ~/.dotfiles/shells/configs.sh
 source ~/.dotfiles/shells/zsh/functions.zsh
+source ~/.dotfiles/shells/zsh/autosuggestions.zsh
 
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local

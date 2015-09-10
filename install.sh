@@ -70,3 +70,6 @@ fi
 
 cd ~/.dotfiles/composer && composer install
 cd -
+
+git clone git://github.com/tarruda/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+git clone git://github.com/jimmijj/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
