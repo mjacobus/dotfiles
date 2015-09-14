@@ -140,9 +140,10 @@
   nnoremap <leader>rm :! rm %<cr>
 
   " escape alias
-  inoremap jj <esc>l
-  inoremap jJ <esc>l
-  inoremap JJ <esc>l
+  inoremap jj <esc>:w<cr>
+  inoremap jJ <esc>:w<cr>
+  inoremap Jj <esc>:w<cr>
+  inoremap JJ <esc>:w<cr>
 
   " navigation
   noremap <space> 10j
