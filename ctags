@@ -1,4 +1,7 @@
--R
+--recurse=yes
+--tag-relative=yes
+--exclude=.git
+
 --fields=+aimS
---languages=php
+--languages=php,javascript,ruby
 --PHP-kinds=+cf
