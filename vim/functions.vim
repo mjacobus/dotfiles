@@ -103,6 +103,38 @@ function! PHPUnitZendModule()
   execute "! clear && echo '" . cmd . "' && " . cmd
 endfunction
 
+function! VOpenTestedFile()
+  let test_file = GetTestedFile(expand("%"))
+  execute "vsplit " . test_file
+endfunction
+
+function! GetTestedFile(test_file)
+  let file = a:test_file
+  let file = substitute(file, "/tests/", "/src/", "g")
+  let file = substitute(file, "/test/", "/src/", "g")
+  let file = substitute(file, "Test", "", "g")
+
+  if filereadable(file)
+    return file
+  endif
+
+
+  let file = substitute(file, "/src/", "/lib/", "g")
+
+  if filereadable(file)
+    return file
+  endif
+
+  let file = substitute(file, "/lib/", "/library/", "g")
+
+  if filereadable(file)
+    return file
+  endif
+
+  echo "file not found"
+endfunction
+
+
 function! ZendGetModuleName()
   return split(split(expand('%'),'module/')[0], '/')[0]
 endfunction

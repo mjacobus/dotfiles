@@ -308,6 +308,7 @@
   autocmd FileType php nnoremap <buffer> <leader>cu <esc>:! clear && ./curl.sh<cr>
   autocmd FileType php nnoremap <buffer> <leader>ct <esc>:call PHPUnitCreateTestFile()<cr>
   autocmd FileType php nnoremap <buffer> <leader>ot <esc>:call PHPUnitCreateTestFile()<cr>
+  autocmd FileType php nnoremap <buffer> <leader>va <esc>:call VOpenTestedFile()<cr>
   autocmd FileType php nnoremap <buffer> <leader>pp <esc>:! clear && time php %<cr>
   autocmd FileType php nnoremap <buffer> <leader>ce <esc>:vsplit curl.sh<cr>
 
