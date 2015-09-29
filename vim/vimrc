@@ -9,7 +9,7 @@
   call vundle#begin()
 
   " Bundle "ervandew/supertab"
-  " Bundle "vim-scripts/ZoomWin"
+  Bundle "vim-scripts/ZoomWin"
   Bundle "austintaylor/vim-commaobject"
   Bundle "altercation/vim-colors-solarized"
   Bundle "tristen/vim-sparkup"

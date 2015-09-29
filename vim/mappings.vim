@@ -58,7 +58,7 @@ nnoremap <Leader>rr <esc>:wq<CR>
 
 " Open vim rc
 " nnoremap <Leader>vim :vsplit $MYVIMRC<CR>
-" nnoremap <Leader>rel :source $MYVIMRC<CR>
+nnoremap <Leader>rel :source $MYVIMRC<CR>
 nnoremap <Leader>vim :vsplit ~/.vimrc<CR>
 
 " Fix anoying original K
