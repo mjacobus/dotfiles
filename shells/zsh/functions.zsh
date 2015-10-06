@@ -11,3 +11,8 @@ function gc {
 function gca {
   git commit -am "$*"
 }
+
+function ghc {
+  REPO=$1
+  git clone git@github.com:$REPO.git
+}
