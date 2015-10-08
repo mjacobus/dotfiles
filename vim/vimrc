@@ -9,7 +9,11 @@
   call vundle#begin()
 
   " Bundle "ervandew/supertab"
-  Bundle "vim-scripts/ZoomWin"
+  if !has('nvim')
+    " does not work very well on nvim
+    Bundle "vim-scripts/ZoomWin"
+  endif
+
   Bundle "austintaylor/vim-commaobject"
   Bundle "altercation/vim-colors-solarized"
   Bundle "tristen/vim-sparkup"
