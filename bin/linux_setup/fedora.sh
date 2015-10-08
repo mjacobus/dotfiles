@@ -35,6 +35,7 @@ install php-pdo.x86_64
 install php-intl
 # install php-pclzip.noarch
 install php-pecl-zip.x86_64
+install postgresql-devel
 
 mecho "Installing composer..."
   curl -sS https://getcomposer.org/installer | php
