@@ -153,7 +153,9 @@ endfunction
 function! SwitchSpecCommand()
   if g:rspec_command == g:rspec_command_rspec
     let g:rspec_command = g:rspec_command_minitest
+    echo "using minitest"
   else
     let g:rspec_command = g:rspec_command_rspec
+    echo "using rspec"
   endif
 endfunction

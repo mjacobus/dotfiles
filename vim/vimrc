@@ -43,7 +43,7 @@
   Bundle "mjacobus/vim-rspec-focus"
   Bundle "vim-ruby/vim-ruby"
   Bundle "tpope/vim-rails"
-  Bundle "thoughtbot/vim-rspec"
+  Bundle "mjacobus/vim-rspec"
   Bundle "shawncplus/Vim-toCterm"
   Bundle "tpope/vim-eunuch"
   Bundle "tpope/vim-vinegar"
@@ -147,6 +147,7 @@
   let g:rspec_command_rspec = "!rspec --drb {spec}"
   let g:rspec_command_minitest = "!rake test TEST={spec}"
   let g:rspec_command = g:rspec_command_rspec
+  let g:rspec_file_regexp = "_\\(test\\|spec\\).rb$"
   nnoremap <leader><leader>t :call SwitchSpecCommand()<cr>
 
   autocmd FileType ruby nnoremap <buffer> <leader>t :call RunCurrentSpecFile()<cr>
