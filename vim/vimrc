@@ -149,7 +149,7 @@
 
   " vim-rspec
   let g:rspec_command_rspec = "!clear && rspec --drb {spec}"
-  let g:rspec_command_minitest = "!clear && rake test TEST={spec}"
+  let g:rspec_command_minitest = "!clear && bundle exec rake test TEST={spec}"
   let g:rspec_command = g:rspec_command_rspec
   let g:rspec_file_regexp = "_\\(test\\|spec\\).rb$"
   nnoremap <leader><leader>t :call SwitchSpecCommand()<cr>
