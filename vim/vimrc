@@ -8,11 +8,12 @@
   set rtp+=~/.vim/Vundle.vim
   call vundle#begin()
 
-  " Bundle "ervandew/supertab"
-  if !has('nvim')
-    " does not work very well on nvim
-    Bundle "vim-scripts/ZoomWin"
-  endif
+  " Prolematic
+  " " Bundle "ervandew/supertab"
+  " if !has('nvim')
+  "   " does not work very well on nvim
+  "   Bundle "vim-scripts/ZoomWin"
+  " endif
 
   Bundle "austintaylor/vim-commaobject"
   Bundle "altercation/vim-colors-solarized"
@@ -234,7 +235,7 @@
 
   " ctrl P
   let g:ctrlp_max_height = 30
-  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files .']
+  " let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files .']
   " let g:ctrlp_working_path_mode = 'c'
   " set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 
