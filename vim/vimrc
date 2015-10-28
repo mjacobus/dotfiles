@@ -317,8 +317,9 @@
   autocmd FileType php nnoremap <buffer> <leader>ct <esc>:call PHPUnitCreateTestFile()<cr>
   autocmd FileType php nnoremap <buffer> <leader>ot <esc>:call PHPUnitCreateTestFile()<cr>
   autocmd FileType php nnoremap <buffer> <leader>va <esc>:call VOpenTestedFile()<cr>
-  autocmd FileType php nnoremap <buffer> <leader>pp <esc>:! clear && time php %<cr>
+  autocmd FileType php nnoremap <buffer> <leader>x <esc>:! clear && time php %<cr>
   autocmd FileType php nnoremap <buffer> <leader>ce <esc>:vsplit curl.sh<cr>
+  autocmd FileType ruby nnoremap <buffer> <leader>x <esc>:! clear && time ruby %<cr>
 
   " remember last position in file
   autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
