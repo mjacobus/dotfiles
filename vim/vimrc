@@ -120,7 +120,11 @@
   set number numberwidth=2
   set pastetoggle=<F3>
   set ruler rulerformat=%=%l/%L
-  set relativenumber
+
+  if exists('+relativenumber')
+    set relativenumber
+  endif
+
   set scrolloff=4 sidescrolloff=10
   set showcmd
   set showmatch
