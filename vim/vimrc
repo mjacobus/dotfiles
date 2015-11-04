@@ -1,382 +1,369 @@
 " ========================================================================
 " Plugins: Vundle config
 " ========================================================================
-  set nocompatible              " be iMproved, required
-  filetype off                  " required
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-  " set the runtime path to include Vundle and initialize
-  set rtp+=~/.vim/Vundle.vim
-  call vundle#begin()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/Vundle.vim
+call vundle#begin()
 
-  " Prolematic
-  " " Bundle "ervandew/supertab"
-  " if !has('nvim')
-  "   " does not work very well on nvim
-  "   Bundle "vim-scripts/ZoomWin"
-  " endif
+" Prolematic
+" " Bundle "ervandew/supertab"
+" if !has('nvim')
+"   " does not work very well on nvim
+"   Bundle "vim-scripts/ZoomWin"
+" endif
 
-  Bundle "austintaylor/vim-commaobject"
-  Bundle "altercation/vim-colors-solarized"
-  Bundle "tristen/vim-sparkup"
-  Bundle "othree/html5.vim"
-  Bundle "tpope/vim-repeat"
-  Bundle "tpope/vim-surround"
-  Bundle "wikitopian/hardmode"
-  Bundle "airblade/vim-gitgutter"
-  Bundle "tpope/vim-fugitive"
-  Bundle "rking/ag.vim"
-  Bundle "sirver/ultisnips"
-  Bundle "mjacobus/vim-snippets"
-  Bundle "tomtom/tcomment_vim"
-  Bundle "Lokaltog/vim-easymotion"
-  " fixed "jiangmiao/auto-pairs"
-  Bundle "yukunlin/auto-pairs"
-  Bundle "mattn/webapi-vim.git"
-  Bundle "mattn/gist-vim.git"
-  Bundle "scrooloose/nerdtree"
-  Bundle "kien/ctrlp.vim"
-  Bundle "godlygeek/tabular"
-  Bundle "scrooloose/syntastic"
-  Bundle "weierophinney/argumentrewrap"
-  Bundle "docteurklein/php-getter-setter.vim"
-  Bundle "joonty/vdebug"
-  Bundle "shawncplus/phpcomplete.vim"
-  Bundle "StanAngeloff/php.vim"
-  Bundle 'captbaritone/better-indent-support-for-php-with-html'
-  Bundle "arnaud-lb/vim-php-namespace"
-  Bundle "vim-scripts/ruby-matchit"
-  Bundle "mjacobus/vim-rspec-focus"
-  Bundle "vim-ruby/vim-ruby"
-  Bundle "tpope/vim-rails"
-  Bundle "mjacobus/vim-rspec"
-  Bundle "shawncplus/Vim-toCterm"
-  Bundle "tpope/vim-eunuch"
-  Bundle "tpope/vim-vinegar"
-  Bundle "tpope/vim-speeddating"
-  " Bundle "Valloric/YouCompleteMe"
-  " Colors
-  " Bundle "chriskempson/base16-vim"
-  Bundle "flazz/vim-colorschemes"
-  Bundle "jonathanfilip/vim-lucius"
+Bundle "austintaylor/vim-commaobject"
+Bundle "altercation/vim-colors-solarized"
+Bundle "tristen/vim-sparkup"
+Bundle "othree/html5.vim"
+Bundle "tpope/vim-repeat"
+Bundle "tpope/vim-surround"
+Bundle "wikitopian/hardmode"
+Bundle "airblade/vim-gitgutter"
+Bundle "tpope/vim-fugitive"
+Bundle "rking/ag.vim"
+Bundle "sirver/ultisnips"
+Bundle "mjacobus/vim-snippets"
+Bundle "tomtom/tcomment_vim"
+Bundle "Lokaltog/vim-easymotion"
+" fixed "jiangmiao/auto-pairs"
+Bundle "yukunlin/auto-pairs"
+Bundle "mattn/webapi-vim.git"
+Bundle "mattn/gist-vim.git"
+Bundle "scrooloose/nerdtree"
+Bundle "kien/ctrlp.vim"
+Bundle "godlygeek/tabular"
+Bundle "scrooloose/syntastic"
+Bundle "weierophinney/argumentrewrap"
+Bundle "docteurklein/php-getter-setter.vim"
+Bundle "joonty/vdebug"
+Bundle "shawncplus/phpcomplete.vim"
+Bundle "StanAngeloff/php.vim"
+Bundle 'captbaritone/better-indent-support-for-php-with-html'
+Bundle "arnaud-lb/vim-php-namespace"
+Bundle "vim-scripts/ruby-matchit"
+Bundle "mjacobus/vim-rspec-focus"
+Bundle "vim-ruby/vim-ruby"
+Bundle "tpope/vim-rails"
+Bundle "mjacobus/vim-rspec"
+Bundle "shawncplus/Vim-toCterm"
+Bundle "tpope/vim-eunuch"
+Bundle "tpope/vim-vinegar"
+Bundle "tpope/vim-speeddating"
+" Bundle "Valloric/YouCompleteMe"
+" Colors
+" Bundle "chriskempson/base16-vim"
+Bundle "flazz/vim-colorschemes"
+Bundle "jonathanfilip/vim-lucius"
 
-  " ending vundle
-  call vundle#end()            " required
-  filetype plugin indent on    " required
+" ending vundle
+call vundle#end()            " required
+filetype plugin indent on    " required
 
-  source ~/.vim/functions.vim
+source ~/.vim/functions.vim
 
 " ========================================================================
 " Options:
 " ========================================================================
-  set background=dark
+set background=dark
 
-  syntax on
-  let mapleader = ","
+syntax on
+let mapleader = ","
 
-  " different color for each paren pairs
-  let vimclojure#ParenRainbow = 1
+" different color for each paren pairs
+let vimclojure#ParenRainbow = 1
 
-  if exists('+undodir')
-    set undodir=~/.vim/undodir
-    set undofile
-    if filewritable(&undodir) == 0
-      call mkdir(&undodir, "p")
-    endif
+if exists('+undodir')
+  set undodir=~/.vim/undodir
+  set undofile
+  if filewritable(&undodir) == 0
+    call mkdir(&undodir, "p")
   endif
+endif
 
-  if exists('+colorcolumn')
-    set colorcolumn=80
-  endif
+if exists('+colorcolumn')
+  set colorcolumn=80
+endif
 
-  set autoindent
-  set autoread
-  set backspace=2
-  set backspace=indent,eol,start
+set autoindent
+set autoread
+set backspace=2
+set backspace=indent,eol,start
 
-  if has("mac")
-    set clipboard=unnamed
-  elseif has("unix")
-    set clipboard=unnamedplus
-  endif
+if has("mac")
+  set clipboard=unnamed
+elseif has("unix")
+  set clipboard=unnamedplus
+endif
 
-  set cursorline
-  set directory=/tmp/
-  set display=lastline
-  set expandtab tabstop=2 softtabstop=2 shiftwidth=2
-  set foldlevel=1
-  set foldmethod=syntax
-  set guicursor=a:blinkon0
-  set hidden
-  set hlsearch
-  set ignorecase smartcase
-  set laststatus=2
-  set list
-  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-  set mouse=""
-  set nobackup
-  set noincsearch
-  set noswapfile
-  set nowrap
-  set number numberwidth=2
-  set pastetoggle=<F3>
-  set ruler rulerformat=%=%l/%L
+set cursorline
+set directory=/tmp/
+set display=lastline
+set expandtab tabstop=2 softtabstop=2 shiftwidth=2
+set foldlevel=1
+set foldmethod=syntax
+set guicursor=a:blinkon0
+set hidden
+set hlsearch
+set ignorecase smartcase
+set laststatus=2
+set list
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+set mouse=""
+set nobackup
+set noincsearch
+set noswapfile
+set nowrap
+set number numberwidth=2
+set pastetoggle=<F3>
+set ruler rulerformat=%=%l/%L
 
-  if exists('+relativenumber')
-    set relativenumber
-  endif
+if exists('+relativenumber')
+  set relativenumber
+endif
 
-  set scrolloff=4 sidescrolloff=10
-  set showcmd
-  set showmatch
-  set smarttab
-  set splitbelow
-  set splitright
-  set tabpagemax=20
-  set ttyfast
-  " visualbel causes some weird char when in gnome terminal
-  " set visualbell
-  set wildmenu
-  set wildmode=list:longest,full
-  set statusline=[%n]\ %<%.99f\ %h%w%m%r%{ETry('CapsLockStatusline')}%y%{ETry('rails#statusline')}%{ETry('fugitive#statusline')}%#ErrorMsg#%*%=%-16(\ %l,%c-%v\ %)%P
-  set tags+=./tags.vendors,tags.vendors
+set scrolloff=4 sidescrolloff=10
+set showcmd
+set showmatch
+set smarttab
+set splitbelow
+set splitright
+set tabpagemax=20
+set ttyfast
+" visualbel causes some weird char when in gnome terminal
+" set visualbell
+set wildmenu
+set wildmode=list:longest,full
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%{ETry('CapsLockStatusline')}%y%{ETry('rails#statusline')}%{ETry('fugitive#statusline')}%#ErrorMsg#%*%=%-16(\ %l,%c-%v\ %)%P
+set tags+=./tags.vendors,tags.vendors
 
-" ========================================================================
+"===============================================================================
 " Mappings:
-" ========================================================================
-  source ~/.vim/mappings.vim
+"===============================================================================
+source ~/.vim/mappings.vim
 
-" ========================================================================
+"===============================================================================
 " Plugin Configuration and mappings
-" ========================================================================
+"===============================================================================
 
-  " vim-to-cterm
-  nnoremap tocterm :source ~/.vim/bundle/Vim-toCterm/tocterm.vim<CR>
+" vim-to-cterm
+nnoremap tocterm :source ~/.vim/bundle/Vim-toCterm/tocterm.vim<CR>
 
-  " vim-rspec
-  let g:rspec_command_rspec = "!clear && rspec --drb {spec}"
-  let g:rspec_command_minitest = "!clear && bundle exec rake test TEST={spec}"
-  let g:rspec_command = g:rspec_command_rspec
-  let g:rspec_file_regexp = "_\\(test\\|spec\\).rb$"
-  nnoremap <leader><leader>t :call SwitchSpecCommand()<cr>
+" vim-rspec
+let g:rspec_command_rspec = "!clear && rspec --drb {spec}"
+let g:rspec_command_minitest = "!clear && bundle exec rake test TEST={spec}"
+let g:rspec_command = g:rspec_command_rspec
+let g:rspec_file_regexp = "_\\(test\\|spec\\).rb$"
+nnoremap <leader><leader>t :call SwitchSpecCommand()<cr>
 
-  autocmd FileType ruby nnoremap <buffer> <leader>t :call RunCurrentSpecFile()<cr>
-  nnoremap <leader>n :call RunNearestSpec()<CR>
-  nnoremap <C-l> :call RunLastSpec()<CR>
-  nnoremap <leader>l :call RunLastSpec()<CR>
-  nnoremap <Leader>o :w<cr>:call RunCurrentLineInTest()<CR>
+autocmd FileType ruby nnoremap <buffer> <leader>t :call RunCurrentSpecFile()<cr>
+nnoremap <leader>n :call RunNearestSpec()<CR>
+nnoremap <C-l> :call RunLastSpec()<CR>
+nnoremap <leader>l :call RunLastSpec()<CR>
+nnoremap <Leader>o :w<cr>:call RunCurrentLineInTest()<CR>
 
-  " php cs fixer
-  autocmd FileType php nnoremap <leader>pff  :call PhpCsFix('%')<cr>
-  autocmd FileType php nnoremap <leader>pfaf :call PhpCsFix('.')<cr>
+" php cs fixer
+autocmd FileType php nnoremap <leader>pff  :call PhpCsFix('%')<cr>
+autocmd FileType php nnoremap <leader>pfaf :call PhpCsFix('.')<cr>
 
-  " php use
-  nnoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
+" php use
+nnoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
 
 
-  " php-getter-setter
-  autocmd FileType php nnoremap <leader>pg :InsertGetterOnly<cr>
-  autocmd FileType php nnoremap <leader>ps :InsertSetterOnly<cr>
-  autocmd FileType php nnoremap <leader>pgs :InsertBothGetterSetter<cr>
+" php-getter-setter
+autocmd FileType php nnoremap <leader>pg :InsertGetterOnly<cr>
+autocmd FileType php nnoremap <leader>ps :InsertSetterOnly<cr>
+autocmd FileType php nnoremap <leader>pgs :InsertBothGetterSetter<cr>
 
-    let b:phpgetset_setterTemplate =
+  let b:phpgetset_setterTemplate =
+    \ "\n" .
+    \ "    public function %funcname%($%varname%)\n" .
+    \ "    {\n" .
+    \ "        $this->%varname% = $%varname%;\n" .
+    \ "    }"
+
+  let b:phpgetset_getterTemplate =
       \ "\n" .
-      \ "    public function %funcname%($%varname%)\n" .
+      \ "    public function %funcname%()\n" .
       \ "    {\n" .
-      \ "        $this->%varname% = $%varname%;\n" .
+      \ "        return $this->%varname%;\n" .
       \ "    }"
 
-    let b:phpgetset_getterTemplate =
-        \ "\n" .
-        \ "    public function %funcname%()\n" .
-        \ "    {\n" .
-        \ "        return $this->%varname%;\n" .
-        \ "    }"
+" tabular
+let g:syntastic_enable_signs=1
+let g:syntastic_quiet_messages = {'level': 'warning'}
+" let g:syntastic_php_checkers=['php', 'phpcs']
+" let g:syntastic_php_phpcs_args='--standard=PSR2 -n'
+let g:syntastic_php_phpcs_args='--standard=PSR2'
+" syntastic is too slow for haml and sass
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': ['haml','scss','sass'] }
 
-  " tabular
-  let g:syntastic_enable_signs=1
-  let g:syntastic_quiet_messages = {'level': 'warning'}
-  " let g:syntastic_php_checkers=['php', 'phpcs']
-  " let g:syntastic_php_phpcs_args='--standard=PSR2 -n'
-  let g:syntastic_php_phpcs_args='--standard=PSR2'
-  " syntastic is too slow for haml and sass
-  let g:syntastic_mode_map = { 'mode': 'active',
-                             \ 'active_filetypes': [],
-                             \ 'passive_filetypes': ['haml','scss','sass'] }
-
-  " tabular
-  function! CustomTabularPatterns()
-    if exists('g:tabular_loaded')
-      AddTabularPattern! symbols / :/l0
-      AddTabularPattern! hash /^[^>]*\zs=>/
-      AddTabularPattern! chunks / \S\+/l0
-      AddTabularPattern! assignment / = /l0
-      AddTabularPattern! comma /^[^,]*,/l1
-      AddTabularPattern! colon /:\zs /l0
-      AddTabularPattern! options_hashes /:\w\+ =>/
-    endif
-  endfunction
-
-  autocmd VimEnter * call CustomTabularPatterns()
-
-  nnoremap a= :Tabularize /=<CR>
-  vnoremap a= :Tabularize /=<CR>
-  nnoremap a: :Tabularize /:\zs<CR>
-  vnoremap a: :Tabularize /:\zs<CR>
-  nnoremap ar :Tabularize /=><CR>
-  vnoremap ar :Tabularize /=><CR>
-
-  " Ultisnips
-  " If you want :UltiSnipsEdit to split your window.
-  let g:UltiSnipsEditSplit="vertical"
-  let g:snips_author="Marcelo Jacobus <marcelo.jacobus@gmail.com>"
-
-  " sparkup
-  let g:sparkupExecuteMapping = '<C-Y>,'
-  let g:sparkupNextMapping = '<c-y>n'
-
-  " solarized
-  let g:solarized_termcolors=256
-
-  " ctrl P
-  let g:ctrlp_max_height = 30
-  " let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files .']
-  " let g:ctrlp_working_path_mode = 'c'
-  " set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-
-  set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,*/coverage/*     " MacOSX/Linux
-
-  let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/](\.(git|hg|svn)|data|tmp|log)$',
-    \ 'file': '\v\.(exe|so|dll)$',
-    \ 'link': 'some_bad_symbolic_links',
-    \ }
-
-  " gits
-  if has("mac")
-    let g:gist_clip_command = 'pbcopy'
-  elseif has("unix")
-    let g:gist_clip_command = 'xclip -selection clipboard'
+" tabular
+function! CustomTabularPatterns()
+  if exists('g:tabular_loaded')
+    AddTabularPattern! symbols / :/l0
+    AddTabularPattern! hash /^[^>]*\zs=>/
+    AddTabularPattern! chunks / \S\+/l0
+    AddTabularPattern! assignment / = /l0
+    AddTabularPattern! comma /^[^,]*,/l1
+    AddTabularPattern! colon /:\zs /l0
+    AddTabularPattern! options_hashes /:\w\+ =>/
   endif
+endfunction
 
-  let g:gist_detect_filetype = 1
-  let g:gist_open_browser_after_post = 1
-  " does not work right after the plugin
-  nnoremap <leader>wa :call argumentrewrap#RewrapArguments()<CR>
+autocmd VimEnter * call CustomTabularPatterns()
 
-  " rails.vim
-  nnoremap <leader>av :AV<cr>
-  nnoremap <leader>as :AS<cr>
-  nnoremap <Leader>va :AV<cr>
-  nnoremap <Leader>sa :AS<cr>
-  nnoremap <Leader>vc :RVcontroller<cr>
-  nnoremap <Leader>sc :RScontroller<cr>
-  nnoremap <Leader>vu :RVunittest<CR>
-  nnoremap <Leader>su :RSunittest<CR>
-  nnoremap <Leader>vv :RVview<cr>
-  nnoremap <Leader>sv :RSview<cr>
-  nnoremap <Leader>m :Rmodel<cr>
-  nnoremap <Leader>sm :RSmodel<cr>
-  nnoremap <Leader>vm :RVmodel<cr>
+nnoremap a= :Tabularize /=<CR>
+vnoremap a= :Tabularize /=<CR>
+nnoremap a: :Tabularize /:\zs<CR>
+vnoremap a: :Tabularize /:\zs<CR>
+nnoremap ar :Tabularize /=><CR>
+vnoremap ar :Tabularize /=><CR>
 
-  " ag.vim
-  nnoremap g/ :Ag!<space>
-  nnoremap g# :Ag! -w <C-R><C-W><space>
-  nnoremap ga :AgAdd!<space>
-  nnoremap gn :cnext<CR>
-  nnoremap gp :cprev<CR>
-  nnoremap gq :ccl<CR>
-  nnoremap gl :cwindow<CR>
+" Ultisnips
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+let g:snips_author="Marcelo Jacobus <marcelo.jacobus@gmail.com>"
 
-  " fugitive
-  autocmd BufReadPost fugitive://* set bufhidden=delete
-  nnoremap <Leader>gac :Gcommit -am ""<LEFT>
-  nnoremap <Leader>gc :Gcommit -m ""<LEFT>
-  nnoremap <Leader>gs :Gstatus<CR>
-  nnoremap <leader>gw :Gwrite<cr>
-  nnoremap <leader>gb :Gblame<cr>
+" sparkup
+let g:sparkupExecuteMapping = '<C-Y>,'
+let g:sparkupNextMapping = '<c-y>n'
 
-  " autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-  nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+" solarized
+let g:solarized_termcolors=256
 
-  " nerdtree
-  nnoremap <c-n> :NERDTreeToggle<CR>
+" ctrl P
+let g:ctrlp_max_height = 30
+" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files .']
+" let g:ctrlp_working_path_mode = 'c'
+" set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,*/coverage/*     " MacOSX/Linux
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|data|tmp|log)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+
+" gits
+if has("mac")
+  let g:gist_clip_command = 'pbcopy'
+elseif has("unix")
+  let g:gist_clip_command = 'xclip -selection clipboard'
+endif
+
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
+" does not work right after the plugin
+nnoremap <leader>wa :call argumentrewrap#RewrapArguments()<CR>
+
+" rails.vim
+nnoremap <leader>av :AV<cr>
+nnoremap <leader>as :AS<cr>
+nnoremap <Leader>va :AV<cr>
+nnoremap <Leader>sa :AS<cr>
+nnoremap <Leader>vc :RVcontroller<cr>
+nnoremap <Leader>sc :RScontroller<cr>
+nnoremap <Leader>vu :RVunittest<CR>
+nnoremap <Leader>su :RSunittest<CR>
+nnoremap <Leader>vv :RVview<cr>
+nnoremap <Leader>sv :RSview<cr>
+nnoremap <Leader>m :Rmodel<cr>
+nnoremap <Leader>sm :RSmodel<cr>
+nnoremap <Leader>vm :RVmodel<cr>
+
+" ag.vim
+nnoremap g/ :Ag!<space>
+nnoremap g# :Ag! -w <C-R><C-W><space>
+nnoremap ga :AgAdd!<space>
+nnoremap gn :cnext<CR>
+nnoremap gp :cprev<CR>
+nnoremap gq :ccl<CR>
+nnoremap gl :cwindow<CR>
+
+" fugitive
+autocmd BufReadPost fugitive://* set bufhidden=delete
+nnoremap <Leader>gac :Gcommit -am ""<LEFT>
+nnoremap <Leader>gc :Gcommit -m ""<LEFT>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <leader>gw :Gwrite<cr>
+nnoremap <leader>gb :Gblame<cr>
+
+" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+
+" nerdtree
+nnoremap <c-n> :NERDTreeToggle<CR>
 
 
-" ========================================================================
+"===============================================================================
 " Autocommands:
-" ========================================================================
-  autocmd BufWrite * :call <sid>MkdirsIfNotExists(expand('<afile>:h'))
-  " TODO: find out why it wont work when the function is not herer
-  function! <SID>MkdirsIfNotExists(directory)
-    if(!isdirectory(a:directory))
-      call system('mkdir -p '.shellescape(a:directory))
-    endif
-  endfunction
+"===============================================================================
 
-  autocmd FileType php nnoremap <buffer> <leader>t <esc>:call PHPUnitCurrentFile()<cr>
-  autocmd FileType php nnoremap <buffer> <leader>at <esc>:call PHPUnitAll()<cr>
-  autocmd FileType php nnoremap <buffer> <leader>nt <esc>:call PHPUnitFocused()<cr>
-  autocmd FileType php nnoremap <buffer> <leader>mt <esc>:call PHPUnitZendModule()<cr>
-  autocmd FileType php nnoremap <buffer> <leader>cu <esc>:! clear && ./curl.sh<cr>
-  autocmd FileType php nnoremap <buffer> <leader>ct <esc>:call PHPUnitCreateTestFile()<cr>
-  autocmd FileType php nnoremap <buffer> <leader>ot <esc>:call PHPUnitCreateTestFile()<cr>
-  autocmd FileType php nnoremap <buffer> <leader>va <esc>:call VOpenTestedFile()<cr>
-  autocmd FileType php nnoremap <buffer> <leader>x <esc>:! clear && time php %<cr>
-  autocmd FileType php nnoremap <buffer> <leader>ce <esc>:vsplit curl.sh<cr>
-  autocmd FileType ruby nnoremap <buffer> <leader>x <esc>:! clear && time ruby %<cr>
+autocmd BufWrite * :call <sid>MkdirsIfNotExists(expand('<afile>:h'))
 
-  " remember last position in file
-  autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+" TODO: find out why it wont work when the function is not herer
+function! <SID>MkdirsIfNotExists(directory)
+  if(!isdirectory(a:directory))
+    call system('mkdir -p '.shellescape(a:directory))
+  endif
+endfunction
 
-  " Thorfile, Rakefile, Vagrantfile, and Gemfile are Ruby
-  autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
+" remember last position in file
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
-  " hb is handlebars
-  autocmd BufNewFile,BufRead *.hb set ai filetype=handlebars
+" Thorfile, Rakefile, Vagrantfile, and Gemfile are Ruby
+autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 
-  " hbs is handlebars
-  autocmd BufNewFile,BufRead *.hbs set ai filetype=handlebars
+" hb is handlebars
+autocmd BufNewFile,BufRead *.hb set ai filetype=handlebars
 
-  " JSON is JS
-  autocmd BufNewFile,BufRead *.json set ai filetype=javascript
+" hbs is handlebars
+autocmd BufNewFile,BufRead *.hbs set ai filetype=handlebars
 
-  " execute jasmine tests
-  autocmd FileType javascript nnoremap <buffer> tt :! clear && npm test<cr>
+" JSON is JS
+autocmd BufNewFile,BufRead *.json set ai filetype=javascript
 
-  " enable spell check
-  autocmd FileType gitcommit setlocal spell spelllang=en_us,pt_br
-  autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us,pt_br
-  autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us,pt_br
+" enable spell check
+autocmd FileType gitcommit setlocal spell spelllang=en_us,pt_br
+autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us,pt_br
+autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us,pt_br
 
-" ========================================================================
+"===============================================================================
 " Abbreviations:
-" ========================================================================
-  abbreviate phpu PHPUnit_Framework_TestCase
-  abbreviate funciton function
-  abbreviate retrun return
+"===============================================================================
 
-" ========================================================================
+source ~/.vim/abbreviations.vim
+
+
+"===============================================================================
 " Appearence:
-" ========================================================================
-  color lucius
-  " highlight ajustment
-  highligh MatchParen cterm=bold ctermbg=none ctermfg=green
+"===============================================================================
 
+color lucius
+" highlight ajustment
+highligh MatchParen cterm=bold ctermbg=none ctermfg=green
 
-  " improved highlight for php: https://github.com/StanAngeloff/php.vim
-  function! PhpSyntaxOverride()
-    hi! def link phpDocTags  phpDefine
-    hi! def link phpDocParam phpType
-  endfunction
+" improved highlight for php: https://github.com/StanAngeloff/php.vim
+function! PhpSyntaxOverride()
+  hi! def link phpDocTags  phpDefine
+  hi! def link phpDocParam phpType
+endfunction
 
-  augroup phpSyntaxOverride
-    autocmd!
-    autocmd FileType php call PhpSyntaxOverride()
-  augroup END
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
+augroup END
 
 " ========================================================================
 " Allow overriding these settings:
 " ========================================================================
-  if filereadable(expand("~/.vimrc.local"))
-    source ~/.vimrc.local
-  endif
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif

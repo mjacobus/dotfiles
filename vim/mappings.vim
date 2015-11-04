@@ -1,3 +1,7 @@
+"===============================================================================
+" Mappings
+"===============================================================================
+
 " tags
 nnoremap <f4> :! ctags <cr>
 
@@ -69,39 +73,6 @@ nnoremap U <nop>
 inoremap <leader>f <ESC>/
 nnoremap <leader>f <ESC>/
 
-" php specific
-"
-autocmd FileType php inoremap <buffer> <C-.> .
-autocmd FileType php inoremap <buffer> ... ../
-autocmd FileType php inoremap <buffer> .. ->
-autocmd FileType php inoremap <buffer> .a ->a
-autocmd FileType php inoremap <buffer> .b ->b
-autocmd FileType php inoremap <buffer> .c ->c
-autocmd FileType php inoremap <buffer> .d ->d
-autocmd FileType php inoremap <buffer> .e ->e
-autocmd FileType php inoremap <buffer> .f ->f
-autocmd FileType php inoremap <buffer> .g ->g
-autocmd FileType php inoremap <buffer> .h ->h
-autocmd FileType php inoremap <buffer> .i ->i
-autocmd FileType php inoremap <buffer> .j ->j
-autocmd FileType php inoremap <buffer> .k ->k
-autocmd FileType php inoremap <buffer> .l ->l
-autocmd FileType php inoremap <buffer> .m ->m
-autocmd FileType php inoremap <buffer> .n ->n
-autocmd FileType php inoremap <buffer> .o ->o
-autocmd FileType php inoremap <buffer> .p ->p
-autocmd FileType php inoremap <buffer> .q ->q
-autocmd FileType php inoremap <buffer> .r ->r
-autocmd FileType php inoremap <buffer> .s ->s
-autocmd FileType php inoremap <buffer> .t ->t
-autocmd FileType php inoremap <buffer> .u ->u
-autocmd FileType php inoremap <buffer> .v ->v
-autocmd FileType php inoremap <buffer> .x ->x
-autocmd FileType php inoremap <buffer> .v ->v
-autocmd FileType php inoremap <buffer> .y ->y
-autocmd FileType php inoremap <buffer> .w ->w
-autocmd FileType php inoremap <buffer> ._ ->_
-autocmd FileType php inoremap <buffer> ;; <esc>$a;
 
 " convert file to latin1 and reloads
 nnoremap <leader>lat1 :write ++enc=latin1<cr>:e<cr>
@@ -169,3 +140,66 @@ vnoremap " "zdi"<C-R>z"<ESC>
 
 " select last paste in visual mode
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
+
+"===============================================================================
+" Language specific
+"===============================================================================
+
+"===============================================================================
+" PHP
+"===============================================================================
+
+autocmd FileType php nnoremap <buffer> <leader>x <esc>:! clear && time php %<cr>
+autocmd FileType php nnoremap <buffer> <leader>ce <esc>:vsplit curl.sh<cr>
+autocmd FileType php nnoremap <buffer> <leader>cu <esc>:! clear && ./curl.sh<cr>
+autocmd FileType php nnoremap <buffer> <leader>t <esc>:call PHPUnitCurrentFile()<cr>
+autocmd FileType php nnoremap <buffer> <leader>at <esc>:call PHPUnitAll()<cr>
+autocmd FileType php nnoremap <buffer> <leader>nt <esc>:call PHPUnitFocused()<cr>
+autocmd FileType php nnoremap <buffer> <leader>mt <esc>:call PHPUnitZendModule()<cr>
+autocmd FileType php nnoremap <buffer> <leader>ct <esc>:call PHPUnitCreateTestFile()<cr>
+autocmd FileType php nnoremap <buffer> <leader>ot <esc>:call PHPUnitCreateTestFile()<cr>
+autocmd FileType php nnoremap <buffer> <leader>va <esc>:call VOpenTestedFile()<cr>
+
+autocmd FileType php inoremap <buffer> <C-.> .
+autocmd FileType php inoremap <buffer> ... ../
+autocmd FileType php inoremap <buffer> .. ->
+autocmd FileType php inoremap <buffer> .a ->a
+autocmd FileType php inoremap <buffer> .b ->b
+autocmd FileType php inoremap <buffer> .c ->c
+autocmd FileType php inoremap <buffer> .d ->d
+autocmd FileType php inoremap <buffer> .e ->e
+autocmd FileType php inoremap <buffer> .f ->f
+autocmd FileType php inoremap <buffer> .g ->g
+autocmd FileType php inoremap <buffer> .h ->h
+autocmd FileType php inoremap <buffer> .i ->i
+autocmd FileType php inoremap <buffer> .j ->j
+autocmd FileType php inoremap <buffer> .k ->k
+autocmd FileType php inoremap <buffer> .l ->l
+autocmd FileType php inoremap <buffer> .m ->m
+autocmd FileType php inoremap <buffer> .n ->n
+autocmd FileType php inoremap <buffer> .o ->o
+autocmd FileType php inoremap <buffer> .p ->p
+autocmd FileType php inoremap <buffer> .q ->q
+autocmd FileType php inoremap <buffer> .r ->r
+autocmd FileType php inoremap <buffer> .s ->s
+autocmd FileType php inoremap <buffer> .t ->t
+autocmd FileType php inoremap <buffer> .u ->u
+autocmd FileType php inoremap <buffer> .v ->v
+autocmd FileType php inoremap <buffer> .x ->x
+autocmd FileType php inoremap <buffer> .v ->v
+autocmd FileType php inoremap <buffer> .y ->y
+autocmd FileType php inoremap <buffer> .w ->w
+autocmd FileType php inoremap <buffer> ._ ->_
+autocmd FileType php inoremap <buffer> ;; <esc>$a;
+
+"===============================================================================
+" Ruby
+"===============================================================================
+autocmd FileType ruby nnoremap <buffer> <leader>x <esc>:! clear && time ruby %<cr>
+
+"===============================================================================
+" Javascript
+"===============================================================================
+
+" execute jasmine tests
+autocmd FileType javascript nnoremap <buffer> tt :! clear && npm test<cr>
