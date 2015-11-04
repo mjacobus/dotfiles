@@ -203,3 +203,9 @@ autocmd FileType ruby nnoremap <buffer> <leader>x <esc>:! clear && time ruby %<c
 
 " execute jasmine tests
 autocmd FileType javascript nnoremap <buffer> tt :! clear && npm test<cr>
+
+"===============================================================================
+" C
+"===============================================================================
+
+autocmd FileType c nnoremap <buffer> <leader>x <esc>:call CompileAndRunCurrentCFile()<cr>

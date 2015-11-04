@@ -159,3 +159,14 @@ function! SwitchSpecCommand()
     echo "using rspec"
   endif
 endfunction
+
+function! CompileAndRunCurrentCFile()
+  let file = expand('%')
+  let binary = substitute(file, "\.c$", "", "")
+  let command = "gcc " . file . " -o " . binary . " && ./" . binary
+  call ExecuteCommand(command)
+endfunction
+
+function! ExecuteCommand(command)
+  execute "! clear && echo '" . a:command . "'" . " && " . a:command
+endfunction
