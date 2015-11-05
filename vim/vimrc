@@ -21,7 +21,8 @@ Bundle "tristen/vim-sparkup"
 Bundle "othree/html5.vim"
 Bundle "tpope/vim-repeat"
 Bundle "tpope/vim-surround"
-Bundle "wikitopian/hardmode"
+" Bundle "wikitopian/hardmode"
+Bundle "takac/vim-hardtime"
 Bundle "airblade/vim-gitgutter"
 Bundle "tpope/vim-fugitive"
 Bundle "rking/ag.vim"
@@ -148,6 +149,9 @@ source ~/.vim/mappings.vim
 "===============================================================================
 " Plugin Configuration and mappings
 "===============================================================================
+
+let g:hardtime_showmsg = 1
+
 
 " vim-to-cterm
 nnoremap tocterm :source ~/.vim/bundle/Vim-toCterm/tocterm.vim<CR>
@@ -295,8 +299,10 @@ nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <leader>gw :Gwrite<cr>
 nnoremap <leader>gb :Gblame<cr>
 
-" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+" hardtime
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardTimeOn()
+nnoremap <leader>h <Esc>:call HardTimeToggle()<CR>
+let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
 
 " nerdtree
 nnoremap <c-n> :NERDTreeToggle<CR>
