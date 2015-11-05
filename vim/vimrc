@@ -150,6 +150,9 @@ source ~/.vim/mappings.vim
 " Plugin Configuration and mappings
 "===============================================================================
 
+" rm file
+nnoremap <leader>rm :Remove<cr>
+
 let g:hardtime_showmsg = 1
 
 
@@ -300,7 +303,7 @@ nnoremap <leader>gw :Gwrite<cr>
 nnoremap <leader>gb :Gblame<cr>
 
 " hardtime
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardTimeOn()
+" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardTimeOn()
 nnoremap <leader>h <Esc>:call HardTimeToggle()<CR>
 let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
 
