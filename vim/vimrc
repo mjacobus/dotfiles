@@ -45,12 +45,23 @@ set showmatch
 set smarttab
 set splitbelow
 set splitright
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%{ETry('CapsLockStatusline')}%y%{ETry('rails#statusline')}%{ETry('fugitive#statusline')}%#ErrorMsg#%*%=%-16(\ %l,%c-%v\ %)%P
 set tabpagemax=20
 set tags+=./tags.vendors,tags.vendors
 set ttyfast
 set wildmenu
 set wildmode=list:longest,full
+
+set statusline=%f       " file name
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] " file format
+set statusline+=%h      " help file flag
+set statusline+=%m      " modified flag
+set statusline+=%r      " read only flag
+set statusline+=%y      " filetype
+set statusline+=%=      " left/right separator
+set statusline+=%c,     " cursor column
+set statusline+=%l/%L   " cursor line/total lines
+set statusline+=\ %P    " percent through file
 
 " Conditional settings
 if exists("+undodir")
