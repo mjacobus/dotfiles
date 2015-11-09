@@ -8,11 +8,11 @@ function! ETry(function, ...)
 endfunction
 
 " create directory for the current buffer
-" function! MkdirsIfNotExists(directory)
-"   if(!isdirectory(a:directory))
-"     call system('mkdir -p '.shellescape(a:directory))
-"   endif
-" endfunction
+function! <SID>MkdirsIfNotExists(directory)
+  if(!isdirectory(a:directory))
+    call system("mkdir -p ".shellescape(a:directory))
+  endif
+endfunction
 
 " remove trailing white spaces before saving rb files
 function! TrimWhiteSpace()
