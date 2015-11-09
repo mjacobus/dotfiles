@@ -151,13 +151,16 @@ function! ClearEchoAndExecute(command)
 endfunction
 
 function! SwitchSpecCommand()
-  if g:rspec_command == g:rspec_command_rspec
-    let g:rspec_command = g:rspec_command_minitest
-    echo "using minitest"
+  if g:test#ruby#spec_framework == "rspec"
+    let g:test#ruby#minitest#file_pattern = '_\(spec\|test\)\.rb'
+    let g:test#ruby#spec_framework = "minitest"
   else
-    let g:rspec_command = g:rspec_command_rspec
-    echo "using rspec"
+    " vim test will trigger rspec
+    let g:test#ruby#minitest#file_pattern = '_test\.rb'
+    let g:test#ruby#spec_framework = "rspec"
   endif
+
+  echo "using " . g:test#ruby#spec_framework . " for _spec.rb"
 endfunction
 
 function! CompileAndRunCurrentCFile()
