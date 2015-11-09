@@ -195,6 +195,7 @@ autocmd FileType php inoremap <buffer> ;; <esc>$a;
 "===============================================================================
 " Ruby
 "===============================================================================
+
 autocmd FileType ruby nnoremap <buffer> <leader>x <esc>:! clear && time ruby %<cr>
 
 "===============================================================================
@@ -202,10 +203,16 @@ autocmd FileType ruby nnoremap <buffer> <leader>x <esc>:! clear && time ruby %<c
 "===============================================================================
 
 " execute jasmine tests
-autocmd FileType javascript nnoremap <buffer> <leader>t :! clear && npm test<cr>
+autocmd FileType javascript nnoremap <buffer> <leader>t :! clear && grunt test --filter<C-R>=expand("%:t:r")<cr><cr>
 
 "===============================================================================
 " C
 "===============================================================================
 
 autocmd FileType c nnoremap <buffer> <leader>x <esc>:call CompileAndRunCurrentCFile()<cr>
+
+"===============================================================================
+" BASH
+"===============================================================================
+
+autocmd FileType sh nnoremap <buffer> <leader>x <esc>:! clear && ./%<cr>
