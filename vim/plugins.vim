@@ -89,19 +89,19 @@ autocmd FileType php nnoremap <leader>pg :InsertGetterOnly<cr>
 autocmd FileType php nnoremap <leader>ps :InsertSetterOnly<cr>
 autocmd FileType php nnoremap <leader>pgs :InsertBothGetterSetter<cr>
 
-  let b:phpgetset_setterTemplate =
-    \ "\n" .
-    \ "    public function %funcname%($%varname%)\n" .
-    \ "    {\n" .
-    \ "        $this->%varname% = $%varname%;\n" .
-    \ "    }"
+let b:phpgetset_setterTemplate =
+  \ "\n" .
+  \ "    public function %funcname%($%varname%)\n" .
+  \ "    {\n" .
+  \ "        $this->%varname% = $%varname%;\n" .
+  \ "    }"
 
-  let b:phpgetset_getterTemplate =
-      \ "\n" .
-      \ "    public function %funcname%()\n" .
-      \ "    {\n" .
-      \ "        return $this->%varname%;\n" .
-      \ "    }"
+let b:phpgetset_getterTemplate =
+    \ "\n" .
+    \ "    public function %funcname%()\n" .
+    \ "    {\n" .
+    \ "        return $this->%varname%;\n" .
+    \ "    }"
 
 " tabular
 let g:syntastic_enable_signs=1
