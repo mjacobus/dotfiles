@@ -46,10 +46,8 @@ Bundle "StanAngeloff/php.vim"
 Bundle 'captbaritone/better-indent-support-for-php-with-html'
 Bundle "arnaud-lb/vim-php-namespace"
 Bundle "vim-scripts/ruby-matchit"
-Bundle "mjacobus/vim-rspec-focus"
 Bundle "vim-ruby/vim-ruby"
 Bundle "tpope/vim-rails"
-Bundle "mjacobus/vim-rspec"
 Bundle "shawncplus/Vim-toCterm"
 Bundle "tpope/vim-eunuch"
 Bundle "tpope/vim-vinegar"
@@ -78,19 +76,6 @@ let g:hardtime_showmsg = 1
 " vim-to-cterm
 nnoremap tocterm :source ~/.vim/bundle/Vim-toCterm/tocterm.vim<CR>
 
-" vim-rspec
-let g:rspec_command_rspec = "!clear && rspec --drb {spec}"
-let g:rspec_command_minitest = "!clear && bundle exec rake test TEST={spec}"
-let g:rspec_command = g:rspec_command_rspec
-let g:rspec_file_regexp = "_\\(test\\|spec\\).rb$"
-nnoremap <leader><leader>t :call SwitchSpecCommand()<cr>
-
-autocmd FileType ruby nnoremap <buffer> <leader>t :call RunCurrentSpecFile()<cr>
-" nnoremap <leader>n :call RunNearestSpec()<CR>
-" nnoremap <C-l> :call RunLastSpec()<CR>
-" nnoremap <leader>l :call RunLastSpec()<CR>
-" nnoremap <Leader>o :w<cr>:call RunCurrentLineInTest()<CR>
-
 " php cs fixer
 autocmd FileType php nnoremap <leader>pff  :call PhpCsFix('%')<cr>
 autocmd FileType php nnoremap <leader>pfaf :call PhpCsFix('.')<cr>
@@ -104,19 +89,19 @@ autocmd FileType php nnoremap <leader>pg :InsertGetterOnly<cr>
 autocmd FileType php nnoremap <leader>ps :InsertSetterOnly<cr>
 autocmd FileType php nnoremap <leader>pgs :InsertBothGetterSetter<cr>
 
-  let b:phpgetset_setterTemplate =
-    \ "\n" .
-    \ "    public function %funcname%($%varname%)\n" .
-    \ "    {\n" .
-    \ "        $this->%varname% = $%varname%;\n" .
-    \ "    }"
+let b:phpgetset_setterTemplate =
+  \ "\n" .
+  \ "    public function %funcname%($%varname%)\n" .
+  \ "    {\n" .
+  \ "        $this->%varname% = $%varname%;\n" .
+  \ "    }"
 
-  let b:phpgetset_getterTemplate =
-      \ "\n" .
-      \ "    public function %funcname%()\n" .
-      \ "    {\n" .
-      \ "        return $this->%varname%;\n" .
-      \ "    }"
+let b:phpgetset_getterTemplate =
+    \ "\n" .
+    \ "    public function %funcname%()\n" .
+    \ "    {\n" .
+    \ "        return $this->%varname%;\n" .
+    \ "    }"
 
 " tabular
 let g:syntastic_enable_signs=1
@@ -236,3 +221,7 @@ nnoremap <silent> <leader>T :TestFile<CR>
 nnoremap <silent> <leader>at :TestSuite<CR>
 nnoremap <silent> <leader>lt :TestLast<CR>
 nnoremap <silent> <leader>gt :TestVisit<CR>
+
+let test#ruby#spec_framework = "minitest"
+let test#ruby#minitest#file_pattern = '_\(spec\|test\)\.rb'
+nnoremap <leader><leader>t :call SwitchSpecCommand()<cr>

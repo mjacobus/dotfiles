@@ -1,47 +1,23 @@
-"=========================================================================
-" Plugins:
-"=========================================================================
 let mapleader = ","
 
 source ~/.vim/plugins.vim
-
-"=========================================================================
-" Functions
-"=========================================================================
 source ~/.vim/functions.vim
+source ~/.vim/abbreviations.vim
+source ~/.vim/mappings.vim
 
-"=========================================================================
+"===============================================================================
 " Options:
-"=========================================================================
+"===============================================================================
 set background=dark
 syntax on
 
 " different color for each paren pairs
 let vimclojure#ParenRainbow = 1
 
-if exists('+undodir')
-  set undodir=~/.vim/undodir
-  set undofile
-  if filewritable(&undodir) == 0
-    call mkdir(&undodir, "p")
-  endif
-endif
-
-if exists('+colorcolumn')
-  set colorcolumn=80
-endif
-
 set autoindent
 set autoread
 set backspace=2
 set backspace=indent,eol,start
-
-if has("mac")
-  set clipboard=unnamed
-elseif has("unix")
-  set clipboard=unnamedplus
-endif
-
 set cursorline
 set directory=/tmp/
 set display=lastline
@@ -63,11 +39,6 @@ set nowrap
 set number numberwidth=2
 set pastetoggle=<F3>
 set ruler rulerformat=%=%l/%L
-
-if exists('+relativenumber')
-  set relativenumber
-endif
-
 set scrolloff=4 sidescrolloff=10
 set showcmd
 set showmatch
@@ -75,29 +46,58 @@ set smarttab
 set splitbelow
 set splitright
 set tabpagemax=20
+set tags+=./tags.vendors,tags.vendors
 set ttyfast
-" visualbel causes some weird char when in gnome terminal
-" set visualbell
 set wildmenu
 set wildmode=list:longest,full
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%{ETry('CapsLockStatusline')}%y%{ETry('rails#statusline')}%{ETry('fugitive#statusline')}%#ErrorMsg#%*%=%-16(\ %l,%c-%v\ %)%P
-set tags+=./tags.vendors,tags.vendors
 
-"===============================================================================
-" Mappings:
-"===============================================================================
-source ~/.vim/mappings.vim
+set statusline=%f       " file name
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] " file format
+set statusline+=%h      " help file flag
+set statusline+=%m      " modified flag
+set statusline+=%r      " read only flag
+set statusline+=%y      " filetype
+set statusline+=%=      " left/right separator
+set statusline+=%c,     " cursor column
+set statusline+=%l/%L   " cursor line/total lines
+set statusline+=\ %P    " percent through file
+
+" Conditional settings
+if exists("+undodir")
+  set undodir=~/.vim/undodir
+  set undofile
+  if filewritable(&undodir) == 0
+    call mkdir(&undodir, "p")
+  endif
+endif
+
+if exists("+colorcolumn")
+  set colorcolumn=80
+endif
+
+if has("mac")
+  set clipboard=unnamed
+elseif has("unix")
+  set clipboard=unnamedplus
+endif
+
+if exists("+relativenumber")
+  set relativenumber
+endif
+
+" visualbel causes some weird char when in gnome terminal
+" set visualbell
 
 "===============================================================================
 " Autocommands:
 "===============================================================================
-
-autocmd BufWrite * :call <sid>MkdirsIfNotExists(expand('<afile>:h'))
+autocmd BufWrite * :call <sid>MkdirsIfNotExists(expand("<afile>:h"))
 
 " TODO: find out why it wont work when the function is not herer
 function! <SID>MkdirsIfNotExists(directory)
   if(!isdirectory(a:directory))
-    call system('mkdir -p '.shellescape(a:directory))
+    call system("mkdir -p ".shellescape(a:directory))
   endif
 endfunction
 
@@ -122,15 +122,8 @@ autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us,pt_br
 autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us,pt_br
 
 "===============================================================================
-" Abbreviations:
-"===============================================================================
-
-source ~/.vim/abbreviations.vim
-
-"===============================================================================
 " Appearence:
 "===============================================================================
-
 color lucius
 " highlight ajustment
 highligh MatchParen cterm=bold ctermbg=none ctermfg=green
@@ -146,9 +139,9 @@ augroup phpSyntaxOverride
   autocmd FileType php call PhpSyntaxOverride()
 augroup END
 
-" ========================================================================
+"===============================================================================
 " Allow overriding these settings:
-" ========================================================================
+"===============================================================================
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
