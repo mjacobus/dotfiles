@@ -225,3 +225,5 @@ nnoremap <silent> <leader>gt :TestVisit<CR>
 let test#ruby#spec_framework = "minitest"
 let test#ruby#minitest#file_pattern = '_\(spec\|test\)\.rb'
 nnoremap <leader><leader>t :call SwitchSpecCommand()<cr>
+
+let g:test#javascript#jasmine#file_pattern = '\v^.*spec\.(js|jsx|coffee)$'
