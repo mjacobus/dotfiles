@@ -58,6 +58,10 @@ Bundle "tpope/vim-speeddating"
 Bundle "flazz/vim-colorschemes"
 Bundle "jonathanfilip/vim-lucius"
 Bundle "janko-m/vim-test"
+Bundle "pangloss/vim-javascript"
+
+" Bundle "othree/javascript-libraries-syntax.vim"
+" Bundle "vim-scripts/JavaScript-Indent"
 
 " ending vundle
 call vundle#end()            " required
