@@ -8,11 +8,11 @@ function! ETry(function, ...)
 endfunction
 
 " create directory for the current buffer
-" function! MkdirsIfNotExists(directory)
-"   if(!isdirectory(a:directory))
-"     call system('mkdir -p '.shellescape(a:directory))
-"   endif
-" endfunction
+function! <SID>MkdirsIfNotExists(directory)
+  if(!isdirectory(a:directory))
+    call system("mkdir -p ".shellescape(a:directory))
+  endif
+endfunction
 
 " remove trailing white spaces before saving rb files
 function! TrimWhiteSpace()
@@ -151,18 +151,21 @@ function! ClearEchoAndExecute(command)
 endfunction
 
 function! SwitchSpecCommand()
-  if g:rspec_command == g:rspec_command_rspec
-    let g:rspec_command = g:rspec_command_minitest
-    echo "using minitest"
+  if g:test#ruby#spec_framework == "rspec"
+    let g:test#ruby#minitest#file_pattern = '_\(spec\|test\)\.rb'
+    let g:test#ruby#spec_framework = "minitest"
   else
-    let g:rspec_command = g:rspec_command_rspec
-    echo "using rspec"
+    " vim test will trigger rspec
+    let g:test#ruby#minitest#file_pattern = '_test\.rb'
+    let g:test#ruby#spec_framework = "rspec"
   endif
+
+  echo "using " . g:test#ruby#spec_framework . " for _spec.rb"
 endfunction
 
 function! CompileAndRunCurrentCFile()
   let file = expand('%')
-  let binary = substitute(file, "\.c$", "", "")
+  let binary = substitute(file, "\.c$", ".o", "")
   let command = "gcc " . file . " -o " . binary . " && ./" . binary
   call ExecuteCommand(command)
 endfunction

@@ -152,10 +152,10 @@ nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 autocmd FileType php nnoremap <buffer> <leader>x <esc>:! clear && time php %<cr>
 autocmd FileType php nnoremap <buffer> <leader>ce <esc>:vsplit curl.sh<cr>
 autocmd FileType php nnoremap <buffer> <leader>cu <esc>:! clear && ./curl.sh<cr>
-autocmd FileType php nnoremap <buffer> <leader>t <esc>:call PHPUnitCurrentFile()<cr>
-autocmd FileType php nnoremap <buffer> <leader>at <esc>:call PHPUnitAll()<cr>
-autocmd FileType php nnoremap <buffer> <leader>nt <esc>:call PHPUnitFocused()<cr>
-autocmd FileType php nnoremap <buffer> <leader>mt <esc>:call PHPUnitZendModule()<cr>
+" autocmd FileType php nnoremap <buffer> <leader>t <esc>:call PHPUnitCurrentFile()<cr>
+" autocmd FileType php nnoremap <buffer> <leader>at <esc>:call PHPUnitAll()<cr>
+" autocmd FileType php nnoremap <buffer> <leader>nt <esc>:call PHPUnitFocused()<cr>
+" autocmd FileType php nnoremap <buffer> <leader>mt <esc>:call PHPUnitZendModule()<cr>
 autocmd FileType php nnoremap <buffer> <leader>ct <esc>:call PHPUnitCreateTestFile()<cr>
 autocmd FileType php nnoremap <buffer> <leader>ot <esc>:call PHPUnitCreateTestFile()<cr>
 autocmd FileType php nnoremap <buffer> <leader>va <esc>:call VOpenTestedFile()<cr>
@@ -203,7 +203,7 @@ autocmd FileType ruby nnoremap <buffer> <leader>x <esc>:! clear && time ruby %<c
 "===============================================================================
 
 " execute jasmine tests
-autocmd FileType javascript nnoremap <buffer> <leader>t :! clear && grunt test --filter<C-R>=expand("%:t:r")<cr><cr>
+" autocmd FileType javascript nnoremap <buffer> <leader>t :! clear && grunt test --filter<C-R>=expand("%:t:r")<cr><cr>
 
 "===============================================================================
 " C
