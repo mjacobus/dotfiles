@@ -60,9 +60,11 @@ nnoremap <Leader>quit <ESC>:q<cr>
 " save and quit Run Ruby, for interactive editor
 nnoremap <Leader>rr <esc>:wq<CR>
 
+" reload buffer
+nnoremap <Leader>rel :e<CR>
+
 " Open vim rc
 " nnoremap <Leader>vim :vsplit $MYVIMRC<CR>
-nnoremap <Leader>rel :source $MYVIMRC<CR>
 nnoremap <Leader>vim :vsplit ~/.vimrc<CR>
 
 " Fix anoying original K
