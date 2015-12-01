@@ -199,6 +199,7 @@ autocmd FileType php inoremap <buffer> ;; <esc>$a;
 "===============================================================================
 
 autocmd FileType ruby nnoremap <buffer> <leader>x <esc>:! clear && time ruby %<cr>
+autocmd FileType ruby nnoremap <buffer> <leader><leader>ct <esc>:call SetChefTest()<cr>
 
 "===============================================================================
 " Javascript

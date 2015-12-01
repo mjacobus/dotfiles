@@ -173,3 +173,7 @@ endfunction
 function! ExecuteCommand(command)
   execute "! clear && echo '" . a:command . "'" . " && " . a:command
 endfunction
+
+function! SetChefTest()
+  execute ":nnoremap <buffer> <leader>t :! chef exec rspec %<cr>"
+endfunction
