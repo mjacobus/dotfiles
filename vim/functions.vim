@@ -175,5 +175,5 @@ function! ExecuteCommand(command)
 endfunction
 
 function! SetChefTest()
-  execute ":nnoremap <buffer> <leader>t :! clear && chef exec rspec %<cr>"
+  execute ":nnoremap <buffer> <leader>t :call ExecuteCommand('chef exec rspec %')<cr>"
 endfunction
