@@ -29,4 +29,4 @@
 [rerere]
   enabled = true
 [merge]
-  ff = false
+  # ff = false
