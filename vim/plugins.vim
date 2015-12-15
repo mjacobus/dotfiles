@@ -154,6 +154,7 @@ let g:solarized_termcolors=256
 
 " ctrl P
 let g:ctrlp_max_height = 30
+let g:ctrlp_show_hidden = 1
 " let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files .']
 " let g:ctrlp_working_path_mode = 'c'
 " set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
