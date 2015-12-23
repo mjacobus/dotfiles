@@ -13,3 +13,5 @@
 - w - show list of windows so it can be selected
 - , - rename the current window
 - f <name> - go to the named window
+
+[Cheat Sheet](http://www.dayid.org/comp/tm.html)
