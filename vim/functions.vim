@@ -99,7 +99,14 @@ endfunction
 
 function! PHPUnitZendModule()
   let module = ZendGetModuleName()
-  let cmd = "phpunit -c module/" . module . "/tests/phpunit.xml"
+  let phpunit = 'phpunit'
+  let vendorPhpunit = './vendor/bin/phpunit'
+
+  if filereadable(vendorPhpunit)
+    let phpunit = vendorPhpunit
+  endif
+
+  let cmd = phpunit . " -c module/" . module . "/tests/phpunit.xml"
   execute "! clear && echo '" . cmd . "' && " . cmd
 endfunction
 
