@@ -28,6 +28,9 @@ nnoremap <leader>bdd :bd!<cr>
 nnoremap <leader>bda :bufdo %bd!<cr>
 nnoremap <leader>n :NERDTree<cr>
 
+" search
+nnoremap <leader>ag :Ag! 
+
 " saves from normal mode
 nnoremap <leader>s :w<cr>
 nnoremap <leader>S :w<cr>
