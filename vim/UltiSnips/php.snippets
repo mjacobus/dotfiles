@@ -44,9 +44,6 @@ snippet gc "GGS class" !
 
 namespace ${1:`!p snip.rv = namespace(snip, path)`};
 
-/**
- * $1\\$2
- */
 class ${2:`!p snip.rv = snip.basename`}
 {
 	${0}
@@ -61,9 +58,6 @@ namespace ${1:`!p snip.rv = namespace(snip, path)`};
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\ServiceManager\FactoryInterface;
 
-/**
- * $1\\$2
- */
 class ${2:`!p snip.rv = snip.basename`} implements FactoryInterface
 {
 	/**
@@ -85,9 +79,6 @@ namespace ${3:`!p snip.rv = namespace(snip, path)`};
 
 use Zend\Test\PHPUnit\Controller\AbstractHttpControllerTestCase;
 
-/**
- * $3\\$4
- */
 class ${4:`!p snip.rv = snip.basename`} extends AbstractHttpControllerTestCase
 {
 
@@ -117,17 +108,19 @@ namespace ${4:`!p snip.rv = namespace(snip, path)`};
 use PHPUnit_Framework_TestCase;
 use ${1:`!p snip.rv = testedclass_namespace(snip, path)`}\\$1;
 
-/**
- * $4\\$5
- */
 class ${5:`!p snip.rv = snip.basename`} extends PHPUnit_Framework_TestCase
 {
-	/** @var ${2:$1} */
-	protected $fixture;
+	/**
+	 * @var ${2:$1} 
+	 */
+	protected $object;
 
-	public function setUp()
+	/**
+	 * @before
+	 */
+	public function initialize()
 	{
-		$this->fixture = new ${1:`!p snip.rv = testedclass(snip, path)`}();
+		$this->object = new ${1:`!p snip.rv = testedclass(snip, path)`}();
 	}
 }
 endsnippet
