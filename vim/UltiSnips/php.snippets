@@ -39,7 +39,7 @@ snippet = "Template echo" !
 <?php echo ${1}; ?>
 endsnippet
 
-snippet gc "GGS class" !
+snippet class "class" !
 <?php
 
 namespace ${1:`!p snip.rv = namespace(snip, path)`};
@@ -100,18 +100,18 @@ class ${4:`!p snip.rv = snip.basename`} extends AbstractHttpControllerTestCase
 }
 endsnippet
 
-snippet gt "GGS test" !
+snippet tclass "Test class" !
 <?php
 
-namespace ${4:`!p snip.rv = namespace(snip, path)`};
+namespace ${1:`!p snip.rv = namespace(snip, path)`};
 
 use PHPUnit_Framework_TestCase;
-use ${1:`!p snip.rv = testedclass_namespace(snip, path)`}\\$1;
+use ${2:${1/Test//}}\\${3:`!p snip.rv = testedclass(snip, path)`};
 
-class ${5:`!p snip.rv = snip.basename`} extends PHPUnit_Framework_TestCase
+class $3Test extends PHPUnit_Framework_TestCase
 {
 	/**
-	 * @var ${2:$1} 
+	 * @var $3
 	 */
 	protected $object;
 
@@ -120,7 +120,7 @@ class ${5:`!p snip.rv = snip.basename`} extends PHPUnit_Framework_TestCase
 	 */
 	public function initialize()
 	{
-		$this->object = new ${1:`!p snip.rv = testedclass(snip, path)`}();
+		$this->object = new $3($0);
 	}
 }
 endsnippet
