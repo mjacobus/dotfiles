@@ -5,3 +5,5 @@ vim/Vundle.vim
 vim/vim
 composer
 vim/flavors
+/vim/.nvim
+/vim/init.vim
