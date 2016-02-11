@@ -76,6 +76,11 @@ fi
 
 # cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
 
+if [ ! -e ~/.dotfiles/bin/composer.phar ]; then
+  curl http://getcomposer.org/composer.phar -o ~/.dotfiles/bin/composer.phar
+  chmod +x ~/.dotfiles/bin/composer.phar
+fi
+
 cd ~/.dotfiles/composer && composer install
 cd -
 
