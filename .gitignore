@@ -8,3 +8,4 @@ vim/flavors
 /vim/.nvim
 /vim/init.vim
 /bin/composer.phar
+composer/composer.lock
