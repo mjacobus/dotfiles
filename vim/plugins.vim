@@ -161,8 +161,9 @@ let g:ctrlp_show_hidden = 1
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,*/coverage/*     " MacOSX/Linux
 
+" \ 'dir':  '\v[\/]((\.(git|hg|svn))|data|tmp|log)$',
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn)|data|tmp|log)$',
+  \ 'dir':  '\v(\.(git|hg|svn|sass-cache)|data|tmp|log|node_modules)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
