@@ -1,4 +1,4 @@
-let mapleader = ","
+let mapleader = " "
 
 source ~/.vim/plugins.vim
 source ~/.vim/functions.vim
