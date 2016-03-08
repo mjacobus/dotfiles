@@ -39,7 +39,7 @@ set nowrap
 set number numberwidth=2
 set pastetoggle=<F3>
 set ruler rulerformat=%=%l/%L
-set scrolloff=4 sidescrolloff=10
+" set scrolloff=4 sidescrolloff=10
 set showcmd
 set showmatch
 set smarttab
