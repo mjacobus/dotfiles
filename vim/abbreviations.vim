@@ -38,5 +38,6 @@ iab        gnome                GNOME
 iab        kde                  KDE
 iab        latex                LaTeX
 iab        jeová                Jeová
+iab        jeova                Jeová
 iab        jesus                Jesus
 iab        evolućao             evolução
