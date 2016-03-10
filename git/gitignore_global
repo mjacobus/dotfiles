@@ -5,3 +5,4 @@ tags
 *.swo
 .netrwhist
 npm-debug.log
+/curl.sh
