@@ -17,7 +17,7 @@ call vundle#begin()
 
 Bundle "austintaylor/vim-commaobject"
 Bundle "altercation/vim-colors-solarized"
-Bundle "tristen/vim-sparkup"
+Bundle "rstacruz/sparkup"
 Bundle "othree/html5.vim"
 Bundle "tpope/vim-repeat"
 Bundle "tpope/vim-surround"
