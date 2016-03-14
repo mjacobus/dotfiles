@@ -36,8 +36,8 @@ nnoremap <leader>s :w<cr>
 nnoremap <leader>S :w<cr>
 
 " saves and exits insert mode
-inoremap <leader>s <ESC>:w<cr>
-inoremap <leader>S <ESC>:w<cr>
+inoremap ,s <ESC>:w<cr>
+inoremap ,S <ESC>:w<cr>
 
 " Select all
 nnoremap <leader>a ggVG
@@ -46,8 +46,7 @@ nnoremap <leader>a ggVG
 nnoremap <c-w>t :tabnew<cr>
 
 " jumps to the next position after the closest closing char
-inoremap <leader>e <Esc>/[\]})"']<cr><Esc>:nohlsearch<cr>a
-nnoremap <leader>e <Esc>/[\]})"']<cr><Esc>:nohlsearch<cr>a
+inoremap ,e <Esc>/[\]})"']<cr><Esc>:nohlsearch<cr>a
 
 " adds arrow
 inoremap <C-l> <Space>=><Space>,<left>
@@ -75,7 +74,6 @@ nnoremap K <nop>
 nnoremap U <nop>
 
 " Find
-inoremap <leader>f <ESC>/
 nnoremap <leader>f <ESC>/
 
 
