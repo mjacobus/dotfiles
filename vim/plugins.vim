@@ -147,7 +147,7 @@ let g:snips_author="Marcelo Jacobus <marcelo.jacobus@gmail.com>"
 
 " sparkup
 let g:sparkupExecuteMapping = '<C-Y>,'
-let g:sparkupNextMapping = '<c-y>n'
+let g:sparkupNextMapping = '<c-y>y'
 
 " solarized
 let g:solarized_termcolors=256
