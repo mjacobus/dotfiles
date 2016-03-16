@@ -50,7 +50,7 @@ Bundle "vim-ruby/vim-ruby"
 Bundle "tpope/vim-rails"
 Bundle "shawncplus/Vim-toCterm"
 Bundle "tpope/vim-eunuch"
-Bundle "tpope/vim-vinegar"
+" Bundle "tpope/vim-vinegar"
 Bundle "tpope/vim-speeddating"
 " Bundle "Valloric/YouCompleteMe"
 " Colors
