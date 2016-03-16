@@ -66,8 +66,16 @@ nnoremap <Leader>rr <esc>:wq<CR>
 nnoremap <Leader>rel :e<CR>
 
 " Open vim rc
-" nnoremap <Leader>vim :vsplit $MYVIMRC<CR>
-nnoremap <Leader>vim :vsplit ~/.vimrc<CR>
+nnoremap <Leader>vi :vsplit ~/.vimrc<CR>
+nnoremap <Leader>va :vsplit ~/.vim/abbreviations.vim<CR>
+nnoremap <Leader>vf :vsplit ~/.vim/functions.vim<CR>
+nnoremap <Leader>vm :vsplit ~/.vim/mappings.vim<CR>
+nnoremap <Leader>vp :vsplit ~/.vim/plugins.vim<CR>
+
+" vundle
+nnoremap <Leader>bi :BundleInstall<cr>
+nnoremap <Leader>bu :BundleUpdate<cr>
+nnoremap <Leader>bc :BundleClean<cr>
 
 " Fix anoying original K
 nnoremap K <nop>
