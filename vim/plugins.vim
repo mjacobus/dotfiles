@@ -168,7 +168,7 @@ let g:ctrlp_custom_ignore = {
   \ 'link': 'some_bad_symbolic_links',
   \ }
 
-" gits
+" gist
 if has("mac")
   let g:gist_clip_command = 'pbcopy'
 elseif has("unix")
@@ -177,6 +177,12 @@ endif
 
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
+
+" public and 'open' gists
+nnoremap <leader>pg :Gist -p<cr>
+nnoremap <leader>og :Gist<cr>
+
+" argumentrewrap
 " does not work right after the plugin
 nnoremap <leader>wa :call argumentrewrap#RewrapArguments()<CR>
 
