@@ -4,9 +4,7 @@ Instalation
 -------------
 
 ```bash
-git clone https://github.com/mjacobus/.dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
-./install.sh
+bash <(https://raw.githubusercontent.com/mjacobus/.dotfiles/master/install.sh)
 ```
 Here you will find (among other configs):
 

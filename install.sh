@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ ! -d ~/.dotfiles ]; then
+  git clone https://github.com/mjacobus/.dotfiles.git ~/.dotfiles
+fi
+
+cd ~/.dotfiles && git pull
+
 # TODO: Check whether the inclusion of .dotfiles/bash_profile exists in either
 # ~/.bashrc or ~/bashrc and write it otherwise
 
