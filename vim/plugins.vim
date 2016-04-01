@@ -239,3 +239,10 @@ let test#ruby#minitest#file_pattern = '_\(spec\|test\)\.rb'
 nnoremap <leader><leader>t :call SwitchSpecCommand()<cr>
 
 let g:test#javascript#jasmine#file_pattern = '\v^.*spec\.(js|jsx|coffee)$'
+
+
+" vim-eunuch
+
+nnoremap <leader>mv :Move<space>
+nnoremap <leader>rn :Rename<space>
+nnoremap <leader>rm :Remove
