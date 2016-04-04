@@ -153,7 +153,7 @@ vnoremap " "zdi"<C-R>z"<ESC>
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 " offers to create/edit a tmp file
-nnoremap <leader>tmp :e ~/.tmp/
+nnoremap <leader>et :e ~/.tmp/
 
 "===============================================================================
 " Language specific
