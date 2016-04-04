@@ -14,9 +14,7 @@ call vundle#begin()
 "   " does not work very well on nvim
 "   Bundle "vim-scripts/ZoomWin"
 " endif
-
 Bundle "austintaylor/vim-commaobject"
-Bundle "altercation/vim-colors-solarized"
 Bundle "rstacruz/sparkup"
 Bundle "othree/html5.vim"
 Bundle "tpope/vim-repeat"
@@ -53,12 +51,15 @@ Bundle "tpope/vim-eunuch"
 " Bundle "tpope/vim-vinegar"
 Bundle "tpope/vim-speeddating"
 " Bundle "Valloric/YouCompleteMe"
-" Colors
-" Bundle "chriskempson/base16-vim"
-Bundle "flazz/vim-colorschemes"
-Bundle "jonathanfilip/vim-lucius"
 Bundle "janko-m/vim-test"
 Bundle "pangloss/vim-javascript"
+
+" Colors
+" Bundle "chriskempson/base16-vim"
+" Bundle "flazz/vim-colorschemes"
+" Bundle "altercation/vim-colors-solarized"
+Bundle "endel/vim-github-colorscheme"
+Bundle "jonathanfilip/vim-lucius"
 
 " Bundle "othree/javascript-libraries-syntax.vim"
 " Bundle "vim-scripts/JavaScript-Indent"
