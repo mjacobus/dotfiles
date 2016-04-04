@@ -152,6 +152,9 @@ vnoremap " "zdi"<C-R>z"<ESC>
 " select last paste in visual mode
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 
+" offers to create/edit a tmp file
+nnoremap <leader>tmp :e ~/.tmp/
+
 "===============================================================================
 " Language specific
 "===============================================================================
