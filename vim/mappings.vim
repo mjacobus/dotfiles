@@ -29,7 +29,20 @@ nnoremap <leader>bda :bufdo %bd!<cr>
 nnoremap <leader>n :NERDTree<cr>
 
 " search
-nnoremap <leader>ag :Ag! 
+nnoremap <leader>ag :Ag! '<left>'
+
+" * and # search for next/previous of selected text when used in visual mode
+vnoremap * y/<C-R>"<CR>
+vnoremap # y?<C-R>"<CR>
+
+vnoremap * y/<C-R>"<CR>
+vnoremap # y?<C-R>"<CR>
+
+" * and # search for next/previous of selected text when used in visual mode
+vnoremap * y/<C-R>"<CR>
+vnoremap # y?<C-R>"<CR>
+vnoremap <leader>ag y:Ag! '<C-R>"'
+nnoremap <leader>lag :Ag<up><cr>
 
 " saves from normal mode
 nnoremap <leader>s :w<cr>
