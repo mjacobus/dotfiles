@@ -10,6 +10,7 @@ alias gp='git push origin'
 alias gpr='git pull --rebase'
 alias gprm='git pull --rebase origin master'
 alias gpu='git pull'
+alias gdc='git diff --cached'
 
 # php
 alias phpunit='./vendor/bin/phpunit'

@@ -9,3 +9,4 @@ vim/flavors
 /vim/init.vim
 /bin/composer.phar
 composer/composer.lock
+/*.log
