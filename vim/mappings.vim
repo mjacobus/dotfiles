@@ -102,7 +102,7 @@ vnoremap Q gq
 nnoremap Q gqap
 
 " clear search
-nnoremap <silent> ,/ :nohlsearch<CR>
+nnoremap <silent> <leader>F :nohlsearch<CR>
 
 " Avoid arrow keys in command mode
 cnoremap <C-h> <left>
