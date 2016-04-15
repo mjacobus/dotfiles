@@ -9,10 +9,10 @@ nnoremap <f4> :! ctags <cr>
 nnoremap <leader>rm :! rm %<cr>
 
 " escape alias
-inoremap jj <esc>:w<cr>
-inoremap jJ <esc>:w<cr>
-inoremap Jj <esc>:w<cr>
-inoremap JJ <esc>:w<cr>
+inoremap jj <esc>
+inoremap jJ <esc>
+inoremap Jj <esc>
+inoremap JJ <esc>
 
 " navigation
 noremap <space> 10j
@@ -72,9 +72,6 @@ vnoremap <leader>h :s/:\(\w*\) *=>/\1:/g<cr>
 vnoremap <leader>h :s/\:\([a-zA-Z_]\+\)\s\+=>/\=printf("%s:", submatch(1))/g<CR><ESC>:let @/ = ""<CR>
 nnoremap <Leader>quit <ESC>:q<cr>
 
-" save and quit Run Ruby, for interactive editor
-nnoremap <Leader>rr <esc>:wq<CR>
-
 " reload buffer
 nnoremap <Leader>rel :e<CR>
 
@@ -96,7 +93,6 @@ nnoremap U <nop>
 
 " Find
 nnoremap <leader>f <ESC>/
-
 
 " convert file to latin1 and reloads
 nnoremap <leader>lat1 :write ++enc=latin1<cr>:e<cr>
