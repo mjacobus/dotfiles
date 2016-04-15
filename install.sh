@@ -10,18 +10,18 @@ cd ~/.dotfiles && git pull
 # ~/.bashrc or ~/bashrc and write it otherwise
 
 
-function ask_should_symlink() {
-  while true; do
-      read -p "Do you want to symlink $1 to $2 ? " yn
-      case $yn in
-          [Yy]* ) symlink_safe $1 $2; break;;
-          [Nn]* ) return ;;
-          * ) echo "Please answer yes or no.";
-      esac
-  done
+ask_should_symlink() {
+while true; do
+  read -p "Do you want to symlink $1 to $2 ? " yn
+  case $yn in
+    [Yy]* ) symlink_safe $1 $2; break;;
+    [Nn]* ) return ;;
+    * ) echo "Please answer yes or no.";
+  esac
+done
 }
 
-function symlink_or_ask() {
+symlink_or_ask() {
   if [ -f $2 ]; then
     ask_should_symlink $1 $2
   else
@@ -29,12 +29,12 @@ function symlink_or_ask() {
   fi
 }
 
-function backup_move() {
+backup_move() {
   SCRIPT_TIME=`date +%Y%m%d%H_%M_%S`
   mv $1 "${1}_${SCRIPT_TIME}"
 }
 
-function symlink_safe() {
+symlink_safe() {
   if [ -f $2 ]; then
     backup_move $2 && ln -sf $1 $2
   else
