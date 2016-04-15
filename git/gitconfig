@@ -3,15 +3,48 @@
   autocrlf = input
   editor = vim
 
-[color]
-  ui = true
-
 [push]
   default = current
 
 [pull]
   # rebase = true
   default = current
+
+[fetch]
+  prune = true
+
+[rerere]
+  enabled = true
+
+[merge]
+  # ff = false
+
+[include]
+  path = ~/.gitconfig.local
+
+[color]
+  ui = true
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  pager = true
+
+[color "branch"]
+  current = yellow reverse
+  local   = yellow
+  remote  = green
+
+[color "diff"]
+  meta = blue
+  frag = magenta
+  old  = red
+  new  = green
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = blue
 
 [alias]
   # http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/
@@ -25,12 +58,3 @@
   le = log --oneline --decorate
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   commti = commit
-
-[rerere]
-  enabled = true
-
-[merge]
-  # ff = false
-
-[include]
-  path = ~/.gitconfig.local
