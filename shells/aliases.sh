@@ -9,14 +9,21 @@ alias l='ls -alF'
 alias dotfiles='cd ~/.dotfiles'
 
 # git
-alias gs='git status -s'
+alias gc!='git commit --amend'
 alias gc='git commit'
+alias gca!='git commit -a --amend'
+alias gca='git commit -a'
+alias gcob='git checkout -b'
+alias gdc='gd --cached'
+alias gdc='git diff --cached'
 alias gp='git push origin'
-alias gpr='git pull --rebase'
+is_installed current_branch && alias gp='git push origin `current_branch`'
+is_installed current_branch && alias gpr='git pull --rebase origin `current_branch`'
+alias gpr='git pull --rebase origin'
 alias gprm='git pull --rebase origin master'
 alias gpu='git pull'
-alias gdc='git diff --cached'
-alias gdc='gd --cached'
+alias gs='git status -s'
+
 
 # php
 alias phpunit='./vendor/bin/phpunit'
@@ -31,9 +38,9 @@ alias cap='bundle exec cap'
 alias ag=$(which ag)
 
 # conditional alias
-which vim.gnome > /dev/null 2>&1 && alias vim=vim.gnome
-which mvim > /dev/null 2>&1 && alias vim='mvim -v'
-which mvim > /dev/null 2>&1 && alias gvim='mvim -v'
-which gvim > /dev/null 2>&1 && alias vim='gvim -v'
-which gvim > /dev/null 2>&1 && alias gvim='gvim -v'
-which nvim > /dev/null 2>&1 && alias vim=nvim
+is_installed vim.gnome && alias vim=vim.gnome
+is_installed mvim      && alias vim='mvim -v'
+is_installed mvim      && alias gvim='mvim -v'
+is_installed gvim      && alias vim='gvim -v'
+is_installed gvim      && alias gvim='gvim -v'
+is_installed nvim      && alias vim=nvim

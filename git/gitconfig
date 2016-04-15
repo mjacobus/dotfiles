@@ -3,9 +3,6 @@
   autocrlf = input
   editor = vim
 
-[push]
-  default = current
-
 [pull]
   # rebase = true
   default = current
@@ -13,14 +10,19 @@
 [fetch]
   prune = true
 
-[rerere]
-  enabled = true
+[push]
+  default = current
 
 [merge]
   # ff = false
 
+[rerere]
+  enabled = true
+
 [include]
   path = ~/.gitconfig.local
+
+[commit]
 
 [color]
   ui = true
