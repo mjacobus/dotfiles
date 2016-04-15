@@ -1,3 +1,8 @@
+is_installed() {
+  type "$1" > /dev/null 2>&1
+  return $?
+}
+
 # Aliases.
 alias l='ls -alF'
 
@@ -11,6 +16,7 @@ alias gpr='git pull --rebase'
 alias gprm='git pull --rebase origin master'
 alias gpu='git pull'
 alias gdc='git diff --cached'
+alias gdc='gd --cached'
 
 # php
 alias phpunit='./vendor/bin/phpunit'
@@ -31,4 +37,3 @@ which mvim > /dev/null 2>&1 && alias gvim='mvim -v'
 which gvim > /dev/null 2>&1 && alias vim='gvim -v'
 which gvim > /dev/null 2>&1 && alias gvim='gvim -v'
 which nvim > /dev/null 2>&1 && alias vim=nvim
-
