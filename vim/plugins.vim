@@ -82,8 +82,8 @@ let g:hardtime_showmsg = 1
 nnoremap tocterm :source ~/.vim/bundle/Vim-toCterm/tocterm.vim<CR>
 
 " php cs fixer
-autocmd FileType php nnoremap <leader>pff  :call PhpCsFix('%')<cr>
-autocmd FileType php nnoremap <leader>pfaf :call PhpCsFix('.')<cr>
+autocmd FileType php nnoremap <leader>cs  :call PhpCsFix('%')<cr>
+autocmd FileType php nnoremap <leader>csd :call PhpCsFix('.')<cr>
 
 " php use
 nnoremap <Leader>u <C-O>:call PhpInsertUse()<CR>

@@ -162,7 +162,7 @@ vnoremap " "zdi"<C-R>z"<ESC>
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 " offers to create/edit a tmp file
-nnoremap <leader>et :e ~/.tmp/
+nnoremap <leader>et :vs ~/.tmp/
 
 "===============================================================================
 " Language specific
@@ -232,6 +232,8 @@ autocmd FileType ruby nnoremap <buffer> <leader><leader>ct <esc>:call SetChefTes
 
 " execute jasmine tests
 " autocmd FileType javascript nnoremap <buffer> <leader>t :! clear && grunt test --filter<C-R>=expand("%:t:r")<cr><cr>
+
+autocmd FileType javascript nnoremap <leader>cs :! jscs % --fix<cr>
 
 "===============================================================================
 " C
