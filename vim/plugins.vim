@@ -159,6 +159,7 @@ let g:ctrlp_show_hidden = 1
 " let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files .']
 " let g:ctrlp_working_path_mode = 'c'
 " set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+nnoremap <leader>pt :CtrlPTag<cr>
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,*/coverage/*     " MacOSX/Linux
 
