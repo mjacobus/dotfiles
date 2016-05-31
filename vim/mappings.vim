@@ -15,8 +15,8 @@ inoremap Jj <esc>
 inoremap JJ <esc>
 
 " navigation
-noremap <space> 10j
-noremap <leader><space> 10k
+noremap <leader>j 10j
+noremap <leader>k 10k
 
 " buffer changing
 nnoremap <leader>bn :bn<cr>
