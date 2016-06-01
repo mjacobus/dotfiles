@@ -187,6 +187,10 @@ autocmd FileType php nnoremap <buffer> <leader>ct <esc>:call PHPUnitCreateTestFi
 autocmd FileType php nnoremap <buffer> <leader>ot <esc>:call PHPUnitCreateTestFile()<cr>
 autocmd FileType php nnoremap <buffer> <leader>va <esc>:call VOpenTestedFile()<cr>
 
+" php cs fixer
+autocmd FileType php nnoremap <leader>cs  :call PhpFixCs('%')<cr>
+autocmd FileType php nnoremap <leader>dcs :call PhpFixCs('.')<cr>
+
 autocmd FileType php inoremap <buffer> <C-.> .
 autocmd FileType php inoremap <buffer> ... ../
 autocmd FileType php inoremap <buffer> .. ->

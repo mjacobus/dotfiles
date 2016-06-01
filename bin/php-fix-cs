@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# vim: filetype=sh
+
+set -e
+
+if [ php-cs-version | grep 'version 2' > /dev/null ]; then
+  php-cs-fixer fix $@ --rules=@Symfony,@PSR1,@PSR2,long_array_syntax,-phpdoc_summary,-short_array_syntax
+else
+  php-cs-fixer fix $@ --level=symfony --fixers=-concat_without_spaces,-return,unused_use,align_double_arrow,phpdoc_indent,-phpdoc_short_description,-psr0
+fi

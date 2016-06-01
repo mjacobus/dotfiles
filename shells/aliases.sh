@@ -3,6 +3,22 @@ is_installed() {
   return $?
 }
 
+function php-cs-fixer() {
+  if [ -f ./vendor/bin/php-cs-fixer ]; then
+    ./vendor/bin/php-cs-fixer $@
+  else
+    ~/.dotfiles/composer/vendor/bin/php-cs-fixer
+  fi
+}
+
+function phpunit() {
+  if [ -f ./vendor/bin/phpunit ]; then
+    ./vendor/bin/php-cs-fixer $@
+  else
+    ~/.dotfiles/composer/vendor/bin/phpunit
+  fi
+}
+
 # Aliases.
 alias l='ls -alF'
 
@@ -27,7 +43,6 @@ alias gs='git status -s'
 
 # php
 alias phpunit='./vendor/bin/phpunit'
-alias php-cs-fixer='./vendor/bin/php-cs-fixer'
 alias phpmd='./vendor/bin/phpmd'
 alias t='phpunit'
 
