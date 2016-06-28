@@ -238,6 +238,7 @@ autocmd FileType ruby nnoremap <buffer> <leader><leader>ct <esc>:call SetChefTes
 " autocmd FileType javascript nnoremap <buffer> <leader>t :! clear && grunt test --filter<C-R>=expand("%:t:r")<cr><cr>
 
 autocmd FileType javascript nnoremap <leader>cs :! jscs % --fix<cr>
+" autocmd FileType javascript nnoremap <buffer> <leader>t :! clear && grunt test --filter<C-R>=expand("%:t:r")<cr><cr>
 
 "===============================================================================
 " C
