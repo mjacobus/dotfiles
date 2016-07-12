@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+name=$1
+
+VBoxManage guestproperty get $name "/VirtualBox/GuestInfo/Net/0/V4/IP"
