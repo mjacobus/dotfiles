@@ -2,6 +2,6 @@
 
 # https://github.com/shawncplus/dotfiles/blob/master/bin/ctags-watch
 
-ctags --fields=+aimS --languages=php --langmap=php:.inc.php --file-scope=no -R .
+ctags --fields=+aimS --languages=php --langmap=php:.inc.php --file-scope=no -R -f tags-php .
 
 # vim: filetype=sh

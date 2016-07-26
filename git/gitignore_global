@@ -2,6 +2,7 @@
 *~
 *.tags
 tags
+tags-*
 *.swo
 .netrwhist
 npm-debug.log
