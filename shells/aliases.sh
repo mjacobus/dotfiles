@@ -41,6 +41,10 @@ alias gprm='git pull --rebase origin master'
 alias gpu='git pull'
 alias gs='git status -s'
 
+# capistrano
+alias cpd='cap production deploy'
+alias csd='cap staging deploy'
+
 
 # php
 alias phpunit='./vendor/bin/phpunit'
