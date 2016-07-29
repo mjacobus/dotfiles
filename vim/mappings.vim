@@ -167,8 +167,8 @@ nnoremap <leader>et :vs ~/.tmp/
 "===============================================================================
 " Language specific
 "===============================================================================
-inoremap ,c ç
-inoremap ,C Ç
+inoremap ć ç
+inoremap Ć Ç
 inoremap ,a â
 inoremap ,A Â
 
