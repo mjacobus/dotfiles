@@ -4,7 +4,6 @@
 
 --fields=+aimS
 --PHP-kinds=+cf
---fields=+aimS
 --languages=php,javascript,ruby
 --langmap=php:.inc.php
 --file-scope=no
