@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ID=$1
+docker inspect $ID | grep '"IPAddress"' | cut -d ":" -f 2 | cut -d '"' -f 2 | head -n1
