@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+for container in `docker ps -a | awk '{print $1}' | grep -v CONTAINER`; do
+  docker rm -f $container
+done
