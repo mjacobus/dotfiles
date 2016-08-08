@@ -8,18 +8,53 @@ function mecho() {
   echo -e "\033[0m"
 }
 
-mecho "Installing mysql-client, libmysqlclient-dev and lots of other libs ..."
-  sudo apt-get install mysql-client zlib1g-dev libssl-dev libsqlite3-dev libmysqlclient-dev \
-    imagemagick librmagick-ruby libxml2-dev libxslt1-dev build-essential openssl \
-    libreadline6 libreadline6-dev zlib1g libyaml-dev libsqlite3-0 sqlite3 libxml2-dev \
-    libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison libpq-dev libpq5 \
-    libmysql-ruby libmysqlclient-dev
+function install () {
+  mecho  "installing $1"
+  sudo apt-get install -y $1
+}
 
-mecho "Installing curl..."
-  sudo apt-get install curl
+set -e
+
+# fix: install libmysql-ruby
+# fix: install librmagick-ruby
+# fix: install librmagick-ruby
+
+install autoconf
+install automake
+install bison
+install build-essential
+install curl
+install imagemagick
+install libc6-dev
+install libmysqlclient-dev
+install libpq-dev
+install libpq5
+install libreadline6
+install libreadline6-dev
+install libsqlite3-0
+install libsqlite3-dev
+install libssl-dev
+install libssl-dev
+install libtool
+install libxml2-dev
+install libxslt-dev
+install libxslt1-dev
+install libyaml-dev
+install mysql-client
+install ncurses-dev
+install openssl
+install sqlite3
+install zlib1g
+install zlib1g-dev
+install build-essential
+install imagemagick
+install libxslt1-dev
+install openssl
 
 mecho "Installing RVM (Ruby Version Manager) and Latest Ruby, which becomes the default ..."
-  curl -L https://get.rvm.io | bash -s stable --ruby
+  gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+  curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
+  curl -sSL https://get.rvm.io | bash -s stable --ruby
 
 mecho "Adding rvm path to the ~/.bashrc file ..."
   source ~/.dotfiles/shells/rvm.sh
