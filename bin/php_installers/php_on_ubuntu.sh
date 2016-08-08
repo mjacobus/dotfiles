@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 function mecho() {
   echo -e '\E[32m'"\033[1m"
   echo "#############################################################################"
@@ -30,35 +32,45 @@ mecho "Installing mysql-server..."
   sudo apt-get install -y mysql-server mysql-client
 
 mecho "Installing curl, php-curl, httpie..."
-  sudo apt-get install -y curl libcurl3 libcurl3-dev php5-curl httpie
+  # sudo apt-get install -y curl libcurl3 libcurl3-dev php7.0-curl httpie
 
-mecho "Installing php5..."
-  sudo apt-get install -y php5
+mecho "Installing php7.0..."
+  sudo apt-get install -y php7.0
 
-mecho "Installing php5-curl..."
-  sudo apt-get install -y php5-curl
+mecho "Installing php7.0-curl..."
+  sudo apt-get install -y php7.0-curl
 
-mecho "Installing php5-gd..."
-  sudo apt-get install -y php5-gd
+mecho "Installing php7.0-gd..."
+  sudo apt-get install -y php7.0-gd
 
-mecho "Installing php5-mysql mysql"
-  sudo apt-get install -y php5-mysql
+mecho "Installing php7.0-mysql mysql"
+  sudo apt-get install -y php7.0-mysql
 
-mecho "Installing php5-intl"
-  sudo apt-get install php5-intl
+mecho "Installing php7.0-intl"
+  sudo apt-get install php7.0-intl
 
-mecho "Installing php5-xsl"
-  sudo apt-get install php5-xsl
+mecho "Installing php7.0-xsl"
+  sudo apt-get install php7.0-xsl
 
-mecho "Installing php5-dev, pear, xdebug..."
-  sudo apt-get install -y php5-dev php-pear
-  sudo pecl install xdebug
-  XDEBUG_PATH=`find /usr/lib/php5 -name xdebug.so`
-  XDEBUG_CONF_PATH=/etc/php5/mods-available/xdebug.ini
-  sudo echo "zend_extension=$XDEBUG_PATH" > /tmp/xdebug.ini
-  sudo mv /tmp/xdebug.ini $XDEBUG_CONF_PATH
-  sudo ln -s $XDEBUG_CONF_PATH /etc/php5/apache2/conf.d/30-xdebug.ini
-  sudo ln -s $XDEBUG_CONF_PATH /etc/php5/cli/conf.d/30-xdebug.ini
+# mecho "Installing php7.0-dev, pear, xdebug..."
+  wget -O /tmp/xdebug-2.4.0.tgz http://xdebug.org/files/xdebug-2.4.0.tgz
+  cd /tmp && sudo tar xzvf xdebug-2.4.0
+  cd xdebug-2.4.0
+  phpize
+  ./configure
+  make
+  sudo cp modules/xdebug.so /usr/lib/php/20151012
+
+#  http://php-built.com/installing-xdebug-for-php7/
+
+#   sudo apt-get install -y php7.0-dev php-pear
+#   sudo pecl install xdebug
+#   XDEBUG_PATH=`find /usr/lib/php/7.0 -name xdebug.so`
+#   XDEBUG_CONF_PATH=/etc/php/7.0/mods-available/xdebug.ini
+#   sudo echo "zend_extension=$XDEBUG_PATH" > /tmp/xdebug.ini
+#   sudo mv /tmp/xdebug.ini $XDEBUG_CONF_PATH
+#   sudo ln -s $XDEBUG_CONF_PATH /etc/php/7.0/apache2/conf.d/30-xdebug.ini
+#   sudo ln -s $XDEBUG_CONF_PATH /etc/php/7.0/cli/conf.d/30-xdebug.ini
 
 mecho "Installing composer..."
   curl -sS https://getcomposer.org/installer | php
