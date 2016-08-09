@@ -49,7 +49,7 @@ alias csd='cap staging deploy'
 # php
 alias phpunit='./vendor/bin/phpunit'
 alias phpmd='./vendor/bin/phpmd'
-alias t='phpunit'
+alias t='[[ -f tests/phpunit.xml ]] && phpunit -c tests/phpunit.xml || phpunit'
 
 # ruby
 alias carrasco='bundle exec carrasco'
