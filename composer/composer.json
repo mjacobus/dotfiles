@@ -10,6 +10,7 @@
       "sebastian/phpcpd" : "*",
       "sebastian/phpdcd" : "*",
       "squizlabs/php_codesniffer": "*",
-      "theseer/phpdox" : "*"
+      "theseer/phpdox" : "*",
+        "bro/code": "^v0.1.5"
     }
 }

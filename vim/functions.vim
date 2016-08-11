@@ -147,14 +147,19 @@ function! ZendGetModuleName()
 endfunction
 
 function! PhpFixCs(target)
-  let cmd = 'php-fix-cs'
-  let full_command = cmd . " " . a:target
-  call ClearEchoAndExecute(full_command)
-endfunction
+  " let cmd = '~/.dotfiles/composer/vendor/bin/./php-cs-fixer fix'
+  " let options = '--level=symfony --fixers=-concat_without_spaces,-return,unused_use,align_double_arrow,phpdoc_indent,-phpdoc_short_description'
+  let options = ''
+  let cmd = '~/.dotfiles/composer/vendor/bin/./bro-code fix'
 
-function! PhpCsFix(target)
-  let cmd = 'php-cs-fixer fix'
-  let options = '--level=symfony --fixers=-concat_without_spaces,-return,unused_use,align_double_arrow,phpdoc_indent,-phpdoc_short_description'
+  if filereadable('vendor/bin/php-cs-fixer')
+    let cmd = './vendor/bin/php-cs-fixer fix'
+  endif
+
+  if filereadable('vendor/bin/bro-code')
+    let cmd = './vendor/bin/bro-code fix'
+  endif
+
   let full_command = cmd . " " . a:target . " " . options
   call ClearEchoAndExecute(full_command)
 endfunction
