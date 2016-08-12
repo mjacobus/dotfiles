@@ -84,6 +84,29 @@ function! PHPUnitGetTestFileFor(file)
   return  test_file
 endfunction
 
+function! PHPGetAternativeFile(file)
+  let currentFile = a:file
+
+  if !empty(matchstr(currentFile, 'test\(s\)\?\/*.*Test.php$'))
+    let file = PHPGetTestedFileFor(currentFile)
+
+    if !filereadable(file)
+      return
+    end
+  else
+    let file = PHPUnitGetTestFileFor(currentFile)
+  endif
+
+  return file
+endfunction
+
+function! PHPOpenVAlternativeFile()
+  let file = PHPGetAternativeFile(expand("%"))
+  if !empty(file)
+    execute "vsplit " . file
+  endif
+endfunction
+
 function! PHPUnitCreateTestFile()
   let test_file = PHPUnitGetTestFileFor(expand("%"))
   execute "vsplit " . test_file
@@ -111,11 +134,11 @@ function! PHPUnitZendModule()
 endfunction
 
 function! VOpenTestedFile()
-  let test_file = GetTestedFile(expand("%"))
+  let test_file = PHPGetTestedFileFor(expand("%"))
   execute "vsplit " . test_file
 endfunction
 
-function! GetTestedFile(test_file)
+function! PHPGetTestedFileFor(test_file)
   let file = a:test_file
   let file = substitute(file, "/tests/", "/src/", "g")
   let file = substitute(file, "/test/", "/src/", "g")

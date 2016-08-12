@@ -76,11 +76,11 @@ nnoremap <Leader>quit <ESC>:q<cr>
 nnoremap <Leader>rel :e<CR>
 
 " Open vim rc
-nnoremap <Leader>vi :vsplit ~/.vimrc<CR>
-nnoremap <Leader>va :vsplit ~/.vim/abbreviations.vim<CR>
-nnoremap <Leader>vf :vsplit ~/.vim/functions.vim<CR>
-nnoremap <Leader>vm :vsplit ~/.vim/mappings.vim<CR>
-nnoremap <Leader>vp :vsplit ~/.vim/plugins.vim<CR>
+nnoremap <Leader>vimi :vsplit ~/.vimrc<CR>
+nnoremap <Leader>vima :vsplit ~/.vim/abbreviations.vim<CR>
+nnoremap <Leader>vimf :vsplit ~/.vim/functions.vim<CR>
+nnoremap <Leader>vimm :vsplit ~/.vim/mappings.vim<CR>
+nnoremap <Leader>vimp :vsplit ~/.vim/plugins.vim<CR>
 
 " vundle
 nnoremap <Leader>bi :BundleInstall<cr>
@@ -183,9 +183,7 @@ autocmd FileType php nnoremap <buffer> <leader>cu <esc>:! clear && ./curl.sh<cr>
 " autocmd FileType php nnoremap <buffer> <leader>at <esc>:call PHPUnitAll()<cr>
 " autocmd FileType php nnoremap <buffer> <leader>nt <esc>:call PHPUnitFocused()<cr>
 " autocmd FileType php nnoremap <buffer> <leader>mt <esc>:call PHPUnitZendModule()<cr>
-autocmd FileType php nnoremap <buffer> <leader>ct <esc>:call PHPUnitCreateTestFile()<cr>
-autocmd FileType php nnoremap <buffer> <leader>ot <esc>:call PHPUnitCreateTestFile()<cr>
-autocmd FileType php nnoremap <buffer> <leader>va <esc>:call VOpenTestedFile()<cr>
+autocmd FileType php nnoremap <buffer> <leader>av <esc>:call PHPOpenVAlternativeFile()<cr>
 
 " php cs fixer
 autocmd FileType php nnoremap <leader>cs  :call PhpFixCs('%')<cr>
