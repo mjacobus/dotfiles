@@ -8,7 +8,7 @@ set -e
 
 # https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04
 
-COMPOSE_VERSION=1.7.1
+COMPOSE_VERSION=1.8.0
 
 # docker compose first
 curl -L https://github.com/docker/compose/releases/download/$COMPOSE_VERSION/docker-compose-`uname -s`-`uname -m` > /tmp/docker-compose
