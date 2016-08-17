@@ -39,6 +39,17 @@ snippet = "Template echo" !
 <?php echo ${1}; ?>
 endsnippet
 
+snippet interface "interface" !
+<?php
+
+namespace ${1:`!p snip.rv = namespace(snip, path)`};
+
+interface ${2:`!p snip.rv = snip.basename`}
+{
+	${0}
+}
+endsnippet
+
 snippet class "class" !
 <?php
 
@@ -156,24 +167,31 @@ ${4:private} \$${1:foo} = ${2:array()};
 endsnippet
 
 snippet pro "protected function"
-protected function ${1:doSomething}()
+protected function ${1:doSomething}(${2})
 {
-	${2}
+	${3}
 }
 endsnippet
 
 snippet pri "private function"
-private function ${1:doSomething}()
+private function ${1:doSomething}(${2})
 {
-	${2}
+	${3}
 }
 endsnippet
 
 snippet pub "public function"
-public function ${1:doSomething}()
+public function ${1:doSomething}(${2})
 {
-	${2}
+	${3}
 }
+endsnippet
+
+snippet ipub "public interface function"
+/**
+ * ${3}
+ */
+public function ${1:doSomething}(${2});
 endsnippet
 
 snippet test "test method"

@@ -179,6 +179,7 @@ inoremap ,A Â
 autocmd FileType php nnoremap <buffer> <leader>x <esc>:! clear && time php %<cr>
 autocmd FileType php nnoremap <buffer> <leader>ce <esc>:vsplit curl.sh<cr>
 autocmd FileType php nnoremap <buffer> <leader>cu <esc>:! clear && ./curl.sh<cr>
+autocmd FileType php nnoremap <buffer> <leader>st <esc>:! clear && ./shell_test.sh<cr>
 " autocmd FileType php nnoremap <buffer> <leader>t <esc>:call PHPUnitCurrentFile()<cr>
 " autocmd FileType php nnoremap <buffer> <leader>at <esc>:call PHPUnitAll()<cr>
 " autocmd FileType php nnoremap <buffer> <leader>nt <esc>:call PHPUnitFocused()<cr>

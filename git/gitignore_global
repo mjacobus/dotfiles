@@ -7,3 +7,4 @@ tags-*
 .netrwhist
 npm-debug.log
 /curl.sh
+shell_test.sh

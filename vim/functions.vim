@@ -140,28 +140,31 @@ endfunction
 
 function! PHPGetTestedFileFor(test_file)
   let file = a:test_file
-  let file = substitute(file, "/tests/", "/src/", "g")
-  let file = substitute(file, "/test/", "/src/", "g")
-  let file = substitute(file, "Test", "", "g")
+  let file = substitute(file, "/tests/", "/src/", "gI")
+  let file = substitute(file, "/test/", "/src/", "gI")
+  let file = substitute(file, "Test/", "/", "gI")
+  let file = substitute(file, "Test.php", ".php", "gI")
+  let file = substitute(file, "tests/", "src/", "gI")
+  let file = substitute(file, "test/", "src/", "gI")
+
+  if filereadable(file)
+    return file
+  endif
+
+  let file = substitute(file, "/src/", "/lib/", "gI")
 
   if filereadable(file)
     return file
   endif
 
 
-  let file = substitute(file, "/src/", "/lib/", "g")
+  let file = substitute(file, "/lib/", "/library/", "gI")
 
   if filereadable(file)
     return file
   endif
 
-  let file = substitute(file, "/lib/", "/library/", "g")
-
-  if filereadable(file)
-    return file
-  endif
-
-  echo "file not found"
+  echo "file not found: '" . file . "'"
 endfunction
 
 

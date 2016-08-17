@@ -48,6 +48,7 @@ alias csd='cap staging deploy'
 
 # php
 alias phpunit='./vendor/bin/phpunit'
+alias behat='./vendor/bin/behat'
 alias phpmd='./vendor/bin/phpmd'
 alias t='[[ -f tests/phpunit.xml ]] && phpunit -c tests/phpunit.xml || phpunit'
 
