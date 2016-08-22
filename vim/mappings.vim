@@ -219,6 +219,7 @@ autocmd FileType php inoremap <buffer> .x ->x
 autocmd FileType php inoremap <buffer> .v ->v
 autocmd FileType php inoremap <buffer> .y ->y
 autocmd FileType php inoremap <buffer> .w ->w
+autocmd FileType php inoremap <buffer> .z ->z
 autocmd FileType php inoremap <buffer> ._ ->_
 autocmd FileType php inoremap <buffer> ;; <esc>$a;
 
