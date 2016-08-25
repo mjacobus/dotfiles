@@ -35,6 +35,10 @@ def pathToNamespace(path):
 
 endglobal
 
+snippet sup "PHPMD supress warning" !
+@SuppressWarnings(PHPMD${1:.UnusedFormalParameter})
+endsnippet
+
 snippet = "Template echo" !
 <?php echo ${1}; ?>
 endsnippet
