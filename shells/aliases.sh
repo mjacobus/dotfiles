@@ -56,7 +56,9 @@ alias t='[[ -f tests/phpunit.xml && ! -f phpunit.xml ]] && phpunit -c tests/phpu
 alias carrasco='bundle exec carrasco'
 alias cap='bundle exec cap'
 
-alias ag=$(which ag)
+# appears to be a plugin
+unalias ag > /dev/null 2>&1
+# alias ag=$(which ag)
 
 # conditional alias
 is_installed vim.gnome && alias vim=vim.gnome
