@@ -129,14 +129,14 @@ class $3Test extends PHPUnit_Framework_TestCase
 	/**
 	 * @var $3
 	 */
-	protected $object;
+	protected $service;
 
 	/**
 	 * @before
 	 */
 	public function initialize()
 	{
-		$this->object = new $3($0);
+		$this->service = new $3($0);
 	}
 }
 endsnippet
@@ -159,15 +159,19 @@ snippet gv "GGS var doc" !
 /* @var ${1:Type} \$${2:foo} */
 endsnippet
 
+snippet ret "return" !
+return ${1:$someValue};
+endsnippet
+
 snippet aio "AssertInstanceOf Equals" !
-$this->assertInstanceOf('${1:ClassName}', ${2:\$object});
+$this->assertInstanceOf(${1:ClassName}::class, ${2:\$object});
 endsnippet
 
 snippet gp "GGS Class property"
 /**
  * @var ${3:array}
  */
-${4:private} \$${1:foo} = ${2:array()};
+${4:private} \$${1:foo} = ${2:[]};
 endsnippet
 
 snippet pro "protected function"
