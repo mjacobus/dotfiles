@@ -10,3 +10,4 @@ vim/flavors
 /bin/composer.phar
 composer/composer.lock
 /*.log
+.vagrant
