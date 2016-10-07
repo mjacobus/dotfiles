@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ID=$1
+docker exec -i -t $ID /bin/bash

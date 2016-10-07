@@ -14,6 +14,7 @@ syntax on
 " different color for each paren pairs
 let vimclojure#ParenRainbow = 1
 
+set path+=**
 set autoindent
 set autoread
 set backspace=2

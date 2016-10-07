@@ -2,9 +2,6 @@
 " Mappings
 "===============================================================================
 
-" tags
-nnoremap <f4> :! ctags <cr>
-
 " rm file
 nnoremap <leader>rm :! rm %<cr>
 
@@ -76,7 +73,7 @@ nnoremap <Leader>quit <ESC>:q<cr>
 nnoremap <Leader>rel :e<CR>
 
 " Open vim rc
-nnoremap <Leader>vimi :vsplit ~/.vimrc<CR>
+nnoremap <Leader>vim :vsplit ~/.vimrc<CR>
 nnoremap <Leader>vima :vsplit ~/.vim/abbreviations.vim<CR>
 nnoremap <Leader>vimf :vsplit ~/.vim/functions.vim<CR>
 nnoremap <Leader>vimm :vsplit ~/.vim/mappings.vim<CR>
@@ -189,6 +186,7 @@ autocmd FileType php nnoremap <buffer> <leader>av <esc>:call PHPOpenVAlternative
 " php cs fixer
 autocmd FileType php nnoremap <leader>cs  :call PhpFixCs('%')<cr>
 autocmd FileType php nnoremap <leader>dcs :call PhpFixCs('.')<cr>
+autocmd FileType php nnoremap <f4> :! ctags-php <cr>
 
 autocmd FileType php inoremap <buffer> <C-.> .
 autocmd FileType php inoremap <buffer> ... ../
