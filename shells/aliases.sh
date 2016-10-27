@@ -19,6 +19,11 @@ function phpunit() {
   fi
 }
 
+function gri() {
+  local number=$1
+  git rebase -i HEAD~$number
+}
+
 # Aliases.
 alias l='ls -alF'
 
