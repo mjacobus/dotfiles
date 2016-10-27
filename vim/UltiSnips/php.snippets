@@ -195,6 +195,34 @@ public function ${1:doSomething}(${2})
 }
 endsnippet
 
+snippet const "constructor"
+public function __construct(${1})
+{
+	${2}
+}
+endsnippet
+
+snippet spub "public static function"
+public static function ${1:doSomething}(${2})
+{
+	${3}
+}
+endsnippet
+
+snippet spro "protected static function"
+protected static function ${1:doSomething}(${2})
+{
+	${3}
+}
+endsnippet
+
+snippet spri "private static function"
+private static function ${1:doSomething}(${2})
+{
+	${3}
+}
+endsnippet
+
 snippet ipub "public interface function"
 /**
  * ${3}
@@ -213,11 +241,11 @@ public function ${1:doSomething}()
 endsnippet
 
 snippet af "assert false"
-$this->assertFalse(${1:\$object});
+$this->assertFalse(\$${1:variable});
 endsnippet
 
 snippet at "assert true"
-$this->assertTrue(${1:\$object});
+$this->assertTrue(\$${1:variable});
 endsnippet
 
 snippet as "assert same"
