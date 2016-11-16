@@ -87,6 +87,36 @@ class ${2:`!p snip.rv = snip.basename`} implements FactoryInterface
 }
 endsnippet
 
+snippet nfactory "Nurse Factory" !
+<?php
+
+namespace ${1:`!p snip.rv = namespace(snip, path)`};
+
+use Nurse\Container;
+use Nurse\Factory\FactoryInterface;
+
+class ${2:`!p snip.rv = snip.basename`} implements FactoryInterface
+{
+	/**
+	 * @return $3
+	 */
+	public function createService(Container $container)
+	{
+		$service = new ${3:`!p snip.rv = factory_product(snip, path)`}();
+
+		return $service;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getKey()
+	{
+		return ${3:`!p snip.rv = factory_product(snip, path)`}::class;
+	}
+}
+endsnippet
+
 snippet gct "GGS controller test" !
 <?php
 
@@ -165,6 +195,16 @@ endsnippet
 
 snippet aio "AssertInstanceOf Equals" !
 $this->assertInstanceOf(${1:ClassName}::class, ${2:\$this->service});
+endsnippet
+
+snippet tii "test implements interface" !
+/**
+ * @test
+ */
+public function implementsCorrectInterface()
+{
+	$this->assertInstanceOf(${1:ClassName}::class, ${2:\$this->service});
+}
 endsnippet
 
 snippet gp "GGS Class property"
