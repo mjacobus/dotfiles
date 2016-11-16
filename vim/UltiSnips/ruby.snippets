@@ -1,5 +1,33 @@
+# http://ruby-doc.org/stdlib-2.0.0/libdoc/minitest/rdoc/MiniTest/Assertions.html
+
 snippet test "test method"
 test "${1:do something}" do
 	${2}
 end
+endsnippet
+
+snippet ae "assert equal"
+assert_equal ${1:expected}, ${2:actual}
+endsnippet
+
+snippet as "assert same"
+assert_same ${1:expected}, ${2:actual}
+endsnippet
+
+snippet ans "assert not same"
+assert_not_same ${1:expected}, ${2:actual}
+endsnippet
+
+snippet aio "assert not same"
+assert_instance_of ${1:klass}, ${2:object}
+endsnippet
+
+snippet ar "assert raises same"
+assert_raises(${1:klass}) do
+	${2}
+end
+endsnippet
+
+snippet art "assert respond to"
+assert_respond_to ${1:object}, ${2:method}
 endsnippet
