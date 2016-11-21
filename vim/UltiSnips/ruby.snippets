@@ -19,7 +19,7 @@ assert_not_same ${1:expected}, ${2:actual}
 endsnippet
 
 snippet aio "assert not same"
-assert_instance_of ${1:klass}, ${2:object}
+assert ${1:object}.is_a?(${2:klass})
 endsnippet
 
 snippet ar "assert raises same"
