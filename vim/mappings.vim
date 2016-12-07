@@ -232,6 +232,7 @@ autocmd FileType php inoremap <buffer> ;; <esc>$a;
 
 autocmd FileType ruby nnoremap <buffer> <leader>x <esc>:! clear && time ruby %<cr>
 autocmd FileType ruby nnoremap <buffer> <leader><leader>ct <esc>:call SetChefTest()<cr>
+autocmd FileType ruby nnoremap <buffer> <leader>av <esc>:call RubyOpenVAlternativeFile()<cr>
 
 "===============================================================================
 " Javascript
