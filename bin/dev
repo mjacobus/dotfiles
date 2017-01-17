@@ -4,9 +4,10 @@ require './ruby/lib/dev/cli/application'
 require './ruby/lib/dev/cli/command/base'
 require './ruby/lib/dev/cli/command/docker_mysql'
 
-
-application = Dev::Cli::Application.new([
+commands = [
   Dev::Cli::Command::DockerMysql.new
-])
+]
 
+application = Dev::Cli::Application.new
+application.append_commands(commands)
 application.start(ARGV)

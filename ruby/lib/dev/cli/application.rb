@@ -22,9 +22,8 @@ end
 module Dev
   module Cli
     class Application
-      def initialize(commands = [], cli_builder = ::Dev::Cli::ExtendedThor)
+      def initialize(cli_builder = ExtendedThor, commands = [])
         @cli = cli_builder
-
         append_commands(commands)
       end
 
@@ -47,10 +46,7 @@ module Dev
 
       def shell_exec!(*command)
         exit_status = shell_exec(*command)
-
-        unless exit_status == 0
-          exit(exit_status)
-        end
+        exit(exit_status) unless exit_status == 0
       end
 
       private
