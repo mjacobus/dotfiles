@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require './bin/dev'
+
+DevCli.start(ARGV)
