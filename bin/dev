@@ -5,8 +5,8 @@ require './ruby/lib/dev/cli/command/base'
 require './ruby/lib/dev/cli/command/docker_mysql'
 
 
-commands = [
+application = Dev::Cli::Application.new([
   Dev::Cli::Command::DockerMysql.new
-]
+])
 
-Dev::Cli::Application.add_custom_commands(commands).start(ARGV)
+application.start(ARGV)

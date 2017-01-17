@@ -2,42 +2,60 @@ require "thor"
 
 module Dev
   module Cli
-    class Application < Thor
+    class ExtendedThor < Thor
       no_commands do
-        def self.add_custom_commands(commands)
-          commands.each do |command|
-            add_custom_command(command)
-          end
-
-          self
-        end
-
-        def self.add_custom_command(command)
+        def self.append_command(command)
           desc *command.description
           command.options_taken.each do |option|
             self.option *option
           end
 
           define_method(command.name) do |*args|
-            command.with_options(options).with_application(self).run(*args)
-          end
-
-          self
-        end
-
-        def from_shell(*command)
-          system(*command.join(' ').to_s)
-          $?.exitstatus
-        end
-
-        def from_shell!(*command)
-          exit_status = from_shell(*command)
-
-          unless exit_status == 0
-            exit(exit_status)
+            command.with_options(options).run(*args)
           end
         end
       end
+    end
+  end
+end
+
+module Dev
+  module Cli
+    class Application
+      def initialize(commands = [], cli_builder = ::Dev::Cli::ExtendedThor)
+        @cli = cli_builder
+
+        append_commands(commands)
+      end
+
+      def append_commands(commands)
+        commands.each { |command| append_command(command) }
+      end
+
+      def append_command(command)
+        cli.append_command(command.with_application(self))
+      end
+
+      def start(args)
+        cli.start(args)
+      end
+
+      def from_shell(*command)
+        system(*command.join(' ').to_s)
+        $?.exitstatus
+      end
+
+      def from_shell!(*command)
+        exit_status = from_shell(*command)
+
+        unless exit_status == 0
+          exit(exit_status)
+        end
+      end
+
+      private
+
+      attr_reader :cli
     end
   end
 end
