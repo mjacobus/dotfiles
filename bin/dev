@@ -1,5 +1,12 @@
 #!/usr/bin/env ruby
 
-require './bin/dev'
+require './ruby/lib/dev/cli/application'
+require './ruby/lib/dev/cli/command/base'
+require './ruby/lib/dev/cli/command/docker_mysql'
 
-DevCli.start(ARGV)
+
+commands = [
+  Dev::Cli::Command::DockerMysql.new
+]
+
+Dev::Cli::Application.add_custom_commands(commands).start(ARGV)
