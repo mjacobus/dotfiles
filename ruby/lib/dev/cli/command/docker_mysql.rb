@@ -18,7 +18,7 @@ module Dev
         end
 
         def run
-          application.from_shell('docker rm -f mysql_test') if options[:force]
+          application.shell_exec('docker rm -f mysql_test') if options[:force]
           port = options[:port]
 
           command = [
@@ -29,7 +29,7 @@ module Dev
             "-d mysql/mysql-server",
           ]
 
-          application.from_shell!(*command)
+          application.shell_exec!(*command)
         end
       end
     end

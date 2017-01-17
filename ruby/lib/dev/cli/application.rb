@@ -40,13 +40,13 @@ module Dev
         cli.start(args)
       end
 
-      def from_shell(*command)
+      def shell_exec(*command)
         system(*command.join(' ').to_s)
         $?.exitstatus
       end
 
-      def from_shell!(*command)
-        exit_status = from_shell(*command)
+      def shell_exec!(*command)
+        exit_status = shell_exec(*command)
 
         unless exit_status == 0
           exit(exit_status)
