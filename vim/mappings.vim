@@ -95,6 +95,7 @@ nnoremap U <nop>
 
 " Find
 nnoremap <leader>f <ESC>/
+nnoremap <leader>* <ESC>:find<space>
 
 " convert file to latin1 and reloads
 nnoremap <leader>lat1 :write ++enc=latin1<cr>:e<cr>
