@@ -14,6 +14,7 @@ call vundle#begin()
 "   " does not work very well on nvim
 "   Bundle "vim-scripts/ZoomWin"
 " endif
+Bundle "majutsushi/tagbar"
 Bundle "austintaylor/vim-commaobject"
 Bundle "rstacruz/sparkup"
 Bundle "othree/html5.vim"
@@ -244,3 +245,7 @@ let g:test#javascript#jasmine#file_pattern = '\v^.*spec\.(js|jsx|coffee)$'
 nnoremap <leader>mv :Move<space>
 nnoremap <leader>rn :Rename<space>
 nnoremap <leader>rm :Remove
+
+
+" majutsushi/tagbar
+nnoremap <F8> :TagbarToggle<CR>
