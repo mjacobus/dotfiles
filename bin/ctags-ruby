@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# https://blog.sensible.io/2014/05/09/supercharge-your-vim-into-ide-with-ctags.html
+
+ctags -R --languages=ruby --exclude=.git --exclude=log -f tags-ruby . $(bundle list --paths)

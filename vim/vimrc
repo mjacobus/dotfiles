@@ -47,7 +47,10 @@ set smarttab
 set splitbelow
 set splitright
 set tabpagemax=20
-set tags+=./tags.vendors,tags-php
+set tags+=./tags.vendors
+set tags+=tags-php
+set tags+=tags-ruby
+set tags+=gems.tags
 set ttyfast
 set wildmenu
 set wildmode=list:longest,full
