@@ -79,6 +79,7 @@ stty start undef
 stty stop undef
 
 source ~/.dotfiles/shells/rvm.sh
+source ~/.dotfiles/shells/chruby.sh
 source ~/.dotfiles/shells/configs.sh
 source ~/.dotfiles/shells/zsh/functions.zsh
 # source ~/.dotfiles/shells/zsh/autosuggestions.zsh
