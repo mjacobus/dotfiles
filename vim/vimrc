@@ -23,7 +23,7 @@ set cursorline
 set directory=/tmp/
 set display=lastline
 set expandtab tabstop=2 softtabstop=2 shiftwidth=2
-set foldlevel=2
+set foldlevel=5
 set foldmethod=syntax
 set guicursor=a:blinkon0
 set hidden
