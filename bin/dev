@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 
-require './ruby/lib/dev/cli/application'
-require './ruby/lib/dev/cli/command/base'
-require './ruby/lib/dev/cli/command/docker_mysql'
+require File.expand_path('../../ruby/lib/dev/cli/application', __FILE__)
+require File.expand_path('../../ruby/lib/dev/cli/command/base', __FILE__)
+require File.expand_path('../../ruby/lib/dev/cli/command/docker_mysql', __FILE__)
 
 commands = [
   Dev::Cli::Command::DockerMysql.new
