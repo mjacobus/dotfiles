@@ -60,6 +60,7 @@ alias t='[[ -f tests/phpunit.xml && ! -f phpunit.xml ]] && phpunit -c tests/phpu
 # ruby
 alias carrasco='bundle exec carrasco'
 alias cap='bundle exec cap'
+alias rake='bundle exec rake'
 
 # appears to be a plugin
 unalias ag > /dev/null 2>&1

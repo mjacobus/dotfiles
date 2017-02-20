@@ -59,6 +59,8 @@ source $ZSH/oh-my-zsh.sh
 # Bind the reverse search to ctrl + R
 bindkey -v
 bindkey ^R history-incremental-search-backward
+# http://unix.stackexchange.com/questions/101182/bind-key-sequence-to-escape-zsh
+bindkey jj vi-cmd-mode
 
 # save a ton of history
 HISTSIZE=20000
