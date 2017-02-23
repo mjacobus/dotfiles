@@ -19,6 +19,16 @@ function phpunit() {
   fi
 }
 
+function rspec() {
+  if [ -f ./bin/rspec ]; then
+    time ./bin/rspec $@
+  elif [ -f ./bin/bundle ]; then
+    time ./bin/bundle exec rspec $@
+  else
+    time bundle exec rspec $@
+  fi
+}
+
 function gri() {
   local number=$1
   git rebase -i HEAD~$number
