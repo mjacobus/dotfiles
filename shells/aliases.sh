@@ -29,6 +29,16 @@ function rspec() {
   fi
 }
 
+# function rubocop() {
+#   if [ -f ./bin/rubocop ]; then
+#     time ./bin/rubocop $@
+#   elif [ -f ./bin/bundle ]; then
+#     time ./bin/bundle exec rubocop $@
+#   else
+#     time rubocop
+#   fi
+# }
+
 function gri() {
   local number=$1
   git rebase -i HEAD~$number
