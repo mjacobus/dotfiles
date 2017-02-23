@@ -44,9 +44,13 @@ Bundle "shawncplus/phpcomplete.vim"
 Bundle "StanAngeloff/php.vim"
 Bundle 'captbaritone/better-indent-support-for-php-with-html'
 Bundle "arnaud-lb/vim-php-namespace"
+
+" ruby
 Bundle "vim-scripts/ruby-matchit"
 Bundle "vim-ruby/vim-ruby"
 Bundle "tpope/vim-rails"
+Bundle "ngmy/vim-rubocop"
+
 Bundle "shawncplus/Vim-toCterm"
 Bundle "tpope/vim-eunuch"
 " Bundle "tpope/vim-vinegar"
@@ -199,6 +203,10 @@ nnoremap <Leader>sv :RSview<cr>
 nnoremap <Leader>m :Rmodel<cr>
 nnoremap <Leader>sm :RSmodel<cr>
 nnoremap <Leader>vm :RVmodel<cr>
+
+" rubocop
+let g:vimrubocop_keymap = 0
+nmap <Leader>cs :RuboCop<CR>
 
 " ag.vim
 nnoremap g/ :Ag!<space>
