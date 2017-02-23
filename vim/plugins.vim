@@ -206,7 +206,7 @@ nnoremap <Leader>vm :RVmodel<cr>
 
 " rubocop
 let g:vimrubocop_keymap = 0
-nmap <Leader>cs :RuboCop<CR>
+autocmd FileType ruby nnoremap <leader>ccs :RuboCop<cr>
 
 " ag.vim
 nnoremap g/ :Ag!<space>

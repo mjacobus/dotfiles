@@ -232,6 +232,8 @@ autocmd FileType php inoremap <buffer> ;; <esc>$a;
 "===============================================================================
 
 autocmd FileType ruby nnoremap <buffer> <leader>x <esc>:! clear && time ruby %<cr>
+autocmd FileType ruby nnoremap <leader>cs  :call RubocopFixCs('%')<cr>
+autocmd FileType ruby nnoremap <leader>dcs :call RubocopFixCs('.')<cr>
 
 "===============================================================================
 " Javascript
