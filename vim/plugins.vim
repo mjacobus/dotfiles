@@ -209,15 +209,18 @@ let g:vimrubocop_keymap = 0
 autocmd FileType ruby nnoremap <leader>ccs :RuboCop<cr>
 
 " ag.vim
-nnoremap g/ :Ag!<space>
-nnoremap g# :Ag! -w <C-R><C-W><space>
-nnoremap ga :AgAdd!<space>
-nnoremap gn :cnext<CR>
-nnoremap gp :cprev<CR>
-nnoremap gq :ccl<CR>
-nnoremap gl :cwindow<CR>
+nnoremap <leader>ag :Ag!
+vnoremap <leader>ag y:Ag! '<C-R>"'
+nnoremap <leader>lag :Ag<up><cr>
+" nnoremap g# :Ag! -w <C-R><C-W><space>
+nnoremap <leader>ga :AgAdd!<space>
+nnoremap <leader>g# :Ag! -w <C-R><C-W><space>
+nnoremap <leader>gn :cnext<CR>
+nnoremap <leader>gp :cprev<CR>
+nnoremap <leader>gq :ccl<CR>
+nnoremap <leader>gl :cwindow<CR>
 
-" fugitive
+" vim fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete
 nnoremap <Leader>gac :Gcommit -am ""<LEFT>
 nnoremap <Leader>gc :Gcommit -m ""<LEFT>
@@ -243,7 +246,6 @@ nnoremap <silent> <leader>gt :TestVisit<CR>
 
 " let test#ruby#spec_framework = "minitest"
 let test#ruby#spec_framework = "rspec"
-let test#ruby#minitest#file_pattern = '_\(spec\|test\)\.rb'
 nnoremap <leader><leader>t :call SwitchSpecCommand()<cr>
 
 let g:test#javascript#jasmine#file_pattern = '\v^.*spec\.(js|jsx|coffee)$'
