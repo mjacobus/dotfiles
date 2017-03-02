@@ -57,7 +57,13 @@ Bundle "tpope/vim-eunuch"
 Bundle "tpope/vim-speeddating"
 " Bundle "Valloric/YouCompleteMe"
 Bundle "janko-m/vim-test"
+
+" javascript
 Bundle "pangloss/vim-javascript"
+Bundle "kchmck/vim-coffee-script"
+
+" templates
+Bundle "slim-template/vim-slim"
 
 " Colors
 " Bundle "chriskempson/base16-vim"
@@ -209,7 +215,7 @@ let g:vimrubocop_keymap = 0
 autocmd FileType ruby nnoremap <leader>ccs :RuboCop<cr>
 
 " ag.vim
-nnoremap <leader>ag :Ag!
+nnoremap <leader>ag :Ag!<space>
 vnoremap <leader>ag y:Ag! '<C-R>"'
 nnoremap <leader>lag :Ag<up><cr>
 " nnoremap g# :Ag! -w <C-R><C-W><space>

@@ -19,6 +19,10 @@ function phpunit() {
   fi
 }
 
+function changedfiles() {
+  git status -s | awk '{print $2}'
+}
+
 function rspec() {
   if [ -f ./bin/rspec ]; then
     time ./bin/rspec $@

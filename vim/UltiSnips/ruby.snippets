@@ -1,5 +1,54 @@
 # http://ruby-doc.org/stdlib-2.0.0/libdoc/minitest/rdoc/MiniTest/Assertions.html
 
+global !p
+
+def class_name(snip, path):
+    klass = path
+    klass = klass.replace('_test.rb', '')
+    klass = klass.replace('_spec.rb', '')
+    klass = klass.replace('.rb', '')
+    klass = klass.replace('lib/', '')
+    klass = klass.replace('spec/services/', '')
+    klass = klass.replace('app/services/', '')
+    klass = klass.replace('app/service/', '')
+    klass = klass.replace('app/models/', '')
+    klass = klass.replace('specs/', '')
+    klass = klass.replace('spec/', '')
+    klass = klass.replace('/',':')
+    parts = klass.split(':')
+    new_parts = []
+    for part in parts:
+        new_parts.append(part[0].upper() + part[1:])
+
+    klass = '::'.join(new_parts)
+
+    parts = klass.split('_')
+    new_parts = []
+    for part in parts:
+        new_parts.append(part[0].upper() + part[1:])
+
+    klass = ''.join(new_parts)
+    return klass
+endglobal
+
+snippet rspec "Rspec.desc"
+RSpec.describe ${1:`!p snip.rv = class_name(snip, path)`} do
+	${2}
+end
+endsnippet
+
+snippet class "class"
+class ${1:`!p snip.rv = class_name(snip, path)`}${2}
+	${3}
+end
+endsnippet
+
+snippet before "before do"
+before do
+	${1}
+end
+endsnippet
+
 snippet it "it block for spec"
 it '${1:do something}' do
 	${2}
@@ -40,7 +89,7 @@ snippet aio "assert not same"
 assert ${1:object}.is_a?(${2:klass})
 endsnippet
 
-snippet ar "assert raises same"
+snippet ar "assert raises"
 assert_raises(${1:klass}) do
 	${2}
 end
@@ -49,3 +98,4 @@ endsnippet
 snippet art "assert respond to"
 assert_respond_to ${1:object}, ${2:method}
 endsnippet
+

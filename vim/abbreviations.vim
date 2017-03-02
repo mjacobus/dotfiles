@@ -41,3 +41,7 @@ iab        jeová                Jeová
 iab        jeova                Jeová
 iab        jesus                Jesus
 iab        evolućao             evolução
+iab        Nao                  não
+iab        espirito             espírito
+iab        coracao             coração
+iab        Coracao             Coração

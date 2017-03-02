@@ -200,6 +200,16 @@ function! RubocopFixCs(target)
   call ClearEchoAndExecute(full_command)
 endfunction
 
+function! ReekCodeSmell(target)
+  let cmd = 'reek'
+
+  if filereadable('./bin/bundle')
+    let cmd = './bin/bundle exec reek'
+  endif
+  let full_command = cmd . " " . a:target
+  call ClearEchoAndExecute(full_command)
+endfunction
+
 function! ClearEchoAndExecute(command)
   execute "! clear && echo '" . a:command . "' && " . a:command
 endfunction

@@ -172,6 +172,8 @@ inoremap Ć Ç
 inoremap ,a â
 inoremap ,A Â
 
+nnoremap <leader>st <esc>:! clear && ./shell_test.sh<cr>
+
 "===============================================================================
 " PHP
 "===============================================================================
@@ -225,12 +227,20 @@ autocmd FileType php inoremap <buffer> ._ ->_
 autocmd FileType php inoremap <buffer> ;; <esc>$a;
 
 "===============================================================================
+" Phython
+"===============================================================================
+
+autocmd FileType python nnoremap <buffer> <leader>x <esc>:! clear && time python %<cr>
+
+"===============================================================================
 " Ruby
 "===============================================================================
 
 autocmd FileType ruby nnoremap <buffer> <leader>x <esc>:! clear && time ruby %<cr>
 autocmd FileType ruby nnoremap <leader>cs  :call RubocopFixCs('%')<cr>
 autocmd FileType ruby nnoremap <leader>dcs :call RubocopFixCs('.')<cr>
+autocmd FileType ruby nnoremap <leader>ccs :call ReekCodeSmell('%')<cr>
+
 
 "===============================================================================
 " Javascript
