@@ -20,7 +20,13 @@ function phpunit() {
 }
 
 function changedfiles() {
-  git status -s | awk '{print $2}'
+  local commit=$1
+  git diff $commit --name-only | awk '{print $2}'
+}
+
+function addedfiles() {
+  local commit=$1
+  git diff $commit --name-only --diff-filter=A
 }
 
 function rspec() {
