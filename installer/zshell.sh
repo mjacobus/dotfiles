@@ -8,3 +8,8 @@ fi
 
 # git clone git://github.com/tarruda/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 # git clone git://github.com/jimmijj/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
+
+
+if [ ! -d ~/.config/base16-shell ]; then
+  git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+fi

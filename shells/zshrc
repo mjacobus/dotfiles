@@ -73,13 +73,15 @@ CLICOLOR=1 #Colorizes output of ls and others.
 EDITOR=vim
 VISUAL=$EDITOR
 PAGER=less
-TERM="screen-256color"
+# TERM="screen-256color"
+TERM="xterm-256color"
 LESS='-R -g -w'
 
 # disable flow control commands (keeps C-s from freezing everything)
 stty start undef
 stty stop undef
 
+source ~/.dotfiles/shells/base16_shell.sh
 source ~/.dotfiles/shells/rvm.sh
 source ~/.dotfiles/shells/chruby.sh
 source ~/.dotfiles/shells/configs.sh
