@@ -71,6 +71,7 @@ Bundle "slim-template/vim-slim"
 " Bundle "altercation/vim-colors-solarized"
 Bundle "endel/vim-github-colorscheme"
 Bundle "jonathanfilip/vim-lucius"
+Bundle 'chriskempson/base16-vim'
 
 " Bundle "othree/javascript-libraries-syntax.vim"
 " Bundle "vim-scripts/JavaScript-Indent"
