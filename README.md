@@ -24,14 +24,14 @@ git clone https://github.com/mjacobus/.dotfiles.git ~/.dotfiles
 
 cd ~/.dotfiles
 
-./install.sh all
+./install all
 ```
 
 Or:
 
 
 ```
-./install.sh vim
+./install vim
 ```
 
 For a list of available installers, refer to [this directory](https://github.com/mjacobus/.dotfiles/tree/master/installer).
