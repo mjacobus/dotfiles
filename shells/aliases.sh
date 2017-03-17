@@ -103,3 +103,7 @@ is_installed mvim      && alias gvim='mvim -v'
 is_installed gvim      && alias vim='gvim -v'
 is_installed gvim      && alias gvim='gvim -v'
 is_installed nvim      && alias vim=nvim
+
+if [[ -f ~/.aliases_local ]]; then
+  source ~/.aliases_local
+fi
