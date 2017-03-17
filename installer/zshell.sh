@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-symlink_or_ask ~/.dotfiles/shells/zshrc ~/.zshrc
+symlink_or_ask ~/.dotfiles/profile.d ~/.profile.d
+echo 'source ~/.profile.d/zshell_setup.sh' >> ~/.zshrc
 
 if [ ! -d ~/.oh-my-zsh ]; then
   sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

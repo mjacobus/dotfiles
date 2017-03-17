@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-# TODO: Check whether the inclusion of .dotfiles/bash_profile exists in either
-# ~/.bashrc or ~/bashrc and write it otherwise
+if [[ -f ~/.bashrc ]]; then
+  echo 'source ~/.profile.d/bash_setup.sh' >> ~/.bashrc
+fi
 
-symlink_or_ask ~/.dotfiles/shells/bashrc ~/.bash_profile
-symlink_or_ask ~/.dotfiles/shells/bashrc ~/.bashrc
+if [[ -f ~/.bash_profile ]]; then
+  echo 'source ~/.profile.d/bash_setup.sh' >> ~/.bash_profile
+fi
