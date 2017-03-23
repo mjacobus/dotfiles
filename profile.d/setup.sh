@@ -1,9 +1,8 @@
 # vi: set ft=sh :
 
-if [ "$PROFILE_INCLUDED" != "" ]; then
-  echo 'haa'
-  # return
-fi
+# if [ "$PROFILE_INCLUDED" != "" ]; then
+#   return
+# fi
 
 export PROFILE_INCLUDED=1
 
