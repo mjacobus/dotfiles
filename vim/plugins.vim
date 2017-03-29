@@ -50,6 +50,7 @@ Bundle "vim-scripts/ruby-matchit"
 Bundle "vim-ruby/vim-ruby"
 Bundle "tpope/vim-rails"
 Bundle "ngmy/vim-rubocop"
+Bundle "uptech/vim-open-alternate"
 
 Bundle "shawncplus/Vim-toCterm"
 Bundle "tpope/vim-eunuch"
@@ -214,6 +215,7 @@ nnoremap <Leader>vm :RVmodel<cr>
 " rubocop
 let g:vimrubocop_keymap = 0
 autocmd FileType ruby nnoremap <leader>ccs :RuboCop<cr>
+autocmd FileType ruby nnoremap <leader>av :OpenAlternate<cr>
 
 " ag.vim
 nnoremap <leader>ag :Ag!<space>
