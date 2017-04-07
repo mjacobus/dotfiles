@@ -2,7 +2,7 @@
 
 set -e
 
-if [ ! -f ~/.dotfiles/install.sh ]; then
+if [ ! -f ~/.dotfiles/install ]; then
   echo "Cloning repo..."
   git clone https://github.com/mjacobus/.dotfiles.git ~/.dotfiles
 fi

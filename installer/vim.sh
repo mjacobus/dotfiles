@@ -15,7 +15,6 @@ mkdir -p ~/.config/nvim
 if [[ -d ~/.config ]]; then
   symlink_or_ask ~/.nvim ~/.config/nvim
   symlink_or_ask ~/.nvimrc ~/.config/nvim/init.vim
-  ~/.config/nvim/init.vim
 fi
 
 # install vundle

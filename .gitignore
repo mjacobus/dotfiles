@@ -11,3 +11,4 @@ vim/flavors
 composer/composer.lock
 /*.log
 .vagrant
+*.swp
