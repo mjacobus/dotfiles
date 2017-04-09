@@ -4,6 +4,14 @@
 #   return
 # fi
 
+if [ -n "$BASH_VERSION"  ]; then
+  SHELL_IS_BASH=1
+fi
+
+if [ -n "$ZSH_VERSION"  ]; then
+  SHELL_IS_ZSHELL=1
+fi
+
 export PROFILE_INCLUDED=1
 
 if [[ "$SHELL_IS_ZSHELL" ]]; then
