@@ -11,7 +11,7 @@ source ~/.dotfiles/installer/config.sh
 
 if (( $# == 1 )); then
   dotfile_install $1
-  exit 0
+  exit $?
 fi
 
 dotfile_install all

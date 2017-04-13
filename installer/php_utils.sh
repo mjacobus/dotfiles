@@ -7,5 +7,5 @@ if [ ! -e ~/.dotfiles/bin/composer.phar ]; then
   chmod +x ~/.dotfiles/bin/composer.phar
 fi
 
-cd ~/.dotfiles/composer && composer install
+cd ~/.dotfiles/composer && ~/.dotfiles/bin/./composer.phar install
 cd -
