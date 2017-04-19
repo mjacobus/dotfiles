@@ -65,6 +65,7 @@ Bundle "janko-m/vim-test"
 " javascript
 Bundle "pangloss/vim-javascript"
 Bundle "kchmck/vim-coffee-script"
+Bundle "isRuslan/vim-es6"
 
 " templates
 Bundle "slim-template/vim-slim"
