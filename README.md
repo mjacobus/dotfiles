@@ -1,6 +1,8 @@
 My .dotfiles
 --------------
 
+WARNING: Installation is weird at the moment. I need to fix it.
+
 ### Instalation
 
 If you are not me (skips personal config):
