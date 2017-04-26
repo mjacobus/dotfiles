@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# lookupd -flushcache
+# dscacheutil -flushcache
+# sudo killall -HUP mDNSResponder
+
+# 10.10.4+
+sudo dscacheutil -flushcache
+sudo killall -HUP mDNSResponder && echo "flushed"
