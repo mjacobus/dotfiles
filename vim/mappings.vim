@@ -69,7 +69,7 @@ vnoremap <leader>h :s/:\(\w*\) *=>/\1:/g<cr>
 " Rails specific
 " nnoremap <Leader>ac :sp app/controllers/application_controller.rb<cr>
 vnoremap <leader>h :s/\:\([a-zA-Z_]\+\)\s\+=>/\=printf("%s:", submatch(1))/g<CR><ESC>:let @/ = ""<CR>
-nnoremap <Leader>quit <ESC>:q<cr>
+nnoremap <Leader>qq <ESC>:q<cr>
 
 " reload buffer
 nnoremap <Leader>rel :e<CR>
