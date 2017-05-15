@@ -49,6 +49,27 @@ module Dev
         exit(exit_status) unless exit_status == 0
       end
 
+      # block: |stdin, stdout, stderr, wait_thr|
+      #   exit code: wait_thr.value
+      def execute(command, &block)
+        Open3.popen3(command, &block)
+      end
+
+      def capture_stdout(command)
+        lines = []
+        execute(command) do |stdin, stdout, stderr, wait_thr|
+          while line = stdout.gets
+            lines << line
+          end
+        end
+        lines
+      end
+
+      def fail(message: nil, code: 1)
+        puts message if message
+        exit(code)
+      end
+
       private
 
       attr_reader :cli
