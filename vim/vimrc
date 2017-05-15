@@ -69,7 +69,7 @@ set statusline+=\ %P    " percent through file
 
 " Conditional settings
 if exists("+undodir")
-  set undodir=~/.vim/undodir
+  set undodir=~/.vimundodir
   set undofile
   if filewritable(&undodir) == 0
     call mkdir(&undodir, "p")
