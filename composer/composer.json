@@ -6,7 +6,6 @@
       "phploc/phploc": "*",
       "phpmd/phpmd" : "@stable",
       "phpunit/phpunit":"*",
-      "sebastian/hhvm-wrapper": "*",
       "sebastian/phpcpd" : "*",
       "sebastian/phpdcd" : "*",
       "squizlabs/php_codesniffer": "*",
