@@ -39,6 +39,8 @@ symlink_safe() {
 
 dotfile_install() {
   local file=$1
+  echo "--------------------------------------------------------------------------------"
   echo "Installing ${1} configs..."
+  echo "--------------------------------------------------------------------------------"
   source ~/.dotfiles/installer/${file}.sh
 }
