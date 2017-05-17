@@ -14,6 +14,8 @@ Vagrant.configure(2) do |config|
   script = <<SCRIPT
     sudo apt-get install -y git vim-gnome vim
     ln -sf /vagrant ~/.dotfiles
+    cd ~/.dotfiles
+    ./vagrant/setup.sh
 SCRIPT
 
   config.vm.provision :shell, inline: script
