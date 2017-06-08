@@ -237,9 +237,9 @@ autocmd FileType python nnoremap <buffer> <leader>x <esc>:! clear && time python
 "===============================================================================
 
 autocmd FileType ruby nnoremap <buffer> <leader>x <esc>:! clear && time ruby %<cr>
-autocmd FileType ruby nnoremap <leader>cs  :call RubocopFixCs('%')<cr>
-autocmd FileType ruby nnoremap <leader>dcs :call RubocopFixCs('.')<cr>
-autocmd FileType ruby nnoremap <leader>ccs :call ReekCodeSmell('%')<cr>
+autocmd FileType ruby nnoremap <buffer> <leader>cs  :call RubocopFixCs('%')<cr>
+autocmd FileType ruby nnoremap <buffer> <leader>dcs :call RubocopFixCs('.')<cr>
+autocmd FileType ruby nnoremap <buffer> <leader>ccs :call ReekCodeSmell('%')<cr>
 
 
 "===============================================================================
@@ -249,7 +249,7 @@ autocmd FileType ruby nnoremap <leader>ccs :call ReekCodeSmell('%')<cr>
 " execute jasmine tests
 " autocmd FileType javascript nnoremap <buffer> <leader>t :! clear && grunt jasmine --filter<C-R>=expand("%:t:r")<cr><cr>
 
-autocmd FileType javascript nnoremap <leader>cs :! jscs % --fix<cr>
+autocmd FileType javascript nnoremap <buffer> <leader>cs :! jscs % --fix<cr>
 
 "===============================================================================
 " C
