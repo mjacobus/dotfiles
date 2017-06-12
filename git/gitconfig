@@ -60,3 +60,5 @@
   le = log --oneline --decorate
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   commti = commit
+[rebase]
+	instructionFormat = (%an <%ae>) %s
