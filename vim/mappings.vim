@@ -166,6 +166,7 @@ nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 " offers to create/edit a tmp file
 nnoremap <leader>et :vs ~/.tmp/
+nnoremap <leader><leader>e :!<space>
 
 "===============================================================================
 " Language specific
