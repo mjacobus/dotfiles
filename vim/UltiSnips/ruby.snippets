@@ -99,3 +99,11 @@ snippet art "assert respond to"
 assert_respond_to ${1:object}, ${2:method}
 endsnippet
 
+
+snippet al "allow().to receive"
+allow(${1:object}).to receive(:${2})
+endsnippet
+
+snippet alw "allow().to receive"
+allow(${1:object}).to receive(:${2:method}).with(${3:{foo: :bar}})
+endsnippet

@@ -19,6 +19,9 @@ noremap <leader>k 10k
 nnoremap <leader>bn :bn<cr>
 nnoremap <leader>bp :bp<cr>
 
+" find buffer file
+nnoremap <leader><leader>b :b<space>
+
 " closes buffer
 nnoremap <leader>bd :bd<cr>
 nnoremap <leader>bdd :bd!<cr>
