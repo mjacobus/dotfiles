@@ -13,3 +13,4 @@ npm-debug.log
 ./turbulence
 /Users/marcelo.jacobus/.vagrant
 /.vagrant
+/shell_test.sh
