@@ -191,12 +191,18 @@ function! PhpFixCs(target)
 endfunction
 
 function! RubocopFixCs(target)
+  let options=''
   let cmd = 'rubocop'
 
   if filereadable('./bin/bundle')
     let cmd = './bin/bundle exec rubocop'
   endif
-  let full_command = cmd . " -a " . a:target
+
+  if filereadable('.rubocop.yml')
+    let options = ' --config=.rubocop.yml '
+  endif
+
+  let full_command = cmd . " -a " . options . a:target
   call ClearEchoAndExecute(full_command)
 endfunction
 
