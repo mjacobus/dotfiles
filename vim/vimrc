@@ -121,9 +121,9 @@ autocmd BufNewFile,BufRead *.hbs set ai filetype=handlebars
 autocmd BufNewFile,BufRead *.json set ai filetype=javascript
 
 " enable spell check
-autocmd FileType gitcommit setlocal spell spelllang=en_us,pt_br
-autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us,pt_br
-autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us,pt_br
+autocmd FileType gitcommit setlocal spell spelllang=en_us,pt_br,de_de
+autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us,pt_br,de_de
+autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us,pt_br,de_de
 
 "===============================================================================
 " Appearence:
