@@ -47,6 +47,8 @@ Bundle "arnaud-lb/vim-php-namespace"
 " This overrites nerdtree mapping
 " Figure out how to fix it
 " Bundle "vim-scripts/YankRing.vim"
+Bundle "kana/vim-textobj-user"
+Bundle "nelstrom/vim-textobj-rubyblock"
 
 " ruby
 Bundle "vim-scripts/ruby-matchit"
@@ -147,12 +149,12 @@ endfunction
 
 autocmd VimEnter * call CustomTabularPatterns()
 
-nnoremap a= :Tabularize /=<CR>
-vnoremap a= :Tabularize /=<CR>
-nnoremap a: :Tabularize /:\zs<CR>
-vnoremap a: :Tabularize /:\zs<CR>
-nnoremap ar :Tabularize /=><CR>
-vnoremap ar :Tabularize /=><CR>
+nnoremap <leader>a= :Tabularize /=<CR>
+vnoremap <leader>a= :Tabularize /=<CR>
+nnoremap <leader>a: :Tabularize /:\zs<CR>
+vnoremap <leader>a: :Tabularize /:\zs<CR>
+nnoremap <leader>ar :Tabularize /=><CR>
+vnoremap <leader>ar :Tabularize /=><CR>
 
 " Ultisnips
 " If you want :UltiSnipsEdit to split your window.
