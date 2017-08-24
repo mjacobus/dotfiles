@@ -153,3 +153,7 @@ augroup END
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+if filereadable(".project.vim")
+  source .project.vim
+endif
