@@ -27,18 +27,30 @@ module Dev
             line.gsub(/\*?\s+/, ' ').split(' ')[0]
           end
 
+          checked = false
+
+          if branches.include?(branch)
+            command = "git checkout #{branches.first}"
+            application.shell_exec!(command)
+            checked = true
+          end
+
           if branches.length > 1
+            if checked
+              puts "WARNING:"
+            end
+
             puts "Too many branches found:"
             puts branches.map{ |branch| "\t#{branch}" }.join("\n")
-            application.fail
+
+            unless checked
+              application.fail
+            end
           end
 
           if branches.length == 0
             application.fail(message: "No matches found")
           end
-
-          command = "git checkout #{branches.first}"
-          application.shell_exec!(command)
         end
       end
     end
