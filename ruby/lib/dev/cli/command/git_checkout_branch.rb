@@ -51,6 +51,9 @@ module Dev
           if branches.length == 0
             application.fail(message: "No matches found")
           end
+
+          command = "git checkout #{branches.first}"
+          application.shell_exec!(command)
         end
       end
     end
