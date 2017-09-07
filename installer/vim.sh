@@ -22,3 +22,5 @@ fi
 vim +BundleInstall +BundleClean +BundleClean +quitall
 
 # cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
+
+./install vim_ctrlp_cmatcher

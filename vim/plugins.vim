@@ -35,6 +35,7 @@ Bundle "mattn/webapi-vim.git"
 Bundle "mattn/gist-vim.git"
 Bundle "scrooloose/nerdtree"
 Bundle "kien/ctrlp.vim"
+Bundle 'JazzCore/ctrlp-cmatcher'
 Bundle "godlygeek/tabular"
 Bundle "scrooloose/syntastic"
 Bundle "weierophinney/argumentrewrap"
@@ -175,6 +176,9 @@ let g:ctrlp_show_hidden = 1
 " let g:ctrlp_working_path_mode = 'c'
 " set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 nnoremap <leader>pt :CtrlPTag<cr>
+
+" https://github.com/JazzCore/ctrlp-cmatcher#installation
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,*/coverage/*     " MacOSX/Linux
 
