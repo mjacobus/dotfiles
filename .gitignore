@@ -6,8 +6,11 @@ vim/vim
 composer
 vim/flavors
 /vim/.nvim
-/bin/composer.phar
 composer/composer.lock
 /*.log
 .vagrant
 *.swp
+
+# tar files
+/bin/composer.phar
+/bin/phpctags.phar

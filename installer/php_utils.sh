@@ -9,3 +9,5 @@ fi
 
 cd ~/.dotfiles/composer && ~/.dotfiles/bin/./composer.phar install
 cd -
+
+curl -Ss http://vim-php.com/phpctags/install/phpctags.phar > ~/.dotfiles/bin/phpctags.phar
