@@ -19,12 +19,9 @@ set autoindent
 set autoread
 set backspace=2
 set backspace=indent,eol,start
-set nocursorline
 set directory=/tmp/
 set display=lastline
 set expandtab tabstop=2 softtabstop=2 shiftwidth=2
-set foldlevel=5
-set foldmethod=syntax
 set guicursor=a:blinkon0
 set hidden
 set hlsearch
@@ -40,7 +37,7 @@ set nowrap
 set number numberwidth=2
 set pastetoggle=<F3>
 set ruler rulerformat=%=%l/%L
-" set scrolloff=4 sidescrolloff=10
+set novisualbell " visualbel causes some weird char when in gnome terminal
 set showcmd
 set showmatch
 set smarttab
@@ -90,8 +87,17 @@ if exists("+relativenumber")
   set relativenumber
 endif
 
-" visualbel causes some weird char when in gnome terminal
-" set visualbell
+" Performance improvments
+if has("mac")
+  set nocursorline
+
+  if exists("+relativenumber")
+    set norelativenumber
+  endif
+
+  set foldlevel=0
+  set foldmethod=manual
+endif
 
 "===============================================================================
 " Autocommands:
