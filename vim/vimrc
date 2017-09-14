@@ -19,7 +19,7 @@ set autoindent
 set autoread
 set backspace=2
 set backspace=indent,eol,start
-set cursorline
+set nocursorline
 set directory=/tmp/
 set display=lastline
 set expandtab tabstop=2 softtabstop=2 shiftwidth=2
