@@ -49,9 +49,8 @@ Bundle "arnaud-lb/vim-php-namespace"
 " Figure out how to fix it
 " Bundle "vim-scripts/YankRing.vim"
 Bundle "kana/vim-textobj-user"
-Bundle "nelstrom/vim-textobj-rubyblock"
-
 " ruby
+Bundle "nelstrom/vim-textobj-rubyblock"
 Bundle "vim-scripts/ruby-matchit"
 Bundle "vim-ruby/vim-ruby"
 Bundle "tpope/vim-rails"
