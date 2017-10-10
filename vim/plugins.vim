@@ -68,6 +68,7 @@ Bundle "janko-m/vim-test"
 Bundle "pangloss/vim-javascript"
 Bundle "kchmck/vim-coffee-script"
 Bundle "isRuslan/vim-es6"
+Bundle 'mxw/vim-jsx'
 
 " templates
 Bundle "slim-template/vim-slim"
@@ -278,3 +279,7 @@ nnoremap <leader>rm :Remove
 
 " majutsushi/tagbar
 nnoremap <F8> :TagbarToggle<CR>
+
+
+" mxw/vim-jsx
+let g:jsx_ext_required = 0

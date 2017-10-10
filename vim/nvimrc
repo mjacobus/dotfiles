@@ -15,3 +15,18 @@ nnoremap <silent> p :call ClipboardPaste()<cr>p
 
 set termguicolors
 color base16-tomorrow-night
+
+" function! ClearEchoAndExecute(command)
+"   execute ":terminal clear && echo '" . a:command . "' && " . a:command
+" endfunction
+"
+" let test#strategy = "neovim"
+"
+" function! test#strategy#neovim(cmd) abort
+"   " botright new
+"   call ClearEchoAndExecute(a:cmd)
+"   " call :termopen(a:cmd)
+"   " au BufDelete <buffer> wincmd p " switch back to last window
+"   " startinsert
+" endfunction
+" let test#strategy = "dispatch"
