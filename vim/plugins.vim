@@ -180,7 +180,8 @@ nnoremap <leader>pt :CtrlPTag<cr>
 " https://github.com/JazzCore/ctrlp-cmatcher#installation
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,*/coverage/*     " MacOSX/Linux
+" set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,*/coverage/*     " MacOSX/Linux
+set wildignore+=*.so,*.swp,*.zip,*/build/*,*/coverage/*     " MacOSX/Linux
 
 " \ 'dir':  '\v[\/]((\.(git|hg|svn))|data|tmp|log)$',
 let g:ctrlp_custom_ignore = {
