@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# this scripts rely on the gem gh-auth
+# https://github.com/chrishunt/github-auth#installation
+
 action=$1
 user=$2
 
