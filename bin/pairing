@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+action=$1
+user=$2
+
+if [  $action == 'add' ]; then
+  gh-auth add --users=${user} --command="/usr/local/bin/tmux attach"
+elif [  $action == 'remove' ]; then
+  gh-auth remove --users=${user}
+else
+  echo "Use either 'add' or 'remove'"
+  exit 1
+fi
