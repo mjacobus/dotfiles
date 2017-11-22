@@ -8,12 +8,17 @@ filetype off                  " required
 set rtp+=~/.vim/Vundle.vim
 call vundle#begin()
 
+" code completion
+Bundle "shawncplus/phpcomplete.vim"
+" Bundle "Valloric/YouCompleteMe"
+
 " Prolematic
 " " Bundle "ervandew/supertab"
 " if !has('nvim')
 "   " does not work very well on nvim
 "   Bundle "vim-scripts/ZoomWin"
 " endif
+
 Bundle "majutsushi/tagbar"
 Bundle "austintaylor/vim-commaobject"
 Bundle "rstacruz/sparkup"
@@ -41,7 +46,6 @@ Bundle "scrooloose/syntastic"
 Bundle "weierophinney/argumentrewrap"
 Bundle "docteurklein/php-getter-setter.vim"
 Bundle "joonty/vdebug"
-Bundle "shawncplus/phpcomplete.vim"
 Bundle "StanAngeloff/php.vim"
 Bundle 'captbaritone/better-indent-support-for-php-with-html'
 Bundle "arnaud-lb/vim-php-namespace"
@@ -61,7 +65,6 @@ Bundle "shawncplus/Vim-toCterm"
 Bundle "tpope/vim-eunuch"
 " Bundle "tpope/vim-vinegar"
 Bundle "tpope/vim-speeddating"
-" Bundle "Valloric/YouCompleteMe"
 Bundle "janko-m/vim-test"
 
 " javascript
