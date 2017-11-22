@@ -1,94 +1,91 @@
 "=========================================================================
 " Plugins: Vundle config
 "=========================================================================
+" TODO: test plugins http://web-techno.net/vim-php-ide/
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
 " code completion
-Bundle "shawncplus/phpcomplete.vim"
-" Bundle "Valloric/YouCompleteMe"
+Plug 'shawncplus/phpcomplete.vim'
+" Plug 'Valloric/YouCompleteMe'
 
-" Prolematic
-" " Bundle "ervandew/supertab"
-" if !has('nvim')
-"   " does not work very well on nvim
-"   Bundle "vim-scripts/ZoomWin"
-" endif
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+  nnoremap <c-p> :FZF<cr>
+  nnoremap <mleader>rm :Remove<cr>
 
-Bundle "majutsushi/tagbar"
-Bundle "austintaylor/vim-commaobject"
-Bundle "rstacruz/sparkup"
-Bundle "othree/html5.vim"
-Bundle "tpope/vim-repeat"
-Bundle "tpope/vim-surround"
-" Bundle "wikitopian/hardmode"
-Bundle "takac/vim-hardtime"
-Bundle "airblade/vim-gitgutter"
-Bundle "tpope/vim-fugitive"
-Bundle "rking/ag.vim"
-Bundle "sirver/ultisnips"
-Bundle "mjacobus/vim-snippets"
-Bundle "tomtom/tcomment_vim"
-Bundle "Lokaltog/vim-easymotion"
-" fixed "jiangmiao/auto-pairs"
-Bundle "yukunlin/auto-pairs"
-Bundle "mattn/webapi-vim.git"
-Bundle "mattn/gist-vim.git"
-Bundle "scrooloose/nerdtree"
-Bundle "kien/ctrlp.vim"
-Bundle 'JazzCore/ctrlp-cmatcher'
-Bundle "godlygeek/tabular"
-Bundle "scrooloose/syntastic"
-Bundle "weierophinney/argumentrewrap"
-Bundle "docteurklein/php-getter-setter.vim"
-Bundle "joonty/vdebug"
-Bundle "StanAngeloff/php.vim"
-Bundle 'captbaritone/better-indent-support-for-php-with-html'
-Bundle "arnaud-lb/vim-php-namespace"
+Plug 'majutsushi/tagbar'
+Plug 'austintaylor/vim-commaobject'
+Plug 'rstacruz/sparkup'
+Plug 'othree/html5.vim'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+" Plug 'wikitopian/hardmode'
+Plug 'takac/vim-hardtime'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'rking/ag.vim'
+Plug 'sirver/ultisnips'
+Plug 'mjacobus/vim-snippets'
+Plug 'tomtom/tcomment_vim'
+Plug 'Lokaltog/vim-easymotion'
+" fixed 'jiangmiao/auto-pairs'
+Plug 'yukunlin/auto-pairs'
+Plug 'mattn/webapi-vim'
+Plug 'mattn/gist-vim'
+Plug 'scrooloose/nerdtree'
+Plug 'godlygeek/tabular'
+Plug 'scrooloose/syntastic'
+Plug 'weierophinney/argumentrewrap'
+Plug 'docteurklein/php-getter-setter.vim'
+Plug 'joonty/vdebug'
+Plug 'StanAngeloff/php.vim'
+Plug 'captbaritone/better-indent-support-for-php-with-html'
+Plug 'arnaud-lb/vim-php-namespace'
 " This overrites nerdtree mapping
 " Figure out how to fix it
-" Bundle "vim-scripts/YankRing.vim"
-Bundle "kana/vim-textobj-user"
+" Plug 'vim-scripts/YankRing.vim'
+Plug 'kana/vim-textobj-user'
 " ruby
-Bundle "nelstrom/vim-textobj-rubyblock"
-Bundle "vim-scripts/ruby-matchit"
-Bundle "vim-ruby/vim-ruby"
-Bundle "tpope/vim-rails"
-Bundle "ngmy/vim-rubocop"
-Bundle "uptech/vim-open-alternate"
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'vim-scripts/ruby-matchit'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'ngmy/vim-rubocop'
+Plug 'uptech/vim-open-alternate'
 
-Bundle "shawncplus/Vim-toCterm"
-Bundle "tpope/vim-eunuch"
-" Bundle "tpope/vim-vinegar"
-Bundle "tpope/vim-speeddating"
-Bundle "janko-m/vim-test"
+Plug 'shawncplus/Vim-toCterm'
+Plug 'tpope/vim-eunuch'
+" Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-speeddating'
+Plug 'janko-m/vim-test'
 
 " javascript
-Bundle "pangloss/vim-javascript"
-Bundle "kchmck/vim-coffee-script"
-Bundle "isRuslan/vim-es6"
-Bundle 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'kchmck/vim-coffee-script'
+Plug 'isRuslan/vim-es6'
+Plug 'mxw/vim-jsx'
 
 " templates
-Bundle "slim-template/vim-slim"
+Plug 'slim-template/vim-slim'
 
 " Colors
-" Bundle "chriskempson/base16-vim"
-" Bundle "flazz/vim-colorschemes"
-" Bundle "altercation/vim-colors-solarized"
-Bundle "endel/vim-github-colorscheme"
-Bundle "jonathanfilip/vim-lucius"
-Bundle 'chriskempson/base16-vim'
+" Plug 'chriskempson/base16-vim'
+" Plug 'flazz/vim-colorschemes'
+" Plug 'altercation/vim-colors-solarized'
+Plug 'endel/vim-github-colorscheme'
+Plug 'jonathanfilip/vim-lucius'
+Plug 'chriskempson/base16-vim'
 
-" Bundle "othree/javascript-libraries-syntax.vim"
-" Bundle "vim-scripts/JavaScript-Indent"
+" Plug 'othree/javascript-libraries-syntax.vim'
+" Plug 'vim-scripts/JavaScript-Indent'
 
 " ending vundle
-call vundle#end()            " required
+call plug#end()            " required
 filetype plugin indent on    " required
 
 "===============================================================================

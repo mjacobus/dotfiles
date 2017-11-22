@@ -13,13 +13,7 @@ symlink_or_ask ~/.dotfiles/vim/gvimrc ~/.gvimrc
 mkdir -p ~/.config
 symlink_or_ask ~/.nvim ~/.config/nvim
 
-# install vundle
-if [ ! -d ~/.dotfiles/vim/Vundle.vim ]; then
-  echo "downloading vundle"
-  cd ~/.dotfiles/vim && git clone https://github.com/gmarik/Vundle.vim.git
-fi
-
-vim +BundleInstall +BundleClean +BundleClean +quitall
+vim +PluginInstall +quitall
 
 # cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
 

@@ -14,3 +14,4 @@ composer/composer.lock
 # tar files
 /bin/composer.phar
 /bin/phpctags.phar
+/vim/plugged
