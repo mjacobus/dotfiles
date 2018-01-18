@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+me = `whoami`.strip
+
+ips = `who | egrep "([0-9]{1,3}[\.]){3}[0-9]{1,3}"`.split("\n").map do |match|
+  who = match.strip.split("\s").first
+  ip = match.strip.split("\s").last.gsub(/[\(\)]/, '')
+
+  if who == me
+    ip
+  end
+
+  "#{who} (#{ip})"
+end
+
+if ips.empty?
+  exit 0
+end
+
+if ips.length == 1
+  printf 'your guest: '
+else
+  printf "#{ips.length} guests: "
+end
+
+printf ips.uniq.join(", ")
+
+exit 0
