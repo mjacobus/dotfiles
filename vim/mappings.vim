@@ -153,13 +153,6 @@ nnoremap <leader>qw ciw""<esc>P
 nnoremap <leader>sb vip:sort<cr>
 nnoremap <leader>sa vi(:sort<cr>
 
-" wrap selection inside caracter
-vnoremap ( "zdi(<C-R>z)<ESC>
-vnoremap { "zdi{<C-R>z}<ESC>
-vnoremap [ "zdi[<C-R>z]<ESC>
-vnoremap ' "zdi'<C-R>z'<ESC>
-
-
 " select last paste in visual mode
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 
