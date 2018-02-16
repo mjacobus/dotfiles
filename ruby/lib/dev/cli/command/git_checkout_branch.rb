@@ -39,14 +39,12 @@ module Dev
           remote_command = "git branch -a | grep -i #{searched_branch}"
 
           branches = application.capture_stdout(command).map do |line|
-            matched_branch = line.gsub(/\*?\s+/, ' ').split(' ')[0]
-            LocalBranch.new(matched_branch)
+            LocalBranch.new(output_line_to_branch_name(line))
           end
 
           if branches.empty?
             branches = application.capture_stdout(remote_command).map do |line|
-              matched_branch = line.gsub(/\*?\s+/, ' ').split(' ')[0]
-              RemoteBranch.new(matched_branch)
+              RemoteBranch.new(output_line_to_branch_name(line))
             end
           end
 
@@ -60,27 +58,42 @@ module Dev
           end
 
           if branches.length > 1
-            puts "WARNING: Too many branches found:"
-            branches.each { |branch| puts "\t#{branch.name}" }
+            warn_too_many_branches(branches)
+          end
+
+          if checked_out
+            return
           end
 
           if branches.any?
-            checked_out ||= perform_checkout(branches.sort_by{|b| b.name.length }.first)
+            branch = branches.sort_by{|b| b.name.length }.first
+            return perform_checkout(branch)
           end
 
-          unless checked_out
-            application.fail(message: "No matches found")
-          end
+          application.fail(message: "No matches found")
+        end
+
+        private
+
+        def output_line_to_branch_name(line)
+          line.gsub(/\*?\s+/, ' ').split(' ')[0]
         end
 
         def perform_checkout(branch)
           puts ""
-          puts "CHECKING OUT : #{branch.name}"
+          puts "CHECKING OUT #{branch.name}:"
           puts ""
-          puts "~> #{branch.checkout_command}\n\n"
+          puts "\t~> #{branch.checkout_command}\n\n"
           puts ""
           application.shell_exec!(branch.checkout_command)
           branch
+        end
+
+        def warn_too_many_branches(branches)
+          puts "WARNING: Too many branches found:"
+          puts ""
+          puts branches.map(&:name).map{|n| "\t#{n}" }.join("\n")
+          puts ""
         end
       end
     end
