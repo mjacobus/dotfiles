@@ -1,4 +1,5 @@
 require "thor"
+require 'open3'
 
 module Dev
   module Cli
