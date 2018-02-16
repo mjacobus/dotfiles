@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+file=$1
+style=solarized-dark
+
+highlight -s $style -O rtf $file | pbcopy
