@@ -226,6 +226,8 @@ autocmd FileType ruby nnoremap <buffer> <leader>ccs :call ReekCodeSmell('%')<cr>
 " execute jasmine tests
 " autocmd FileType javascript nnoremap <buffer> <leader>t :! clear && grunt jasmine --filter<C-R>=expand("%:t:r")<cr><cr>
 
+
+autocmd FileType javascript nnoremap <buffer> <leader>x <esc>:! clear && time node %<cr>
 autocmd FileType javascript nnoremap <buffer> <leader>cs :! jscs % --fix<cr>
 
 "===============================================================================

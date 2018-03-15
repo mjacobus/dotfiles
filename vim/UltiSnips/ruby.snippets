@@ -189,6 +189,7 @@ endsnippet
 
 snippet rup "Reek UnusedParameters"
 :reek:UnusedParameters
+# rubocop:disable UnusedMethodArgument
 endsnippet
 
 snippet rdlitl "Rubocop disable line is too long"
@@ -197,4 +198,12 @@ endsnippet
 
 snippet relitl "Rubocop enable line is too long"
 rubocop:enable LineLength
+endsnippet
+
+snippet relitl "Rubocop disable unused argument"
+rubocop:disable UnusedMethodArgument
+endsnippet
+
+snippet rnmd "Rubocop nested method definition"
+rubocop:disable NestedMethodDefinition
 endsnippet
