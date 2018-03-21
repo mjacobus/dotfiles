@@ -163,3 +163,7 @@ endif
 if filereadable(".project.vim")
   source .project.vim
 endif
+
+if filereadable(".editor/project.vim")
+  source .editor/project.vim
+endif
