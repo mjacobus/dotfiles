@@ -151,10 +151,10 @@ snippet tclass "Test class" !
 namespace ${1:`!p snip.rv = namespace(snip, path)`};
 
 use ${2:${1/Test//}}\\${3:`!p snip.rv = testedclass(snip, path)`};
-use PHPUnit_Framework_TestCase;
+use PHUnit\Framework\TestCase;
 use Prophecy\Prophecy\ObjectProphecy;
 
-class $3Test extends PHPUnit_Framework_TestCase
+class $3Test extends TestCase
 {
 	/**
 	 * @var $3
