@@ -5,4 +5,7 @@ bin=~/.dotfiles/bin/phpctags.phar
 
 echo "Using $bin to generate $target"
 
-php $bin --languages=php --langmap=php:.inc.php -R -f tags-php .
+php $bin --languages=php \
+  --langmap=php:.inc.php \
+  --file-scope=no \
+  -R -f tags-php .
