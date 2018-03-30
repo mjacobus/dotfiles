@@ -182,7 +182,7 @@ autocmd FileType php nnoremap <buffer> <leader>st <esc>:! clear && ./shell_test.
 " autocmd FileType php nnoremap <buffer> <leader>at <esc>:call PHPUnitAll()<cr>
 " autocmd FileType php nnoremap <buffer> <leader>nt <esc>:call PHPUnitFocused()<cr>
 " autocmd FileType php nnoremap <buffer> <leader>mt <esc>:call PHPUnitZendModule()<cr>
-autocmd FileType php nnoremap <buffer> <leader>av <esc>:call PHPOpenVAlternativeFile()<cr>
+autocmd FileType php nnoremap <buffer> <leader>av <esc>:call PHPOpenAlternativeFile()<cr>
 
 " php cs fixer
 autocmd FileType php nnoremap <leader>cs  :call PhpFixCs('%')<cr>

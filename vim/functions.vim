@@ -107,6 +107,13 @@ function! PHPOpenVAlternativeFile()
   endif
 endfunction
 
+function! PHPOpenAlternativeFile()
+  let file = PHPGetAternativeFile(expand("%"))
+  if !empty(file)
+    execute "e " . file
+  endif
+endfunction
+
 function! PHPUnitCreateTestFile()
   let test_file = PHPUnitGetTestFileFor(expand("%"))
   execute "vsplit " . test_file
