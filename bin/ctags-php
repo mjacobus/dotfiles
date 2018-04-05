@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 
+# http://web-techno.net/vim-php-ide/
 # https://github.com/shawncplus/dotfiles/blob/master/bin/ctags-watch
 
-ctags --fields=+aimS --languages=php --langmap=php:.inc.php --file-scope=no -R -f tags-php .
-
-# vim: filetype=sh
+ctags --fields=+aimS \
+  --languages=php \
+  --langmap=php:.inc.php \
+  --file-scope=no \
+  --PHP-kinds=+cdfint-av\
+  --exclude=composer.phar \
+  --exclude=*Test.php \
+  --exclude="\\.git" \
+  -R -f tags-php .
