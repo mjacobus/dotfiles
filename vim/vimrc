@@ -17,7 +17,6 @@ let vimclojure#ParenRainbow = 1
 set path+=**
 set autoindent
 set autoread
-set backspace=2
 set backspace=indent,eol,start
 set directory=/tmp/
 set display=lastline
