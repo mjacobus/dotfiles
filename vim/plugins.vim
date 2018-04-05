@@ -18,6 +18,7 @@ Plug 'junegunn/fzf.vim'
   nnoremap <c-p> :FZF<cr>
   nnoremap <mleader>rm :Remove<cr>
 
+Plug 'itchyny/lightline.vim'
 Plug 'majutsushi/tagbar'
 Plug 'austintaylor/vim-commaobject'
 Plug 'rstacruz/sparkup'
