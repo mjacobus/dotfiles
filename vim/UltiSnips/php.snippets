@@ -92,15 +92,15 @@ snippet nfactory "Nurse Factory" !
 
 namespace ${1:`!p snip.rv = namespace(snip, path)`};
 
-use Nurse\Container;
 use Nurse\Factory\FactoryInterface;
+use Psr\Container\ContainerInterface;
 
 class ${2:`!p snip.rv = snip.basename`} implements FactoryInterface
 {
 	/**
 	 * @return $3
 	 */
-	public function createService(Container $container)
+	public function createService(ContainerInterface $container)
 	{
 		$service = new ${3:`!p snip.rv = factory_product(snip, path)`}();
 
@@ -110,7 +110,7 @@ class ${2:`!p snip.rv = snip.basename`} implements FactoryInterface
 	/**
 	 * @return string
 	 */
-	public function getKey()
+	public function getKey(): string
 	{
 		return ${3:`!p snip.rv = factory_product(snip, path)`}::class;
 	}
@@ -271,6 +271,16 @@ public function ${1:doSomething}(${2});
 endsnippet
 
 snippet test "test method"
+/**
+ * @test
+ */
+public function ${1:doSomething}()
+{
+	${2}
+}
+endsnippet
+
+snippet it "test method"
 /**
  * @test
  */
