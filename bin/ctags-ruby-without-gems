@@ -6,4 +6,4 @@ ctags -R \
   --tag-relative=yes \
   --languages=ruby \
   --exclude=.git \
-  --exclude=log -f tags-ruby . $(bundle list --paths)
+  --exclude=log -f tags-ruby .
