@@ -328,3 +328,21 @@ autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 
 " 'phpactor/phpactor'
 autocmd FileType php setlocal omnifunc=phpactor#Complete
+
+" Include use statement
+autocmd FileType php nmap <Leader>u :call phpactor#UseAdd()<CR>
+
+" Invoke the context menu
+autocmd FileType php nmap <Leader>mm :call phpactor#ContextMenu()<CR>
+
+" Goto definition of class or class member under the cursor
+autocmd FileType php nmap <Leader>o :call phpactor#GotoDefinition()<CR>
+
+" Transform the classes in the current file
+autocmd FileType php nmap <Leader>tt :call phpactor#Transform()<CR>
+
+" Generate a new class (replacing the current file)
+autocmd FileType php nmap <Leader>cc :call phpactor#ClassNew()<CR>
+
+" Extract method from selection
+autocmd FileType php vmap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>
