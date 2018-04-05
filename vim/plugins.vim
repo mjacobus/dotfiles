@@ -297,3 +297,8 @@ nnoremap <F8> :TagbarToggle<CR>
 
 " mxw/vim-jsx
 let g:jsx_ext_required = 0
+
+" itchyny/lightline.vim
+let g:lightline = {
+      \ 'colorscheme': 'seoul256',
+      \ }
