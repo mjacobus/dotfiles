@@ -9,10 +9,6 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 call plug#begin('~/.vim/plugged')
 
-" code completion
-Plug 'shawncplus/phpcomplete.vim'
-" Plug 'Valloric/YouCompleteMe'
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
   nnoremap <c-p> :FZF<cr>
@@ -81,6 +77,24 @@ Plug 'slim-template/vim-slim'
 Plug 'endel/vim-github-colorscheme'
 Plug 'jonathanfilip/vim-lucius'
 Plug 'chriskempson/base16-vim'
+
+" autocomplete
+" http://web-techno.net/vim-php-ide/
+" https://github.com/roxma/nvim-completion-manager
+if has('nvim')
+  Plug 'roxma/nvim-completion-manager'
+  Plug 'roxma/ncm-rct-complete'
+endif
+
+Plug 'phpactor/phpactor' ,  {'do': 'composer install'}
+
+if !has('nvim')
+  " Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+" refactorings
+Plug 'roxma/ncm-phpactor'
+Plug 'arnaud-lb/vim-php-namespace'
 
 " Plug 'othree/javascript-libraries-syntax.vim'
 " Plug 'vim-scripts/JavaScript-Indent'
@@ -302,3 +316,15 @@ let g:jsx_ext_required = 0
 let g:lightline = {
       \ 'colorscheme': 'seoul256',
       \ }
+
+" 'arnaud-lb/vim-php-namespace'
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+
+
+" 'phpactor/phpactor'
+autocmd FileType php setlocal omnifunc=phpactor#Complete
