@@ -137,20 +137,8 @@ autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us,pt_br,de_de
 
 let base16colorspace=256
 color base16-tomorrow-night
-
-" highlight ajustment
-highligh MatchParen cterm=bold ctermbg=none ctermfg=green
-
-" improved highlight for php: https://github.com/StanAngeloff/php.vim
-function! PhpSyntaxOverride()
-  hi! def link phpDocTags  phpDefine
-  hi! def link phpDocParam phpType
-endfunction
-
-augroup phpSyntaxOverride
-  autocmd!
-  autocmd FileType php call PhpSyntaxOverride()
-augroup END
+color jellybeans
+call FixColors()
 
 "===============================================================================
 " Allow overriding these settings:

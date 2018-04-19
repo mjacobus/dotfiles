@@ -336,3 +336,10 @@ function! RubyGetTestedFileFor(test_file)
   echo "file not found: '" . file . "'"
 endfunction
 
+function! FixColors()
+  highlight ColorColumn ctermbg=235
+  highlight vertsplit guifg=white guibg=black ctermbg=none
+  highligh MatchParen cterm=bold ctermbg=none ctermfg=green
+  highligh! def link phpDocTags  phpDefine
+  highligh! def link phpDocParam phpType
+endfunction

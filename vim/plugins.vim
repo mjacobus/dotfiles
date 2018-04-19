@@ -77,6 +77,7 @@ Plug 'slim-template/vim-slim'
 Plug 'endel/vim-github-colorscheme'
 Plug 'jonathanfilip/vim-lucius'
 Plug 'chriskempson/base16-vim'
+Plug 'nanotech/jellybeans.vim'
 
 " autocomplete
 " http://web-techno.net/vim-php-ide/
@@ -148,8 +149,8 @@ let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['haml','scss','sass'] }
 
-let g:syntastic_ruby_rubocop_exec = 'bundle exec rubocop'
-let g:syntastic_ruby_checkers = ['rubocop', 'reek', 'mri']
+" let g:syntastic_ruby_rubocop_exec = 'bundle exec rubocop'
+" let g:syntastic_ruby_checkers = ['rubocop', 'reek', 'mri']
 
 " debug " https://github.com/vim-syntastic/syntastic/issues/2161
 
