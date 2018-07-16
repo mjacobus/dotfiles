@@ -132,6 +132,7 @@ endsnippet
 
 snippet rlpl "Reek LongParameterList"
 :reek:LongParameterList
+# rubocop:disable Metrics/ParameterList
 endsnippet
 
 snippet rmd "Reek ManualDispatch"
@@ -160,6 +161,7 @@ endsnippet
 
 snippet rtms "Reek TooManyStatements"
 :reek:TooManyStatements
+# rubocop:disable Metrics/MethodLength:
 endsnippet
 
 snippet rumn "Reek UncommunicativeMethodName"
@@ -192,8 +194,9 @@ snippet rup "Reek UnusedParameters"
 # rubocop:disable UnusedMethodArgument
 endsnippet
 
-snippet rdlitl "Rubocop disable line is too long"
-rubocop:disable LineLength
+snippet rtmp "Rubocop too many parameters"
+:reek:LongParameterList
+# rubocop:disable Metrics/ParameterList
 endsnippet
 
 snippet relitl "Rubocop enable line is too long"
