@@ -54,6 +54,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'ngmy/vim-rubocop'
 Plug 'uptech/vim-open-alternate'
+Plug 'noprompt/vim-yardoc'
 
 Plug 'shawncplus/Vim-toCterm'
 Plug 'tpope/vim-eunuch'
