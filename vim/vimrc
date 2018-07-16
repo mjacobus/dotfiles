@@ -137,7 +137,7 @@ autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us,pt_br,de_de
 
 let base16colorspace=256
 color base16-tomorrow-night
-color jellybeans
+" color jellybeans
 call FixColors()
 
 "===============================================================================
