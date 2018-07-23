@@ -1,4 +1,5 @@
 let mapleader = " "
+set nocompatible
 
 source ~/.vim/plugins.vim
 source ~/.vim/functions.vim
@@ -48,6 +49,7 @@ set tags+=tags-php
 set tags+=tags-ruby
 set tags+=gems.tags
 set ttyfast
+set wildignore+=*.so,*.swp,*.zip,*/build/*,*/coverage/*     " MacOSX/Linux
 set wildmenu
 set wildmode=list:longest,full
 
