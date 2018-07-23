@@ -13,8 +13,8 @@ symlink_or_ask ~/.dotfiles/vim/gvimrc ~/.gvimrc
 mkdir -p ~/.config
 symlink_or_ask ~/.nvim ~/.config/nvim
 
-vim +PluginInstall +quitall
+vim +PlugInstall +quitall
 
 # cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
 
-./install vim_ctrlp_cmatcher
+#./install vim_ctrlp_cmatcher

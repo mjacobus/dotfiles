@@ -6,5 +6,5 @@
 export CFLAGS=-Qunused-arguments
 export CPPFLAGS=-Qunused-arguments
 
-cd ~/.vim/bundle/ctrlp-cmatcher
+cd ~/.vimplugged/ctrlp-cmatcher
 ./install.sh
