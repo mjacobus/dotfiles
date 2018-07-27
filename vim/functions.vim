@@ -199,7 +199,7 @@ endfunction
 
 function! RubocopFixCs(target)
   let options=''
-  let cmd = 'rubocop'
+  let cmd = 'bundle exec rubocop'
 
   if filereadable('./bin/bundle')
     let cmd = './bin/bundle exec rubocop'
@@ -214,7 +214,7 @@ function! RubocopFixCs(target)
 endfunction
 
 function! ReekCodeSmell(target)
-  let cmd = 'reek'
+  let cmd = 'bundle exec reek'
 
   if filereadable('./bin/bundle')
     let cmd = './bin/bundle exec reek'
