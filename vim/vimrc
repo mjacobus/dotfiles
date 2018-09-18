@@ -21,6 +21,7 @@ set autoread
 set backspace=indent,eol,start
 set directory=/tmp/
 set display=lastline
+set encoding=UTF-8
 set expandtab tabstop=2 softtabstop=2 shiftwidth=2
 set guicursor=a:blinkon0
 set hidden
@@ -139,6 +140,7 @@ autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us,pt_br,de_de
 
 let base16colorspace=256
 color base16-tomorrow-night
+color OceanicNext
 " color jellybeans
 call FixColors()
 
