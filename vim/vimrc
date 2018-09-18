@@ -48,6 +48,7 @@ set tabpagemax=20
 set tags+=./tags.vendors
 set tags+=tags-php
 set tags+=tags-ruby
+set tags+=tags-js
 set tags+=gems.tags
 set ttyfast
 set wildignore+=*.so,*.swp,*.zip,*/build/*,*/coverage/*     " MacOSX/Linux
