@@ -14,7 +14,7 @@ autocmd FileType ruby nnoremap <leader>ccs :RuboCop<cr>
 autocmd FileType ruby nnoremap <leader>av :OpenAlternate<cr>
 
 " rails.vim
-nnoremap <leader>av :AV<cr>
+" nnoremap <leader>av :AV<cr>
 nnoremap <leader>as :AS<cr>
 nnoremap <Leader>va :AV<cr>
 nnoremap <Leader>sa :AS<cr>

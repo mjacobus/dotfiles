@@ -157,7 +157,8 @@ nnoremap <leader>sa vi(:sort<cr>
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 " offers to create/edit a tmp file
-nnoremap <leader>et :vs ~/.tmp/
+nnoremap <leader>et :e ~/.tmp/
+nnoremap <leader>cet :e tmp/
 nnoremap <leader><leader>e :!<space>
 
 "===============================================================================
