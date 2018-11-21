@@ -31,9 +31,13 @@ def class_name(snip, path):
     return klass
 endglobal
 
-snippet rspec "Rspec.desc"
-RSpec.describe ${1:`!p snip.rv = class_name(snip, path)`} do
-	${2}
+snippet rspec "RSpec.describe"
+# frozen_string_literal: true
+
+require '${1:spec_helper}'
+
+RSpec.describe ${2:`!p snip.rv = class_name(snip, path)`} do
+	${3}
 end
 endsnippet
 
@@ -130,6 +134,10 @@ snippet riva "Reek InstanceVariableAssumption"
 :reek:InstanceVariableAssumption
 endsnippet
 
+snippet rd "Reek LongParameterList"
+# rubocop:disable ${1:Metrics}/${2:ParameterList}
+endsnippet
+
 snippet rlpl "Reek LongParameterList"
 :reek:LongParameterList
 # rubocop:disable Metrics/ParameterList
@@ -161,7 +169,7 @@ endsnippet
 
 snippet rtms "Reek TooManyStatements"
 :reek:TooManyStatements
-# rubocop:disable Metrics/MethodLength:
+# rubocop:disable Metrics/MethodLength
 endsnippet
 
 snippet rml "Rubocop MethodLength"
