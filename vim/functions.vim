@@ -179,6 +179,10 @@ function! ZendGetModuleName()
   return split(split(expand('%'),'module/')[0], '/')[0]
 endfunction
 
+function! Prettier()
+  call ClearEchoAndExecute('./node_modules/.bin/prettier --write %')<cr>
+endfunction
+
 function! PhpFixCs(target)
   " let cmd = '~/.dotfiles/composer/vendor/bin/./php-cs-fixer fix'
   " let options = '--level=symfony --fixers=-concat_without_spaces,-return,unused_use,align_double_arrow,phpdoc_indent,-phpdoc_short_description'
