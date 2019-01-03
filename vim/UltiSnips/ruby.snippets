@@ -31,6 +31,10 @@ def class_name(snip, path):
     return klass
 endglobal
 
+snippet frozen "Frozen string"
+# frozen_string_literal: true
+endsnippet
+
 snippet rspec "RSpec.describe"
 # frozen_string_literal: true
 
@@ -135,12 +139,12 @@ snippet riva "Reek InstanceVariableAssumption"
 endsnippet
 
 snippet rd "Reek LongParameterList"
-# rubocop:disable ${1:Metrics}/${2:ParameterList}
+rubocop:disable ${1:Metrics}/${2:ParameterList}
 endsnippet
 
 snippet rlpl "Reek LongParameterList"
 :reek:LongParameterList
-# rubocop:disable Metrics/ParameterList
+rubocop:disable Metrics/ParameterList
 endsnippet
 
 snippet rmd "Reek ManualDispatch"
@@ -169,11 +173,11 @@ endsnippet
 
 snippet rtms "Reek TooManyStatements"
 :reek:TooManyStatements
-# rubocop:disable Metrics/MethodLength
+rubocop:disable Metrics/MethodLength
 endsnippet
 
 snippet rml "Rubocop MethodLength"
-# rubocop:disable Metrics/MethodLength:
+rubocop:disable Metrics/MethodLength
 endsnippet
 
 snippet rumn "Reek UncommunicativeMethodName"
@@ -227,5 +231,5 @@ rubocop:disable NestedMethodDefinition
 endsnippet
 
 snippet rabcs "Rubocop AbcSize"
-rubocop:disable AbcSize
+rubocop:disable Metrics/AbcSize
 endsnippet
