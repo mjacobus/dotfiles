@@ -180,7 +180,7 @@ function! ZendGetModuleName()
 endfunction
 
 function! Prettier()
-  call ClearEchoAndExecute('./node_modules/.bin/prettier --write %')<cr>
+  call ClearEchoAndExecute('./node_modules/.bin/prettier --write %')
 endfunction
 
 function! PhpFixCs(target)
