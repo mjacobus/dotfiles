@@ -230,6 +230,14 @@ autocmd FileType ruby nnoremap <buffer> <leader>ccs :call ReekCodeSmell('%')<cr>
 
 autocmd FileType javascript nnoremap <buffer> <leader>x <esc>:! clear && time node %<cr>
 autocmd FileType javascript nnoremap <buffer> <leader>cs :call Prettier()<cr>
+autocmd FileType javascript nnoremap <buffer> <leader>cs :call Prettier()<cr>
+
+"===============================================================================
+" css
+"===============================================================================
+autocmd FileType css nnoremap <buffer> <leader>cs :call Prettier()<cr>
+autocmd FileType sass nnoremap <buffer> <leader>cs :call Prettier()<cr>
+autocmd FileType scss nnoremap <buffer> <leader>cs :call Prettier()<cr>
 
 "===============================================================================
 " C
