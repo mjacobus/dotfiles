@@ -2,6 +2,9 @@
 " Mappings
 "===============================================================================
 
+" rm file
+nnoremap <leader>rm :Delete<cr>
+
 " escape alias
 inoremap jj <esc>
 inoremap jJ <esc>
