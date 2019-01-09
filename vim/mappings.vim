@@ -2,9 +2,6 @@
 " Mappings
 "===============================================================================
 
-" rm file
-nnoremap <leader>rm :! rm %<cr>
-
 " escape alias
 inoremap jj <esc>
 inoremap jJ <esc>
