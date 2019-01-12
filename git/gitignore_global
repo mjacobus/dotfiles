@@ -16,3 +16,5 @@ npm-debug.log
 /shell_test.sh
 /.project.vim
 /.cache
+.editor
+.tool-versions
