@@ -240,6 +240,11 @@ autocmd FileType sass nnoremap <buffer> <leader>cs :call Prettier()<cr>
 autocmd FileType scss nnoremap <buffer> <leader>cs :call Prettier()<cr>
 
 "===============================================================================
+" html
+"===============================================================================
+autocmd FileType html nnoremap <buffer> <leader>cs :call Prettier()<cr>
+
+"===============================================================================
 " C
 "===============================================================================
 
