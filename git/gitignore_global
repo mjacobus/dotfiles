@@ -7,13 +7,12 @@ tags-*
 .netrwhist
 npm-debug.log
 /curl.sh
-./shell_test.sh
+shell_test.sh
 .DS_Store
 ./test.rb
 ./turbulence
 /Users/marcelo.jacobus/.vagrant
 /.vagrant
-/shell_test.sh
 /.project.vim
 /.cache
 .editor

@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+
+# https://trac.ffmpeg.org/wiki/Encode/MPEG-4
+class Mp4ToAviConverter
+  def convert(file, output: nil)
+    output ||= file.sub(/mp4$/, 'avi')
+    to_avi(file, output)
+  end
+
+  private
+
+  def to_avi(file, output)
+    command = "ffmpeg -i #{file} -c:v libxvid #{output}"
+    `#{command}`
+  end
+end
+
+converter = Mp4ToAviConverter.new
+
+files = ARGV.dup
+
+files.each do |file|
+  converter.convert(file)
+end
