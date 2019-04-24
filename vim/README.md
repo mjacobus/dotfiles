@@ -39,3 +39,9 @@ To memorize
 - ```:mksession filename``` - saves session
 - ```:source filename``` - restores session
 - ```vim -S filename``` - restores session
+
+
+### Args
+
+- :args `ag -l "require 'spec_helper'"`
+- :argdo :%s/spec_helper/rails_helper/g | w
