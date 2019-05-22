@@ -1,0 +1,1 @@
+Plug 'jparise/vim-graphql'
