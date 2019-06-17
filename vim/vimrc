@@ -86,10 +86,6 @@ elseif has("unix")
   set clipboard=unnamedplus
 endif
 
-if exists("+relativenumber")
-  set relativenumber
-endif
-
 " Performance improvments
 if has("mac")
   set nocursorline
