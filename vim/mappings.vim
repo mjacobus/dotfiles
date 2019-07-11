@@ -170,7 +170,7 @@ inoremap Ć Ç
 inoremap ,a â
 inoremap ,A Â
 
-nnoremap <leader>st <esc>:! clear && ./shell_test.sh<cr>
+nnoremap <leader>st <esc>:! clear && ./shell_test<cr>
 
 "===============================================================================
 " PHP

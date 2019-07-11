@@ -8,6 +8,7 @@ tags-*
 npm-debug.log
 /curl.sh
 shell_test.sh
+shell_test
 .DS_Store
 ./test.rb
 ./turbulence
