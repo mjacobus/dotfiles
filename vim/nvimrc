@@ -14,7 +14,9 @@ vnoremap <silent> d d:call ClipboardYank()<cr>
 nnoremap <silent> p :call ClipboardPaste()<cr>p
 
 set termguicolors
-color base16-tomorrow-night
+" colorscheme base16-tomorrow-night
+" colorscheme jellybeans
+colorscheme lucius
 
 " function! ClearEchoAndExecute(command)
 "   execute ":terminal clear && echo '" . a:command . "' && " . a:command
