@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+
+# checks words in a project
+
+file_path = ARGV.first
+
+words = File.read(file_path).split("\n").reject(&:empty?).uniq
+
+class WordFinder
+  def find_one(word)
+    `ag -l #{word}`.split("\n")
+  end
+
+  def find_all(words)
+    words.map do |word|
+      [word, find_one(word)]
+    end.reject do |(_word, entries)|
+      entries.empty?
+    end
+  end
+end
+
+found = WordFinder.new.find_all(words)
+
+found.each do |(file, entries)|
+  puts "Found #{file.inspect} in #{entries.size} entries, like in: #{entries.first}"
+end
