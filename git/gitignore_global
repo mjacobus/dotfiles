@@ -18,3 +18,4 @@ shell_test
 /.cache
 .editor
 .tool-versions
+/.vim-skip-plugins

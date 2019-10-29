@@ -1,7 +1,9 @@
 let mapleader = " "
 set nocompatible
 
-source ~/.vim/plugins.vim
+if !filereadable(".vim-skip-plugins")
+  source ~/.vim/plugins.vim
+end
 source ~/.vim/functions.vim
 source ~/.vim/abbreviations.vim
 source ~/.vim/mappings.vim
