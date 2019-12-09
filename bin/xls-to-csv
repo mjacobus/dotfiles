@@ -3,4 +3,6 @@
 inputFile=$1
 outputDir=$2
 
-libreoffice --headless --convert-to csv $inputFile --outdir $outputDir
+libreoffice --headless --convert-to csv \
+  --infilter=CSV:44,34,76,1 \
+  $inputFile --outdir $outputDir
