@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -e
+
+origin=$1
+
+upstream=`git remote -v | grep origin | head -n 1 | awk '{print $2}'`
+
+echo "Set upstream: $upstream"
+echo "Set origin: $origin"
+
+git remote rm origin
+git remote add upstream $upstream
+git remote add origin $origin
+
+echo
+echo
+
+git remote -v
