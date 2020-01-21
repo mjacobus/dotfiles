@@ -11,6 +11,6 @@
       "squizlabs/php_codesniffer": "*",
       "theseer/phpdox" : "*",
         "bro/code": "^v0.1.5",
-        "techlivezheng/phpctags": "^0.6.0"
+        "techlivezheng/phpctags": "*"
     }
 }
