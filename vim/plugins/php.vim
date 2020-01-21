@@ -1,3 +1,6 @@
+" TODO: A good read for autocompletion. I need to make it work
+" https://phpactor.github.io/phpactor/vim-plugin.html"
+
 " An up-to-date Vim syntax for PHP.
 Plug 'StanAngeloff/php.vim'
 
