@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require 'json'
+require 'awesome_print'
+require 'pretty_diffs'
+require 'minitest/autorun'
+
+# Install https://www.gnu.org/software/wdiff/
+class JsonComparisonTest < Minitest::Test
+  include PrettyDiffs
+
+  def test_files_are_equal
+    file_a = JSON.parse(File.read(ARGV[0]))
+    file_b = JSON.parse(File.read(ARGV[1]))
+
+    assert_equal(file_a, file_b)
+  end
+end
