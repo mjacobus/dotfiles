@@ -16,3 +16,14 @@ composer/composer.lock
 /bin/phpctags.phar
 /vim/plugged
 tmp
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+
+# rspec failure tracking
+.rspec_status
