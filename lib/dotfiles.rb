@@ -8,6 +8,7 @@ require 'dotfiles/application_helper'
 require 'dotfiles/installer'
 require 'dotfiles/installers/base_installer'
 require 'dotfiles/installers/ag'
+require 'dotfiles/installers/ctags'
 
 module Dotfiles
 end

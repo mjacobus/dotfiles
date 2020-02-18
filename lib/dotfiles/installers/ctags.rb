@@ -2,16 +2,16 @@
 
 module Dotfiles
   module Installers
-    class Ag < BaseInstaller
+    class Ctags < BaseInstaller
       def name
-        'ag configuration'
+        'ctags configuration'
       end
 
       private
 
       def perform_installation
-        file = destination_for('.agignore')
-        symlink(dotfile('agignore'), file)
+        file = destination_for('.ctags')
+        symlink(dotfile('ctags'), file)
       end
     end
   end
