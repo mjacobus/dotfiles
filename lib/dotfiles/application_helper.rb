@@ -71,6 +71,10 @@ module Dotfiles
       "#{home}/.dotfiles/#{file}"
     end
 
+    def github_clone(source, destination)
+      run("git clone https://github.com/#{source}.git #{destination}")
+    end
+
     private
 
     def backup_destination

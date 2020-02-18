@@ -13,6 +13,7 @@ require 'dotfiles/installers/irb'
 require 'dotfiles/installers/tmux'
 require 'dotfiles/installers/git'
 require 'dotfiles/installers/vim'
+require 'dotfiles/installers/zshell'
 
 module Dotfiles
 end
