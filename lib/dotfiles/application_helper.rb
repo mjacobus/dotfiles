@@ -16,7 +16,13 @@ module Dotfiles
 
     def run(command)
       output(command.to_s, color: :yellow)
-      @command_runner.run(command)
+      stdout = @command_runner.run(command)
+      unless stdout.empty?
+        output(stdout)
+      end
+    rescue CommandError => exception
+      output(exception.command_result.error, color: :red)
+      exit(exception.command_result.code)
     end
 
     def ask(question)
@@ -25,7 +31,7 @@ module Dotfiles
     end
 
     def timestamp
-      Time.new.strftime('%Y%m%d%H%M')
+      Time.new.strftime('%Y%m%d%H%M%s')
     end
 
     def symlink(source, target)

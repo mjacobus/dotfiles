@@ -10,5 +10,6 @@ installer = Dotfiles::Installer.new([
   Dotfiles::Installers::Ctags.new(application_helper),
   Dotfiles::Installers::Irb.new(application_helper),
   Dotfiles::Installers::Tmux.new(application_helper),
+  Dotfiles::Installers::Git.new(application_helper)
 ])
 installer.install(ARGV.dup)

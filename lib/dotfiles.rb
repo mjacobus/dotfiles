@@ -11,6 +11,7 @@ require 'dotfiles/installers/ag'
 require 'dotfiles/installers/ctags'
 require 'dotfiles/installers/irb'
 require 'dotfiles/installers/tmux'
+require 'dotfiles/installers/git'
 
 module Dotfiles
 end
