@@ -12,6 +12,7 @@ require 'dotfiles/installers/ctags'
 require 'dotfiles/installers/irb'
 require 'dotfiles/installers/tmux'
 require 'dotfiles/installers/git'
+require 'dotfiles/installers/vim'
 
 module Dotfiles
 end
