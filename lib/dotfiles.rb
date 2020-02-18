@@ -4,8 +4,10 @@ require 'dotfiles/version'
 require 'dotfiles/command_runner'
 require 'dotfiles/command_error'
 require 'dotfiles/command_result'
+require 'dotfiles/application_helper'
+require 'dotfiles/installer'
+require 'dotfiles/installers/base_installer'
+require 'dotfiles/installers/ag'
 
 module Dotfiles
-  class Error < StandardError; end
-  # Your code goes here...
 end
