@@ -33,7 +33,7 @@ module Dotfiles
         offer_backup_for_file(target)
       end
 
-      run("ln -s #{source} #{target}")
+      run("ln -sf #{source} #{target}")
     end
 
     def output(string, color: nil)
