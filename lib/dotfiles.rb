@@ -9,6 +9,7 @@ require 'dotfiles/installer'
 require 'dotfiles/installers/base_installer'
 require 'dotfiles/installers/ag'
 require 'dotfiles/installers/ctags'
+require 'dotfiles/installers/irb'
 
 module Dotfiles
 end
