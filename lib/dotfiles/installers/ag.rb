@@ -10,8 +10,8 @@ module Dotfiles
       private
 
       def perform_installation
-        file = app.destination_for('.agignore')
-        app.link(app.dotfile('agignore'), file)
+        file = destination_for('.agignore')
+        symlink(app.dotfile('agignore'), file)
       end
     end
   end

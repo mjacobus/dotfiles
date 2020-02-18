@@ -27,6 +27,26 @@ module Dotfiles
         raise "Not implemented: #{self.class}"
       end
 
+      def symlink(source, destination)
+        app.symlink(source, destination)
+      end
+
+      def destination_for(filename)
+        app.destination_for(filename)
+      end
+
+      def ask(question)
+        app.ask(question)
+      end
+
+      def yes_no?(question)
+        app.yes_no?(question)
+      end
+
+      def dotfile(file)
+        app.dotfile(file)
+      end
+
       attr_reader :app
     end
   end

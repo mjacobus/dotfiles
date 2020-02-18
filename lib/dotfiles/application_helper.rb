@@ -6,11 +6,11 @@ module Dotfiles
   class ApplicationHelper
     attr_reader :home
 
-    def initialize(argv, output = $stdout, time = Time.now)
-      @command_runner = CommandRunner.new
+    def initialize(argv, output = $stdout, command_runner: CommandRunner.new)
+      @command_runner = command_runner
       @argv = argv.dup
       @output = output
-      @time = time
+      @time = Time.now
       @home = ENV['HOME']
     end
 
@@ -28,7 +28,7 @@ module Dotfiles
       Time.new.strftime('%Y%m%d%H%M')
     end
 
-    def link(source, target)
+    def symlink(source, target)
       if file_exist?(target)
         offer_backup_for_file(target)
       end
