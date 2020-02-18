@@ -10,6 +10,7 @@ require 'dotfiles/installers/base_installer'
 require 'dotfiles/installers/ag'
 require 'dotfiles/installers/ctags'
 require 'dotfiles/installers/irb'
+require 'dotfiles/installers/tmux'
 
 module Dotfiles
 end
