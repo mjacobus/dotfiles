@@ -48,3 +48,7 @@ Here you will find (among other configs):
 ### Ctags
 
 - Use patched ctags. See this [link](https://github.com/shawncplus/phpcomplete.vim/wiki/Patched-ctags)
+
+### Note to self:
+
+Installation scripts before the ruby refactoring can be found [here](https://github.com/mjacobus/.dotfiles/tree/42ee48f4b57e3d3e69e547434da20e111ddb08df/installer)
