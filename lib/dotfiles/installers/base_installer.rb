@@ -16,7 +16,7 @@ module Dotfiles
       private
 
       def confirmation_message
-        "Sure you want to install \"#{name}\"?"
+        "Do you want to install \"#{name}\"?"
       end
 
       def name
