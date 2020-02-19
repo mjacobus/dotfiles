@@ -3,7 +3,7 @@ sudo: false
 language: ruby
 cache: bundler
 rvm:
-  - 2.5.3
+  - 2.6.5
 script:
+  - gem install bundler
   - bundle exec rspec
-  - ./exe/dotfiles
