@@ -1,7 +1,10 @@
 My .dotfiles
 --------------
 
-WARNING: Installation is weird at the moment. I need to fix it.
+[![Build Status](https://travis-ci.org/mjacobus/.dotfiles.svg?branch=master)](https://travis-ci.org/mjacobus/.dotfiles)
+[![Maintainability](https://api.codeclimate.com/v1/badges/227148a60543cbdf3c49/maintainability)](https://codeclimate.com/github/mjacobus/.dotfiles/maintainability)
+[![Coverage Status](https://coveralls.io/repos/github/mjacobus/.dotfiles/badge.svg?branch=master)](https://coveralls.io/github/mjacobus/.dotfiles?branch=master)
+
 
 ### Instalation
 
