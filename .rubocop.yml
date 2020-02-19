@@ -1,0 +1,56 @@
+require:
+  - rubocop-rspec
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'dotfiles.gemspec'
+
+Layout/LineLength:
+  Max: 100
+
+Style/Documentation:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/MultilineOperationIndentation:
+  Enabled: true
+  EnforcedStyle: indented
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+Naming/RescuedExceptionsVariableName:
+  PreferredName: 'exception'
+
+Style/FormatStringToken:
+  EnforcedStyle: template
+
+RSpec:
+  Exclude:
+    - 'spec/factories/**/*'
+
+RSpec/ExampleLength:
+  Max: 10
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - 'node_modules/**/*'
+    - 'script/**/*'
+    - 'log/**/*'
+    - 'docker/**/*'
+    - 'doc/**/*'
+    - 'bin/**/*'
+    - 'ruby/**/*'
+    - 'vendor/**/*'
