@@ -26,7 +26,7 @@ module Dotfiles
         # Do we really want to load the app like this?
         # app.run("source ~/.profile.d/setup.sh >> #{app.home}/.zshell")
 
-        symlink(dotfile('zshrc'), destination_for('.zshrc'))
+        symlink(dotfile('shell_setup.conf'), destination_for('.zshrc'))
       end
       # rubocop:enable Metrics/AbcSize
       # rubocop:enable Layout/LineLength

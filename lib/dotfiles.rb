@@ -15,6 +15,7 @@ require 'dotfiles/installers/tmux'
 require 'dotfiles/installers/git'
 require 'dotfiles/installers/vim'
 require 'dotfiles/installers/zshell'
+require 'dotfiles/installers/bash'
 require 'dotfiles/installers/asdf'
 
 module Dotfiles
