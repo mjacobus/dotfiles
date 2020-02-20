@@ -8,7 +8,7 @@ module Dotfiles
       end
 
       def install
-        if app.yes_no?(confirmation_message)
+        if app.yes_no_quit?(confirmation_message)
           perform_installation
         end
       end
