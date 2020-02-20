@@ -15,7 +15,7 @@ module Dotfiles
     end
 
     def run(command)
-      output(command.to_s, color: :yellow)
+      output(command.to_s, color: :blue)
       stdout = @command_runner.run(command)
       unless stdout.empty?
         output(stdout)
@@ -26,7 +26,7 @@ module Dotfiles
     end
 
     def ask(question)
-      output(question, color: :green)
+      output(question, color: :yellow)
       gets.chomp
     end
 
