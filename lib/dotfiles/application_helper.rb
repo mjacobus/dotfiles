@@ -36,7 +36,7 @@ module Dotfiles
 
     def symlink(source, target)
       if file_exist?(target)
-        offer_backup_for_file(target)
+        backup(target)
       end
 
       run("ln -sf #{source} #{target}")
@@ -55,8 +55,19 @@ module Dotfiles
     end
 
     def backup(file)
+      output("File exists: #{file}. It will be moved to #{backup_destination}.")
       run("mkdir -p #{backup_destination}")
       run("mv #{file} #{backup_destination}/")
+    end
+
+    def yes_no_quit?(question)
+      answer = ask("#{question} Y[es]/N[no]/Q[quit]").downcase
+
+      if answer == 'q'
+        exit(0)
+      end
+
+      answer == 'y'
     end
 
     def yes_no?(question)
@@ -79,13 +90,6 @@ module Dotfiles
 
     def backup_destination
       "#{home}/.dotfiles-backup/#{timestamp}"
-    end
-
-    def offer_backup_for_file(file)
-      output("File exists: #{file}.")
-      if yes_no?('Do you want to backup?')
-        backup(file)
-      end
     end
   end
 end

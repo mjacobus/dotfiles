@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Dotfiles
-  class CommandError < RuntimeError
+  class CommandError < Error
     attr_reader :command_result
 
     def initialize(command_result)
