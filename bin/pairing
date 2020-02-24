@@ -6,8 +6,10 @@
 action=$1
 user=$2
 
+tmux=`which tmux`
+
 if [  $action == 'add' ]; then
-  gh-auth add --users=${user} --command="/usr/local/bin/tmux attach"
+  gh-auth add --users=${user} --command="${tmux} attach"
 elif [  $action == 'remove' ]; then
   gh-auth remove --users=${user}
 else
