@@ -335,6 +335,6 @@ endfunction
 function! OpenAlternateFile()
   let file = system('alternative_file ' . expand('%'))
   if !empty(file)
-    execute "vsplit " . file
+    execute "e " . file
   endif
 endfunction
