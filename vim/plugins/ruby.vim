@@ -3,7 +3,7 @@ Plug 'vim-scripts/ruby-matchit'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'ngmy/vim-rubocop'
-Plug 'uptech/vim-open-alternate'
+" Plug 'uptech/vim-open-alternate'
 Plug 'noprompt/vim-yardoc'
 
 
@@ -11,7 +11,7 @@ Plug 'noprompt/vim-yardoc'
 let g:vimrubocop_keymap = 0
 
 autocmd FileType ruby nnoremap <leader>ccs :RuboCop<cr>
-autocmd FileType ruby nnoremap <leader>av :OpenAlternate<cr>
+autocmd FileType ruby nnoremap <leader>av :call OpenAlternateFile()<cr>
 
 " rails.vim
 " nnoremap <leader>av :AV<cr>

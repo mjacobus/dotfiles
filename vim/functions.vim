@@ -331,3 +331,10 @@ function! FixColors()
   highligh! def link phpDocTags  phpDefine
   highligh! def link phpDocParam phpType
 endfunction
+
+function! OpenAlternateFile()
+  let file = system('alternative_file ' . expand('%'))
+  if !empty(file)
+    execute "vsplit " . file
+  endif
+endfunction

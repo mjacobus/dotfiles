@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/dotfiles/scripts/alternative_file'
+puts Dotfiles::Scripts::AlternativeFile.new.execute(ARGV.dup)
