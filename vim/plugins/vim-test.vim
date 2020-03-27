@@ -26,3 +26,5 @@ function! SwitchSpecCommand()
 
   echo "using " . g:test#ruby#spec_framework . " for _spec.rb"
 endfunction
+
+" let test#strategy = "dispatch_background"
