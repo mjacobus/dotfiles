@@ -46,6 +46,26 @@ RSpec.describe ${2:`!p snip.rv = class_name(snip, path)`} do
 end
 endsnippet
 
+snippet rt "rails test"
+# frozen_string_literal: true
+
+require '${1:test_helper}'
+
+class ${2:`!p snip.rv = class_name(snip, path)`}Test < ActiveSupport::TestCase
+	${3}
+end
+endsnippet
+
+snippet rct "rails controller test"
+# frozen_string_literal: true
+
+require '${1:test_helper}'
+
+class ${2:`!p snip.rv = class_name(snip, path)`}Test < ActionDispatch::IntegrationTest
+	${3}
+end
+endsnippet
+
 snippet class "class"
 class ${1:`!p snip.rv = class_name(snip, path)`}${2}
 	${3}
@@ -214,7 +234,7 @@ endsnippet
 snippet rtmp "Rubocop too many parameters"
 :reek:LongParameterList
 # rubocop:disable Metrics/ParameterList
-endsnippet 
+endsnippet
 snippet rdll "Rubocop enable line is too long"
 rubocop:disable Metrics/LineLength
 endsnippet
@@ -233,4 +253,27 @@ endsnippet
 
 snippet rabcs "Rubocop AbcSize"
 rubocop:disable Metrics/AbcSize
+endsnippet
+
+# https://www.rubydoc.info/gems/yard/file/docs/Tags.md
+# Yard docs
+
+snippet ret "@return"
+@return [${1:String}]
+endsnippet
+
+snippet param "@param"
+@param ${1:varname} [${2:String}] ${3}
+endsnippet
+
+snippet yield "@yield"
+@yield [${1:parameters}] ${2:description}
+endsnippet
+
+snippet yieldr "@yieldreturn"
+@yieldreturn [${1:Type}] [${2}]
+endsnippet
+
+snippet yieldp "@yieldparam"
+@yieldreturn ${1:name} [${2:Type}] ${3}
 endsnippet

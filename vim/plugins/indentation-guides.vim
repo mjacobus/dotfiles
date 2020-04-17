@@ -1,3 +1,6 @@
-Plug 'Yggdroot/indentLine'
+" it looks weird on nvim
+if !has('nvim')
+  Plug 'Yggdroot/indentLine'
+  let g:indentLine_char = '▏'
+endif
 
-let g:indentLine_char = '▏'
