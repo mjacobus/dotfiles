@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -ex
+
+# https://stackoverflow.com/questions/17324645/git-create-commit-from-diff-between-two-branches
+
+timestamp=`date +%Y%m%d%H%m%S`
+base_branch=$1
+wip_branch=$2
+tmp_branch="tmp/diff/___${base_branch}___${wip_branch}___${timestamp}"
+
+git checkout -b  $tmp_branch $base_branch
+git reset --soft $wip_branch
+git commit
