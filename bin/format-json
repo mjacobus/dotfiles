@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -e
+
+jsonfile=$1
+tempfile=$(mktemp /tmp/abc-script.XXXXXX)
+jq . $jsonfile > $tempfile
+cat $tempfile > $jsonfile
