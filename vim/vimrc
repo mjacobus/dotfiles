@@ -142,6 +142,10 @@ colorscheme base16-tomorrow-night
 colorscheme OceanicNext
 " colorscheme jellybeans
 call FixColors()
+hi Normal guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
+
 
 "===============================================================================
 " Allow overriding these settings:
