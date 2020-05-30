@@ -5,6 +5,7 @@ Plug 'tpope/vim-rails'
 Plug 'ngmy/vim-rubocop'
 " Plug 'uptech/vim-open-alternate'
 Plug 'noprompt/vim-yardoc'
+Plug 'hallison/vim-rdoc'
 
 
 " rubocop

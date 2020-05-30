@@ -19,3 +19,4 @@ shell_test
 .editor
 .tool-versions
 /.vim-skip-plugins
+*.json.gz
