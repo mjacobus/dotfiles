@@ -15,6 +15,10 @@ inoremap JJ <esc>
 noremap <leader>j 10j
 noremap <leader>k 10k
 
+" This mappings embraces my muscle memory while on ergodox
+nnoremap <backspace> =
+vnoremap <backspace> =
+
 " buffer changing
 nnoremap <leader>bn :bn<cr>
 nnoremap <leader>bp :bp<cr>
