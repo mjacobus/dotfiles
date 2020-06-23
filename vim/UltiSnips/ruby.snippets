@@ -2,6 +2,27 @@
 
 global !p
 
+def nested_class_definition(snip, path):
+    klass = class_name(snip, path)
+    parts = klass.split('::')
+    lines = []
+
+    i = 0
+    for part in parts:
+        prefix = "module "
+        if (i + 1) == len(parts):
+            prefix = "class "
+        lines.append(i * "  " + prefix + part)
+        i += 1
+
+    i -= 1
+    for part in parts:
+        prefix = "module "
+        lines.append(i * "  " + "end")
+        i -= 1
+
+    return "\n".join(lines)
+
 def class_name(snip, path):
     klass = path
     klass = klass.replace('_test.rb', '')
@@ -67,9 +88,7 @@ end
 endsnippet
 
 snippet class "class"
-class ${1:`!p snip.rv = class_name(snip, path)`}${2}
-	${3}
-end
+`!p snip.rv = nested_class_definition(snip, path)`
 endsnippet
 
 snippet before "before do"
