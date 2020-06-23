@@ -68,7 +68,7 @@ nnoremap <c-w>t :tabnew<cr>
 inoremap ,e <Esc>/[\]})"']<cr><Esc>:nohlsearch<cr>a
 
 " adds arrow
-inoremap <C-l> <Space>=><Space>,<left>
+inoremap <C-l> <Space>=><Space>
 
 " Ruby old style hashes to new style hashes
 vnoremap <leader>h :s/:\(\w*\) *=>/\1:/g<cr>
