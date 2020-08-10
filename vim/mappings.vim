@@ -262,3 +262,4 @@ autocmd FileType c nnoremap <buffer> <leader>x <esc>:call CompileAndRunCurrentCF
 "===============================================================================
 
 autocmd FileType sh nnoremap <buffer> <leader>x <esc>:! clear && ./%<cr>
+autocmd FileType zsh nnoremap <buffer> <leader>x <esc>:! clear && ./%<cr>
