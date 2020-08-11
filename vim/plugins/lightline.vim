@@ -8,6 +8,12 @@ let g:lightline = {
       \ },
       \ }
 
+
+let g:lightline.enable = {
+      \ 'statusline': 1,
+      \ 'tabline': 0
+      \ }
+
 function! LightlineFilename()
   return expand('%:t') !=# '' ? expand('%:f') : '[No Name]'
 endfunction
