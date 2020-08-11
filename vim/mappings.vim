@@ -173,6 +173,10 @@ inoremap ,A Â
 
 nnoremap <leader>st <esc>:! clear && ./shell_test<cr>
 nnoremap <leader><leader>xx <esc>:! chmod +x %<cr>
+nnoremap <c-l> gt
+nnoremap <c-k> gt
+nnoremap <c-h> gT
+nnoremap <c-j> gT
 
 "===============================================================================
 " Language specific
