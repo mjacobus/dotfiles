@@ -57,6 +57,12 @@ set wildignore+=*.so,*.swp,*.zip,*/build/*,*/coverage/*     " MacOSX/Linux
 set wildmenu
 set wildmode=list:longest,full
 
+" https://www.reddit.com/r/vim/comments/57huhd/any_idea_why_terminal_vim_isnt_correctly/
+" Attempt to fix rendering
+if &term =~ '256color'
+  set t_ut=
+endif
+
 " Conditional settings
 if exists("+undodir")
   set undodir=~/.vimundodir
