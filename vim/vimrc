@@ -131,29 +131,29 @@ if !filereadable(".vim-skip-plugins")
     source ~/.vim/plugins/vim-test.vim
     source ~/.vim/plugins/vim-to-cterm.vim
 
-    source ~/.vim/plugins/php.vim
+    " source ~/.vim/plugins/php.vim
     source ~/.vim/plugins/ruby.vim
-    source ~/.vim/plugins/javascript.vim
+    " source ~/.vim/plugins/javascript.vim
 
     Plug 'yukunlin/auto-pairs'          " fixed 'jiangmiao/auto-pairs'
-    Plug 'endel/vim-github-colorscheme' " color
-    Plug 'jonathanfilip/vim-lucius'     " color
-    Plug 'chriskempson/base16-vim'      " color
-    Plug 'nanotech/jellybeans.vim'      " color
+    " Plug 'endel/vim-github-colorscheme' " color
+    " Plug 'jonathanfilip/vim-lucius'     " color
+    " Plug 'chriskempson/base16-vim'      " color
+    " Plug 'nanotech/jellybeans.vim'      " color
     Plug 'mhartington/oceanic-next'     " color
     Plug 'Lokaltog/vim-easymotion'
-    Plug 'airblade/vim-gitgutter'
+    " Plug 'airblade/vim-gitgutter'
     Plug 'austintaylor/vim-commaobject'
-    Plug 'joonty/vdebug'
+    " Plug 'joonty/vdebug'
     Plug 'kana/vim-textobj-user'
     Plug 'tomtom/tcomment_vim'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-speeddating'
     Plug 'tpope/vim-surround'
-    Plug 'slim-template/vim-slim'
+    " Plug 'slim-template/vim-slim'
     Plug 'mechatroner/rainbow_csv'
     Plug 'mattn/emmet-vim'
-    Plug 'jparise/vim-graphql'
+    " Plug 'jparise/vim-graphql'
     Plug 'othree/html5.vim'
 
   call plug#end()
@@ -165,7 +165,7 @@ end
 " colorscheme lucius
 
 let base16colorspace=256
-colorscheme base16-tomorrow-night
+" colorscheme base16-tomorrow-night
 colorscheme OceanicNext
 " colorscheme jellybeans
 call FixColors()
