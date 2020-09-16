@@ -11,9 +11,6 @@ source ~/.vim/mappings.vim
 set background=dark
 syntax on
 
-" different color for each paren pairs
-let vimclojure#ParenRainbow = 1
-
 set path+=**
 set autoindent
 set autoread
@@ -54,11 +51,6 @@ set wildignore+=*.so,*.swp,*.zip,*/build/*,*/coverage/*     " MacOSX/Linux
 set wildmenu
 set wildmode=list:longest,full
 
-" https://www.reddit.com/r/vim/comments/57huhd/any_idea_why_terminal_vim_isnt_correctly/
-" Attempt to fix rendering
-if &term =~ '256color'
-  set t_ut=
-endif
 
 " Conditional settings
 if exists("+undodir")
@@ -139,7 +131,6 @@ if !filereadable(".vim-skip-plugins")
     source ~/.vim/plugins/ruby.vim
     source ~/.vim/plugins/syntastic.vim
     source ~/.vim/plugins/tabular.vim
-    source ~/.vim/plugins/tagbar.vim
     source ~/.vim/plugins/ultisnipts.vim
     source ~/.vim/plugins/vim-test.vim
     source ~/.vim/plugins/vim-to-cterm.vim
