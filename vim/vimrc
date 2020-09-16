@@ -1,16 +1,12 @@
 let mapleader = " "
 set nocompatible
+syntax on
 
 source ~/.vim/functions.vim
 source ~/.vim/abbreviations.vim
 source ~/.vim/mappings.vim
 
-"===============================================================================
-" Options:
-"===============================================================================
 set background=dark
-syntax on
-
 set path+=**
 set autoindent
 set autoread
@@ -50,7 +46,6 @@ set ttyfast
 set wildignore+=*.so,*.swp,*.zip,*/build/*,*/coverage/*     " MacOSX/Linux
 set wildmenu
 set wildmode=list:longest,full
-
 
 " Conditional settings
 if exists("+undodir")
@@ -115,6 +110,10 @@ autocmd FileType gitcommit setlocal spell spelllang=en_us,pt_br,de_de
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us,pt_br,de_de
 autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us,pt_br,de_de
 
+"===============================================================================
+" Plugins
+"===============================================================================
+
 if !filereadable(".vim-skip-plugins")
   call plug#begin('~/.vimplugged')
     source ~/.vim/plugins/ag.vim
@@ -124,16 +123,17 @@ if !filereadable(".vim-skip-plugins")
     source ~/.vim/plugins/fzf.vim
     source ~/.vim/plugins/gist.vim
     source ~/.vim/plugins/indentation-guides.vim
-    source ~/.vim/plugins/javascript.vim
     source ~/.vim/plugins/lightline.vim
     source ~/.vim/plugins/nerdtree.vim
-    source ~/.vim/plugins/php.vim
-    source ~/.vim/plugins/ruby.vim
     source ~/.vim/plugins/syntastic.vim
     source ~/.vim/plugins/tabular.vim
     source ~/.vim/plugins/ultisnipts.vim
     source ~/.vim/plugins/vim-test.vim
     source ~/.vim/plugins/vim-to-cterm.vim
+
+    source ~/.vim/plugins/php.vim
+    source ~/.vim/plugins/ruby.vim
+    source ~/.vim/plugins/javascript.vim
 
     Plug 'yukunlin/auto-pairs'          " fixed 'jiangmiao/auto-pairs'
     Plug 'endel/vim-github-colorscheme' " color
@@ -172,7 +172,6 @@ call FixColors()
 hi Normal guibg=NONE ctermbg=NONE
 hi Normal guibg=NONE ctermbg=NONE
 hi EndOfBuffer guibg=NONE ctermbg=NONE
-
 
 "===============================================================================
 " Allow overriding these settings:
