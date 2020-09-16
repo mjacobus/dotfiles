@@ -28,7 +28,7 @@ set list
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 set mouse=""
 set nobackup
-set noincsearch
+set incsearch
 set noswapfile
 set nowrap
 set number numberwidth=2
