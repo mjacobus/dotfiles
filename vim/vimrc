@@ -2,7 +2,35 @@ let mapleader = " "
 set nocompatible
 
 if !filereadable(".vim-skip-plugins")
-  source ~/.vim/plugins.vim
+  call plug#begin('~/.vimplugged')
+    source ~/.vim/plugins/ag.vim
+    source ~/.vim/plugins/argumentrewrap.vim
+    source ~/.vim/plugins/autocomplete.vim
+    source ~/.vim/plugins/autopairs.vim
+    source ~/.vim/plugins/colors.vim
+    source ~/.vim/plugins/config.vim
+    source ~/.vim/plugins/csv.vim
+    source ~/.vim/plugins/ctrl_p.vim
+    source ~/.vim/plugins/emmet.vim
+    source ~/.vim/plugins/eunuch.vim
+    source ~/.vim/plugins/fugitive.vim
+    source ~/.vim/plugins/fzf.vim
+    source ~/.vim/plugins/gist.vim
+    source ~/.vim/plugins/graphql.vim
+    source ~/.vim/plugins/html.vim
+    source ~/.vim/plugins/indentation-guides.vim
+    source ~/.vim/plugins/javascript.vim
+    source ~/.vim/plugins/lightline.vim
+    source ~/.vim/plugins/nerdtree.vim
+    source ~/.vim/plugins/php.vim
+    source ~/.vim/plugins/ruby.vim
+    source ~/.vim/plugins/syntastic.vim
+    source ~/.vim/plugins/tabular.vim
+    source ~/.vim/plugins/tagbar.vim
+    source ~/.vim/plugins/ultisnipts.vim
+    source ~/.vim/plugins/vim-test.vim
+    source ~/.vim/plugins/vim-to-cterm.vim
+  call plug#end()
 end
 source ~/.vim/functions.vim
 source ~/.vim/abbreviations.vim
