@@ -20,3 +20,4 @@ shell_test
 .tool-versions
 /.vim-skip-plugins
 *.json.gz
+/.test_runner.yml
