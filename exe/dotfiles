@@ -1,7 +1,14 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require 'bundler/setup'
+begin
+  require 'colorized_string'
+rescue LoadError
+  puts "No colorized_string"
+end
+
+lib = File.expand_path('../lib', __dir__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'dotfiles'
 
 application_helper = Dotfiles::ApplicationHelper.new(ARGV.dup)

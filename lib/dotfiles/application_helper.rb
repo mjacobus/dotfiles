@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'colorized_string'
-
 module Dotfiles
   class ApplicationHelper
     attr_reader :home
@@ -43,7 +41,7 @@ module Dotfiles
     end
 
     def output(string, color: nil)
-      if color
+      if defined?(ColorizedString) && color
         string = ColorizedString.new(string).send(color)
       end
 
