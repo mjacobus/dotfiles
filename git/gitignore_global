@@ -21,3 +21,6 @@ shell_test
 /.vim-skip-plugins
 *.json.gz
 /.test_runner.yml
+config/initializers/marcelo_debugger.rb
+app/models/m.rb
+/.env
