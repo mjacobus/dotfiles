@@ -26,7 +26,8 @@ module Dotfiles
       end
 
       def install_config_files
-        symlink(dotfile('git/asdfrc'), destination_for('.asdfrc'))
+        symlink(dotfile('asdfrc'), destination_for('.asdfrc'))
+        symlink(dotfile('.default-gems'), destination_for('default-gems'))
         symlink(dotfile('.tools-versions'), destination_for('.tools-versions'))
       end
 
