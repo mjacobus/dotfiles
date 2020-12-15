@@ -24,3 +24,5 @@ shell_test
 config/initializers/marcelo_debugger.rb
 app/models/m.rb
 /.env
+/.scripts
+/.project
