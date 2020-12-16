@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+bkp=$(mktemp /tmp/json-pretty-bkp.XXXXXX)
+tempfile=$(mktemp /tmp/json-pretty-source.XXXXXX)
+file=$1
+
+cat $file > $bkp
+jq . $file > $tempfile
+cat $tempfile > $file

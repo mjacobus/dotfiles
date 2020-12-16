@@ -104,6 +104,8 @@ autocmd BufNewFile,BufRead *.hbs set ai filetype=handlebars
 
 " JSON is JS
 autocmd BufNewFile,BufRead *.json set ai filetype=javascript
+" es6 is JS
+autocmd BufNewFile,BufRead *.es6 set ai filetype=javascript
 
 " enable spell check
 autocmd FileType gitcommit setlocal spell spelllang=en_us,pt_br,de_de
