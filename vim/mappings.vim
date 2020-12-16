@@ -243,6 +243,7 @@ autocmd FileType ruby nnoremap <buffer> <leader>ccs :call ReekCodeSmell('%')<cr>
 autocmd FileType javascript nnoremap <buffer> <leader>x <esc>:! clear && time node %<cr>
 autocmd FileType javascript nnoremap <buffer> <leader>cs :call Prettier()<cr>
 autocmd FileType javascript nnoremap <buffer> <leader>js :call PrettifyJson()<cr>
+autocmd FileType json nnoremap <buffer> <leader>cs :call PrettifyJson()<cr>
 
 "===============================================================================
 " css

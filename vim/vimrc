@@ -103,7 +103,7 @@ autocmd BufNewFile,BufRead *.hb set ai filetype=handlebars
 autocmd BufNewFile,BufRead *.hbs set ai filetype=handlebars
 
 " JSON is JS
-autocmd BufNewFile,BufRead *.json set ai filetype=javascript
+" autocmd BufNewFile,BufRead *.json set ai filetype=javascript
 " es6 is JS
 autocmd BufNewFile,BufRead *.es6 set ai filetype=javascript
 
