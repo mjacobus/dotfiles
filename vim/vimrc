@@ -135,7 +135,7 @@ if !filereadable(".vim-skip-plugins")
 
     " source ~/.vim/plugins/php.vim
     source ~/.vim/plugins/ruby.vim
-    " source ~/.vim/plugins/javascript.vim
+    source ~/.vim/plugins/javascript.vim
 
     Plug 'yukunlin/auto-pairs'          " fixed 'jiangmiao/auto-pairs'
     " Plug 'endel/vim-github-colorscheme' " color
