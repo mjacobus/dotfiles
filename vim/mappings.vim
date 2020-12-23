@@ -54,6 +54,7 @@ vnoremap # y?<C-R>"<CR>
 " saves from normal mode
 nnoremap <leader>s :w<cr>
 nnoremap <leader>S :w<cr>
+inoremap jk <esc>:w<cr>
 
 " saves and exits insert mode
 inoremap ,s <ESC>:w<cr>
