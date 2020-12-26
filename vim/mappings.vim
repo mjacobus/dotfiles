@@ -6,10 +6,11 @@
 nnoremap <leader>rm :Delete<cr>
 
 " escape alias
-inoremap jj <esc>
-inoremap jJ <esc>
-inoremap Jj <esc>
-inoremap JJ <esc>
+inoremap jj <esc>:w<cr>
+inoremap jJ <esc>:w<cr>
+inoremap Jj <esc>:w<cr>
+inoremap JJ <esc>:w<cr>
+inoremap jk <esc>
 
 " navigation
 noremap <leader>j 10j
@@ -54,7 +55,6 @@ vnoremap # y?<C-R>"<CR>
 " saves from normal mode
 nnoremap <leader>s :w<cr>
 nnoremap <leader>S :w<cr>
-inoremap jk <esc>:w<cr>
 
 " saves and exits insert mode
 inoremap ,s <ESC>:w<cr>
