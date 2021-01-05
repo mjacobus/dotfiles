@@ -14,6 +14,7 @@ module Dotfiles
         install_config_files
         clone_asdf
         add_plugin('ruby')
+        add_plugin('elixir')
         add_plugin('php', 'https://github.com/asdf-community/asdf-php.git')
         install_nodejs
       end
