@@ -1,2 +1,4 @@
 ruby 2.7.2
 nodejs 10.16.0
+elixir 1.11
+erlang 23.2
