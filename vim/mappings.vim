@@ -232,6 +232,12 @@ autocmd FileType ruby nnoremap <buffer> <leader>cs  :call RubocopFixCs('%')<cr>
 autocmd FileType ruby nnoremap <buffer> <leader>dcs :call RubocopFixCs('.')<cr>
 autocmd FileType ruby nnoremap <buffer> <leader>ccs :call ReekCodeSmell('%')<cr>
 
+"===============================================================================
+" Elixir
+"===============================================================================
+
+autocmd FileType elixir nnoremap <buffer> <leader>x <esc>:! clear && time elixir %<cr>
+autocmd FileType elixir nnoremap <buffer> <leader>cs :call ElixirFixCs('%')<cr>
 
 "===============================================================================
 " Javascript

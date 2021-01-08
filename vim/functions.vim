@@ -205,6 +205,11 @@ function! PhpFixCs(target)
   call ClearEchoAndExecute(full_command)
 endfunction
 
+function! ElixirFixCs(target)
+  let cmd = 'mix format '
+  call ClearEchoAndExecute(cmd)
+endfunction
+
 function! RubocopFixCs(target)
   let options=''
   let cmd = 'bundle exec rubocop'
