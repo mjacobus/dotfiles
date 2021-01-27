@@ -8,15 +8,15 @@ module Dotfiles
       end
 
       def key
-        self.class.to_s.split('::').last
+        self.class.to_s.split('::').last.downcase
       end
 
       def install
-        if app.only?(key)
-          return perform_installation
+        if !app.only_present? && app.yes_no_quit?(confirmation_message)
+          perform_installation
         end
 
-        if app.yes_no_quit?(confirmation_message)
+        if app.only?(key)
           perform_installation
         end
       end

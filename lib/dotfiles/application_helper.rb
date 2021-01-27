@@ -23,8 +23,12 @@ module Dotfiles
       exit(exception.command_result.code)
     end
 
+    def only_present?(*_args)
+      options.key?('only')
+    end
+
     def only?(installer_key)
-      options.key?('only') && options['only'].split(',').include?(installer_key)
+      only_present? && options['only'].split(',').include?(installer_key)
     end
 
     def options
