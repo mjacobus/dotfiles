@@ -17,6 +17,7 @@ module Dotfiles
         add_plugin('erlang')
         add_plugin('elixir')
         add_plugin('php', 'https://github.com/asdf-community/asdf-php.git')
+        add_plugin('golang', 'https://github.com/kennyp/asdf-golang.git')
         install_nodejs
       end
 

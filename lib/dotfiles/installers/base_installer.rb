@@ -7,7 +7,15 @@ module Dotfiles
         @app = application
       end
 
+      def key
+        self.class.to_s.split('::').last
+      end
+
       def install
+        if app.only?(key)
+          return perform_installation
+        end
+
         if app.yes_no_quit?(confirmation_message)
           perform_installation
         end
@@ -20,7 +28,7 @@ module Dotfiles
       end
 
       def name
-        self.class.to_s.split('::').last
+        key.to_s
       end
 
       def perform_installation

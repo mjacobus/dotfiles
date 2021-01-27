@@ -23,6 +23,17 @@ module Dotfiles
       exit(exception.command_result.code)
     end
 
+    def only?(installer_key)
+      options.key?('only') && options['only'].split(',').include?(installer_key)
+    end
+
+    def options
+      @options = @argv.map do |value|
+        parts = value.split('=')
+        [parts.shift.sub(/^--/, ''), parts.join('=')]
+      end.to_h
+    end
+
     def ask(question)
       output(question, color: :yellow)
       gets.chomp

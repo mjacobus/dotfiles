@@ -2,3 +2,4 @@ ruby 3.0.0
 nodejs 10.16.0
 elixir 1.11
 erlang 23.2
+golang 1.13
