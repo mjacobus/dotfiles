@@ -16,6 +16,7 @@ module Dotfiles
         add_plugin('ruby')
         add_plugin('erlang')
         add_plugin('elixir')
+        add_plugin('python', '')
         add_plugin('php', 'https://github.com/asdf-community/asdf-php.git')
         add_plugin('golang', 'https://github.com/kennyp/asdf-golang.git')
         install_nodejs
@@ -32,6 +33,7 @@ module Dotfiles
         symlink(dotfile('asdfrc'), destination_for('.asdfrc'))
         symlink(dotfile('.default-gems'), destination_for('default-gems'))
         symlink(dotfile('.tools-versions'), destination_for('.tools-versions'))
+        symlink(dotfile('.tools-versions'), destination_for('.tool-versions'))
       end
 
       def clone_asdf
