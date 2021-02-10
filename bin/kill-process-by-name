@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+name=$1
+pgrep -i $name | xargs kill -9
