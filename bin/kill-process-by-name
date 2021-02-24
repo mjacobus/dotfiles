@@ -1,4 +1,13 @@
 #!/usr/bin/env bash
 
 name=$1
+# USER       PID  %CPU %MEM      VSZ    RSS   TT  STAT STARTED      TIME COMMAND
+# $(ps -aux | grep $name | awk '{if(NR!=1) { print $4, $1, ($2, $3) }}' | pick -do | tail -n +2)
+# $(ps -e | grep $name | awk '{if(NR!=1) { print $4, $1 }}' | pick -do | tail -n +2) # almost original
+# $(ps -aux | grep $name | awk '{if(NR!=1) { print $4, $1 }}' | pick -do | tail -n +2)
+
+# ps aux | grep vim | awk '{if(NR!=1) { print $11, $2 }}' | xargs pick -do
+# kill $(ps -e | grep -i $name | awk '{if(NR!=1) { print $4, $1 }}' | pick -do | tail -n +2)
+
+# ps aux | grep -i $name | grep -v grep | awk "{print \$2}" | xargs kill -9
 pgrep -i $name | xargs kill -9
