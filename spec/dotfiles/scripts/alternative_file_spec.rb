@@ -14,8 +14,53 @@ RSpec.describe Dotfiles::Scripts::AlternativeFile do
     expect(found).to eq('spec/dotfiles/scripts/alternative_file_spec.rb')
   end
 
+  context 'when both types of test files exist' do
+    let(:found) { script.execute(['lib/dotfiles/file.rb']) }
+
+    context 'when spec file is present' do
+      before do
+        mock_exist('spec')
+        mock_exist('test')
+        mock_exist('test/dotfiles/file_test.rb')
+        mock_exist('spec/dotfiles/file_spec.rb')
+      end
+
+      it 'finds the rspec file' do
+        expect(found).to eq('spec/dotfiles/file_spec.rb')
+      end
+    end
+
+    context 'when spec file is absent' do
+      before do
+        mock_exist('spec')
+        mock_exist('test')
+        mock_exist('test/dotfiles/file_test.rb')
+        mock_exist('spec/dotfiles/file_spec.rb', false)
+      end
+
+      it 'finds the minitest file' do
+        expect(found).to eq('test/dotfiles/file_test.rb')
+      end
+    end
+
+    context 'when both are absent' do
+      before do
+        mock_exist('spec')
+        mock_exist('test')
+        mock_exist('test/dotfiles/file_test.rb', false)
+        mock_exist('spec/dotfiles/file_spec.rb', false)
+      end
+
+      it 'finds the rspec file' do
+        expect(found).to eq('spec/dotfiles/file_spec.rb')
+      end
+    end
+  end
+
   it 'finds the test file when it exists' do
     mock_exist('test')
+    mock_exist('spec', false)
+    mock_exist('spec/dotfiles/file_spec.rb', false)
     file = 'lib/dotfiles/scripts/alternative_file.rb'
 
     found = script.execute([file])
