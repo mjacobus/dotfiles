@@ -11,7 +11,7 @@ RSpec.describe Dotfiles::Scripts::AlternativeFile do
 
     found = script.execute([file])
 
-    expect(found).to eq('spec/dotfiles/scripts/alternative_file_spec.rb')
+    expect(found.to_s).to eq('spec/dotfiles/scripts/alternative_file_spec.rb')
   end
 
   context 'when both types of test files exist' do
@@ -26,7 +26,7 @@ RSpec.describe Dotfiles::Scripts::AlternativeFile do
       end
 
       it 'finds the rspec file' do
-        expect(found).to eq('spec/dotfiles/file_spec.rb')
+        expect(found.to_s).to eq('spec/dotfiles/file_spec.rb')
       end
     end
 
@@ -39,7 +39,7 @@ RSpec.describe Dotfiles::Scripts::AlternativeFile do
       end
 
       it 'finds the minitest file' do
-        expect(found).to eq('test/dotfiles/file_test.rb')
+        expect(found.to_s).to eq('test/dotfiles/file_test.rb')
       end
     end
 
@@ -52,7 +52,7 @@ RSpec.describe Dotfiles::Scripts::AlternativeFile do
       end
 
       it 'finds the rspec file' do
-        expect(found).to eq('spec/dotfiles/file_spec.rb')
+        expect(found.to_s).to eq('spec/dotfiles/file_spec.rb')
       end
     end
   end
@@ -65,7 +65,7 @@ RSpec.describe Dotfiles::Scripts::AlternativeFile do
 
     found = script.execute([file])
 
-    expect(found).to eq('test/dotfiles/scripts/alternative_file_test.rb')
+    expect(found.to_s).to eq('test/dotfiles/scripts/alternative_file_test.rb')
   end
 
   it 'finds the alternative file for a spec file in gem' do
@@ -73,7 +73,7 @@ RSpec.describe Dotfiles::Scripts::AlternativeFile do
 
     found = script.execute([file])
 
-    expect(found).to eq('lib/dotfiles/scripts/alternative_file.rb')
+    expect(found.to_s).to eq('lib/dotfiles/scripts/alternative_file.rb')
   end
 
   it 'finds the alternative file for a minitest file in gem' do
@@ -81,7 +81,7 @@ RSpec.describe Dotfiles::Scripts::AlternativeFile do
 
     found = script.execute([file])
 
-    expect(found).to eq('lib/dotfiles/scripts/alternative_file.rb')
+    expect(found.to_s).to eq('lib/dotfiles/scripts/alternative_file.rb')
   end
 
   it 'finds the alternative file for a minitest file when no alternative file exists' do
@@ -90,25 +90,76 @@ RSpec.describe Dotfiles::Scripts::AlternativeFile do
 
     found = script.execute([file])
 
-    expect(found).to eq('lib/dotfiles/scripts/alternative_file.rb')
+    expect(found.to_s).to eq('lib/dotfiles/scripts/alternative_file.rb')
   end
 
   it 'finds spec for rails model' do
-    mock_exist(:all, false)
     mock_exist('spec', true)
-
     file = 'app/models/user.rb'
+    mock_exist(:all, false)
 
     found = script.execute([file])
 
-    expect(found).to eq('spec/models/user_spec.rb')
+    expect(found.to_s).to eq('spec/models/user_spec.rb')
+  end
+
+  context 'package files' do
+    it 'finds test files for private packaged files' do
+      mock_exist(:all, false)
+      mock_exist('packages/foo/test')
+
+      file = 'packages/foo/private/baz/user.rb'
+      expected_file = mock_exist('packages/foo/test/baz/user_test.rb')
+
+      found = script.execute([file])
+
+      expect(found.to_s).to eq(expected_file)
+    end
+
+    it 'finds test files for public packaged files' do
+      mock_exist(:all, false)
+      mock_exist('packages/foo/test')
+
+      file = 'packages/foo/public/baz/user.rb'
+      expected_file = mock_exist('packages/foo/test/baz/user_test.rb')
+
+      found = script.execute([file])
+
+      expect(found.to_s).to eq(expected_file)
+    end
+
+    it 'finds the alternative private file for a test file' do
+      mock_exist(:all, false)
+      mock_exist('packages/foo/test/baz/user.rb')
+
+      file = 'packages/foo/test/baz/user_test.rb'
+      expected_file = mock_exist('packages/foo/private/baz/user.rb')
+
+      found = script.execute([file])
+
+      expect(found.to_s).to eq(expected_file)
+    end
+
+    it 'finds the alternative public file for a test file' do
+      mock_exist(:all, false)
+      mock_exist('packages/foo/test/baz/user.rb')
+
+      file = 'packages/foo/test/baz/user_test.rb'
+      expected_file = mock_exist('packages/foo/public/baz/user.rb')
+
+      found = script.execute([file])
+
+      expect(found.to_s).to eq(expected_file)
+    end
   end
 
   def mock_exist(file, exist = true)
     if file == :all
       allow(File).to receive(:exist?).and_return(exist)
+      return file
       return
     end
     allow(File).to receive(:exist?).with(file).and_return(exist)
+    file
   end
 end
