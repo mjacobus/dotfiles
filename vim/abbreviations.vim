@@ -45,3 +45,4 @@ iab        Nao                  não
 iab        espirito             espírito
 iab        coracao             coração
 iab        Coracao             Coração
+iab        ier                 @github/international-expansion-reviewers
