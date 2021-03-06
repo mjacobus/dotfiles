@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 # rubocop:disable Metrics/MethodLength
+require 'pathname'
 require_relative './alternative_file/file'
 
 module Dotfiles
