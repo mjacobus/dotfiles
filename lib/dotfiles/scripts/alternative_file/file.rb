@@ -1,8 +1,10 @@
+# frozen_stringliteral: true
+
 module Dotfiles
   module Scripts
     class AlternativeFile
       class File
-        def initialize(path)
+        def initialize(path = '')
           @path = Pathname.new(path.to_s)
         end
 
@@ -10,12 +12,12 @@ module Dotfiles
           to_s.match?(*args)
         end
 
-        def split(*args)
-          to_s.split(*args)
+        def split(char = '/')
+          to_s.split(char)
         end
 
         def to_s
-          @path.to_s
+          @path.to_s.gsub('//', '/')
         end
 
         def sub(find, replace)
@@ -32,6 +34,10 @@ module Dotfiles
 
         def prefix_with(prefix)
           new(prefix).join(self)
+        end
+
+        def exist?
+          ::File.exist?(to_s)
         end
 
         private
