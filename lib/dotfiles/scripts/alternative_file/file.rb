@@ -1,4 +1,4 @@
-# frozen_stringliteral: true
+# frozen_string_literal: true
 
 module Dotfiles
   module Scripts
@@ -8,16 +8,24 @@ module Dotfiles
           @path = Pathname.new(path.to_s)
         end
 
+        def to_s
+          @path.to_s.gsub('//', '/')
+        end
+
+        def start_with?(prefix)
+          to_s.start_with?(prefix)
+        end
+
+        def without_prefix(prefix)
+          sub(/^#{prefix}/, '')
+        end
+
         def match?(*args)
           to_s.match?(*args)
         end
 
         def split(char = '/')
           to_s.split(char)
-        end
-
-        def to_s
-          @path.to_s.gsub('//', '/')
         end
 
         def sub(find, replace)
@@ -46,10 +54,12 @@ module Dotfiles
           self.class.new(path)
         end
 
-        def self.join(parts)
-          file = File.new('')
-          parts.flatten.each { |part| file = file.join(part) }
-          file
+        class << self
+          def join(parts)
+            file = File.new('')
+            parts.flatten.each { |part| file = file.join(part) }
+            file
+          end
         end
       end
     end

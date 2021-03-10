@@ -26,6 +26,10 @@ module Dotfiles
           return find_packaged_test_file_for(file)
         end
 
+        if file.start_with?('public/') || file.start_with?('private/')
+          file = file.without_prefix('public/').without_prefix('private/')
+        end
+
         minitest_folder = prefix.join('test')
         minitest = minitest_folder.join(file).sub(/(lib|app)/, '').sub('.rb', '_test.rb')
 

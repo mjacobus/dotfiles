@@ -151,6 +151,73 @@ RSpec.describe Dotfiles::Scripts::AlternativeFile do
 
       expect(found.to_s).to eq(expected_file)
     end
+
+    context 'inside the packages folder' do
+      it 'finds public alternative file for test' do
+        mock_exist(:all, false)
+        expected_file = mock_exist('public/baz/user.rb')
+
+        file = 'test/baz/user_test.rb'
+
+        found = script.execute([file])
+
+        expect(found.to_s).to eq(expected_file)
+      end
+
+      it 'finds private alternative file for test' do
+        mock_exist(:all, false)
+        expected_file = mock_exist('private/baz/user.rb')
+        file = 'spec/baz/user_spec.rb'
+
+        found = script.execute([file])
+
+        expect(found.to_s).to eq(expected_file)
+      end
+
+      it 'finds test file for public file' do
+        mock_exist(:all, false)
+        mock_exist('test')
+        expected_file = mock_exist('test/baz/user_test.rb')
+        file = 'public/baz/user.rb'
+
+        found = script.execute([file])
+
+        expect(found.to_s).to eq(expected_file)
+      end
+
+      it 'finds test file for private file' do
+        mock_exist(:all, false)
+        mock_exist('test')
+        file = 'private/baz/user.rb'
+        expected_file = mock_exist('test/baz/user_test.rb')
+
+        found = script.execute([file])
+
+        expect(found.to_s).to eq(expected_file)
+      end
+
+      it 'finds spec file for public file' do
+        mock_exist(:all, false)
+        mock_exist('spec')
+        expected_file = mock_exist('spec/baz/user_spec.rb')
+        file = 'public/baz/user.rb'
+
+        found = script.execute([file])
+
+        expect(found.to_s).to eq(expected_file)
+      end
+
+      it 'finds spec file for private file' do
+        mock_exist(:all, false)
+        mock_exist('spec')
+        file = 'private/baz/user.rb'
+        expected_file = mock_exist('spec/baz/user_spec.rb')
+
+        found = script.execute([file])
+
+        expect(found.to_s).to eq(expected_file)
+      end
+    end
   end
 
   def mock_exist(file, exist = true)
