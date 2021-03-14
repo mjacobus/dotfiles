@@ -26,7 +26,7 @@ GEM
     parser (3.0.0.0)
       ast (~> 2.4.1)
     rainbow (3.0.0)
-    rake (10.5.0)
+    rake (13.0.3)
     regexp_parser (2.0.3)
     rest-client (1.6.7)
       mime-types (>= 1.16)
@@ -79,7 +79,7 @@ DEPENDENCIES
   coveralls
   dotfiled
   dotfiles!
-  rake (~> 10.0)
+  rake (~> 13.0)
   rspec
   rubocop
   rubocop-rspec
