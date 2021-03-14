@@ -342,7 +342,9 @@ function! FixColors()
 endfunction
 
 function! OpenAlternateFile()
-  let file = system('alternative_file ' . expand('%'))
+  " Need to update dotfiled
+  let file = system('dotfiled ' . expand('%'))
+  " let file = system('alternative_file ' . expand('%'))
   if !empty(file)
     execute "e " . file
   endif
