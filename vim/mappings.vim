@@ -12,6 +12,10 @@ inoremap Jj <esc>:w<cr>
 inoremap JJ <esc>:w<cr>
 inoremap jk <esc>
 
+" use esc jj to escape terminal mode
+tnoremap <esc> <C-\><C-n>
+tnoremap jj <C-\><C-n>
+
 " navigation
 noremap <leader>j 10j
 noremap <leader>k 10k
