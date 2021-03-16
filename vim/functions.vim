@@ -237,9 +237,14 @@ function! ReekCodeSmell(target)
 endfunction
 
 function! ClearEchoAndExecute(command)
-  execute "! clear && echo '" . a:command . "' && " . a:command
-endfunction
+  let cmd = "! clear && echo '" . a:command . "' && " . a:command
 
+  if has('nvim')
+    let cmd = "terminal " . a:command
+  endif
+
+  execute cmd
+endfunction
 
 function! CompileAndRunCurrentCFile()
   let file = expand('%')
