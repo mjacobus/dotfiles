@@ -28,3 +28,4 @@ app/models/m.rb
 /.project
 /tmp/
 /.bundle
+.project.lua
