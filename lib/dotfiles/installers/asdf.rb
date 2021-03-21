@@ -19,6 +19,7 @@ module Dotfiles
         add_plugin('python', '')
         add_plugin('php', 'https://github.com/asdf-community/asdf-php.git')
         add_plugin('golang', 'https://github.com/kennyp/asdf-golang.git')
+        add_plugin('lua', 'https://github.com/Stratus3D/asdf-lua.git')
         install_nodejs
       end
 
@@ -44,15 +45,22 @@ module Dotfiles
       end
 
       def install_nodejs
-        add_plugin('nodejs')
-        app.output('The next command may take a while', color: :red)
-        app.run("bash #{destination_for('.asdf')}/plugins/nodejs/bin/import-release-team-keyring")
+        if add_plugin('nodejs')
+          app.output('The next command may take a while', color: :red)
+          app.run("bash #{destination_for('.asdf')}/plugins/nodejs/bin/import-release-team-keyring")
+        end
       end
 
       def add_plugin(name, source = nil)
-        script = destination_for('.asdf/bin/asdf')
-        source ||= "https://github.com/asdf-vm/asdf-#{name}.git"
-        app.run("#{script} plugin-add #{name} #{source}")
+        confirmed = app.yes_no?("Install #{name}?")
+
+        if confirmed
+          script = destination_for('.asdf/bin/asdf')
+          source ||= "https://github.com/asdf-vm/asdf-#{name}.git"
+          app.run("#{script} plugin-add #{name} #{source}")
+        end
+
+        confirmed
       end
     end
   end

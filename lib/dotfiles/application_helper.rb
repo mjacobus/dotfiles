@@ -4,10 +4,11 @@ module Dotfiles
   class ApplicationHelper
     attr_reader :home
 
-    def initialize(argv, output = $stdout, command_runner: CommandRunner.new)
+    def initialize(argv, output = $stdout, input = $stdin, command_runner: CommandRunner.new)
       @command_runner = command_runner
       @argv = argv.dup
       @output = output
+      @input = input
       @time = Time.now
       @home = ENV['HOME']
     end
@@ -40,7 +41,7 @@ module Dotfiles
 
     def ask(question)
       output(question, color: :yellow)
-      gets.chomp
+      @input.gets.chomp
     end
 
     def timestamp
