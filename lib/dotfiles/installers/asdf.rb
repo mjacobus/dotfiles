@@ -33,7 +33,6 @@ module Dotfiles
       def install_config_files
         symlink(dotfile('asdfrc'), destination_for('.asdfrc'))
         symlink(dotfile('.default-gems'), destination_for('default-gems'))
-        symlink(dotfile('.tools-versions'), destination_for('.tools-versions'))
         symlink(dotfile('.tools-versions'), destination_for('.tool-versions'))
       end
 
