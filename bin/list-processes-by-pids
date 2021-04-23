@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+# 449 594 613 615 619 640 676 796 944
+grep_for = ARGV.map { |pid| "-e ' #{pid} '" }.join(" ")
+result = `ps aux | grep #{grep_for}`
+result.each_line do |line|
+  puts line.split(/\s+/)[10]
+end
