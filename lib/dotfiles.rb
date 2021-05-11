@@ -16,6 +16,7 @@ require 'dotfiles/installers/git'
 require 'dotfiles/installers/vim'
 require 'dotfiles/installers/zshell'
 require 'dotfiles/installers/bash'
+require 'dotfiles/installers/inputrc'
 require 'dotfiles/installers/asdf'
 require 'dotfiles/installers/php_utils'
 

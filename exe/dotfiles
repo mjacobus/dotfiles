@@ -13,6 +13,7 @@ require 'dotfiles'
 
 application_helper = Dotfiles::ApplicationHelper.new(ARGV.dup)
 installer = Dotfiles::Installer.new([
+  Dotfiles::Installers::Inputrc.new(application_helper),
   Dotfiles::Installers::Bash.new(application_helper),
   Dotfiles::Installers::Zshell.new(application_helper),
   Dotfiles::Installers::Ag.new(application_helper),
