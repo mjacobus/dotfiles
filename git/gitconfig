@@ -62,3 +62,10 @@
   commti = commit
 [rebase]
 	instructionFormat = (%an <%ae>) %s
+[credential]
+	helper = osxkeychain
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
