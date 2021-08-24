@@ -33,8 +33,7 @@ finish_log "symlinks"
 cd $MAIN_PROJECT
 bundle install
 
-start_log "asnks
-jjkkkdf"
+start_log "asdf"
 ./exe/dotfiles --only=asdf
 finish_log "asdf"
 
