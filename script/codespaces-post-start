@@ -2,12 +2,14 @@
 
 # https://github.com/github/ghcs
 
-set -ev
+set -e
 
 MAIN_PROJECT=`pwd`
 
 function log() {
-  echo "`date` - $1" >> ~/DOTFILES_LOG
+  message="`date` - $1"
+  echo $message
+  echo $message >> ~/DOTFILES_LOG
 }
 
 function start_log() {
