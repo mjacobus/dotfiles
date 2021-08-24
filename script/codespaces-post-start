@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "CODESPACES!!!================="
+echo "`date` - Installed dotfiles" >> ~/DOTFILES_INSTALLED
