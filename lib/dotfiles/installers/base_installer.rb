@@ -51,6 +51,14 @@ module Dotfiles
         app.yes_no?(question)
       end
 
+      def yes_no_unless?(question, &block)
+        if block.call
+          return true
+        end
+
+        yes_no?(question)
+      end
+
       def dotfile(file)
         app.dotfile(file)
       end
