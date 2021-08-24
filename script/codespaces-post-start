@@ -26,6 +26,7 @@ if [[ ! -d /workspaces/dotfiles ]]; then
 fi
 
 start_log "symlinks"
+mv  ~/.dotfiles ~/.dotfiles-bkp
 [[ ! -d ~/.dotfiles ]] && ln -s /workspaces/dotfiles ~/.dotfiles
 [[ ! -d ~/Projects ]] && ln -s /workspaces ~/Projects
 finish_log "symlinks"
