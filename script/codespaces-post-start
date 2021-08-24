@@ -1,4 +1,20 @@
 #!/usr/bin/env bash
 
 echo "CODESPACES!!!================="
+
+PROJECT_DIR=`pwd`
+
+ln -s /workspaces ~/Projects
+git clone https://github.com/neovim/neovim ~/Projects/neovim
+cd ~/Projects/neovim
+make -j4
+sudo make install
+
+
+cd $PROJECT_DIR
+bundle install
+sudo apt-get install -y tmux
+
+sudo apt-get install ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl
+
 echo "`date` - Installed dotfiles" >> ~/DOTFILES_INSTALLED
