@@ -2,6 +2,8 @@
 
 # https://github.com/github/ghcs
 
+set -ev
+
 MAIN_PROJECT=`pwd`
 
 function log() {
@@ -16,24 +18,23 @@ function finish_log() {
   log "Finishing $1"
 }
 
-
 start_log "Codespaces"
 
-set -e
 
 if [[ ! -d /workspaces/dotfiles ]]; then
   git clone git@github.com:mjacobus/dotfiles.git /workspaces/dotfiles
 fi
 
 start_log "symlinks"
-ln -s /workspaces/dotfiles ~/.dotfiles
-ln -s /workspaces ~/Projects
+[[ ! -d ~/.dotfiles ]] && ln -s /workspaces/dotfiles ~/.dotfiles
+[[ ! -d ~/Projects ]] && ln -s /workspaces ~/Projects
 finish_log "symlinks"
 
 cd $MAIN_PROJECT
 bundle install
 
-start_log "asdf"
+start_log "asnks
+jjkkkdf"
 ./exe/dotfiles --only=asdf
 finish_log "asdf"
 
