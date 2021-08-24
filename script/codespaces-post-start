@@ -43,6 +43,7 @@ start_log "asdf"
 finish_log "asdf"
 
 start_log "python"
+source ~/.profile.d/setup.sh
 asdf install python
 finish_log "python"
 
