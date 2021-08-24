@@ -24,6 +24,14 @@ sudo make install
 cd $MAIN_PROJECT
 bundle install
 ./exe/dotfiles --only=asdf
+./exe/dotfiles --only=git --email=marcelo.jacobus@gmail.com
+./exe/dotfiles --only=ag
+./exe/dotfiles --only=tmux
+./exe/dotfiles --only=vim
+./exe/dotfiles --only=irb
+./exe/dotfiles --only=inputrc
+./exe/dotfiles --only=zshell
+./exe/dotfiles --only=ctags
 
 sudo apt-get install -y tmux
 
