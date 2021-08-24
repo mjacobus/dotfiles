@@ -1,9 +1,19 @@
 #!/usr/bin/env bash
 
+MAIN_PROJECT=`pwd`
+
 echo "CODESPACES!!!================="
 
-PROJECT_DIR=`pwd`
+set -e
 
+if [[ ! -d /workspaces/dotfiles ]]; then
+  git clone git@github.com:mjacobus/dotfiles.git /workspaces/dotfiles
+fi
+
+ln -s /workspaces/dotfiles ~/.dotfiles
+
+
+# Install neovim
 ln -s /workspaces ~/Projects
 git clone https://github.com/neovim/neovim ~/Projects/neovim
 cd ~/Projects/neovim
@@ -11,7 +21,7 @@ make -j4
 sudo make install
 
 
-cd $PROJECT_DIR
+cd $MAIN_PROJECT
 bundle install
 sudo apt-get install -y tmux
 
