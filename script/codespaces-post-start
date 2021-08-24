@@ -84,10 +84,11 @@ if [[ ! -d /workspaces/neovim ]]; then
   make -j4
   sudo make install
   finish_log "Neovim installation"
+  pip install neovim
 fi
 
 # Neovim config
-if [[ ! -d /workspaces/neovim ]]; then
+if [[ ! -d /workspaces/neovim-config ]]; then
   start_log "Neovim Config"
   git clone https://github.com/mjacobus/neovim-config ~/Projects/neovim-config
   cd ~/Projects/neovim-config
