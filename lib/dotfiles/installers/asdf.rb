@@ -51,7 +51,7 @@ module Dotfiles
       end
 
       def add_plugin(name, source = nil)
-        confirmed = app.yes_no?("Install #{name}?")
+        confirmed = yes_no_unless?("Install #{name}?") { app.only?('asdf') }
 
         if confirmed
           script = destination_for('.asdf/bin/asdf')

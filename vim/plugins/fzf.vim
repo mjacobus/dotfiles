@@ -1,6 +1,7 @@
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
   nnoremap <c-p> :FZF<cr>
+  nnoremap <leader>p :FZF<cr>
   nnoremap <mleader>rm :Remove<cr>
 
 let g:fzf_action = {

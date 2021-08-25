@@ -13,7 +13,7 @@ module Dotfiles
         file = destination_for('.gitconfig')
         symlink(dotfile('git/gitconfig'), file)
 
-        email = ask('What is your email?')
+        email = app.options['email'] || ask('What is your email?')
 
         if email == 'marcelo.jacobus@gmail.com'
           file = destination_for('.gitconfig.local')
