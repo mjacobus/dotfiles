@@ -45,7 +45,6 @@ start_log "asdf"
 finish_log "asdf"
 
 start_log "python"
-source ~/.profile.d/setup.sh
 zsh -ci "asdf install python"
 finish_log "python"
 
@@ -95,7 +94,7 @@ if [[ ! -d /workspaces/neovim-config ]]; then
   start_log "Neovim Config"
   git clone https://github.com/mjacobus/neovim-config ~/Projects/neovim-config
   cd ~/Projects/neovim-config
-  ./install
+  ./install.sh
   start_log "Neovim Config"
 fi
 
