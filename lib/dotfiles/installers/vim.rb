@@ -17,7 +17,6 @@ module Dotfiles
         symlink(dotfile('vim/gvimrc'), destination_for('.gvimrc'))
 
         app.run("mkdir -p #{app.home}/.config")
-        app.run('vim +PlugInstall +quitall')
 
         unless app.options['vim-skip-plug-install']
           app.run('vim +PlugInstall +quitall')
