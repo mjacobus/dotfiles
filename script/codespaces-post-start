@@ -44,10 +44,6 @@ start_log "asdf"
 ./exe/dotfiles --only=asdf
 finish_log "asdf"
 
-start_log "python"
-zsh -ci "asdf install python"
-finish_log "python"
-
 start_log "git"
 ./exe/dotfiles --only=git --email=marcelo.jacobus@gmail.com
 finish_log "git"
@@ -61,10 +57,6 @@ sudo apt-get install -y tmux
 ./exe/dotfiles --only=tmux
 finish_log "tmux"
 
-# start_log "ag"
-# ./exe/dotfiles --only=vim
-# finish_log "ag"
-
 start_log "irb"
 ./exe/dotfiles --only=irb
 finish_log "irb"
@@ -77,25 +69,5 @@ start_log "ctags"
 ./exe/dotfiles --only=ctags
 finish_log "ctags"
 
-# Install neovim
-if [[ ! -d /workspaces/neovim ]]; then
-  start_log "Neovim installation"
-  sudo apt-get install -y ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl
-  git clone https://github.com/neovim/neovim ~/Projects/neovim
-  cd ~/Projects/neovim
-  make -j4
-  sudo make install
-  finish_log "Neovim installation"
-  pip install neovim
-fi
+log "FINISHED! Now open tmux and run ./script/codespaces-post-start-manual"
 
-# Neovim config
-if [[ ! -d /workspaces/neovim-config ]]; then
-  start_log "Neovim Config"
-  git clone https://github.com/mjacobus/neovim-config ~/Projects/neovim-config
-  cd ~/Projects/neovim-config
-  ./install.sh
-  start_log "Neovim Config"
-fi
-
-finish_log "Codespaces"
