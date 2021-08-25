@@ -98,4 +98,8 @@ if [[ ! -d /workspaces/neovim-config ]]; then
   start_log "Neovim Config"
 fi
 
+start_log "zsh"
+echo 'zsh' > ~/.bashc
+finish_log "zsh"
+
 finish_log "Codespaces"
