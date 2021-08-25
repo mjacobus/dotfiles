@@ -46,7 +46,7 @@ finish_log "asdf"
 
 start_log "python"
 source ~/.profile.d/setup.sh
-asdf install python
+zsh -ci "asdf install python"
 finish_log "python"
 
 start_log "git"
