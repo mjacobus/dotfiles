@@ -34,7 +34,6 @@ mv  ~/.dotfiles ~/.dotfiles-bkp
 finish_log "symlinks"
 
 cd $MAIN_PROJECT
-bundle install
 
 start_log "zshell"
 ./exe/dotfiles --only=zshell
