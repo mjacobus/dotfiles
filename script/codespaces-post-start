@@ -74,9 +74,8 @@ zsh -ci "asdf install python"
 # asdf install python
 finish_log "python"
 
-
 start_log "vim"
-./exe/dotfiles --only=vim
+./exe/dotfiles --only=vim --vim-skip-plug-install
 finish_log "vim"
 
 # Install neovim
@@ -101,4 +100,3 @@ if [[ ! -d /workspaces/neovim-config ]]; then
 fi
 
 finish_log "Codespaces"
-
