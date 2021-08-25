@@ -86,7 +86,7 @@ if [[ ! -d /workspaces/neovim ]]; then
   make -j4
   sudo make install
   finish_log "Neovim installation"
-  pip install neovim
+  zsh -ci "pip install neovim"
 fi
 
 # Neovim config
