@@ -70,36 +70,19 @@ finish_log "ctags"
 
 start_log "python"
 zsh -ci "asdf install python"
-# asdf install python
 finish_log "python"
+
+start_log "nodejs"
+zsh -ci "asdf install nodejs"
+finish_log "nodejs"
 
 start_log "vim"
 ./exe/dotfiles --only=vim --vim-skip-plug-install
 finish_log "vim"
 
-# Install neovim
-if [[ ! -d /workspaces/neovim ]]; then
-  start_log "Neovim installation"
-  sudo apt-get install -y ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl
-  git clone https://github.com/neovim/neovim ~/Projects/neovim
-  cd ~/Projects/neovim
-  make -j4
-  sudo make install
-  finish_log "Neovim installation"
-  zsh -ci "pip install neovim"
-fi
-
-# Neovim config
-if [[ ! -d /workspaces/neovim-config ]]; then
-  start_log "Neovim Config"
-  git clone https://github.com/mjacobus/neovim-config ~/Projects/neovim-config
-  cd ~/Projects/neovim-config
-  zsh -ci "./install.sh"
-  start_log "Neovim Config"
-fi
-
 start_log "zsh"
-echo 'zsh' > ~/.bashc
+echo ~/.bashrc > ~/.bashrc.bkp
+echo zsh > ~/.bashrc
 finish_log "zsh"
 
 finish_log "Codespaces"
