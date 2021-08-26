@@ -31,6 +31,12 @@ start_log "symlinks"
 mv  ~/.dotfiles ~/.dotfiles-bkp
 [[ ! -d ~/.dotfiles ]] && ln -s /workspaces/dotfiles ~/.dotfiles
 [[ ! -d ~/Projects ]] && ln -s /workspaces ~/Projects
+
+if [[ ! -d ~/Projects/github-projects ]] ; then
+  mkdir -p ~/Projects/github-projects
+  ln -s ~/Projects/github ~/Projects/github
+fi
+
 finish_log "symlinks"
 
 cd $MAIN_PROJECT
