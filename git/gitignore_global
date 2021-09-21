@@ -1,8 +1,8 @@
 *.swp
 *~
 *.tags
-tags
-tags-*
+/tags
+/tags-*
 *.swo
 .netrwhist
 npm-debug.log
