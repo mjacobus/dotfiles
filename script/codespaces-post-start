@@ -4,7 +4,7 @@
 
 set -e
 
-MAIN_PROJECT=`pwd`
+DOTFILES="$HOME/.dotfiles"
 
 function log() {
   message="`date` - $1"
@@ -23,13 +23,11 @@ function finish_log() {
 start_log "Codespaces"
 
 
-if [[ ! -d /workspaces/dotfiles ]]; then
-  git clone git@github.com:mjacobus/dotfiles.git /workspaces/dotfiles
+if [[ ! -d $DOTFILES ]]; then
+  git clone git@github.com:mjacobus/dotfiles.git $DOTFILES
 fi
 
 start_log "symlinks"
-mv  ~/.dotfiles ~/.dotfiles-bkp
-[[ ! -d ~/.dotfiles ]] && ln -s /workspaces/dotfiles ~/.dotfiles
 [[ ! -d ~/Projects ]] && ln -s /workspaces ~/Projects
 
 if [[ ! -d ~/Projects/github-projects ]] ; then
@@ -39,7 +37,11 @@ fi
 
 finish_log "symlinks"
 
-cd $MAIN_PROJECT
+set +e
+which ruby || sudo apt-get install -y ruby
+set -e
+
+cd $DOTFILES
 
 start_log "zshell"
 ./exe/dotfiles --only=zshell
