@@ -1,6 +1,6 @@
 ruby 3.0.0
 nodejs 16.13.0
-php 8.0.2
+php system
 elixir 1.11
 erlang 23.2
 golang 1.15
