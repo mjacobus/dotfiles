@@ -6,6 +6,7 @@ set -e
 
 DOTFILES="$HOME/.dotfiles"
 
+
 function log() {
   message="`date` - $1"
   echo $message
@@ -42,6 +43,11 @@ which ruby || sudo apt-get install -y ruby
 set -e
 
 cd $DOTFILES
+
+
+start_log "homebrew"
+command -v brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+finish_log "homebrew"
 
 start_log "zshell"
 ./exe/dotfiles --only=zshell
