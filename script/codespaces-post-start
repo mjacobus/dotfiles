@@ -44,10 +44,13 @@ set -e
 
 cd $DOTFILES
 
-
 start_log "homebrew"
 command -v brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 finish_log "homebrew"
+
+start_log "tig"
+brew install tig
+finish_log "tig"
 
 start_log "zshell"
 ./exe/dotfiles --only=zshell
@@ -98,7 +101,6 @@ start_log "zsh"
 echo ~/.bashrc > ~/.bashrc.bkp
 echo zsh > ~/.bashrc
 finish_log "zsh"
-
 
 start_log "gh cli"
 # https://github.com/cli/cli/blob/trunk/docs/install_linux.md
