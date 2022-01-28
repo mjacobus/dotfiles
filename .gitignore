@@ -28,3 +28,5 @@ tmp
 # rspec failure tracking
 .rspec_status
 /vendor
+
+/shell_test
