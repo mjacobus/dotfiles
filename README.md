@@ -6,7 +6,18 @@ My .dotfiles
 [![Coverage Status](https://coveralls.io/repos/github/mjacobus/.dotfiles/badge.svg?branch=master)](https://coveralls.io/github/mjacobus/.dotfiles?branch=master)
 
 
-### Instalation
+### Installation
+
+Backup and remove the following files:
+
+```
+~/.bashrc
+~/.zshrc
+```
+
+```
+./install
+```
 
 ```bash
 # if you are using system wide ruby

@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 
 stow home -t $HOME --verbose=2
+
+
+# install oh-my-zsh
+# curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+
+# app.github_clone('chriskempson/base16-shell', "#{app.home}/.config/base16-shell")
