@@ -1,0 +1,11 @@
+[user]
+  name = Marcelo Jacobus
+  email = marcelo.jacobus@gmail.com
+
+[github]
+  user = mjacobus
+
+;[pager]
+;  diff = diff-so-fancy | less --tabs=4 -RFX
+;  show = diff-so-fancy | less --tabs=4 -RFX
+
