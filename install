@@ -7,9 +7,9 @@ stow -R bin
 stow -R ctags
 stow -R git
 stow -R ruby_config
-stow -R shells
+#stow -R shells
 stow -R tmux
-stow -R vim
+#stow -R vim
 
 # install oh-my-zsh
 # curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh

@@ -1,1 +1,1 @@
-.shell_setup.conf
+source ~/.shell_setup.conf
