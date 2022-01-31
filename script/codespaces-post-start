@@ -13,9 +13,11 @@ if [[ ! -d ~/Projects/github-projects ]] ; then
   ln -s ~/Projects/github ~/Projects/github-projects/github
 fi
 
+command -v tmux || sudo apt-get install -y tmux
+command -v stow || sudo apt-get install -y stow
+command -v tig || sudo apt-get install -y tig
+command -v ag || sudo apt-get install -y silversearcher-ag
+
 command -v brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-command -v tig || brew install tig
 command -v gh || brew install gh
 command -v nvim || brew install nvim --HEAD
-command -v tmux || sudo apt-get install -y tmux
-command -v ag || brew install the_silver_searcher
