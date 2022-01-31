@@ -8,7 +8,7 @@ My .dotfiles
 
 ### Installation
 
-Backup and remove the following files:
+First off, rename or remove the following files:
 
 ```
 ~/.bashrc
@@ -16,19 +16,10 @@ Backup and remove the following files:
 ```
 
 ```
+git clone https://github.com/mjacobus/dotfiles ~/.dotfiles
+cd ~/.dotfiles
+git submodules update
 ./install
-```
-
-```bash
-# if you are using system wide ruby
-sudo gem install bundler
-bundle install --path .bundle
-```
-
-Then
-
-```
-./exe/dotfiles # you will see a wizzard
 ```
 
 ### (Some) docs
@@ -44,4 +35,5 @@ Here you will find (among other configs):
 
 ### Note to self:
 
-Installation scripts before the ruby refactoring can be found [here](https://github.com/mjacobus/.dotfiles/tree/42ee48f4b57e3d3e69e547434da20e111ddb08df/installer)
+- Installation scripts before the ruby refactoring can be found [here](https://github.com/mjacobus/.dotfiles/tree/42ee48f4b57e3d3e69e547434da20e111ddb08df/installer)
+- Installation before stow can be found [here](https://github.com/mjacobus/dotfiles/tree/ed6b3a986e2551d999112134fd5d12d8434118d4)
