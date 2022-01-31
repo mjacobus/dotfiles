@@ -23,6 +23,7 @@ stow $flags tmux
 stow $flags vim
 stow $flags zshell
 stow $flags neovim
+stow $flags alacritty
 
 # install oh-my-zsh
 # curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh
