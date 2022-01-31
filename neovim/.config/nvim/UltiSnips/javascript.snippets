@@ -1,0 +1,29 @@
+snippet it "it spec"
+it('${1}', () => {
+	${2}
+});
+endsnippet
+
+snippet desc "describe spec"
+describe('${1}', () => {
+	${2}
+});
+endsnippet
+
+snippet before "bofore spec"
+beforeEach(() => {
+	${1}
+});
+endsnippet
+
+snippet def "define method"
+${1:functionName}($2) {
+	${3}
+}
+endsnippet
+
+snippet for "for"
+for (let ${1:i}; i < ${2:arr}.length; i++) {
+	${3}
+}
+endsnippet

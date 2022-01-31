@@ -1,0 +1,315 @@
+# http://ruby-doc.org/stdlib-2.0.0/libdoc/minitest/rdoc/MiniTest/Assertions.html
+
+global !p
+
+def nested_class_definition(snip, path):
+    klass = class_name(snip, path)
+    parts = klass.split('::')
+    lines = []
+
+    i = 0
+    for part in parts:
+        prefix = "module "
+        if (i + 1) == len(parts):
+            prefix = "class "
+        lines.append(i * "  " + prefix + part)
+        i += 1
+
+    i -= 1
+    for part in parts:
+        prefix = "module "
+        lines.append(i * "  " + "end")
+        i -= 1
+
+    return "\n".join(lines)
+
+def class_name(snip, path):
+    klass = path
+    klass = klass.replace('_test.rb', '')
+    klass = klass.replace('_spec.rb', '')
+    klass = klass.replace('.rb', '')
+    klass = klass.replace('lib/', '')
+    klass = klass.replace('spec/services/', '')
+    klass = klass.replace('app/services/', '')
+    klass = klass.replace('app/service/', '')
+    klass = klass.replace('app/models/', '')
+    klass = klass.replace('specs/', '')
+    klass = klass.replace('spec/', '')
+    klass = klass.replace('/',':')
+    parts = klass.split(':')
+    new_parts = []
+    for part in parts:
+        new_parts.append(part[0].upper() + part[1:])
+
+    klass = '::'.join(new_parts)
+
+    parts = klass.split('_')
+    new_parts = []
+    for part in parts:
+        new_parts.append(part[0].upper() + part[1:])
+
+    klass = ''.join(new_parts)
+    return klass
+endglobal
+
+snippet frozen "Frozen string"
+# frozen_string_literal: true
+
+endsnippet
+
+snippet rspec "RSpec.describe"
+# frozen_string_literal: true
+
+require '${1:spec_helper}'
+
+RSpec.describe ${2:`!p snip.rv = class_name(snip, path)`} do
+	${3}
+end
+endsnippet
+
+snippet rt "rails test"
+# frozen_string_literal: true
+
+require '${1:test_helper}'
+
+class ${2:`!p snip.rv = class_name(snip, path)`}Test < ActiveSupport::TestCase
+	${3}
+end
+endsnippet
+
+snippet rct "rails controller test"
+# frozen_string_literal: true
+
+require '${1:test_helper}'
+
+class ${2:`!p snip.rv = class_name(snip, path)`}Test < ActionDispatch::IntegrationTest
+	${3}
+end
+endsnippet
+
+snippet class "class"
+`!p snip.rv = nested_class_definition(snip, path)`
+endsnippet
+
+snippet before "before do"
+before do
+	${1}
+end
+endsnippet
+
+snippet it "it block for spec"
+it '${1:do something}' do
+	${2}
+end
+endsnippet
+
+snippet test "test method"
+test "${1:do something}" do
+	${2}
+end
+endsnippet
+
+snippet spec
+specify '${1:do something}' do
+	${2}
+end
+endsnippet
+
+snippet cont
+context '${1:do something}' do
+	${2}
+end
+endsnippet
+
+snippet ae "assert equal"
+assert_equal ${1:expected}, ${2:actual}
+endsnippet
+
+snippet as "assert same"
+assert_same ${1:expected}, ${2:actual}
+endsnippet
+
+snippet ans "assert not same"
+assert_not_same ${1:expected}, ${2:actual}
+endsnippet
+
+snippet aio "assert not same"
+assert ${1:object}.is_a?(${2:klass})
+endsnippet
+
+snippet ar "assert raises"
+assert_raises(${1:klass}) do
+	${2}
+end
+endsnippet
+
+snippet art "assert respond to"
+assert_respond_to ${1:object}, ${2:method}
+endsnippet
+
+
+snippet al "allow().to receive"
+allow(${1:object}).to receive(:${2})
+endsnippet
+
+snippet alw "allow().to receive"
+allow(${1:object}).to receive(:${2:method}).with(${3:{foo: :bar}})
+endsnippet
+
+# Reek suppress snippets
+
+snippet rfe "Reek FeatureEnvy"
+:reek:FeatureEnvy
+endsnippet
+
+snippet rbp "Reek BooleanParameter"
+:reek:BooleanParameter
+endsnippet
+
+snippet rcp "Reek ControlParameter"
+:reek:ControlParameter
+endsnippet
+
+snippet rdc "Reek DataClump"
+:reek:DataClump
+endsnippet
+
+snippet riva "Reek InstanceVariableAssumption"
+:reek:InstanceVariableAssumption
+endsnippet
+
+snippet rdel "Rubocop disable RSpec/ExampleLength"
+rubocop:disable RSpec/ExampleLength
+endsnippet
+
+snippet reel "Rubocop enable RSpec/ExampleLength"
+rubocop:enable RSpec/ExampleLength
+endsnippet
+
+
+snippet rd "Rubocop Disable"
+rubocop:disable ${1:Metrics}/${2:ParameterList}
+endsnippet
+
+snippet rlpl "Reek LongParameterList"
+:reek:LongParameterList
+rubocop:disable Metrics/ParameterList
+endsnippet
+
+snippet rmd "Reek ManualDispatch"
+:reek:ManualDispatch
+endsnippet
+
+snippet rni "Reek NestedIterators"
+:reek:NestedIterators
+endsnippet
+
+snippet rnc "Reek NilCheck"
+:reek:NilCheck
+endsnippet
+
+snippet rrc "Reek RepeatedConditional"
+:reek:RepeatedConditional
+endsnippet
+
+snippet rtmiv "Reek TooManyInstanceVariables"
+:reek:TooManyInstanceVariables
+endsnippet
+
+snippet rtmm "Reek TooManyMethods"
+:reek:TooManyMethods
+endsnippet
+
+snippet rtms "Reek TooManyStatements"
+:reek:TooManyStatements
+rubocop:disable Metrics/MethodLength
+endsnippet
+
+snippet rdml "Rubocop disable MethodLength"
+rubocop:disable Metrics/MethodLength
+endsnippet
+
+snippet reml "Rubocop enable MethodLength"
+rubocop:enable Metrics/MethodLength
+endsnippet
+
+snippet rumn "Reek UncommunicativeMethodName"
+:reek:UncommunicativeMethodName
+endsnippet
+
+snippet rumon "Reek UncommunicativeModuleName"
+:reek:UncommunicativeModuleName
+endsnippet
+
+
+snippet ruvn "Reek UncommunicativeVariableName"
+:reek:UncommunicativeVariableName
+endsnippet
+
+snippet rpdm "Reek PrimaDonnaMethod"
+:reek:PrimaDonnaMethod
+endsnippet
+
+snippet rsfcc "Reek SubclassedFromCoreClass"
+:reek:SubclassedFromCoreClass
+endsnippet
+
+snippet rcv "Reek ClassVariable"
+:reek:ClassVariable
+endsnippet
+
+snippet rup "Reek UnusedParameters"
+:reek:UnusedParameters
+# rubocop:disable UnusedMethodArgument
+endsnippet
+
+snippet rtmp "Rubocop too many parameters"
+:reek:LongParameterList
+# rubocop:disable Metrics/ParameterList
+endsnippet
+snippet rdll "Rubocop enable line is too long"
+rubocop:disable Metrics/LineLength
+endsnippet
+
+snippet relitl "Rubocop enable line is too long"
+rubocop:enable LineLength
+endsnippet
+
+snippet relitl "Rubocop disable unused argument"
+rubocop:disable UnusedMethodArgument
+endsnippet
+
+snippet rnmd "Rubocop nested method definition"
+rubocop:disable NestedMethodDefinition
+endsnippet
+
+snippet rda "Rubocop disable AbcSize"
+rubocop:disable Metrics/AbcSize
+endsnippet
+
+snippet rea "Rubocop disable AbcSize"
+rubocop:enable Metrics/AbcSize
+endsnippet
+
+# https://www.rubydoc.info/gems/yard/file/docs/Tags.md
+# Yard docs
+
+snippet ret "@return"
+@return [${1:String}]
+endsnippet
+
+snippet param "@param"
+@param ${1:varname} [${2:String}] ${3}
+endsnippet
+
+snippet yield "@yield"
+@yield [${1:parameters}] ${2:description}
+endsnippet
+
+snippet yieldr "@yieldreturn"
+@yieldreturn [${1:Type}] [${2}]
+endsnippet
+
+snippet yieldp "@yieldparam"
+@yieldreturn ${1:name} [${2:Type}] ${3}
+endsnippet
