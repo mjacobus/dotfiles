@@ -30,3 +30,4 @@ tmp
 /vendor
 
 /shell_test
+.DS_Store
