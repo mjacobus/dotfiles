@@ -1,15 +1,24 @@
 #!/usr/bin/env bash
 
-set -ev 
-stow -R ag
-stow -R asdf
-stow -R bin
-stow -R ctags
-stow -R git
-stow -R ruby_config
-stow -R shells
-stow -R tmux
-stow -R vim
+args=$@
+
+flags="--verbose=1"
+
+if [[ "$args" == "--uninstall" ]]; then
+  echo 'Uninstalling'
+  flags="-D --verbose=1"
+fi
+
+stow $flags ag
+stow $flags asdf
+stow $flags bin
+stow $flags ctags
+stow $flags git
+stow $flags ruby_config
+stow $flags shells
+stow $flags tmux
+stow $flags vim
+stow $flags zshell
 
 # install oh-my-zsh
 # curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh

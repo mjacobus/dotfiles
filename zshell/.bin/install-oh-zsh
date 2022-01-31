@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+
+# From https://github.com/ohmyzsh/ohmyzsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+mv ~/.zshrc ~/.zshrc.oh-my-zsh
+mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
