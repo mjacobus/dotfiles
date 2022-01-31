@@ -22,5 +22,6 @@ stow $flags shells
 stow $flags tmux
 stow $flags vim
 stow $flags zshell
+stow $flags bash
 stow $flags neovim
 stow $flags alacritty
