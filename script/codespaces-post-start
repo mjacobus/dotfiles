@@ -6,108 +6,18 @@ set -e
 
 DOTFILES="$HOME/.dotfiles"
 
-
-function log() {
-  message="`date` - $1"
-  echo $message
-  echo $message >> ~/DOTFILES_LOG
-}
-
-function start_log() {
-  log "Starting $1"
-}
-
-function finish_log() {
-  log "Finishing $1"
-}
-
-start_log "Codespaces"
-
-
-if [[ ! -d $DOTFILES ]]; then
-  git clone git@github.com:mjacobus/dotfiles.git $DOTFILES
-fi
-
-start_log "symlinks"
 [[ ! -d ~/Projects ]] && ln -s /workspaces ~/Projects
 
 if [[ ! -d ~/Projects/github-projects ]] ; then
   mkdir -p ~/Projects/github-projects
-  ln -s ~/Projects/github ~/Projects/github
+  ln -s ~/Projects/github ~/Projects/github-projects/github
 fi
 
-finish_log "symlinks"
-
-set +e
-which ruby || sudo apt-get install -y ruby
-set -e
-
-cd $DOTFILES
-
-start_log "homebrew"
 command -v brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-finish_log "homebrew"
+command -v tig || brew install tig
+command -v gh || brew install gh
+command -v nvim || brew install nvim --HEAD
 
-start_log "tig"
-brew install tig
-finish_log "tig"
-
-start_log "zshell"
-./exe/dotfiles --only=zshell
-finish_log "zshell"
-
-start_log "asdf"
-./exe/dotfiles --only=asdf
-finish_log "asdf"
-
-start_log "git"
-./exe/dotfiles --only=git --email=marcelo.jacobus@gmail.com
-finish_log "git"
-
-start_log "ag"
-./exe/dotfiles --only=ag
-finish_log "ag"
-
-start_log "tmux"
-sudo apt-get install -y tmux
-./exe/dotfiles --only=tmux
-finish_log "tmux"
-
-start_log "irb"
-./exe/dotfiles --only=irb
-finish_log "irb"
-
-start_log "inputrc"
-./exe/dotfiles --only=inputrc
-finish_log "inputrc"
-
-start_log "ctags"
-./exe/dotfiles --only=ctags
-finish_log "ctags"
-
-start_log "python"
-zsh -ci "asdf install python"
-finish_log "python"
-
-start_log "nodejs"
-zsh -ci "asdf install nodejs"
-finish_log "nodejs"
-
-start_log "vim"
-./exe/dotfiles --only=vim --vim-skip-plug-install
-finish_log "vim"
-
-start_log "zsh"
-echo ~/.bashrc > ~/.bashrc.bkp
-echo zsh > ~/.bashrc
-finish_log "zsh"
-
-start_log "gh cli"
-# https://github.com/cli/cli/blob/trunk/docs/install_linux.md
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-sudo apt update
-sudo apt install gh
-finish_log "gh cli"
-
-finish_log "Codespaces"
+# if [[ ! -d $DOTFILES ]]; then
+#   git clone git@github.com:mjacobus/dotfiles.git $DOTFILES
+# fi
