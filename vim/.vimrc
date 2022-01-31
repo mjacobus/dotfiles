@@ -129,7 +129,7 @@ if !filereadable(".vim-skip-plugins")
     source ~/.vim/plugins/nerdtree.vim
     source ~/.vim/plugins/syntastic.vim
     source ~/.vim/plugins/tabular.vim
-    source ~/.vim/plugins/ultisnipts.vim
+    " source ~/.vim/plugins/ultisnipts.vim
     source ~/.vim/plugins/vim-test.vim
     source ~/.vim/plugins/vim-to-cterm.vim
 
