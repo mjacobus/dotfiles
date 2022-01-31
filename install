@@ -24,8 +24,3 @@ stow $flags vim
 stow $flags zshell
 stow $flags neovim
 stow $flags alacritty
-
-# install oh-my-zsh
-# curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh
-
-# app.github_clone('chriskempson/base16-shell', "#{app.home}/.config/base16-shell")
