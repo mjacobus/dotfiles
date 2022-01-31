@@ -17,7 +17,5 @@ command -v brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/
 command -v tig || brew install tig
 command -v gh || brew install gh
 command -v nvim || brew install nvim --HEAD
-
-# if [[ ! -d $DOTFILES ]]; then
-#   git clone git@github.com:mjacobus/dotfiles.git $DOTFILES
-# fi
+command -v tmux || sudo apt-get install -y tmux
+command -v ag || brew install the_silver_searcher
