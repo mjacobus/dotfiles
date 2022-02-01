@@ -25,3 +25,4 @@ stow $flags zshell
 stow $flags bash
 stow $flags neovim
 stow $flags alacritty
+stow $flags kitty
