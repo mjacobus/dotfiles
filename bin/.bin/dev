@@ -1,9 +1,13 @@
 #!/usr/bin/env ruby
 
-require File.expand_path('../../ruby/lib/dev/cli/application', __FILE__)
-require File.expand_path('../../ruby/lib/dev/cli/command/base', __FILE__)
-require File.expand_path('../../ruby/lib/dev/cli/command/docker_mysql', __FILE__)
-require File.expand_path('../../ruby/lib/dev/cli/command/git_checkout_branch', __FILE__)
+def dotfile(file)
+  "#{ENV['HOME']}/.dotfiles/#{file}"
+end
+
+require dotfile('ruby/lib/dev/cli/application')
+require dotfile('ruby/lib/dev/cli/command/base')
+require dotfile('ruby/lib/dev/cli/command/docker_mysql')
+require dotfile('ruby/lib/dev/cli/command/git_checkout_branch')
 
 commands = [
   Dev::Cli::Command::DockerMysql.new,
