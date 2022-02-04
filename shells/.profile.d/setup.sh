@@ -4,6 +4,12 @@
 #   return
 # fi
 
+if [ -n "$DOTFILES_SHELL_LOADED"  ]; then
+  return
+fi
+
+export DOTFILES_SHELL_LOADED=1
+
 if [ -n "$BASH_VERSION"  ]; then
   SHELL_IS_BASH=1
 fi

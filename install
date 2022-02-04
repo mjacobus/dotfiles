@@ -26,3 +26,6 @@ stow $flags bash
 stow $flags neovim
 stow $flags alacritty
 stow $flags kitty
+
+echo 'source ~/.profile.d/setup.sh' >> ~/.bashrc
+echo 'source ~/.profile.d/setup.sh' >> ~/.zshrc
