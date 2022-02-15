@@ -31,3 +31,4 @@ tmp
 
 /shell_test
 .DS_Store
+/neovim/.config/nvim/plugin/packer_compiled.lua
