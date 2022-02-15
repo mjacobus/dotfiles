@@ -23,3 +23,6 @@ command -v gh || brew install gh
 command -v nvim || brew install nvim --HEAD
 
 git clone $GH_CONFIG_REPO ~/.github-config
+
+asdf install python
+pip install neovim
