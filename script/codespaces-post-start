@@ -21,3 +21,5 @@ command -v ag || sudo apt-get install -y silversearcher-ag
 command -v brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 command -v gh || brew install gh
 command -v nvim || brew install nvim --HEAD
+
+git clone $GH_CONFIG_REPO ~/.github-config
