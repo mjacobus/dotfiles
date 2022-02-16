@@ -399,3 +399,12 @@ autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us,pt_br
 " set showmatch
 " set wildignore+=*.so,*.swp,*.zip,*/build/*,*/coverage/*     " MacOSX/Linux
 " set wildmode=list:longest,full
+
+" Forward clipboard in a codespace
+if !empty($CODESPACES)
+  let g:clipboard = {"name": "rdm", "copy": {}, "paste": {}}
+  let g:clipboard.copy["+"] = ["rdm", "copy"]
+  let g:clipboard.paste["+"] = ["rdm", "paste"]
+  let g:clipboard.copy["*"] = ["rdm", "copy"]
+  let g:clipboard.paste["*"] = ["rdm", "paste"]
+endif
