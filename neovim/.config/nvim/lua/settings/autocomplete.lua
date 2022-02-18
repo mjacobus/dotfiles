@@ -21,15 +21,20 @@
        c = cmp.mapping.close(),
      }),
      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+     ["<c-y>"] = cmp.mapping(
+     cmp.mapping.confirm {
+       behavior = cmp.ConfirmBehavior.Insert,
+       select = true,
+     },
+     { "i", "c" }
+     ),
+
    },
    sources = cmp.config.sources({
      { name = 'nvim_lsp' },
-     -- { name = 'vsnip' }, -- For vsnip users.
-     -- { name = 'luasnip' }, -- For luasnip users.
-     { name = 'ultisnips' }, -- For ultisnips users.
-     -- { name = 'snippy' }, -- For snippy users.
-   }, {
-     { name = 'buffer' },
+     { name = 'ultisnips' },
+     { name = 'buffer', keyword_length = 3 },
+     { name = 'path' },
    })
  })
 
