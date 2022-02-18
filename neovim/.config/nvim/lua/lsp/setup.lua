@@ -1,6 +1,3 @@
-require 'lsp/ruby'
-require 'lsp/lua'
-
 config = require('lspconfig')
 
 -- Type script
@@ -17,6 +14,9 @@ config.gopls.setup{}
 
 -- Lua
 config.sumneko_lua.setup{}
+
+-- Ruby
+config.solargraph.setup{}
 
 local lsp_installer = require("nvim-lsp-installer")
 
