@@ -79,7 +79,6 @@ require('packer').startup(function(use)
   --   requires = 'kyazdani42/nvim-web-devicons',
   --   config = [[require('settings.vim-tree')]]
   -- }
-  use 'nvim-lua/completion-nvim'
   use 'rking/ag.vim'
   use 'weierophinney/argumentrewrap'
   use 'tpope/vim-eunuch'
