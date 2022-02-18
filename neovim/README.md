@@ -1,23 +1,23 @@
 My neovim config
 ---------------------
 
+## LSP
 
-
-
-## Install
-
-If not installed yet, install [stow](https://www.gnu.org/software/stow/).
-
+To fix error:
 
 ```
-brew install stow
+Spawning language server with cmd: `$HOME/.local/share/nvim/lspinstall/go/gopls`failed. The language server is either not installed, or, missing from PATH, or not executable
 ```
 
-And then run the installation script
+```
+:LspInstall
+```
+Then
 
 ```
-./install.sh
+ln -s ~/.local/share/nvim/{lsp_servers,lspinstall}
 ```
+
 
 ## Installing neovim HEAD with brew
 
