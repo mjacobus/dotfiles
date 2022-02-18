@@ -68,7 +68,8 @@ require('packer').startup(function(use)
       { 'quangnguyen30192/cmp-nvim-ultisnips' },
       { 'williamboman/nvim-lsp-installer' },
       { 'hrsh7th/cmp-nvim-lsp-signature-help' },
-      { 'f3fora/cmp-spell' }
+      { 'f3fora/cmp-spell' },
+      { 'hrsh7th/cmp-nvim-lua' },
     },
     config = [[require('settings.autocomplete')]]
   }
