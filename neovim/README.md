@@ -1,23 +1,10 @@
 My neovim config
 ---------------------
 
-## LSP
+## Installing plugins
 
-To fix error:
-
-```
-Spawning language server with cmd: `$HOME/.local/share/nvim/lspinstall/go/gopls`failed. The language server is either not installed, or, missing from PATH, or not executable
-```
-
-```
-:LspInstall
-```
-Then
-
-```
-ln -s ~/.local/share/nvim/{lsp_servers,lspinstall}
-```
-
+`:PackerInstall`
+`:PackerCompile`
 
 ## Installing neovim HEAD with brew
 
