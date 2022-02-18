@@ -46,15 +46,31 @@ require('packer').startup(function(use)
   use 'mechatroner/rainbow_csv'
   use 'mattn/emmet-vim'
   use 'othree/html5.vim'
-  use { 'fatih/vim-go' }
+  -- use { 'fatih/vim-go' }
   use {
     'tyru/open-browser-github.vim',
     requires = {{'tyru/open-browser.vim'}}
   }
+
+  -- use {
+  --   'neovim/nvim-lspconfig',
+  --   config = [[require('settings.lsp')]]
+  -- }
+
   use {
-    'neovim/nvim-lspconfig',
-    config = [[require('settings.lsp')]]
+    'hrsh7th/nvim-cmp',
+    requires = {
+      { 'neovim/nvim-lspconfig' },
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-path' },
+      { 'hrsh7th/cmp-cmdline' },
+      { 'quangnguyen30192/cmp-nvim-ultisnips' },
+      { 'williamboman/nvim-lsp-installer' }
+    },
+    config = [[require('settings.autocomplete')]]
   }
+
   use 'folke/tokyonight.nvim'
   -- use {
   --   'kyazdani42/nvim-tree.lua',
