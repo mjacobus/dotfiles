@@ -36,6 +36,7 @@
      { name = 'ultisnips' },
      { name = 'buffer', keyword_length = 3 },
      { name = 'path' },
+     { name = 'spell' },
    })
  })
 
