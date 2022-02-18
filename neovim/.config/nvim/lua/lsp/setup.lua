@@ -1,13 +1,14 @@
+-- see a list of servers here: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 config = require('lspconfig')
-
--- Type script
-config.tsserver.setup{}
 
 -- Bash
 config.bashls.setup{}
 
 -- Javascript, I think https://github.com/denoland/deno
 config.denols.setup{}
+
+-- Type script
+config.tsserver.setup{}
 
 -- Golang
 config.gopls.setup{}
@@ -17,6 +18,9 @@ config.sumneko_lua.setup{}
 
 -- Ruby
 config.solargraph.setup{}
+
+-- PHP
+config.phpactor.setup{}
 
 local lsp_installer = require("nvim-lsp-installer")
 

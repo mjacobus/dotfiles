@@ -46,16 +46,10 @@ require('packer').startup(function(use)
   use 'mechatroner/rainbow_csv'
   use 'mattn/emmet-vim'
   use 'othree/html5.vim'
-  -- use { 'fatih/vim-go' }
   use {
     'tyru/open-browser-github.vim',
     requires = {{'tyru/open-browser.vim'}}
   }
-
-  -- use {
-  --   'neovim/nvim-lspconfig',
-  --   config = [[require('settings.lsp')]]
-  -- }
 
   use {
     'hrsh7th/nvim-cmp',
