@@ -1,8 +1,5 @@
-require 'lsp/go'
 require 'lsp/ruby'
 require 'lsp/lua'
-
-
 
 config = require('lspconfig')
 
@@ -15,7 +12,8 @@ config.bashls.setup{}
 -- Javascript, I think https://github.com/denoland/deno
 config.denols.setup{}
 
--- config.gopls.setup{}
+-- Golang
+config.gopls.setup{}
 
 local lsp_installer = require("nvim-lsp-installer")
 
