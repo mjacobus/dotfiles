@@ -32,6 +32,7 @@
    },
    sources = cmp.config.sources({
      { name = 'nvim_lsp' },
+     { name = 'nvim_lsp_signature_help' },
      { name = 'ultisnips' },
      { name = 'buffer', keyword_length = 3 },
      { name = 'path' },
