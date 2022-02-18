@@ -1,16 +1,5 @@
 {
     "require": {
-      "behat/behat" : "*",
-      "fabpot/php-cs-fixer" : "*",
-      "pdepend/pdepend" : "*",
-      "phploc/phploc": "*",
-      "phpmd/phpmd" : "@stable",
-      "phpunit/phpunit":"*",
-      "sebastian/phpcpd" : "*",
-      "sebastian/phpdcd" : "*",
-      "squizlabs/php_codesniffer": "*",
-      "theseer/phpdox" : "*",
-        "bro/code": "^v0.1.5",
-        "techlivezheng/phpctags": "*"
+        "phpactor/phpactor": "^0.18.1"
     }
 }
