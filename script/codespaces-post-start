@@ -35,5 +35,9 @@ sudo chsh -s $(which zsh)
 
 source ~/.profile.d/asdf.conf
 
+asdf install ruby
+asdf install nodejs
 asdf install python
 pip install neovim
+gem install thor
+gem install koine-test_runner
