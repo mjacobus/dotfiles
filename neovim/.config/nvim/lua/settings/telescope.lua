@@ -1,5 +1,6 @@
 nnoremap = require('utils').nnoremap
 nnoremap('<leader>g', ':Telescope git_files find_command=rg,--ignore,--hidden,--files<cr>')
+nnoremap('<leader>P', ':Telescope git_files find_command=rg,--ignore,--hidden,--files<cr>')
 
 -- require('vimp')
 --
