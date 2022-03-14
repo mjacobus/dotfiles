@@ -28,6 +28,8 @@ vimp.nnoremap('<leader>j', function()
   end
 end)
 
+vimp.nnoremap('<leader>af', '<c-^>')
+
 vimp.nnoremap('<leader>ak', function()
   open_mj_alternative_file('next', '--exists')
 end)
