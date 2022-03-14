@@ -39,11 +39,9 @@ end)
 function open_mj_alternative_file(subcommand, options)
   file_path = vim.fn.expand('%')
   files = mj_alternative_file(file_path, subcommand, options)
-  print("--files " .. files)
   files = vim.split(files, ' ')
   file = files[1]
 
-  print(" file: " .. file)
   if file ~= '' then
     vim.api.nvim_command('e ' .. file)
   end
