@@ -6,6 +6,17 @@ set -e
 
 DOTFILES="$HOME/.dotfiles"
 
+# Install dotfiles
+if [[ ! -f ~/.bashrc ]]; then
+  mv ~/.bashrc ~/.bashrc.bkp
+  mv ~/.zshrc ~/.zshrc.bkp
+  mv ~/.gitconfig ~/.gitconfig.bkp
+
+  cd $DOTFILES
+  ./install
+  echo "zsh" > ~/.bashrc
+fi
+
 [[ ! -d ~/Projects ]] && ln -s /workspaces ~/Projects
 
 if [[ ! -d ~/Projects/github-projects ]] ; then
