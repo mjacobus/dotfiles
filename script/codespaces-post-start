@@ -8,6 +8,7 @@ DOTFILES="$HOME/.dotfiles"
 
 # Install dotfiles
 if [[ ! -f ~/.bashrc ]]; then
+  echo "Installing dotfiles..."
   mv ~/.bashrc ~/.bashrc.bkp
   mv ~/.zshrc ~/.zshrc.bkp
   mv ~/.gitconfig ~/.gitconfig.bkp
