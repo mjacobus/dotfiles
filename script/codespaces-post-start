@@ -22,6 +22,7 @@ command -v brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/
 command -v gh || brew install gh
 command -v nvim || brew install nvim --HEAD
 
+# GH_CONFIG_REPO: https://{TOKEN}@github.com/mjacobus/github-config.git
 git clone $GH_CONFIG_REPO ~/.github-config
 
  # Use RDM for copy/paste and open support
