@@ -107,6 +107,7 @@ require('packer').startup(function(use)
   use 'hallison/vim-rdoc'
   use 'pwntester/octo.nvim'
 
+  use 'jparise/vim-graphql'
   -- Do I want them?
   --     source ~/.vim/plugins/indentation-guides.vim
   --     source ~/.vim/plugins/lightline.vim
