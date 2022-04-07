@@ -22,6 +22,9 @@ config.solargraph.setup{}
 -- PHP
 config.phpactor.setup{}
 
+-- GraphQL
+config.graphql.setup{}
+
 local lsp_installer = require("nvim-lsp-installer")
 
 -- Register a handler that will be called for each installed server when it's ready (i.e. when installation is finished
