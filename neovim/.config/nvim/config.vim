@@ -165,10 +165,10 @@ nnoremap <leader>rm :Delete<cr>
 nnoremap <leader>o <c-^>
 
 " escape alias
-inoremap jj <esc>:w<cr>
-inoremap jJ <esc>:w<cr>
-inoremap Jj <esc>:w<cr>
-inoremap JJ <esc>:w<cr>
+inoremap jj <esc>
+inoremap jJ <esc>
+inoremap Jj <esc>
+inoremap JJ <esc>
 inoremap jk <esc>
 
 " use esc jj to escape terminal mode
