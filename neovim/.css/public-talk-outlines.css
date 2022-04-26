@@ -1,0 +1,71 @@
+/* h1, h2, h3, h4 { */
+/*   font-size: 14px; */
+/* } */
+
+/* 
+
+:let g:mkdp_markdown_css="/Users/marcelojacobus/.css/public-talk-outlines.css" 
+:MarkdownPreview
+
+*/
+
+@page {
+  margin: 2cm;
+}
+
+body {
+  font-family: Arial;
+}
+
+#page-header  {
+  display: none;
+}
+
+h1 {
+  font-size: 1.4em;
+}
+
+h2 {
+  font-size: 1em;
+  text-transform: uppercase;
+  margin: 10px 0 5px 0;
+  background: #FFEEEE;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul ul {
+  padding-left: 30px;
+}
+
+ul li {
+  background: #ffdd00;
+  margin-bottom: 2px;
+}
+
+ul li ul {
+  background: white;
+}
+
+ul ul li {
+  background: white;
+}
+
+.octicon.octicon-link {
+  display: none;
+}
+
+@media print {
+  body {
+    font-size: 0.8em;
+  }
+
+  hr {
+    /* display: none; */
+    page-break-after: always;
+  }
+}
