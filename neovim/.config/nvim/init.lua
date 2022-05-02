@@ -22,9 +22,9 @@ vimp.nnoremap('<leader>j', function()
   name = vim.api.nvim_buf_get_name(0)
 
   if string.find(name, "term://") then
+    number = vim.api.nvim_buf_get_number(0)
     vim.api.nvim_exec('buffer #', true)
-  else
-    -- vim.api.nvim_exec('<cr>', true)
+    vim.api.nvim_buf_delete(number, {})
   end
 end)
 
