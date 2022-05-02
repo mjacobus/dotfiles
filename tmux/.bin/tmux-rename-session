@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+currentName=`tmux display-message -p '#S'`
+tmux rename-session -t $currentName $1
