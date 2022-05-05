@@ -62,6 +62,7 @@ ul ul li {
 @media print {
   body {
     font-size: 0.8em;
+    --secondary-background-color: none;
   }
 
   hr {
