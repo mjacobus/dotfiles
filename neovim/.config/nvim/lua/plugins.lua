@@ -91,6 +91,7 @@ require('packer').startup(function(use)
 
   use { 
     'iamcco/markdown-preview.nvim', 
+    config = [[require('settings.markdown')]],
     run = 'cd app && npm install'
   }
 
