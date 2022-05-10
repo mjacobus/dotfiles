@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+
+number = ARGV.join.gsub(/[^\d]/, '')
+
+unless number.start_with?('051')
+  number = "051#{number}"
+end
+
+url = "https://wa.me/#{number}"
+puts url
+`open #{url}`
