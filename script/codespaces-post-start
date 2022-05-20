@@ -39,7 +39,7 @@ git clone $GH_CONFIG_REPO ~/.github-config
 
  # Use RDM for copy/paste and open support
 wget https://github.com/BlakeWilliams/remote-development-manager/releases/latest/download/rdm-linux-amd64
-mv rdm-linux-amd64 /usr/local/bin/rdm
+sudo mv rdm-linux-amd64 /usr/local/bin/rdm
 chmod +x /usr/local/bin/rdm
 
 gh config set browser "rdm open"
