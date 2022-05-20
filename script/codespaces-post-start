@@ -2,7 +2,6 @@
 
 # https://github.com/github/ghcs
 
-set -e
 
 DOTFILES="$HOME/.dotfiles"
 
@@ -11,6 +10,7 @@ mv ~/.bashrc ~/.bashrc.bkp
 mv ~/.zshrc ~/.zshrc.bkp
 mv ~/.gitconfig ~/.gitconfig.bkp
 
+set -e
 
 if [[ ! -d "$DOTFILES" ]]; then
   gh repo clone mjacobus/dotfiles $DOTFILES
@@ -29,12 +29,13 @@ command -v tig || sudo apt-get install -y tig
 command -v ag || sudo apt-get install -y silversearcher-ag
 
 command -v brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-command -v gh || brew install gh
-command -v nvim || brew install nvim --HEAD
 
 cd $DOTFILES
 ./install
 echo "zsh" > ~/.bashrc
+
+command -v gh || brew install gh
+command -v nvim || brew install nvim --HEAD
 
 # GH_CONFIG_REPO: https://{TOKEN}@github.com/mjacobus/github-config.git
 git clone $GH_CONFIG_REPO ~/.github-config
