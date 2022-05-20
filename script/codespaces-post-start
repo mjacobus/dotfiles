@@ -33,6 +33,8 @@ command -v nvim || brew install nvim --HEAD
 
 # GH_CONFIG_REPO: https://{TOKEN}@github.com/mjacobus/github-config.git
 git clone $GH_CONFIG_REPO ~/.github-config
+cd ~/.gitconfig
+./install
 
  # Use RDM for copy/paste and open support
 wget https://github.com/BlakeWilliams/remote-development-manager/releases/latest/download/rdm-linux-amd64
