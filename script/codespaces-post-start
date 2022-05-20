@@ -11,6 +11,11 @@ mv ~/.bashrc ~/.bashrc.bkp
 mv ~/.zshrc ~/.zshrc.bkp
 mv ~/.gitconfig ~/.gitconfig.bkp
 
+
+if [[ ! -d "$DOTFILES" ]]; then
+  gh repo clone mjacobus/dotfiles $DOTFILES
+fi
+
 cd $DOTFILES
 ./install
 echo "zsh" > ~/.bashrc
