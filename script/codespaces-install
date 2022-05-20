@@ -2,66 +2,12 @@
 
 # ------------------------------------------------------------------
 # This command is meant to be run manually once the CS is spinned up
+# Because I was not able to automate it yet in script/codespaces-post-start.
+# The brew installation script requires some user interactions and I did not know
+# how to bypass it
 # ------------------------------------------------------------------
-
-# https://github.com/github/ghcs
-
-DOTFILES="$HOME/.dotfiles"
-
-echo "Installing dotfiles..."
-mv ~/.bashrc ~/.bashrc.bkp
-mv ~/.zshrc ~/.zshrc.bkp
-mv ~/.gitconfig ~/.gitconfig.bkp
 
 set -e
 
-if [[ ! -d "$DOTFILES" ]]; then
-  gh repo clone mjacobus/dotfiles $DOTFILES
-fi
-
-[[ ! -d ~/Projects ]] && ln -s /workspaces ~/Projects
-
-if [[ ! -d ~/Projects/github-projects ]] ; then
-  mkdir -p ~/Projects/github-projects
-  ln -s ~/Projects/github ~/Projects/github-projects/github
-fi
-
-command -v tmux || sudo apt-get install -y tmux
-command -v stow || sudo apt-get install -y stow
-command -v tig || sudo apt-get install -y tig
-command -v ag || sudo apt-get install -y silversearcher-ag
-
 command -v brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-cd $DOTFILES
-./install
-echo "zsh" > ~/.bashrc
-
-command -v gh || brew install gh
 command -v nvim || brew install nvim --HEAD
-
-if [[ ! -d ~/.github-config ]]; then
-  # GH_CONFIG_REPO: https://{TOKEN}@github.com/mjacobus/github-config.git
-  git clone $GH_CONFIG_REPO ~/.github-config
-  cd ~/.gitconfig
-  ./install
-fi
-
- # Use RDM for copy/paste and open support
-wget https://github.com/BlakeWilliams/remote-development-manager/releases/latest/download/rdm-linux-amd64
-sudo mv rdm-linux-amd64 /usr/local/bin/rdm
-chmod +x /usr/local/bin/rdm
-
-gh config set browser "rdm open"
-
-sudo chsh -s $(which zsh)
-
-source ~/.profile.d/asdf.conf
-
-asdf install ruby
-asdf install nodejs
-asdf install python
-pip install neovim
-gem install thor
-gem install koine-test_runner
-# 

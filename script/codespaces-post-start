@@ -4,5 +4,91 @@
 # This command is automatically run when the codspace is spinned up
 # ------------------------------------------------------------------
 
+set -e
+
+function log() {
+  echo $1 > ~/codespaces.log
+}
+
+#-------------------------------------------------------------------------------
+# Clone repos
+#-------------------------------------------------------------------------------
+DOTFILES="$HOME/.dotfiles"
 gh repo clone mjacobus/dotfiles $DOTFILES
+log "Dotfiles cloned"
 git clone $GH_CONFIG_REPO ~/.github-config
+log "GH config cloned"
+
+#-------------------------------------------------------------------------------
+# Install Basic CLI commands
+#-------------------------------------------------------------------------------
+command -v tmux || sudo apt-get install -y tmux
+command -v stow || sudo apt-get install -y stow
+command -v tig || sudo apt-get install -y tig
+command -v ag || sudo apt-get install -y silversearcher-ag
+log "apt-get commands installed"
+
+#-------------------------------------------------------------------------------
+# Projects folders
+#-------------------------------------------------------------------------------
+[[ ! -d ~/Projects ]] && ln -s /workspaces ~/Projects
+
+if [[ ! -d ~/Projects/github-projects ]] ; then
+  mkdir -p ~/Projects/github-projects
+  ln -s ~/Projects/github ~/Projects/github-projects/github
+fi
+
+log "Projects folder set up"
+
+cd $DOTFILES
+
+#-------------------------------------------------------------------------------
+# Dotfiles
+#-------------------------------------------------------------------------------
+mv ~/.bashrc ~/.bashrc.bkp
+mv ~/.zshrc ~/.zshrc.bkp
+mv ~/.gitconfig ~/.gitconfig.bkp
+
+log "Orignal .files backed up"
+
+./install
+echo "zsh" > ~/.bashrc
+log "~/.dotfiles installed"
+
+#-------------------------------------------------------------------------------
+# Github config
+#-------------------------------------------------------------------------------
+
+# Github Specific config
+cd ~/.github-config
+./install
+log "~/.github-config installed"
+
+#-------------------------------------------------------------------------------
+# Asdf
+#-------------------------------------------------------------------------------
+source ~/.profile.d/asdf.conf
+asdf install ruby
+asdf install nodejs
+asdf install python
+log "asdf basic languages installed"
+
+#-------------------------------------------------------------------------------
+# Editor dependencies
+#-------------------------------------------------------------------------------
+pip install neovim
+log "pip neovim installed"
+
+gem install thor
+gem install koine-test_runner
+gem install mj
+log "Gems installed"
+
+#-------------------------------------------------------------------------------
+# RDM - for copy/paste and open support
+#-------------------------------------------------------------------------------
+wget https://github.com/BlakeWilliams/remote-development-manager/releases/latest/download/rdm-linux-amd64
+sudo mv rdm-linux-amd64 /usr/local/bin/rdm
+chmod +x /usr/local/bin/rdm
+gh config set browser "rdm open"
+log "rdm installed"
