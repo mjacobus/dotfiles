@@ -61,7 +61,7 @@ log "~/.dotfiles installed"
 
 # Github Specific config
 cd ~/.github-config
-./install
+./install.sh
 log "~/.github-config installed"
 
 #-------------------------------------------------------------------------------
