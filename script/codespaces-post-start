@@ -7,7 +7,7 @@
 set -e
 
 function log() {
-  echo $1 > ~/codespaces.log
+  echo $1 >> ~/codespaces.log
 }
 
 #-------------------------------------------------------------------------------
