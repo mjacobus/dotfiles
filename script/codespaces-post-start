@@ -100,3 +100,8 @@ sudo mv rdm-linux-amd64 /usr/local/bin/rdm
 chmod +x /usr/local/bin/rdm
 gh config set browser "rdm open"
 log "rdm installed"
+
+#-------------------------------------------------------------------------------
+# Zshell
+#-------------------------------------------------------------------------------
+sudo chsh -s /usr/bin/zsh vscode
