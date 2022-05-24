@@ -14,10 +14,18 @@ function log() {
 # Clone repos
 #-------------------------------------------------------------------------------
 DOTFILES="$HOME/.dotfiles"
-gh repo clone mjacobus/dotfiles $DOTFILES
-log "Dotfiles cloned"
-git clone $GH_CONFIG_REPO ~/.github-config
-log "GH config cloned"
+GH_CONFIG="$HOME/.github-config"
+
+
+if [[ ! -d $DOTFILES ]] ; then
+  gh repo clone mjacobus/dotfiles $DOTFILES
+  log "Dotfiles cloned"
+fi
+
+if [[ ! -d $GH_CONFIG ]] ; then
+  git clone $GH_CONFIG_REPO $GH_CONFIG
+  log "GH config cloned"
+fi
 
 #-------------------------------------------------------------------------------
 # Install Basic CLI commands
@@ -60,9 +68,9 @@ log "~/.dotfiles installed"
 #-------------------------------------------------------------------------------
 
 # Github Specific config
-cd ~/.github-config
+cd $GH_CONFIG
 ./install.sh
-log "~/.github-config installed"
+log "$GH_CONFIG installed"
 
 #-------------------------------------------------------------------------------
 # Asdf
