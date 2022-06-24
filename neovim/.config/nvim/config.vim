@@ -52,8 +52,8 @@ let g:gist_open_browser_after_post = 1
 " use 'rking/ag.vim'
 " nnoremap g# :Ag! -w <C-R><C-W><space>
 nnoremap <leader>ag :Ag!<space>
+nnoremap <leader>ahg :Ag! --hidden<space>
 vnoremap <leader>ag y:Ag! '<C-R>"'
-nnoremap <leader>lag :Ag<up><cr>
 nnoremap <leader>ga :AgAdd!<space>
 nnoremap <leader>g# :Ag! -w <C-R><C-W><space>
 nnoremap <leader>gn :cnext<CR>
@@ -242,7 +242,6 @@ nnoremap <Leader>rel :e<CR>
 
 " Open vim rc
 nnoremap <Leader>vi :vsplit ~/.config/nvim/config.vim<CR>
-nnoremap <Leader>lvi :vsplit ~/.config/nvim/init.lua<CR>
 
 " vundle
 nnoremap <Leader>bi :BundleInstall<cr>
@@ -256,9 +255,6 @@ nnoremap U <nop>
 " Find
 nnoremap <leader>f <ESC>/
 nnoremap <leader>* <ESC>:find<space>
-
-" convert file to latin1 and reloads
-nnoremap <leader>lat1 :write ++enc=latin1<cr>:e<cr>
 
 " Use Q for formatting the current paragraph (or selection)
 vnoremap Q gq
