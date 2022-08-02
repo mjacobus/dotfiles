@@ -60,7 +60,7 @@ endsnippet
 snippet rspec "RSpec.describe"
 # frozen_string_literal: true
 
-require '${1:spec_helper}'
+require "${1:spec_helper}"
 
 RSpec.describe ${2:`!p snip.rv = class_name(snip, path)`} do
 	${3}
@@ -70,7 +70,7 @@ endsnippet
 snippet rt "rails test"
 # frozen_string_literal: true
 
-require '${1:test_helper}'
+require "${1:test_helper}"
 
 class ${2:`!p snip.rv = class_name(snip, path)`}Test < ActiveSupport::TestCase
 	${3}
@@ -80,7 +80,7 @@ endsnippet
 snippet rct "rails controller test"
 # frozen_string_literal: true
 
-require '${1:test_helper}'
+require "${1:test_helper}"
 
 class ${2:`!p snip.rv = class_name(snip, path)`}Test < ActionDispatch::IntegrationTest
 	${3}
@@ -98,7 +98,7 @@ end
 endsnippet
 
 snippet it "it block for spec"
-it '${1:do something}' do
+it "${1:do something}" do
 	${2}
 end
 endsnippet
@@ -110,13 +110,13 @@ end
 endsnippet
 
 snippet spec
-specify '${1:do something}' do
+specify "${1:do something}" do
 	${2}
 end
 endsnippet
 
 snippet cont
-context '${1:do something}' do
+context "${1:do something}" do
 	${2}
 end
 endsnippet
@@ -154,6 +154,14 @@ endsnippet
 
 snippet alw "allow().to receive"
 allow(${1:object}).to receive(:${2:method}).with(${3:{foo: :bar}})
+endsnippet
+
+snippet req "require"
+require "${1:file}"
+endsnippet
+
+snippet rl "require_relative"
+require_relative "${1:./file}"
 endsnippet
 
 # Reek suppress snippets
