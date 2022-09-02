@@ -10,7 +10,7 @@ end
 branches.shift
 
 local_branches = branches.reject { |b| b.start_with?("#{remote}/") }
-remote_branches = branches.select { |b| b.start_with?("#{remote}/") }
+remote_branches = branches - local_branches
 
 remote_branches_without_prefix = remote_branches.map do |branch|
   branch.sub(%r{^#{remote}/}, '')
