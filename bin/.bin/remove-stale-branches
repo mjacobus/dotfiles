@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+remote = ARGV.first || 'origin'
+branches = `git branch -a`.split("\n").map(&:strip).map do |branch|
+  branch.sub(%r{^remotes/}, '')
+end
+
+# exclude main branch
+branches.shift
+
+local_branches = branches.reject { |b| b.start_with?("#{remote}/") }
+remote_branches = branches.select { |b| b.start_with?("#{remote}/") }
+
+remote_branches_without_prefix = remote_branches.map do |branch|
+  branch.sub(%r{^#{remote}/}, '')
+end
+
+stale_branches = local_branches - remote_branches_without_prefix
+
+stale_branches.each do |branch|
+  output = `git branch -D #{branch}`
+  puts output
+end
