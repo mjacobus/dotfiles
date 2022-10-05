@@ -7,7 +7,7 @@ branches = `git branch -a`.split("\n").map(&:strip).map do |branch|
 end
 
 # exclude main branch
-branches.shift
+branches = branches.reject { |b| b.start_with?("*") }
 
 local_branches = branches.reject { |b| b.start_with?("#{remote}/") }
 remote_branches = branches - local_branches
@@ -19,6 +19,6 @@ end
 stale_branches = local_branches - remote_branches_without_prefix
 
 stale_branches.each do |branch|
-  output = `git branch -D #{branch}`
-  puts output
+  cmd = "git branch -D #{branch}"
+  puts `#{cmd}`
 end
