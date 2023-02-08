@@ -1,3 +1,6 @@
 [submodule "asdf/.asdf"]
 	path = asdf/.asdf
 	url = https://github.com/asdf-vm/asdf
+[submodule "base16-shell/.config/base16-shell"]
+	path = base16-shell/.config/base16-shell
+	url = https://github.com/chriskempson/base16-shell

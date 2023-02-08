@@ -26,3 +26,4 @@ stow $flags bash
 stow $flags neovim
 stow $flags alacritty
 stow $flags kitty
+stow $flags base16-shell
