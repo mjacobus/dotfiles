@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# use rg to search the current gem dir
+
+rg -i "${@}" "$(gem environment gemdir)/gems"
+
+# stolen from https://github.com/andxyz/.dot-binfiles/blob/master/rbenv-search-current-gems-dir-with-rg.sh
