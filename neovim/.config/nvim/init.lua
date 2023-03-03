@@ -24,7 +24,7 @@ vimp.nnoremap('<leader>j', function()
   if string.find(name, "term://") then
     number = vim.api.nvim_buf_get_number(0)
     vim.api.nvim_exec('buffer #', true)
-    vim.api.nvim_buf_delete(number, {})
+    vim.api.nvim_buf_delete(number, { force = true })
   end
 end)
 
@@ -40,6 +40,7 @@ end)
 
 function open_mj_alternative_file(subcommand, options)
   file_path = vim.fn.expand('%')
+  file_name = vim.fn.fnamemodify(file_path, ":~:.")
   files = mj_alternative_file(file_path, subcommand, options)
   files = vim.split(files, ' ')
   file = files[1]
