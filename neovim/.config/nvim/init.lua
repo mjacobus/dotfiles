@@ -40,7 +40,7 @@ end)
 
 function open_mj_alternative_file(subcommand, options)
   file_path = vim.fn.expand('%')
-  file_name = vim.fn.fnamemodify(file_path, ":~:.")
+  file_path = vim.fn.fnamemodify(file_path, ":~:.")
   files = mj_alternative_file(file_path, subcommand, options)
   files = vim.split(files, ' ')
   file = files[1]
