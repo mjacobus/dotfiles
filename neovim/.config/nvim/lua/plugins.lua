@@ -114,6 +114,10 @@ require('packer').startup(function(use)
   use 'pwntester/octo.nvim'
 
   use 'jparise/vim-graphql'
+
+  -- javascript
+  use 'kchmck/vim-coffee-script'
+
   -- Do I want them?
   --     source ~/.vim/plugins/indentation-guides.vim
   --     source ~/.vim/plugins/lightline.vim
