@@ -48,6 +48,10 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
+
+vim.keymap.set("i", "jj", "<ESC>:w<cr>")
+vim.keymap.set("n", "<leader>s", ":w<cr>")
+
 vim.keymap.set("n", '<leader>j', function()
   name = vim.api.nvim_buf_get_name(0)
 
@@ -59,6 +63,9 @@ vim.keymap.set("n", '<leader>j', function()
 end)
 
 vim.keymap.set('n', '<leader>af', '<c-^>')
+
+-- Missing mappings might be here:
+-- ~/.dotfiles/neovim/.config/nvim/config.vim
 
 vim.keymap.set('n', '<leader>ak', function()
   open_mj_alternative_file('next', '--exists')
