@@ -118,6 +118,7 @@ require('packer').startup(function(use)
   -- javascript
   use 'kchmck/vim-coffee-script'
 
+  use 'drewtempelmeyer/palenight.vim'
   -- Do I want them?
   --     source ~/.vim/plugins/indentation-guides.vim
   --     source ~/.vim/plugins/lightline.vim

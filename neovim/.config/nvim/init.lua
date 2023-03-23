@@ -14,6 +14,7 @@ vim.wo.number = true
 vim.wo.numberwidth = 2
 vim.wo.wrap = false
 vim.cmd([[colorscheme OceanicNext]])
+-- vim.cmd([[colorscheme palenight]])
 vim.api.nvim_set_option('clipboard', 'unnamed')
 
 vim.api.nvim_exec("source ~/.config/nvim/config.vim", true)
