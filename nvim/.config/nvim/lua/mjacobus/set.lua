@@ -29,3 +29,16 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
+
+
+vim.o.ignorecase = true
+vim.o.hidden = true
+vim.o.smartcase = true
+vim.o.background = "dark"
+vim.wo.number = true
+vim.wo.numberwidth = 2
+-- vim.cmd([[colorscheme OceanicNext]])
+-- vim.cmd([[colorscheme palenight]])
+vim.api.nvim_set_option('clipboard', 'unnamed')
+
+-- vim.api.nvim_exec("source ~/.config/nvim/config.vim", true)

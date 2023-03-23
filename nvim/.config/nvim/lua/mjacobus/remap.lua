@@ -47,3 +47,51 @@ vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
+
+vim.keymap.set("n", '<leader>j', function()
+  name = vim.api.nvim_buf_get_name(0)
+
+  if string.find(name, "term://") then
+    number = vim.api.nvim_buf_get_number(0)
+    vim.api.nvim_exec('buffer #', true)
+    vim.api.nvim_buf_delete(number, { force = true })
+  end
+end)
+
+vim.keymap.set('n', '<leader>af', '<c-^>')
+
+vim.keymap.set('n', '<leader>ak', function()
+  open_mj_alternative_file('next', '--exists')
+end)
+
+vim.keymap.set('n', '<leader>aj', function()
+  open_mj_alternative_file('prev', '--exists')
+end)
+
+
+-- functions
+
+function open_mj_alternative_file(subcommand, options)
+  file_path = vim.fn.expand('%')
+  file_path = vim.fn.fnamemodify(file_path, ":~:.")
+  files = mj_alternative_file(file_path, subcommand, options)
+  files = vim.split(files, ' ')
+  file = files[1]
+
+  if file ~= '' then
+    vim.api.nvim_command('e ' .. file)
+  end
+end
+
+function mj_alternative_file(file, subcommand, options)
+  local cmd = 'mj alternative_file ' .. subcommand .. ' ' .. file .. ' ' .. options
+  return execute_command(cmd)
+end
+
+function execute_command(cmd)
+  print("cmd: " .. cmd)
+  local f = io.popen(cmd)
+  local s = f:read('*a')
+  f:close()
+  return s
+end
