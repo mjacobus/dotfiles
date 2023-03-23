@@ -45,6 +45,22 @@ return require('packer').startup(function(use)
   use("tpope/vim-fugitive")
   use("nvim-treesitter/nvim-treesitter-context");
 
+  -- my old plugins
+  use 'tomtom/tcomment_vim'
+  use 'tpope/vim-repeat'
+  use 'tpope/vim-speeddating'
+  use 'tpope/vim-surround'
+  use 'mattn/emmet-vim'
+  use 'yukunlin/auto-pairs'
+  use { 'mattn/gist-vim', requires = {{'mattn/webapi-vim'}} }
+  use 'rking/ag.vim'
+  use 'weierophinney/argumentrewrap'
+  use 'tpope/vim-eunuch'
+  use 'scrooloose/nerdtree'
+
+  -- colors
+  use 'mhartington/oceanic-next'
+
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v1.x',
