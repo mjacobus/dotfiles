@@ -60,6 +60,8 @@ return require('packer').startup(function(use)
 
   -- colors
   use 'mhartington/oceanic-next'
+  use 'chriskempson/base16-vim'
+  use 'drewtempelmeyer/palenight.vim'
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
