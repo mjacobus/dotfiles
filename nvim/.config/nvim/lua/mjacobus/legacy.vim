@@ -302,35 +302,3 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "norm
 autocmd FileType gitcommit setlocal spell spelllang=en_us,pt_br
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us,pt_br
 autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us,pt_br
-" 
-" 
-" " nnoremap  <leader>j :buffer #<cr>:bd! term://<cr>
-" "
-" " OLD CONFIG
-" " source ~/.vim/functions.vim
-" " source ~/.vim/abbreviations.vim
-" " source ~/.vim/mappings.vim
-" "
-" " set path+=**
-" " set expandtab tabstop=2 softtabstop=2 shiftwidth=2
-" " set guicursor=a:blinkon0
-" " set hidden
-" " set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-" " set mouse=""
-" " set nobackup
-" " set noswapfile
-" " set nowrap
-" " set number numberwidth=2
-" " set showmatch
-" " set wildignore+=*.so,*.swp,*.zip,*/build/*,*/coverage/*     " MacOSX/Linux
-" " set wildmode=list:longest,full
-" 
-" " Forward clipboard in a codespace
-" if !empty($CODESPACES)
-"   let g:clipboard = {"name": "rdm", "copy": {}, "paste": {}}
-"   let g:clipboard.copy["+"] = ["rdm", "copy"]
-"   let g:clipboard.paste["+"] = ["rdm", "paste"]
-"   let g:clipboard.copy["*"] = ["rdm", "copy"]
-"   let g:clipboard.paste["*"] = ["rdm", "paste"]
-" endif
-" 

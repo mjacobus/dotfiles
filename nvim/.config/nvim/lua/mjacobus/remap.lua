@@ -72,11 +72,11 @@ vim.keymap.set('n', '<leader>bda', ':bufdo %bd!<cr>')
 vim.keymap.set('n', '<leader>F', ':nohlsearch<cr>', { silent = true })
 
 -- " Avoid arrow keys in command mode
-vim.keymap.set('n', '<C-h>', '<left>')
-vim.keymap.set('n', '<C-j>', '<down>')
-vim.keymap.set('n', '<C-k>', '<up>')
-vim.keymap.set('n', '<C-l>', '<right>')
-vim.keymap.set('n', '<C-x>', '<del>')
+vim.keymap.set('c', '<C-h>', '<left>')
+vim.keymap.set('c', '<C-j>', '<down>')
+vim.keymap.set('c', '<C-k>', '<up>')
+vim.keymap.set('c', '<C-l>', '<right>')
+vim.keymap.set('c', '<C-x>', '<del>')
 
 vim.keymap.set('n', '<leader>ak', function()
   open_mj_alternative_file('next', '--exists')

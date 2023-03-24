@@ -59,6 +59,9 @@ return require('packer').startup(function(use)
   use 'scrooloose/nerdtree'
   use 'Lokaltog/vim-easymotion'
 
+  -- javascript
+  use 'kchmck/vim-coffee-script'
+
   -- colors
   use 'mhartington/oceanic-next'
   use 'chriskempson/base16-vim'

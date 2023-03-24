@@ -1,4 +1,6 @@
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+vim.keymap.set("n", "<leader>ga", ':Gwrite')
+vim.keymap.set("n", "<leader>gb", ':Gblame')
 
 local ThePrimeagen_Fugitive = vim.api.nvim_create_augroup("ThePrimeagen_Fugitive", {})
 
@@ -27,3 +29,5 @@ autocmd("BufWinEnter", {
         vim.keymap.set("n", "<leader>t", ":Git push -u origin ", opts);
     end,
 })
+
+

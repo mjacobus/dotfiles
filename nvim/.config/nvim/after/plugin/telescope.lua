@@ -5,6 +5,7 @@ local git_files = function()
 end
 
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+vim.keymap.set('n', '<leader>p', git_files, {})
 vim.keymap.set('n', '<leader>pa', git_files, {})
 vim.keymap.set('n', '<leader>ps', function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
