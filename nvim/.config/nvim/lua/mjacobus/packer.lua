@@ -44,6 +44,7 @@ return require('packer').startup(function(use)
   use("mbbill/undotree")
   use("tpope/vim-fugitive")
   use("nvim-treesitter/nvim-treesitter-context");
+  use('lewis6991/gitsigns.nvim')
 
   -- my old plugins
   use 'tomtom/tcomment_vim'
