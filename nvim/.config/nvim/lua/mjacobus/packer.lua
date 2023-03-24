@@ -57,6 +57,7 @@ return require('packer').startup(function(use)
   use 'weierophinney/argumentrewrap'
   use 'tpope/vim-eunuch'
   use 'scrooloose/nerdtree'
+  use 'Lokaltog/vim-easymotion'
 
   -- colors
   use 'mhartington/oceanic-next'

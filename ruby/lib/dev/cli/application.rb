@@ -7,6 +7,7 @@ module Dev
       no_commands do
         def self.append_command(command)
           desc *command.description
+
           command.options_taken.each do |option|
             self.option *option
           end

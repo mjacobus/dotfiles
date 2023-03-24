@@ -43,7 +43,6 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
-
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
@@ -66,6 +65,18 @@ vim.keymap.set('n', '<leader>af', '<c-^>')
 
 -- Missing mappings might be here:
 -- ~/.dotfiles/neovim/.config/nvim/config.vim
+
+vim.keymap.set('n', '<leader>bd', ':bd<cr>')
+vim.keymap.set('n', '<leader>bdd', ':bd!<cr>')
+vim.keymap.set('n', '<leader>bda', ':bufdo %bd!<cr>')
+vim.keymap.set('n', '<leader>F', ':nohlsearch<cr>', { silent = true })
+
+-- " Avoid arrow keys in command mode
+vim.keymap.set('n', '<C-h>', '<left>')
+vim.keymap.set('n', '<C-j>', '<down>')
+vim.keymap.set('n', '<C-k>', '<up>')
+vim.keymap.set('n', '<C-l>', '<right>')
+vim.keymap.set('n', '<C-x>', '<del>')
 
 vim.keymap.set('n', '<leader>ak', function()
   open_mj_alternative_file('next', '--exists')

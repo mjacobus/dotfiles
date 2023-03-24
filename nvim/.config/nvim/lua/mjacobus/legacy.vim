@@ -1,21 +1,8 @@
 " this are the configs that I mean to move to init.lua
 " inoremap jj <ESC>:w<cr>
 " 
-" set undofile
 " 
-" set tags+=./tags.vendors
-" set tags+=tags-php
-" set tags+=tags-ruby
-" set tags+=tags-js
-" set tags+=gems.tags
-" 
-" 
-" set colorcolumn=80
-" 
-" set expandtab tabstop=2 softtabstop=2 shiftwidth=2
 " set noswapfile
-" set splitright
-" set splitbelow
 " 
 " autocmd BufWrite * :call <sid>MkdirsIfNotExists(expand("<afile>:h"))
 " 
@@ -49,17 +36,6 @@
 " let g:gist_detect_filetype = 1
 " let g:gist_open_browser_after_post = 1
 " 
-" " use 'rking/ag.vim'
-" " nnoremap g# :Ag! -w <C-R><C-W><space>
-" nnoremap <leader>ag :Ag!<space>
-" nnoremap <leader>ahg :Ag! --hidden<space>
-" vnoremap <leader>ag y:Ag! '<C-R>"'
-" nnoremap <leader>ga :AgAdd!<space>
-" nnoremap <leader>g# :Ag! -w <C-R><C-W><space>
-" nnoremap <leader>gn :cnext<CR>
-" nnoremap <leader>gp :cprev<CR>
-" nnoremap <leader>gq :ccl<CR>
-" nnoremap <leader>gl :cwindow<CR>
 " 
 " " use 'weierophinney/argumentrewrap'
 " nnoremap <leader>wa :call argumentrewrap#RewrapArguments()<CR>
@@ -111,87 +87,71 @@
 "   \ 'ctrl-t': 'tab split',
 "   \ 'ctrl-s': 'split',
 "   \ 'ctrl-v': 'vsplit' }
+
+"===============================================================================
+" functions
+"===============================================================================
+
+" augment status line
+function! ETry(function, ...)
+  if exists('*'.a:function)
+    return call(a:function, a:000)
+  else
+    return ''
+  endif
+endfunction
+
+" remove trailing white spaces before saving rb files
+function! TrimWhiteSpace()
+" Save cursor position
+  let l = line(".")
+  let c = col(".")
+
+  %s/\s\+$//e
+
+" Restore cursor position
+  call cursor(l, c)
+endfunction
+
+function! ClearEchoAndExecute(command)
+  let cmd = "! clear && echo '" . a:command . "' && " . a:command
+
+  if has('nvim')
+    let cmd = "terminal " . a:command
+  endif
+
+  execute cmd
+endfunction
+
+function! ExecuteCommand(command)
+  execute "! clear && echo '" . a:command . "'" . " && " . a:command
+endfunction
+
+
+
+
+"===============================================================================
+" Mappings
+"===============================================================================
+
+" rm file
+nnoremap <leader>rm :Delete<cr>
+
+" Last buffer
+nnoremap <leader>o <c-^>
 " 
-" "===============================================================================
-" " functions
-" "===============================================================================
-" 
-" " augment status line
-" function! ETry(function, ...)
-"   if exists('*'.a:function)
-"     return call(a:function, a:000)
-"   else
-"     return ''
-"   endif
-" endfunction
-" 
-" " remove trailing white spaces before saving rb files
-" function! TrimWhiteSpace()
-" " Save cursor position
-"   let l = line(".")
-"   let c = col(".")
-" 
-"   %s/\s\+$//e
-" 
-" " Restore cursor position
-"   call cursor(l, c)
-" endfunction
-" 
-" function! ClearEchoAndExecute(command)
-"   let cmd = "! clear && echo '" . a:command . "' && " . a:command
-" 
-"   if has('nvim')
-"     let cmd = "terminal " . a:command
-"   endif
-" 
-"   execute cmd
-" endfunction
-" 
-" function! ExecuteCommand(command)
-"   execute "! clear && echo '" . a:command . "'" . " && " . a:command
-" endfunction
-" 
-" 
-" 
-" 
-" "===============================================================================
-" " Mappings
-" "===============================================================================
-" 
-" " rm file
-" nnoremap <leader>rm :Delete<cr>
-" 
-" " Last buffer
-" nnoremap <leader>o <c-^>
-" 
-" " escape alias
-" inoremap jj <esc>
-" inoremap jJ <esc>
-" inoremap Jj <esc>
-" inoremap JJ <esc>
-" inoremap jk <esc>
-" 
-" " use esc jj to escape terminal mode
-" tnoremap <esc> <C-\><C-n>
-" tnoremap jj <C-\><C-n>
-" 
-" " This mappings embraces my muscle memory while on ergodox
-" nnoremap <backspace> =
-" vnoremap <backspace> =
-" 
-" " buffer changing
-" nnoremap <leader>bn :bn<cr>
-" nnoremap <leader>bp :bp<cr>
-" 
-" " find buffer file
-" nnoremap <leader><leader>b :b<space>
-" 
-" " closes buffer
-" nnoremap <leader>bd :bd<cr>
-" nnoremap <leader>bdd :bd!<cr>
-" nnoremap <leader>bda :bufdo %bd!<cr>
-" nnoremap <leader>n :NERDTreeToggle<cr>
-" 
+" use esc jj to escape terminal mode
+tnoremap <esc> <C-\><C-n>
+tnoremap jj <C-\><C-n>
+
+" buffer changing
+nnoremap <leader>bn :bn<cr>
+nnoremap <leader>bp :bp<cr>
+
+" find buffer file
+nnoremap <leader><leader>b :b<space>
+
+
 " " search
 " " nnoremap * :keepjumps normal *``<cr>
 " 
@@ -214,75 +174,57 @@
 " " saves from normal mode
 " nnoremap <leader>s :w<cr>
 " nnoremap <leader>S :w<cr>
-" 
-" " saves and exits insert mode
-" inoremap ,s <ESC>:w<cr>
-" inoremap ,S <ESC>:w<cr>
-" 
-" " Select all
-" nnoremap <leader>a ggVG
-" 
-" " new tab
-" nnoremap <c-w>t :tabnew<cr>
-" 
-" " jumps to the next position after the closest closing char
-" inoremap ,e <Esc>/[\]})"']<cr><Esc>:nohlsearch<cr>a
-" 
-" " adds arrow
-" inoremap <C-l> <Space>=><Space>
-" 
-" 
+
+" Select all
+nnoremap <leader>a ggVG
+
+" new tab
+nnoremap <c-w>t :tabnew<cr>
+
+" jumps to the next position after the closest closing char
+inoremap ,e <Esc>/[\]})"']<cr><Esc>:nohlsearch<cr>a
+
+" adds arrow
+inoremap <C-l> <Space>=><Space>
+
+
 " " Rails specific
-" " nnoremap <Leader>ac :sp app/controllers/application_controller.rb<cr>
-" vnoremap <leader>h :s/\:\([a-zA-Z_]\+\)\s\+=>/\=printf("%s:", submatch(1))/g<CR><ESC>:let @/ = ""<CR>
-" nnoremap <Leader>qq <ESC>:q<cr>
-" 
-" " reload buffer
-" nnoremap <Leader>rel :e<CR>
-" 
+vnoremap <leader>h :s/\:\([a-zA-Z_]\+\)\s\+=>/\=printf("%s:", submatch(1))/g<CR><ESC>:let @/ = ""<CR>
+nnoremap <Leader>qq <ESC>:q<cr>
+
+" reload buffer
+nnoremap <Leader>rel :e<CR>
+
 " " Open vim rc
 " nnoremap <Leader>vi :vsplit ~/.config/nvim/config.vim<CR>
-" 
-" " vundle
-" nnoremap <Leader>bi :BundleInstall<cr>
-" nnoremap <Leader>bu :BundleUpdate<cr>
-" nnoremap <Leader>bc :BundleClean<cr>
 " 
 " " Fix anoying original K
 " nnoremap K <nop>
 " nnoremap U <nop>
 " 
-" " Find
-" nnoremap <leader>f <ESC>/
-" nnoremap <leader>* <ESC>:find<space>
-" 
-" " Use Q for formatting the current paragraph (or selection)
-" vnoremap Q gq
-" nnoremap Q gqap
-" 
-" " clear search
-" nnoremap <silent> <leader>F :nohlsearch<CR>
-" 
-" " Avoid arrow keys in command mode
-" cnoremap <C-h> <left>
-" cnoremap <C-j> <down>
-" cnoremap <C-k> <up>
-" cnoremap <C-l> <right>
-" cnoremap <C-x> <del>
-" 
+" Find
+nnoremap <leader>f <ESC>/
+nnoremap <leader>* <ESC>:find<space>
+
+" Use Q for formatting the current paragraph (or selection)
+vnoremap Q gq
+nnoremap Q gqap
+
+
+
 " " Control Ctrl and Ctrl V
 " vnoremap <C-c> "+y
 " vnoremap <leader>c "+y
 " nnoremap <leader>v :set paste<cr>"+p:set nopaste<cr>i
 " 
-" " buffer resizing mappings (shift + arrow key)
-" nnoremap <Up> <c-w>+
-" nnoremap <Down> <c-w>-
-" nnoremap <Left> <c-w><
-" nnoremap <Right> <c-w>>
-" 
-" " Trim all trailing whitespaces no questions asked.
-" nnoremap <leader>wt :call TrimWhiteSpace()<cr>
+" buffer resizing mappings (shift + arrow key)
+nnoremap <Up> <c-w>+
+nnoremap <Down> <c-w>-
+nnoremap <Left> <c-w><
+nnoremap <Right> <c-w>>
+
+" Trim all trailing whitespaces no questions asked.
+nnoremap <leader>wt :call TrimWhiteSpace()<cr>
 " 
 " " quotes
 " " Single quote word
@@ -311,64 +253,55 @@
 " 
 " " select last paste in visual mode
 " nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
-" 
-" " offers to create/edit a tmp file
-" nnoremap <leader>on :e tmp/notes.txt<cr>
-" nnoremap <leader>et :e ~/.tmp/
-" nnoremap <leader>cet :e tmp/
-" nnoremap <leader><leader>e :!<space>
-" 
-" inoremap ć ç
-" inoremap Ć Ç
-" inoremap ,a â
-" inoremap ,A Â
-" 
-" nnoremap <leader>st <esc>:terminal ./shell_test<cr>
-" nnoremap <leader><leader>xx <esc>:! chmod +x %<cr>
-" 
-" "===============================================================================
-" " Language specific
-" "===============================================================================
-" 
-" 
-" "===============================================================================
-" " C
-" "===============================================================================
-" 
-" "===============================================================================
-" " BASH
-" "===============================================================================
-" autocmd FileType sh nnoremap <buffer> <leader>x <esc>:terminal ./%<cr>
-" autocmd FileType zsh nnoremap <buffer> <leader>x <esc>:terminal ./%<cr>
-" 
-" "===============================================================================
-" " Allow overriding these settings:
-" "===============================================================================
-" if filereadable(expand("~/.vimrc.local"))
-"   source ~/.vimrc.local
-" endif
-" 
-" if filereadable(".project.vim")
-"   source .project.vim
-" endif
-" 
-" if filereadable(".project.lua")
-"   luafile .project.lua
-" endif
-" 
-" if filereadable(".editor/project.vim")
-"   source .editor/project.vim
-" endif
-" 
-" "===============================================================================
-" " Autocommands:
-" "===============================================================================
-" " remember last position in file
-" autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
-" 
-" autocmd FileType gitcommit setlocal spell spelllang=en_us,pt_br
-" autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us,pt_br
-" autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us,pt_br
+
+" offers to create/edit a tmp file
+nnoremap <leader>on :e tmp/notes.txt<cr>
+nnoremap <leader>et :e ~/.tmp/
+nnoremap <leader>cet :e tmp/
+nnoremap <leader><leader>e :!<space>
+
+nnoremap <leader>st <esc>:terminal ./shell_test<cr>
+nnoremap <leader><leader>xx <esc>:! chmod +x %<cr>
+
+"===============================================================================
+" Language specific
+"===============================================================================
+
+
+"===============================================================================
+" BASH
+"===============================================================================
+autocmd FileType sh nnoremap <buffer> <leader>x <esc>:terminal ./%<cr>
+autocmd FileType zsh nnoremap <buffer> <leader>x <esc>:terminal ./%<cr>
+
+"===============================================================================
+" Allow overriding these settings:
+"===============================================================================
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
+
+if filereadable(".project.vim")
+  source .project.vim
+endif
+
+if filereadable(".project.lua")
+  luafile .project.lua
+endif
+
+if filereadable(".editor/project.vim")
+  source .editor/project.vim
+endif
+
+"===============================================================================
+" Autocommands:
+"===============================================================================
+" remember last position in file
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+
+autocmd FileType gitcommit setlocal spell spelllang=en_us,pt_br
+autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us,pt_br
+autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us,pt_br
 " 
 " 
 " " nnoremap  <leader>j :buffer #<cr>:bd! term://<cr>
