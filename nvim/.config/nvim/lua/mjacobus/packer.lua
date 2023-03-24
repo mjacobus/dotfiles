@@ -77,6 +77,10 @@ return require('packer').startup(function(use)
   use 'folke/tokyonight.nvim'
   use { "catppuccin/nvim", as = "catppuccin" }
   use 'patstockwell/vim-monokai-tasty'
+  use 'kartikp10/noctis.nvim'
+  use 'Almo7aya/neogruvbox.nvim'
+  use { 'nocksock/bloop.nvim', requires = {{ 'rktjmp/lush.nvim' }} }
+  use 'aswathkk/DarkScene.vim'
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
