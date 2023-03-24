@@ -61,11 +61,21 @@ return require('packer').startup(function(use)
 
   -- javascript
   use 'kchmck/vim-coffee-script'
+  -- Should use it?
+  -- Plug 'HerringtonDarkholme/yats.vim'
+  -- Plug 'pangloss/vim-javascript'
+  -- Plug 'MaxMEllon/vim-jsx-pretty'
+  -- Plug 'styled-components/vim-styled-components'
+  -- Plug 'elzr/vim-json'
+  -- Plug 'jparise/vim-graphql'
 
   -- colors
   use 'mhartington/oceanic-next'
   use 'chriskempson/base16-vim'
   use 'drewtempelmeyer/palenight.vim'
+  use 'folke/tokyonight.nvim'
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use 'patstockwell/vim-monokai-tasty'
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
