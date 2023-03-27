@@ -18,6 +18,8 @@ end
 
 stale_branches = local_branches - remote_branches_without_prefix
 
+stale_branches = stale_branches.reject { |b| b.start_with?("heroku") }
+
 stale_branches.each do |branch|
   cmd = "git branch -D #{branch}"
   puts `#{cmd}`
