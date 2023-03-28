@@ -1,6 +1,6 @@
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
-vim.keymap.set("n", "<leader>ga", ':Gwrite')
-vim.keymap.set("n", "<leader>gb", ':Gblame')
+vim.keymap.set("n", "<leader>gw", ':Git add %<cr>')
+vim.keymap.set("n", "<leader>gb", ':Git blame')
 
 local ThePrimeagen_Fugitive = vim.api.nvim_create_augroup("ThePrimeagen_Fugitive", {})
 
