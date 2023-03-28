@@ -59,6 +59,21 @@ return require('packer').startup(function(use)
   use 'tpope/vim-eunuch'
   use 'scrooloose/nerdtree'
   use 'Lokaltog/vim-easymotion'
+  use 'godlygeek/tabular'
+  use { 'mjacobus/vim-snippets', requires = {{ 'sirver/ultisnips' }}}
+  use 'austintaylor/vim-commaobject'
+  use 'mechatroner/rainbow_csv'
+
+  -- Github
+  use 'pwntester/octo.nvim'
+  use {
+    'tyru/open-browser-github.vim',
+    requires = {{'tyru/open-browser.vim'}}
+  }
+
+  -- ruby
+  use 'noprompt/vim-yardoc'
+  use 'hallison/vim-rdoc'
 
   -- javascript
   use 'kchmck/vim-coffee-script'
@@ -96,6 +111,7 @@ return require('packer').startup(function(use)
 		  {'hrsh7th/cmp-buffer'},
 		  {'hrsh7th/cmp-path'},
 		  {'saadparwaiz1/cmp_luasnip'},
+      { 'quangnguyen30192/cmp-nvim-ultisnips' },
 		  {'hrsh7th/cmp-nvim-lsp'},
 		  {'hrsh7th/cmp-nvim-lua'},
 
