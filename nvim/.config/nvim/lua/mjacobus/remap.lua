@@ -24,7 +24,7 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+-- vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -51,7 +51,7 @@ end)
 vim.keymap.set("i", "jj", "<ESC>:w<cr>")
 vim.keymap.set("n", "<leader>s", ":w<cr>")
 
-vim.keymap.set("n", '<leader>d', function()
+vim.keymap.set("n", '<leader>j', function()
   name = vim.api.nvim_buf_get_name(0)
 
   if string.find(name, "term://") then
