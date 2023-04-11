@@ -158,7 +158,7 @@ nnoremap <leader><leader>b :b<space>
 " " Highlight but do not jump
 " " http://stackoverflow.com/questions/4256697/vim-search-and-highlight-but-do-not-jump
 " " nnoremap * *``
-" nnoremap * *N
+nnoremap * *N
 " 
 " " * and # search for next/previous of selected text when used in visual mode
 " vnoremap * y/<C-R>"<CR>
