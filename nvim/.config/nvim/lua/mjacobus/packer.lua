@@ -20,7 +20,7 @@ return require('packer').startup(function(use)
 	  'rose-pine/neovim',
 	  as = 'rose-pine',
 	  config = function()
-		  vim.cmd('colorscheme rose-pine')
+		  -- vim.cmd('colorscheme rose-pine')
 	  end
   })
 
@@ -45,6 +45,8 @@ return require('packer').startup(function(use)
   use("tpope/vim-fugitive")
   use("nvim-treesitter/nvim-treesitter-context");
   use('lewis6991/gitsigns.nvim')
+  use('chriskempson/vim-tomorrow-theme')
+  use('jlanzarotta/colorSchemeExplorer')
 
   -- my old plugins
   use 'tomtom/tcomment_vim'
@@ -85,7 +87,7 @@ return require('packer').startup(function(use)
   -- Plug 'elzr/vim-json'
   -- Plug 'jparise/vim-graphql'
 
-  -- colors
+  -- colors @see https://vimcolorschemes.com/
   use 'mhartington/oceanic-next'
   use 'chriskempson/base16-vim'
   use 'drewtempelmeyer/palenight.vim'
@@ -96,6 +98,7 @@ return require('packer').startup(function(use)
   use 'Almo7aya/neogruvbox.nvim'
   use { 'nocksock/bloop.nvim', requires = {{ 'rktjmp/lush.nvim' }} }
   use 'aswathkk/DarkScene.vim'
+  use 'Mofiqul/vscode.nvim'
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',

@@ -9,7 +9,8 @@ end
 
 -- ColorMyPencils()
 -- ColorMyPencils("base16-monokai")
-ColorMyPencils("catppuccin-mocha")
+-- ColorMyPencils("catppuccin-mocha")
+ColorMyPencils("tokyonight")
 -- ColorMyPencils("base16-tomorrow-night")
 -- ColorMyPencils("rose-pine")
 -- ColorMyPencils("OceanNext")
