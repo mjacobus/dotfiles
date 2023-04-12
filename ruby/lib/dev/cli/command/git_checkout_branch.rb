@@ -9,6 +9,10 @@ module Dev
             @name = branch_name
             @checkout_command = "git checkout #{name}"
           end
+
+          def match?(pattern)
+            Regexp.new(pattern).match?(@name)
+          end
         end
 
         class RemoteBranch < LocalBranch
@@ -35,8 +39,8 @@ module Dev
 
         def run
           searched_branch = options[:branch].gsub(' ', '-')
-          command = "git branch | grep -i #{searched_branch}"
-          remote_command = "git branch -a | grep -i #{searched_branch}"
+          command = "git branch"
+          remote_command = "git branch -a"
 
           branches = application.capture_stdout(command).map do |line|
             LocalBranch.new(output_line_to_branch_name(line))
@@ -49,6 +53,8 @@ module Dev
           end
 
           checked_out = nil
+
+          branches = branches.select { |b| b.match?(searched_branch) }
 
           branches.each do |branch|
             if searched_branch == branch.name
