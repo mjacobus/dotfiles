@@ -53,6 +53,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-repeat'
   use 'tpope/vim-speeddating'
   use 'tpope/vim-surround'
+  use 'tpope/vim-rails'
   use 'mattn/emmet-vim'
   use 'yukunlin/auto-pairs'
   use { 'mattn/gist-vim', requires = {{'mattn/webapi-vim'}} }
