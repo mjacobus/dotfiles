@@ -12,8 +12,6 @@ if [[ "$args" == "--uninstall" ]]; then
   flags="-D --verbose=1 -t $HOME"
 fi
 
-rm -rf ~/.config/nvim
-
 stow $flags ag
 stow $flags asdf
 stow $flags bin
@@ -27,6 +25,7 @@ stow $flags zshell
 stow $flags bash
 # stow $flags neovim # older
 stow $flags nvim   # newer
+stow $flags lvim   # newest
 stow $flags alacritty
 stow $flags kitty
 stow $flags base16-shell
