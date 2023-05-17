@@ -14,10 +14,10 @@ lvim.keys.insert_mode["jj"] = "<ESC>"
 
 -- This closes the terminal, I.E. after a test run
 vim.keymap.set("n", '<leader>j', function()
-  name = vim.api.nvim_buf_get_name(0)
+  local name = vim.api.nvim_buf_get_name(0)
 
   if string.find(name, "term://") then
-    number = vim.api.nvim_buf_get_number(0)
+    local number = vim.api.nvim_buf_get_number(0)
     vim.api.nvim_exec('buffer #', true)
     vim.api.nvim_buf_delete(number, { force = true })
   end
@@ -33,9 +33,11 @@ vim.keymap.set('c', '<C-l>', '<right>')
 vim.keymap.set('c', '<C-x>', '<del>')
 
 vim.keymap.set('n', '<leader>ak', function()
-  af.open('next', '--exists')
+  alternative_file.open('next', '--exists')
 end)
 
 vim.keymap.set('n', '<leader>aj', function()
   alternative_file.open('prev', '--exists')
 end)
+
+vim.diagnostic.config({ virtual_text = false })
