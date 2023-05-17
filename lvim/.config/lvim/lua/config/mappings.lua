@@ -13,7 +13,7 @@ lvim.builtin.which_key.mappings["bda"] = { "<cmd>bufdo %bd!<cr>", "close all buf
 lvim.keys.insert_mode["jj"] = "<ESC>"
 
 -- This closes the terminal, I.E. after a test run
-vim.keymap.set("n", '<leader>j', function()
+lvim.keys.normal_mode["<leader>j"] = function()
   local name = vim.api.nvim_buf_get_name(0)
 
   if string.find(name, "term://") then
@@ -21,7 +21,7 @@ vim.keymap.set("n", '<leader>j', function()
     vim.api.nvim_exec('buffer #', true)
     vim.api.nvim_buf_delete(number, { force = true })
   end
-end)
+end
 
 vim.keymap.set('n', '<leader>af', '<c-^>') -- alternative file
 
