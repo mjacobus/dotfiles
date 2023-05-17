@@ -5,41 +5,41 @@ lvim.plugins = {
   { 'chriskempson/vim-tomorrow-theme' },
   { 'jlanzarotta/colorSchemeExplorer' },
 
-  -- misc
-  { 'tpope/vim-surround' },
-  { 'tpope/vim-eunuch' },
-  { 'tpope/vim-fugitive' },
-  { 'Lokaltog/vim-easymotion' },
-  {
-    'mattn/gist-vim',
-    dependencies = { { 'mattn/webapi-vim' } }
-  },
-  { "folke/zen-mode.nvim" },
-
-  -- github
+  -- GitHub
   -- { 'pwntester/octo.nvim'},
   {
     'tyru/open-browser-github.vim',
     dependencies = { { 'tyru/open-browser.vim' } }
   },
+  {
+    'mattn/gist-vim',
+    dependencies = { { 'mattn/webapi-vim' } }
+  },
 
-  -- { "folke/trouble.nvim" }, -- @see gh page,
+  -- misc
+  { 'tpope/vim-surround' },
+  { 'tpope/vim-eunuch' },
+  { 'tpope/vim-fugitive' },
+  { 'Lokaltog/vim-easymotion' },
+  { "folke/zen-mode.nvim" },
+  { "laytan/cloak.nvim" },
+  { "folke/trouble.nvim" }, -- @see gh page,
   -- { "nvim-treesitter/nvim-treesitter-context" }, -- keep the function name at the top of the file
-  -- { "theprimeagen/harpoon" },
-  -- { "theprimeagen/refactoring.nvim" },
-  -- { "mbbill/undotree" },
+  { "theprimeagen/harpoon" },
+  { "theprimeagen/refactoring.nvim" },
+  { "mbbill/undotree" },
+  { 'rking/ag.vim' },
+  { 'weierophinney/argumentrewrap' },
+  { 'godlygeek/tabular' },
+  { 'mechatroner/rainbow_csv' },
 
   -- my old plugins
   -- { 'tpope/vim-repeat' },
   -- { 'tpope/vim-speeddating' },
   -- { 'tpope/vim-rails' },
-  -- { 'mattn/emmet-vim' },
-  -- { 'rking/ag.vim' },
-  -- { 'weierophinney/argumentrewrap' },
-  -- { 'godlygeek/tabular' },
+  -- { 'mattn/emmet-vjm' },
   -- { 'mjacobus/vim-snippets',  dependencies = { { 'sirver/ultisnips' } } },
   -- { 'austintaylor/vim-commaobject' },
-  -- { 'mechatroner/rainbow_csv' },
 
   -- ruby
   -- { 'noprompt/vim-yardoc' }
@@ -69,7 +69,6 @@ lvim.plugins = {
   -- { 'Mofiqul/vscode.nvim' },
   -- { "github/copilot.vim" },
   -- { "eandrju/cellular-automaton.nvim" },
-  -- { "laytan/cloak.nvim" },
 
   -- LSP add ons
   -- Autocompletion
