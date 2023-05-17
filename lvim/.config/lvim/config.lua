@@ -3,3 +3,6 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 require("config.mappings")
+require("config.plugins")
+
+lvim.colorscheme = "tokyonight"
