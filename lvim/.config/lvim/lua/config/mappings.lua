@@ -5,7 +5,6 @@ local alternative_file = require("lib/alternative_file")
 -- 'which_key' means prefixed by <leader>
 lvim.builtin.which_key.mappings["Q"] = { "<cmd>q!", "Quit" }
 lvim.builtin.which_key.mappings["q"] = { "<cmd>bdelete<cr>", "close buffer" }
-lvim.builtin.which_key.mappings["q"] = { "<cmd>bdelete<cr>", "close buffer" }
 lvim.builtin.which_key.mappings["bdd"] = { "<cmd>bdelete!<cr>", "close buffer!" }
 lvim.builtin.which_key.mappings["bda"] = { "<cmd>bufdo %bd!<cr>", "close all buffers!" }
 

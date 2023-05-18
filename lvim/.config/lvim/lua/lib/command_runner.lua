@@ -8,4 +8,9 @@ M.run = function(cmd)
   return s
 end
 
+M.run_in_terminal = function(cmd)
+  print("cmd: " .. cmd)
+  vim.api.nvim_command(":terminal time " .. cmd)
+end
+
 return M
