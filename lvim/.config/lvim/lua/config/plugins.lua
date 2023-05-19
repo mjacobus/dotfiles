@@ -1,4 +1,4 @@
-lvim.plugins = {
+return {
   -- Colorschemes
   { 'mhartington/oceanic-next' },
   { 'folke/tokyonight.nvim' },
