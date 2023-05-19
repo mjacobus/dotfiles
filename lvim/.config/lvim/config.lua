@@ -4,31 +4,18 @@
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
 require("config.mappings")
-local tables = require("lib/tables")
-local python = require("config.ide.python")
-local php = require("config.ide.php")
-local lua = require("config.ide.lua")
 
-lvim.builtin.treesitter.ensure_installed = tables.combine(
-  python.treesitter.ensure_installed,
-  lua.treesitter.ensure_installed,
-  php.treesitter.ensure_installed
+lvim.plugins                             = require("config.plugins")
+lvim.builtin.treesitter.ensure_installed = {}
+lvim.format_on_save.enabled              = true
+lvim.format_on_save.pattern              = {}
+
+
+require("config.ides").setup(
+  lvim,
+  {
+    require("config.ide.python"),
+    require("config.ide.lua"),
+    require("config.ide.php")
+  }
 )
-
-lvim.plugins = tables.combine(
-  require("config.plugins"),
-  python.plugins,
-  lua.plugins,
-  php.plugins
-)
-
-lvim.format_on_save.enabled = true
-lvim.format_on_save.pattern = tables.combine(
-  python.format_on_save.pattern,
-  lua.format_on_save.pattern,
-  php.format_on_save.pattern
-)
-
-python.setup()
-php.setup()
-lua.setup()
