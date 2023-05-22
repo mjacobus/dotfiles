@@ -7,6 +7,7 @@ local M = {}
 M.plugins = {
   { "AckslD/swenv.nvim" },
   { "stevearc/dressing.nvim" },
+  { "nvim-neotest/neotest-python" },
 }
 
 M.treesitter = {

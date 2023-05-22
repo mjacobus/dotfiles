@@ -14,8 +14,35 @@ lvim.format_on_save.pattern              = {}
 require("config.ides").setup(
   lvim,
   {
-    require("config.ide.python"),
     require("config.ide.lua"),
-    require("config.ide.php")
+    require("config.ide.php"),
+    require("config.ide.python"),
+    require("config.ide.ruby")
   }
 )
+
+require("neotest").setup({
+  adapters = {
+    require('neotest-rspec')({
+      rspec_cmd = function()
+        return vim.tbl_flatten({
+          "bundle",
+          "exec",
+          "rspec",
+        })
+      end
+    }),
+    require("neotest-python")({
+      dap = { justMyCode = false },
+    }),
+    require('neotest-phpunit')({
+      phpunit_cmd = function()
+        return "vendor/bin/phpunit"
+      end
+    }),
+    -- require("neotest-plenary"),
+    -- require("neotest-vim-test")({
+    --   ignore_file_types = { "python", "vim", "lua" },
+    -- }),
+  },
+})

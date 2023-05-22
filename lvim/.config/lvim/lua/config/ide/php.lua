@@ -2,7 +2,9 @@
 -- @see https://github.com/LunarVim/starter.lvim/blob/php-ide/config.lua
 local M = {}
 
-M.plugins = {}
+M.plugins = {
+  { "olimorris/neotest-phpunit" }
+}
 
 M.treesitter = {
   ensure_installed = { "php" }
