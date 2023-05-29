@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -v
+set -e
+
+git clone https://github.com/github/copilot.vim \
+   ~/.config/nvim/pack/github/start/copilot.vim
+
+echo "In neovim: Copilot setup"
