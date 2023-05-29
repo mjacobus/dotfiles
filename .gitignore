@@ -34,3 +34,4 @@ tmp
 /nvim/.config/nvim/plugin/packer_compiled.lua
 /neovim/.config/nvim/plugin/packer_compiled.lua
 /neovim/.config/nvim/pack/github/start/copilot.vim
+/nvim/.config/nvim/pack/
