@@ -1,4 +1,4 @@
-lvim.plugins = {
+return {
   -- Colorschemes
   { 'mhartington/oceanic-next' },
   { 'folke/tokyonight.nvim' },
@@ -14,6 +14,18 @@ lvim.plugins = {
   {
     'mattn/gist-vim',
     dependencies = { { 'mattn/webapi-vim' } }
+  },
+
+  {
+    "zbirenbaum/copilot-cmp",
+    event = "InsertEnter",
+    dependencies = { "zbirenbaum/copilot.lua" },
+    config = function()
+      vim.defer_fn(function()
+        require("copilot").setup()     -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
+        require("copilot_cmp").setup() -- https://github.com/zbirenbaum/copilot-cmp/blob/master/README.md#configuration
+      end, 100)
+    end,
   },
 
   -- misc
@@ -32,6 +44,17 @@ lvim.plugins = {
   { 'weierophinney/argumentrewrap' },
   { 'godlygeek/tabular' },
   { 'mechatroner/rainbow_csv' },
+
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim"
+    }
+  },
+
+  { "olimorris/neotest-rspec" }
 
   -- my old plugins
   -- { 'tpope/vim-repeat' },
