@@ -24,6 +24,9 @@ lvim.keys.normal_mode["<leader>j"] = function()
   end
 end
 
+lvim.builtin.which_key.mappings.f = { '/', "Search alias" }
+lvim.builtin.which_key.mappings.F = { '<cmd>nohlsearch<cr>', "Remove search highlight" }
+
 lvim.keys.normal_mode['<leader>af'] = '<c-^>' -- alternative file
 
 -- " Avoid arrow keys in command mode
