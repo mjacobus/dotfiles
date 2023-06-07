@@ -3,13 +3,15 @@ local alternative_file = require("lib/alternative_file")
 -- lvim.keys.normal_mode["<leader>q"] = { "<cmd>bdelete<cr>", "close buffer" }
 
 -- 'which_key' means prefixed by <leader>
-lvim.builtin.which_key.mappings["Q"] = { "<cmd>q!", "Quit" }
+lvim.builtin.which_key.mappings["Q"] = { "<cmd>q!<cr>", "Quit" }
 lvim.builtin.which_key.mappings["q"] = { "<cmd>bdelete<cr>", "close buffer" }
 lvim.builtin.which_key.mappings["bdd"] = { "<cmd>bdelete!<cr>", "close buffer!" }
 lvim.builtin.which_key.mappings["bda"] = { "<cmd>bufdo %bd!<cr>", "close all buffers!" }
 
 -- TODO: how to add more meaningful comments
 lvim.keys.insert_mode["jj"] = "<ESC>"
+-- lvim.keys.normal_mode["<leader>qq"] = ":q!<cr>" -- does not work
+lvim.builtin.which_key.mappings.q.q = { "<cmd>:q!<cr>", "Quit force" }
 
 -- This closes the terminal, I.E. after a test run
 lvim.keys.normal_mode["<leader>j"] = function()
@@ -22,7 +24,7 @@ lvim.keys.normal_mode["<leader>j"] = function()
   end
 end
 
-vim.keymap.set('n', '<leader>af', '<c-^>') -- alternative file
+lvim.keys.normal_mode['<leader>af'] = '<c-^>' -- alternative file
 
 -- " Avoid arrow keys in command mode
 vim.keymap.set('c', '<C-h>', '<left>')
@@ -31,12 +33,13 @@ vim.keymap.set('c', '<C-k>', '<up>')
 vim.keymap.set('c', '<C-l>', '<right>')
 vim.keymap.set('c', '<C-x>', '<del>')
 
-vim.keymap.set('n', '<leader>ak', function()
+lvim.keys.normal_mode["<leader>ak"] = function()
   alternative_file.open('next', '--exists')
-end)
+end
 
-vim.keymap.set('n', '<leader>aj', function()
+lvim.keys.normal_mode["<leader>aj"] = function()
   alternative_file.open('prev', '--exists')
-end)
+end
+
 
 vim.diagnostic.config({ virtual_text = false })
