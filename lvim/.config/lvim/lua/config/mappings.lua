@@ -7,6 +7,7 @@ lvim.builtin.which_key.mappings["Q"] = { "<cmd>q!<cr>", "Quit" }
 lvim.builtin.which_key.mappings["q"] = { "<cmd>bdelete<cr>", "close buffer" }
 lvim.builtin.which_key.mappings["bdd"] = { "<cmd>bdelete!<cr>", "close buffer!" }
 lvim.builtin.which_key.mappings["bda"] = { "<cmd>bufdo %bd!<cr>", "close all buffers!" }
+lvim.builtin.which_key.mappings.s.t = { "<cmd>:terminal ./shell_test<cr>", "Run shell_test" }
 
 -- TODO: how to add more meaningful comments
 lvim.keys.insert_mode["jj"] = "<ESC>"
