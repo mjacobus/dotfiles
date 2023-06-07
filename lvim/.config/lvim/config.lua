@@ -15,6 +15,7 @@ require("config.ides").setup(
   lvim,
   {
     require("config.ide.lua"),
+    require("config.ide.javascript"),
     require("config.ide.php"),
     require("config.ide.python"),
     require("config.ide.ruby")
