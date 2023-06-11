@@ -10,7 +10,7 @@ M.treesitter = {
 }
 
 M.format_on_save = {
-  pattern = { "*.js", "*.ts", "*.tsx", ".css", ".scss", ".sass", ".mjs" }
+  pattern = { "*.js", "*.jsx", "*.ts", "*.tsx", ".css", ".scss", ".sass", ".mjs" }
 }
 
 M.setup = function()
