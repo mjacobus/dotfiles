@@ -35,6 +35,7 @@ return {
   { 'Lokaltog/vim-easymotion' },
   { "folke/zen-mode.nvim" },
   { "laytan/cloak.nvim" },
+  { 'mattn/emmet-vim' },
   { "folke/trouble.nvim" }, -- @see gh page,
   -- { "nvim-treesitter/nvim-treesitter-context" }, -- keep the function name at the top of the file
   { "theprimeagen/harpoon" },
@@ -60,7 +61,6 @@ return {
   -- { 'tpope/vim-repeat' },
   -- { 'tpope/vim-speeddating' },
   -- { 'tpope/vim-rails' },
-  -- { 'mattn/emmet-vjm' },
   -- { 'mjacobus/vim-snippets',  dependencies = { { 'sirver/ultisnips' } } },
   -- { 'austintaylor/vim-commaobject' },
 
