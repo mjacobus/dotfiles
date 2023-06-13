@@ -55,7 +55,14 @@ return {
     }
   },
 
-  { "olimorris/neotest-rspec" }
+  { "olimorris/neotest-rspec" },
+  {
+    'mjacobus/vim-snippets',
+    dependencies = {
+      'sirver/ultisnips',
+      'quangnguyen30192/cmp-nvim-ultisnips'
+    }
+  },
 
   -- my old plugins
   -- { 'tpope/vim-repeat' },
