@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+
+# show all files changed from current branch to either main, origin/main, master, or origin/master
+#
+# Useful if want to I.E. lint your files
+#
+# Example:
+#   `branch-files | xargs rubocop -A`
+#   `branch-files | xargs xargs ./node_modules/.bin/prettier --write`
+
+# use -a to include deleted files
+
+require 'optparse'
+
+def run(cmd)
+  system cmd
+end
+
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: branch-files [options]"
+  opts.on("-a", "--all", "Show all files, including deleted") do |all|
+    options[:all] = all
+  end
+  opts.on("-bBASE", "--base=BASE", "Base branch (default to origin/master or origin/main)") do |base_branch|
+    options[:base_branch] = base_branch
+  end
+end.parse!
+
+current_branch = `git branch --show-current`.strip
+base_branch = options[:base_branch]
+base_branch ||= run("git rev-parse --verify master > /dev/null 2>&1") ? "origin/master" : "origin/main"
+run "git diff --name-status #{options[:all] ? '' : '--diff-filter=d'} #{base_branch}...#{current_branch} | awk '{print $2}'"
