@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+files = `branch-files`.split("\n")
+current_branch = `git branch --show-current`.strip
+remote_branch="origin/#{current_branch}"
+
+system("git diff #{remote_branch} -- #{files.join(' ')}")
