@@ -28,3 +28,4 @@ stow $flags nvim   # newer
 stow $flags alacritty
 stow $flags kitty
 stow $flags base16-shell
+stow $flags osx-desktop
