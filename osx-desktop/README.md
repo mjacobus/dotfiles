@@ -4,8 +4,11 @@
 brew install koekeishiya/formulae/skhd
 brew install koekeishiya/formulae/yabai
 
-brew services start yabai
-brew services restart yabai
+yabai --install-service
+yabai --start-service
+
+skhd --install-service
+skhd --start-service
 ```
 
 
