@@ -65,6 +65,9 @@ bindsym $mod+Return exec kitty
 # bindsym $mod+Return exec gnome-terminal
 bindsym $mod+u exec i3lock
 
+# file explorer
+bindsym $mod+Shift+f exec nautilus
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -101,7 +104,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+y split h
+bindsym $mod+y split y
 
 # split in vertical orientation
 bindsym $mod+v split v
