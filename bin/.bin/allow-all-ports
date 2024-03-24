@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# This allows you to run a server on any port without root privileges.
+# For instance, I can start puma on port 80.
+sudo sysctl -w net.ipv4.ip_unprivileged_port_start=0
