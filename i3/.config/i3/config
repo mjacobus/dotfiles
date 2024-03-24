@@ -10,13 +10,13 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 # Super key
-# set $mod Mod4
+set $mod Mod4
 
 # Left Alt key
 # set $mod Mod1
 
 # Right alt
-set $mod Mod5
+# set $mod Mod5
 
 
 # Font for window titles. Will also be used by the bar unless a different font
