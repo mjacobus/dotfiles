@@ -80,6 +80,13 @@ bindsym $mod+c exec gnome-calendar
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# screenshot? not working why?
+# bindsym $mod+x exec screenshot-selection.sh
+
+# bindsym $mod+x exec /home/mjacobus/.bin/screenshot-selection.sh
+
+bindsym --release $mod+x exec /home/mjacobus/.bin/screenshot-selection.sh > /tmp/screenshot_log.txt 2>&1
+
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
