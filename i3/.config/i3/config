@@ -60,13 +60,16 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-# bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec kitty
 # bindsym $mod+Return exec gnome-terminal
 bindsym $mod+u exec i3lock
 
 # file explorer
 bindsym $mod+Shift+f exec nautilus
+
+# calendar
+bindsym $mod+c exec gnome-calendar
 
 # kill focused window
 bindsym $mod+Shift+q kill
