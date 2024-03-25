@@ -68,6 +68,12 @@ bindsym $mod+u exec i3lock
 # file explorer
 bindsym $mod+Shift+f exec nautilus
 
+# slack
+bindsym $mod+Shift+s exec slack
+
+# browser
+bindsym $mod+Shift+g exec google-chrome
+
 # calendar
 bindsym $mod+c exec gnome-calendar
 
