@@ -60,8 +60,8 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-# bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec kitty
 # bindsym $mod+Return exec gnome-terminal
 bindsym $mod+u exec i3lock
 
@@ -79,6 +79,9 @@ bindsym $mod+c exec gnome-calendar
 
 # kill focused window
 bindsym $mod+Shift+q kill
+
+# Volume control
+bindsym $mod+m exec pavucontrol
 
 # screenshot? not working why?
 # bindsym $mod+x exec screenshot-selection.sh
