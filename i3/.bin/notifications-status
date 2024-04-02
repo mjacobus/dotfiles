@@ -5,7 +5,7 @@ status=$(dunstctl is-paused)
 
 # Toggle the notification status based on the current state and echo the status
 if [ "$status" = "true" ]; then
-  echo "Notifications: On"
+  echo "Notifications: OFF"
 else
-  echo "Notifications: Off"
+  echo "Notifications: ON"
 fi
