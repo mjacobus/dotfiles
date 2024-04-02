@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Get CPU usage from the top command; the output is the percentage of CPU not being used ('%id' field), so subtract from 100 to get usage
+cpu_usage=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"%"}')
+
+# Output the CPU usage
+echo "CPU: $cpu_usage"

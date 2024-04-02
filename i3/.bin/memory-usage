@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Get the memory usage data
+memory_usage=$(free -mh | grep 'Mem' | awk '{print $3 "/" $2}')
+
+# Output the memory usage
+echo "MEM: $memory_usage"

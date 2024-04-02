@@ -1,4 +1,16 @@
-# vi:ft=config
+# vi:ft=ini
+
+
+[memory]
+command=~/.bin/memory-usage
+interval=30
+# label=Mem
+
+
+[cpu]
+command=~/.bin/cpu-usage
+interval=10
+# label=CPU
 
 [toggle_notifications]
 command=~/.bin/notifications-status
@@ -10,7 +22,7 @@ color=#FFFF00
 [volume]
 command=~/.bin/get-volume.sh
 interval=1
-label=VOL
+# label=VOL
 
 # Guess the weather hourly
 # [weather]
