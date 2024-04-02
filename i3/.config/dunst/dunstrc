@@ -1,3 +1,4 @@
+# vim: ft=ini
 [global]
     # Set the position to bottom right
     geometry = "300x5-10-30"
