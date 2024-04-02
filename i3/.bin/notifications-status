@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Check the current status of dunst notifications
+status=$(dunstctl is-paused)
+
+# Toggle the notification status based on the current state and echo the status
+if [ "$status" = "true" ]; then
+  echo "Notifications: On"
+else
+  echo "Notifications: Off"
+fi

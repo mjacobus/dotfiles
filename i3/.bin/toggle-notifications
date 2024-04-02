@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Check the current status of dunst notifications
+status=$(dunstctl is-paused)
+
+# Toggle the notification status based on the current state
+if [ "$status" = "true" ]; then
+  # Notifications are currently paused, so resume them
+  dunstctl set-paused false
+  echo "Notifications: ON"
+else
+  # Notifications are currently active, so pause them
+  dunstctl set-paused true
+  echo "Notifications: OFF"
+fi
+
+# Send a signal to i3blocks to update the block
+pkill -RTMIN+10 i3blocks

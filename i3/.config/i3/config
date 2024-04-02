@@ -84,6 +84,9 @@ bindsym $mod+Shift+q kill
 # Volume control
 bindsym $mod+m exec pavucontrol
 
+# Volume control
+bindsym $mod+N exec ~/.bin/toggle-notifications
+
 # screenshot? not working why?
 # bindsym $mod+x exec screenshot-selection.sh
 
