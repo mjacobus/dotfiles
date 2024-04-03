@@ -1,4 +1,9 @@
 # vim: ft=ini
+
+# -----------------------
+# ---- NOTIFICATIONS ----
+# -----------------------
+
 [global]
     # Set the position to bottom right
     geometry = "300x5-10-30"
@@ -7,7 +12,13 @@
 
     # Define the format of the notification, including a link
     # %a is the app name, %s is the summary, %b is the body, %U is the URL
-    format = "<b>%s</b>\n%b\n%U"
+    # format = "<b>%s</b>\n%b\n"
+    format = "<img src='%i'>%s\n\n<small>%b</small>%p"
+
+[frame]
+  width = 4
+  color = "#063355"
+  padding = 4
 
 [urgency_low]
     # Low urgency notifications settings
