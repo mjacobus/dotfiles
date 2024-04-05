@@ -23,6 +23,7 @@ color=#FFFF00
 command=~/.bin/get-volume.sh
 interval=1
 # label=VOL
+signal=10
 
 # Guess the weather hourly
 # [weather]

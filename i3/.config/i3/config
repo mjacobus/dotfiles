@@ -48,10 +48,9 @@ exec --no-startup-id nm-applet
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && notify-send -t 1000 "Volume Up" "Volume: $(~/.bin/get-volume.sh)"
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && notify-send -t 1000 "Volume Down" "Volume: $(~/.bin/get-volume.sh)"
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && notify-send -t 1000 "Volume Mute" "Toggled"
-
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.bin/change-volume.sh up
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.bin/change-volume.sh down
+bindsym XF86AudioMute        exec --no-startup-id ~/.bin/change-volume.sh mute
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -234,7 +233,7 @@ bar {
   colors {
     background #000000
     statusline #dddddd
-    separator  #666666
+    separator  #00ff0jk
 
       # Color settings for workspace buttons
     focused_workspace  #4c7899 #4c7899 #ffffff
