@@ -231,7 +231,7 @@ bar {
   font pango:DejaVu Sans Mono 12
 
   colors {
-    background #000000
+    background #222222
     statusline #dddddd
     separator  #00ff0jk
 
