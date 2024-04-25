@@ -7,5 +7,5 @@ golang 1.17
 python 3.11.1
 lua 5.4.2
 postgres 15.0
-rust 1.76
+rust 1.77.2
 perl 5.34.0
