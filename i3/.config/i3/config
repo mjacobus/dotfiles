@@ -74,7 +74,8 @@ bindsym $mod+Shift+f exec nautilus
 bindsym $mod+Shift+s exec slack
 
 # browser
-bindsym $mod+Shift+g exec google-chrome
+# bindsym $mod+Shift+g exec google-chrome
+bindsym $mod+Shift+g exec firefox
 
 # calendar
 bindsym $mod+c exec gnome-calendar
