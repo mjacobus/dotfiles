@@ -75,7 +75,8 @@ bindsym $mod+Shift+s exec slack
 
 # browser
 # bindsym $mod+Shift+g exec google-chrome
-bindsym $mod+Shift+g exec firefox
+# bindsym $mod+Shift+g exec firefox
+bindsym $mod+Shift+g exec brave-browser
 
 # calendar
 bindsym $mod+c exec gnome-calendar
