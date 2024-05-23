@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# so I can start puma on port 80
+sudo sysctl fs.inotify.max_user_watches=999524288
+
+# Start google drive
+google-drive-ocamlfuse /home/mjacobus/GoogleDrive
+
+start-ssh-agent
