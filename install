@@ -8,8 +8,8 @@ git submodule update
 flags="--verbose=1 -t $HOME"
 
 if [[ "$args" == "--uninstall" ]]; then
-  echo 'Uninstalling'
-  flags="-D --verbose=1 -t $HOME"
+	echo 'Uninstalling'
+	flags="-D --verbose=1 -t $HOME"
 fi
 
 stow $flags i3
@@ -25,7 +25,7 @@ stow $flags vim
 stow $flags zshell
 stow $flags bash
 # stow $flags neovim # older
-stow $flags nvim   # newer
+# stow $flags nvim   # newer
 stow $flags alacritty
 stow $flags kitty
 stow $flags base16-shell
