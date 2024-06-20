@@ -21,7 +21,7 @@ stow $flags git
 stow $flags ruby_config
 stow $flags shells
 stow $flags tmux
-stow $flags vim
+# stow $flags vim
 stow $flags zshell
 stow $flags bash
 stow $flags alacritty
