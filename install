@@ -24,9 +24,11 @@ stow $flags tmux
 stow $flags vim
 stow $flags zshell
 stow $flags bash
-# stow $flags neovim # older
-# stow $flags nvim   # newer
 stow $flags alacritty
 stow $flags kitty
 stow $flags base16-shell
 stow $flags osx-desktop
+
+# neovim config was moved to mjacobus/nvim
+# stow $flags neovim # older
+# stow $flags nvim   # newer
