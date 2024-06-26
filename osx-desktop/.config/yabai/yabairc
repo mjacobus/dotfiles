@@ -1,35 +1,70 @@
-# vi ft=sh
-# @see https://www.josean.com/posts/yabai-setup
-# brew services start yabai
-# brew services restart yabai
+#!/usr/bin/env sh
 
-# default layout (can be bsp, stack or float)
+# Start the yabai service
+# yabai --start-service
+
+# brew services start yabai
+# brew services start skhd
+
+# Set window gaps
+yabai -m config window_gap 10
+yabai -m config window_border on
+yabai -m config window_border_width 2
+yabai -m config active_window_border_color 0xff775759
+
+# Focus follows mouse
+yabai -m config focus_follows_mouse autofocus
+
+# Set default layouts
 yabai -m config layout bsp
 
-# New window spawns to the right if vertical split, or bottom if horizontal split
-yabai -m config window_placement second_child
+# Set modifier key
+yabai -m config modifier key:cmd
 
-# padding set to 12px
-yabai -m config top_padding 0
-yabai -m config bottom_padding 0
-yabai -m config left_padding 0
-yabai -m config right_padding 0
-yabai -m config window_gap 0
+# Configure spaces (workspaces)
+yabai -m config space 1 label="1"
+yabai -m config space 2 label="2"
+yabai -m config space 3 label="3"
+yabai -m config space 4 label="4"
+yabai -m config space 5 label="5"
+yabai -m config space 6 label="6"
+yabai -m config space 7 label="7"
+yabai -m config space 8 label="8"
+yabai -m config space 9 label="9"
+yabai -m config space 10 label="10"
 
-# center mouse on window with focus
-yabai -m config mouse_follows_focus on
-
-# modifier for clicking and dragging with mouse
-yabai -m config mouse_modifier cmd
-# set modifier + left-click drag to move window
-yabai -m config mouse_action1 move
-# set modifier + right-click drag to resize window
-yabai -m config mouse_action2 resize
-
-
-# when window is dropped in center of another window, swap them (on edges it will split it)
-yabai -m mouse_drop_action swap
-
-yabai -m rule --add app="^System Settings$" manage=off
-yabai -m rule --add app="^Calculator$" manage=off
-yabai -m rule --add app="^Karabiner-Elements$" manage=off
+# # vi ft=sh
+# # @see https://www.josean.com/posts/yabai-setup
+# # brew services start yabai
+# # brew services restart yabai
+#
+# # default layout (can be bsp, stack or float)
+# yabai -m config layout bsp
+#
+# # New window spawns to the right if vertical split, or bottom if horizontal split
+# yabai -m config window_placement second_child
+#
+# # padding set to 12px
+# yabai -m config top_padding 0
+# yabai -m config bottom_padding 0
+# yabai -m config left_padding 0
+# yabai -m config right_padding 0
+# yabai -m config window_gap 0
+#
+# # center mouse on window with focus
+# yabai -m config mouse_follows_focus on
+#
+# # modifier for clicking and dragging with mouse
+# yabai -m config mouse_modifier cmd
+# # set modifier + left-click drag to move window
+# yabai -m config mouse_action1 move
+# # set modifier + right-click drag to resize window
+# yabai -m config mouse_action2 resize
+#
+#
+# # when window is dropped in center of another window, swap them (on edges it will split it)
+# yabai -m mouse_drop_action swap
+#
+# yabai -m rule --add app="^System Settings$" manage=off
+# yabai -m rule --add app="^Calculator$" manage=off
+# yabai -m rule --add app="^Karabiner-Elements$" manage=off

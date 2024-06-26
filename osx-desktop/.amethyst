@@ -1,0 +1,87 @@
+{
+  "floating": [
+    {
+      "id": "^com.apple.systempreferences$"
+    }
+  ],
+  "mod": "mod4",
+  "mouse-resizes-windows": true,
+  "enables-layout-hud": true,
+  "enables-layout-hud-on-space-change": true,
+  "layouts": [
+    "tall",
+    "wide",
+    "fullscreen"
+  ],
+  "window-margins": 10,
+  "window-resize-step": 5,
+  "focus-follows-mouse": true,
+  "new-windows-to-main": true,
+  "floating-is-locked": false,
+  "window-minimum-width": 1,
+  "window-minimum-height": 1,
+  "floating-non-resizable": false,
+  "floating-non-tiled": false,
+  "global": [
+    {
+      "shortcut": "mod4+space",
+      "action": "cycle-layout"
+    },
+    {
+      "shortcut": "mod4+f",
+      "action": "toggle-fullscreen"
+    },
+    {
+      "shortcut": "mod4+shift+space",
+      "action": "toggle-float"
+    },
+    {
+      "shortcut": "mod4+h",
+      "action": "focus-left"
+    },
+    {
+      "shortcut": "mod4+j",
+      "action": "focus-down"
+    },
+    {
+      "shortcut": "mod4+k",
+      "action": "focus-up"
+    },
+    {
+      "shortcut": "mod4+l",
+      "action": "focus-right"
+    },
+    {
+      "shortcut": "mod4+shift+h",
+      "action": "move-window-left"
+    },
+    {
+      "shortcut": "mod4+shift+j",
+      "action": "move-window-down"
+    },
+    {
+      "shortcut": "mod4+shift+k",
+      "action": "move-window-up"
+    },
+    {
+      "shortcut": "mod4+shift+l",
+      "action": "move-window-right"
+    },
+    {
+      "shortcut": "mod4+alt+h",
+      "action": "shrink-left"
+    },
+    {
+      "shortcut": "mod4+alt+l",
+      "action": "expand-right"
+    },
+    {
+      "shortcut": "mod4+alt+j",
+      "action": "shrink-down"
+    },
+    {
+      "shortcut": "mod4+alt+k",
+      "action": "expand-up"
+    }
+  ]
+}
