@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+# Check if the script is run with superuser privileges
+if [[ $EUID -ne 0 ]]; then
+	echo "This script must be run as root. Use sudo."
+	exit 1
+fi
+
+# Check if a new hostname is provided as an argument
+if [ -z "$1" ]; then
+	echo "Usage: sudo $0 new_hostname"
+	exit 1
+fi
+
+NEW_HOSTNAME=$1
+
+# Set the hostname
+sudo scutil --set HostName "$NEW_HOSTNAME"
+
+# Set the computer name
+sudo scutil --set ComputerName "$NEW_HOSTNAME"
+
+# Set the local hostname
+sudo scutil --set LocalHostName "$NEW_HOSTNAME"
+
+# Verify the changes
+echo "Hostname: $(scutil --get HostName)"
+echo "Computer Name: $(scutil --get ComputerName)"
+echo "Local Hostname: $(scutil --get LocalHostName)"
+
+echo "Hostname change complete. You may need to restart your computer for all changes to take effect."
