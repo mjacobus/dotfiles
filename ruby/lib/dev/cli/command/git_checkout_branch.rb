@@ -3,9 +3,10 @@ module Dev
     module Command
       class GitCheckoutBranch < Base
         class LocalBranch
-          attr_reader :name, :checkout_command
+          attr_reader :name, :checkout_command, :original_name
 
           def initialize(branch_name)
+            @original_name = branch_name
             @name = branch_name
             @checkout_command = "git checkout #{name}"
           end
@@ -13,13 +14,17 @@ module Dev
           def match?(pattern)
             Regexp.new(pattern).match?(@name)
           end
+
+          def to_s
+            name
+          end
         end
 
         class RemoteBranch < LocalBranch
           def initialize(branch_name)
-            branch_name = branch_name.sub('remotes/', '').sub('origin/', '')
-            super(branch_name)
+            super(branch_name.sub('remotes/', '').sub('origin/', ''))
             @checkout_command = "git checkout -b #{branch_name} origin/#{branch_name}"
+            @original_name = branch_name
           end
         end
 
@@ -28,28 +33,27 @@ module Dev
         end
 
         def description
-          ["git_checkout_branch", "checks matching branch"]
+          ['git_checkout_branch', 'checks matching branch']
         end
 
         def options_taken
           [
-            [:branch, type: :string]
+            [:branch, { type: :string }]
           ]
         end
 
         def run
           searched_branch = options[:branch].gsub(' ', '-')
-          command = "git branch"
-          remote_command = "git branch -a"
+          command = 'git branch -a'
 
           branches = application.capture_stdout(command).map do |line|
-            LocalBranch.new(output_line_to_branch_name(line))
-          end
+            line = output_line_to_branch_name(line)
 
-          if branches.empty?
-            branches = application.capture_stdout(remote_command).map do |line|
-              RemoteBranch.new(output_line_to_branch_name(line))
+            if line.start_with?('remotes/')
+              next RemoteBranch.new(line)
             end
+
+            LocalBranch.new(line)
           end
 
           checked_out = nil
@@ -63,7 +67,7 @@ module Dev
             end
           end
 
-          if branches.length > 1
+          if branches.map(&:name).uniq.length > 1
             warn_too_many_branches(branches)
           end
 
@@ -72,11 +76,11 @@ module Dev
           end
 
           if branches.any?
-            branch = branches.sort_by{|b| b.name.length }.first
+            branch = branches.sort_by { |b| b.name.length }.first
             return perform_checkout(branch)
           end
 
-          application.fail(message: "No matches found")
+          application.fail(message: 'No matches found')
         end
 
         private
@@ -86,20 +90,20 @@ module Dev
         end
 
         def perform_checkout(branch)
-          puts ""
+          puts ''
           puts "CHECKING OUT #{branch.name}:"
-          puts ""
+          puts ''
           puts "\t~> #{branch.checkout_command}\n\n"
-          puts ""
+          puts ''
           application.shell_exec!(branch.checkout_command)
           branch
         end
 
         def warn_too_many_branches(branches)
-          puts "WARNING: Too many branches found:"
-          puts ""
-          puts branches.map(&:name).map{|n| "\t#{n}" }.join("\n")
-          puts ""
+          puts 'WARNING: Too many branches found:'
+          puts ''
+          puts branches.map(&:original_name).map { |n| "\t#{n}" }.join("\n")
+          puts ''
         end
       end
     end
