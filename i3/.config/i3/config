@@ -83,6 +83,7 @@ bindsym $mod+c exec gnome-calendar
 
 # kill focused window
 bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # Volume control
 bindsym $mod+m exec pavucontrol
