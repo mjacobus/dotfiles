@@ -79,7 +79,7 @@ bindsym $mod+Shift+s exec slack
 bindsym $mod+Shift+g exec brave-browser
 
 # calendar
-bindsym $mod+c exec gnome-calendar
+bindsym $mod+Shifg+c exec gnome-calendar
 
 # kill focused window
 bindsym $mod+Shift+q kill
