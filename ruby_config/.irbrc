@@ -9,6 +9,6 @@ IRB.conf[:USE_AUTOCOMPLETE] = false
 
 begin
   require 'interactive_editor'
-rescue => e
+rescue LoadError => e
   puts "please install interactive_editor so you can use vi inside irb"
 end
