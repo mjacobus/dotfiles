@@ -1,4 +1,4 @@
-# vi: set ft=ruby :
+# vi: set ft=sh :
 #
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -40,26 +40,29 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
-  1password
-  bundler
-  composer
-  docker
-  docker-compose
-  git
-  git-extras
-  gitfast
-  urltools
-  tmux
-  vi-mode
-  web-search
+	1password
+	bundler
+	composer
+	docker
+	docker-compose
+	git
+	git-extras
+	gitfast
+	sudo
+	tmux
+	urltools
+	vi-mode
+	web-search
+	rake-fast
+	jira
 )
 
 if [[ -d $ZSH ]]; then
-  source $ZSH/oh-my-zsh.sh
+	source $ZSH/oh-my-zsh.sh
 else
-  echo "---------------------------------------------"
-  echo "Run install-oh-my-zsh to install oh my zsh"
-  echo "---------------------------------------------"
+	echo "---------------------------------------------"
+	echo "Run install-oh-my-zsh to install oh my zsh"
+	echo "---------------------------------------------"
 fi
 
 # Bind the reverse search to ctrl + R
