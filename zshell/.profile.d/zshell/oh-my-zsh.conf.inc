@@ -48,7 +48,6 @@ plugins=(
 	git
 	git-extras
 	gitfast
-	sudo
 	tmux
 	urltools
 	vi-mode
