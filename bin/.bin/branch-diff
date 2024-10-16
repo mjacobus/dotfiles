@@ -1,7 +1,11 @@
 #!/usr/bin/env ruby
 
-files = `branch-files`.split("\n")
 current_branch = `git branch --show-current`.strip
-remote_branch="origin/#{current_branch}"
+branch_against = "origin/#{current_branch}"
 
-system("git diff #{remote_branch} -- #{files.join(' ')}")
+branch_against = ARGV.first if ARGV.length.positive?
+
+files = `branch-files`.split("\n")
+`git branch --show-current`.strip
+
+system("git diff #{branch_against} -- #{files.join(' ')}")
