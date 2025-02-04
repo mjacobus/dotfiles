@@ -36,6 +36,9 @@ exec --no-startup-id ~/.bin/set-default-speaker.sh
 # no bell
 exec --no-startup-id xset -b
 
+# first number is delay, second is repeat rate
+exec --no-startup-id xset r rate 200 40
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
