@@ -12,3 +12,5 @@ rust 1.77.2
 perl 5.34.0
 java openjdk-17.0.1
 julia 1.10.4
+dart 3.7.2
+flutter 3.29.0
