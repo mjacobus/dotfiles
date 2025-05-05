@@ -4,3 +4,7 @@ Xft.antialias: true
 Xft.hinting: true
 Xft.hintstyle: hintslight
 Xft.rgba: rgb
+
+! URxvt.font: xft:Liberation Mono:size=11
+! or try one of the others:
+URxvt.font: xft:DejaVu Sans Mono:size=11
