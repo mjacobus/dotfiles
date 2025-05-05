@@ -39,6 +39,9 @@ exec --no-startup-id xset -b
 # first number is delay, second is repeat rate
 exec --no-startup-id xset r rate 200 40
 
+# better fonts, maybe
+exec --no-startup-id xrdb -merge ~/.Xresources
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
