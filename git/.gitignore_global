@@ -31,3 +31,4 @@ app/models/m.rb
 /.cache
 .cache/
 shell_test.old
+/.tmp
