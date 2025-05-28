@@ -41,7 +41,7 @@ color=#91E78B
 
 [date]
 # display date in format DD/MM/YYYY
-command=date +%d/%m/%Y
+command=date +%Y-%m-%d
 interval=5
 color=#FFFF00
 
