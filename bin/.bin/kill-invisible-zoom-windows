@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+xwininfo -tree -root | grep -i zoom | while read -r line; do
+	win_id=$(echo "$line" | awk '{print $1}')
+	size=$(echo "$line" | grep -oP '\d+x\d+' | head -n1)
+	width=${size%x*}
+	height=${size#*x}
+
+	if [ "$width" -le 200 ] && [ "$height" -lt 200 ]; then
+		echo "Killing invisible Zoom window with ID: $win_id ($widthx$height)"
+		xdottool windowkill "$win_id" 2>/dev/null
+	fi
+done
