@@ -13,7 +13,7 @@
 require 'optparse'
 
 def run(cmd)
-  system cmd
+  `#{cmd}`.strip
 end
 
 options = {}
@@ -25,9 +25,21 @@ OptionParser.new do |opts|
   opts.on("-bBASE", "--base=BASE", "Base branch (default to origin/master or origin/main)") do |base_branch|
     options[:base_branch] = base_branch
   end
+  opts.on('-e', '--exists',
+          'Base branch (default to origin/master or origin/main)') do |_base_branch|
+    options[:exists] = true
+  end
 end.parse!
 
 current_branch = `git branch --show-current`.strip
-base_branch = options[:base_branch]
-base_branch ||= run("git rev-parse --verify master > /dev/null 2>&1") ? "origin/master" : "origin/main"
-run "git diff --name-status #{options[:all] ? '' : '--diff-filter=d'} #{base_branch}...#{current_branch} | awk '{print $2}'"
+nbase_branch = options[:base_branch]
+base_branch ||= run("git rev-parse --verify main > /dev/null 2>&1") ? "origin/main" : "origin/master"
+files = run("git diff --name-status #{options[:all] ? '' : '--diff-filter=d'} #{base_branch}...#{current_branch} | awk '{print $2}'")
+
+files = files.to_s.split("\n").map(&:strip).reject(&:empty?)
+
+if options[:exists]
+  files = files.select { File.exist?(it) }
+end
+
+puts files.join("\n")
