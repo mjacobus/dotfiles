@@ -32,7 +32,7 @@ OptionParser.new do |opts|
 end.parse!
 
 current_branch = `git branch --show-current`.strip
-nbase_branch = options[:base_branch]
+base_branch = options[:base_branch]
 base_branch ||= run("git rev-parse --verify main > /dev/null 2>&1") ? "origin/main" : "origin/master"
 files = run("git diff --name-status #{options[:all] ? '' : '--diff-filter=d'} #{base_branch}...#{current_branch} | awk '{print $2}'")
 
