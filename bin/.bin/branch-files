@@ -39,7 +39,7 @@ files = run("git diff --name-status #{options[:all] ? '' : '--diff-filter=d'} #{
 files = files.to_s.split("\n").map(&:strip).reject(&:empty?)
 
 if options[:exists]
-  files = files.select { File.exist?(it) }
+  files = files.select { |f| File.exist?(f) }
 end
 
 puts files.join("\n")
