@@ -14,7 +14,7 @@ fi
 
 stow $flags i3
 stow $flags ag
-stow $flags asdf
+# stow $flags asdf # TODO: This is messed up after the last update
 stow $flags bin
 stow $flags ctags
 stow $flags git
