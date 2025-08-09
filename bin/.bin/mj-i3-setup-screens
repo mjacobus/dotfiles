@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+
+xrandr | grep " connected"
+
+# Example
+# DisplayPort-4 connected 1920x1080+0+0 (normal left inverted right x axis y axis) 598mm x 336mm
+# DisplayPort-5 connected primary 2560x1080+1920+0 (normal left inverted right x axis y axis) 798mm x 334mm
+# DVI-I-2-1 connected 2560x1080+4480+0 (normal left inverted right x axis y axis) 798mm x 334m
+#
+
+i3-msg "workspace 5; move workspace to output DisplayPort-5"
+i3-msg "workspace 6; move workspace to output DisplayPort-4"
+i3-msg "workspace 10; move workspace to output DisplayPort-5"
