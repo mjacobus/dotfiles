@@ -9,6 +9,16 @@ xrandr | grep " connected"
 # DVI-I-2-1 connected 2560x1080+4480+0 (normal left inverted right x axis y axis) 798mm x 334m
 #
 
-i3-msg "workspace 5; move workspace to output DisplayPort-5"
-i3-msg "workspace 6; move workspace to output DisplayPort-4"
-i3-msg "workspace 10; move workspace to output DisplayPort-5"
+left="DisplayPort-4"
+main="DisplayPort-5"
+
+for i in $(echo 6); do
+  echo "Setting workspace $i to output $left"
+  i3-msg "workspace $i; move workspace to output $left" > /dev/null
+done
+
+for i in $(echo 1 2 3 4 5 7 8 9 10); do
+  echo "Setting workspace $i to output $main"
+  i3-msg "workspace $i; move workspace to output $main" > /dev/null
+done
+
