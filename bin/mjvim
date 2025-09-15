@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# ~/bin/mjvim (make sure ~/bin is in your $PATH and run chmod +x ~/bin/mjvim)
+
+NVIM_APPNAME="mjvim" nvim "$@"
