@@ -1,7 +1,7 @@
 [core]
   excludesfile = ~/.gitignore_global
   autocrlf = input
-	editor = ASDF_NODEJS_VERSION=20.17.0 nvim
+	editor = mjvim
 
 [pull]
   # rebase = true

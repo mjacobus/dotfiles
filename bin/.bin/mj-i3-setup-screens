@@ -17,7 +17,7 @@ for i in $(echo 6); do
   i3-msg "workspace $i; move workspace to output $left" > /dev/null
 done
 
-for i in $(echo 1 2 3 4 5 7 8 9 10); do
+for i in $(echo 1 2 3 4 5 7 8 9 10 2); do
   echo "Setting workspace $i to output $main"
   i3-msg "workspace $i; move workspace to output $main" > /dev/null
 done
