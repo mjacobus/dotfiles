@@ -15,6 +15,7 @@ fi
 stow $flags tmux
 stow $flags zshell
 stow $flags shells --adopt
+stow $flags hypr --adopt
 
 # stow $flags i3
 # stow $flags ag
