@@ -18,11 +18,11 @@ stow $flags shells --adopt
 stow $flags hypr --adopt
 stow $flags alacritty --adopt
 stow $flags git
+stow $flags bin --adopt
 
 # stow $flags i3
 # stow $flags ag
 # # stow $flags asdf # TODO: This is messed up after the last update
-# stow $flags bin
 # stow $flags ctags
 # stow $flags ruby_config
 # stow $flags shells
