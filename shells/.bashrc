@@ -9,6 +9,8 @@ if [[ -v TMUX ]]; then
   zsh; exit
 fi
 
+alias gs="git status -s"
+
 # Add your own exports, aliases, and functions here.
 #
 # Make an alias for invoking commands you use constantly
