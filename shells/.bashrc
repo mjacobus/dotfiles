@@ -6,7 +6,7 @@ fi
 
 # If inside tmux, let's use zshell
 if [[ -v TMUX ]]; then
-  zsh && exit
+  zsh; exit
 fi
 
 # Add your own exports, aliases, and functions here.
