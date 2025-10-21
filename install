@@ -15,7 +15,7 @@ fi
 stow $flags tmux
 stow $flags zshell
 stow $flags shells --adopt
-stow $flags hypr --adopt
+stow $flags hypr
 stow $flags alacritty --adopt
 stow $flags git
 stow $flags bin --adopt
