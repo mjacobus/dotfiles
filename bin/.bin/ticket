@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
 def run(args)
-  puts "Executing command with #{args.join(" ")}"
   description = ""
   ticket = ""
 
