@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# @see https://github.com/basecamp/omarchy/discussions/2468
+# To set firefox as default:
+# xdg-mime default firefox.desktop x-scheme-handler/http
+# xdg-mime default firefox.desktop x-scheme-handler/https
+# xdg-mime default firefox.desktop text/html
+
+# Redirect standard WebApp calls to Firefox WebApp profile
+browser=$(xdg-settings get default-web-browser)
+
+case $browser in
+firefox* )
+    # Launch Firefox directly with the dedicated WebApp profile
+    # exec setsid uwsm app -- firefox --no-remote --new-window --class WebApp "$1" "${@:2}"
+    url="$1"
+    shift
+
+    exec setsid firefox \
+      --new-window \
+      --class "firefox-app" \
+      "$url" \
+      "$@"
+    ;;
+  *)
+    # Old Chromium fallback for other browsers if needed
+    ~/.local/share/omarchy/bin/omarchy-launch-webapp "$@"
+    ;;
+esac
