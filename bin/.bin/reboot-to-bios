@@ -1,0 +1,2 @@
+#!/bin/usb/env bash
+sudo systemctl reboot --firmware-setup
