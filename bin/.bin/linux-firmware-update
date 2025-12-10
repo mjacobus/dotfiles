@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+fwupdmgr refresh
+fwupdmgr get-updates
+fwupdmgr update
+
+# Last time - 2025-12-05
+# Successfully installed firmware
+# Do not turn off your computer or remove the AC adapter while the update is in progress.
+# Devices with the latest available firmware version:
+#  • PM9B1 NVMe Samsung 1024GB
+# Devices with no available firmware updates:
+#  • 0000:00:1f.5-chip1
+#  • BIOS1
+#  • Bios DB Key
+#  • Bios FW Aux Authority
+#  • Dell Universal Dock D6000
+#  • Hub
+#  • Hub
+#  • Key Exchange Key
+#  • PCH SPI Controller
+#  • TPM
+#  • UEFI Device Firmware
+#  • UEFI Device Firmware
+#  • Windows Production PCA
+# An update requires a reboot to complete. Restart now? [y|N

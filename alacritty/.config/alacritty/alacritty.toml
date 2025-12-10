@@ -10,11 +10,17 @@ italic = { family = "CaskaydiaMono Nerd Font", style = "Italic" }
 size = 9
 
 [window]
-padding.x = 14
-padding.y = 14
+padding.x = 0
+padding.y = 1
 decorations = "None"
 
 [keyboard]
 bindings = [
-{ key = "F11", action = "ToggleFullscreen" }
+{ key = "F11", action = "ToggleFullscreen" },
+{ key = "Insert", mods = "Shift", action = "Paste" },
+{ key = "Insert", mods = "Control", action = "Copy" }
 ]
+
+[terminal.shell]
+program = "/usr/bin/zsh"
+args = ["-l"]

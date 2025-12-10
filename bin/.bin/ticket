@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+
+def run(args)
+  description = ""
+  ticket = ""
+
+  url = args.shift
+  ticket = url
+
+  if url.split("/").length > 1
+    description = url.split("/").last
+  end
+
+  if url.match(/R2D2-(\d+)/i)
+    ticket = $1
+  end
+
+  if args.length > 0
+    description = args.join(" ")
+  end
+
+  description ||= "missing description"
+  description = description.gsub("-", " ")
+
+  command = "create-branch R2D2-#{ticket} #{description}"
+  puts "Executing #{command}"
+  `#{command}`
+end
+
+run ARGV

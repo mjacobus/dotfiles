@@ -12,22 +12,30 @@ if [[ "$args" == "--uninstall" ]]; then
 	flags="-D --verbose=1 -t $HOME"
 fi
 
-stow $flags i3
-stow $flags ag
-# stow $flags asdf # TODO: This is messed up after the last update
-stow $flags bin
-stow $flags ctags
-stow $flags git
-stow $flags ruby_config
-stow $flags shells
+stow $flags pop-shell # Pop!_OS
+stow $flags omarchy
 stow $flags tmux
-# stow $flags vim
 stow $flags zshell
-stow $flags bash
-stow $flags alacritty
-stow $flags kitty
-stow $flags base16-shell
-stow $flags osx-desktop
+stow $flags shells --adopt
+stow $flags hypr --adopt
+stow $flags alacritty --adopt
+stow $flags git
+stow $flags bin --adopt
+stow $flags mise --adopt
+
+# stow $flags i3
+# stow $flags ag
+# stow $flags mise
+# stow $flags ctags
+# stow $flags ruby_config
+# stow $flags shells
+# stow $flags tmux
+# # stow $flags vim
+# stow $flags bash
+# stow $flags alacritty
+# stow $flags kitty
+# stow $flags base16-shell
+# stow $flags osx-desktop
 
 # neovim config was moved to mjacobus/nvim
 # stow $flags neovim # older

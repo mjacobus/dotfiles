@@ -20,6 +20,11 @@ fi
 
 export PROFILE_INCLUDED=1
 
+if [ -z "$SSH_AUTH_SOCK" ]; then
+  eval "$(ssh-agent -s)" >/dev/null
+  ssh-add ~/.ssh/id_rsa >/dev/null 2>&1
+fi
+
 if [[ "$SHELL_IS_ZSHELL" ]]; then
   for file in `ls ~/.profile.d/zshell/*.conf`; do
     file=`basename $file`
