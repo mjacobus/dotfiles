@@ -1,0 +1,25 @@
+{
+	"show_launcher": ["<Super>space"],
+
+	"focus_left": ["<Super><Shift>h"],
+	"focus_right": ["<Super><Shift>l"],
+	"focus_up": ["<Super><Shift>k"],
+	"focus_down": ["<Super><Shift>j"],
+
+	"move_left": ["<Super><Shift><Alt>h"],
+	"move_right": ["<Super><Shift><Alt>l"],
+	"move_up": ["<Super><Shift><Alt>k"],
+	"move_down": ["<Super><Shift><Alt>j"],
+
+	"toggle_tiling": ["<Super>y"],
+	"toggle_floating": ["<Super>f"],
+
+	"toggle_stacking": [],
+	"toggle_orientation": [],
+
+	"swap_left": [],
+	"swap_right": [],
+	"swap_up": [],
+	"swap_down": []
+}
+

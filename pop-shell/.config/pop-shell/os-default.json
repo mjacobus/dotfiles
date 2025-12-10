@@ -1,0 +1,15 @@
+{
+  "focus_left": ["<Super><Shift>h"],
+  "focus_right": ["<Super><Shift>l"],
+  "focus_down": ["<Super><Shift>j"],
+  "focus_up": ["<Super><Shift>k"],
+  "float": [
+    {
+      "class": "pop-shell-example",
+      "title": "pop-shell-example"
+    }
+  ],
+  "skiptaskbarhidden": [],
+  "log_on_focus": false
+}
+
