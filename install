@@ -28,6 +28,7 @@ stow $flags alacritty
 stow $flags kitty
 stow $flags base16-shell
 stow $flags osx-desktop
+stow $flags pop-shell # pop os
 
 # neovim config was moved to mjacobus/nvim
 # stow $flags neovim # older
