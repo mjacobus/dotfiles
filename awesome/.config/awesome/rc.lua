@@ -377,23 +377,23 @@ globalkeys = gears.table.join(
     {description = "open zoom", group = "launcher"}),
 
   -- Web apps (standalone chromium windows)
-  awful.key({ modkey,           }, "a", function () awful.spawn("flatpak run org.chromium.Chromium --app=https://chatgpt.com --class=chatgpt") end,
+  awful.key({ modkey,           }, "a", function () awful.spawn("flatpak run org.chromium.Chromium --new-window https://chatgpt.com") end,
     {description = "open chatgpt", group = "launcher"}),
-  awful.key({ modkey,           }, "c", function () awful.spawn("flatpak run org.chromium.Chromium --app=https://calendar.google.com/calendar/u/0/r --class=calendar-personal") end,
+  awful.key({ modkey,           }, "c", function () awful.spawn("flatpak run org.chromium.Chromium --new-window https://calendar.google.com/calendar/u/0/r") end,
     {description = "open calendar (personal)", group = "launcher"}),
-  awful.key({ modkey, "Shift"   }, "c", function () awful.spawn("flatpak run org.chromium.Chromium --app=https://calendar.google.com/calendar/u/1/r --class=calendar-work") end,
+  awful.key({ modkey, "Shift"   }, "c", function () awful.spawn("flatpak run org.chromium.Chromium --new-window https://calendar.google.com/calendar/u/1/r") end,
     {description = "open calendar (work)", group = "launcher"}),
-  awful.key({ modkey,           }, "s", function () awful.spawn("flatpak run org.chromium.Chromium --app=https://app.slack.com/client/T090AJD0EAG/C090AJD8J4C --class=slack-credclub") end,
+  awful.key({ modkey,           }, "s", function () awful.spawn("flatpak run org.chromium.Chromium --new-window https://app.slack.com/client/T090AJD0EAG/C090AJD8J4C") end,
     {description = "open credclub slack", group = "launcher"}),
-  awful.key({ modkey, "Shift"   }, "s", function () awful.spawn("flatpak run org.chromium.Chromium --app=https://app.slack.com/client/T0KHRPJJJ --class=slack-work") end,
+  awful.key({ modkey, "Shift"   }, "s", function () awful.spawn("flatpak run org.chromium.Chromium --new-window https://app.slack.com/client/T0KHRPJJJ") end,
     {description = "open work slack", group = "launcher"}),
-  awful.key({ modkey,           }, "e", function () awful.spawn("flatpak run org.chromium.Chromium --app=https://mail.google.com/mail/u/0/#inbox --class=gmail-personal") end,
+  awful.key({ modkey,           }, "e", function () awful.spawn("flatpak run org.chromium.Chromium --new-window https://mail.google.com/mail/u/0/#inbox") end,
     {description = "open email (personal)", group = "launcher"}),
-  awful.key({ modkey, "Shift"   }, "e", function () awful.spawn("flatpak run org.chromium.Chromium --app=https://mail.google.com/mail/u/1/#inbox --class=gmail-work") end,
+  awful.key({ modkey, "Shift"   }, "e", function () awful.spawn("flatpak run org.chromium.Chromium --new-window https://mail.google.com/mail/u/1/#inbox") end,
     {description = "open email (work)", group = "launcher"}),
-  awful.key({ modkey,           }, "y", function () awful.spawn("flatpak run org.chromium.Chromium --app=https://youtube.com/ --class=youtube") end,
+  awful.key({ modkey,           }, "y", function () awful.spawn("flatpak run org.chromium.Chromium --new-window https://youtube.com/") end,
     {description = "open youtube", group = "launcher"}),
-  awful.key({ modkey, "Shift"   }, "w", function () awful.spawn("flatpak run org.chromium.Chromium --app=https://web.whatsapp.com/ --class=whatsapp") end,
+  awful.key({ modkey, "Shift"   }, "w", function () awful.spawn("flatpak run org.chromium.Chromium --new-window https://web.whatsapp.com/") end,
     {description = "open whatsapp", group = "launcher"}),
 
   awful.key({ modkey, "Control" }, "r", awesome.restart,
@@ -606,44 +606,31 @@ awful.rules.rules = {
       raise = true,
       keys = clientkeys,
       buttons = clientbuttons,
-      screen = awful.screen.preferred,
-      placement = awful.placement.no_overlap+awful.placement.no_offscreen
+      screen = awful.screen.preferred
     }
   },
 
   -- Flatpak apps (Chromium, Zoom, webapps)
-  { rule = { class = "org.chromium.Chromium" },
-    properties = { focus = true, raise = true }
+  -- Force ALL Chromium windows (including webapps) to tile properly
+  { rule = { class = "Org.chromium.Chromium" },
+    properties = {
+      focus = true,
+      raise = true,
+      floating = false,
+      maximized = false,
+      maximized_horizontal = false,
+      maximized_vertical = false,
+      size_hints_honor = false
+    }
   },
   { rule = { class = "us.zoom.Zoom" },
-    properties = { focus = true, raise = true }
-  },
-  { rule = { class = "chatgpt" },
-    properties = { focus = true, raise = true }
-  },
-  { rule = { class = "calendar-personal" },
-    properties = { focus = true, raise = true }
-  },
-  { rule = { class = "calendar-work" },
-    properties = { focus = true, raise = true }
-  },
-  { rule = { class = "slack-credclub" },
-    properties = { focus = true, raise = true }
-  },
-  { rule = { class = "slack-work" },
-    properties = { focus = true, raise = true }
-  },
-  { rule = { class = "gmail-personal" },
-    properties = { focus = true, raise = true }
-  },
-  { rule = { class = "gmail-work" },
-    properties = { focus = true, raise = true }
-  },
-  { rule = { class = "youtube" },
-    properties = { focus = true, raise = true }
-  },
-  { rule = { class = "whatsapp" },
-    properties = { focus = true, raise = true }
+    properties = {
+      focus = true,
+      raise = true,
+      floating = false,
+      maximized = false,
+      size_hints_honor = false
+    }
   },
 
   -- Floating clients.
@@ -675,7 +662,7 @@ awful.rules.rules = {
       "ConfigManager",  -- Thunderbird's about:config.
       "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
     }
-  }, properties = { floating = true }},
+  }, properties = { floating = true, placement = awful.placement.no_overlap+awful.placement.no_offscreen }},
 
   -- Add titlebars to normal clients and dialogs
   { rule_any = {type = { "normal", "dialog" }
@@ -693,7 +680,7 @@ awful.rules.rules = {
 client.connect_signal("manage", function (c)
   -- Set the windows at the slave,
   -- i.e. put it at the end of others instead of setting it master.
-  -- if not awesome.startup then awful.client.setslave(c) end
+  if not awesome.startup then awful.client.setslave(c) end
 
   if awesome.startup
     and not c.size_hints.user_position
@@ -701,6 +688,19 @@ client.connect_signal("manage", function (c)
     -- Prevent clients from being unreachable after screen count changes.
     awful.placement.no_offscreen(c)
   end
+
+  -- Force Chromium webapps to honor tiling layouts
+  if c.class == "Org.chromium.Chromium" then
+    c.size_hints_honor = false
+    c.maximized = false
+    c.maximized_horizontal = false
+    c.maximized_vertical = false
+  end
+end)
+
+-- Force layout rearrangement when tag layout changes
+tag.connect_signal("property::layout", function(t)
+  awful.layout.arrange(t.screen)
 end)
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
