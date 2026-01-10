@@ -75,21 +75,21 @@ bindsym $mod+Return exec gnome-terminal
 bindsym $mod+d exec rofi -show drun
 
 # browser
-bindsym $mod+b exec google-chrome
+bindsym $mod+b exec flatpak run org.chromium.Chromium
 
 # zoom
 bindsym $mod+z exec flatpak run us.zoom.Zoom
 
 # Web apps (Chrome windows)
-bindsym $mod+a exec google-chrome --new-window https://chatgpt.com
-bindsym $mod+c exec google-chrome --new-window https://calendar.google.com/calendar/u/0/r
-bindsym $mod+Shift+c exec google-chrome --new-window https://calendar.google.com/calendar/u/1/r
-bindsym $mod+s exec google-chrome --new-window https://app.slack.com/client/T090AJD0EAG/C090AJD8J4C
-bindsym $mod+Shift+s exec google-chrome --new-window https://app.slack.com/client/T0KHRPJJJ
-bindsym $mod+e exec google-chrome --new-window https://mail.google.com/mail/u/0/#inbox
-bindsym $mod+Shift+e exec google-chrome --new-window https://mail.google.com/mail/u/1/#inbox
-bindsym $mod+y exec google-chrome --new-window https://youtube.com/
-bindsym $mod+Shift+w exec google-chrome --new-window https://web.whatsapp.com/
+bindsym $mod+a exec flatpak run org.chromium.Chromium --new-window https://chatgpt.com
+bindsym $mod+c exec flatpak run org.chromium.Chromium --new-window https://calendar.google.com/calendar/u/0/r
+bindsym $mod+Shift+c exec flatpak run org.chromium.Chromium --new-window https://calendar.google.com/calendar/u/1/r
+bindsym $mod+s exec flatpak run org.chromium.Chromium --new-window https://app.slack.com/client/T090AJD0EAG/C090AJD8J4C
+bindsym $mod+Shift+s exec flatpak run org.chromium.Chromium --new-window https://app.slack.com/client/T0KHRPJJJ
+bindsym $mod+e exec flatpak run org.chromium.Chromium --new-window https://mail.google.com/mail/u/0/#inbox
+bindsym $mod+Shift+e exec flatpak run org.chromium.Chromium --new-window https://mail.google.com/mail/u/1/#inbox
+bindsym $mod+y exec flatpak run org.chromium.Chromium --new-window https://youtube.com/
+bindsym $mod+Shift+w exec flatpak run org.chromium.Chromium --new-window https://web.whatsapp.com/
 
 # file explorer
 bindsym $mod+Shift+f exec nautilus
