@@ -187,7 +187,13 @@ awful.screen.connect_for_each_screen(function(s)
   set_wallpaper(s)
 
   -- Each screen has its own tag table.
-  awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+  if s.index == 1 then
+    awful.tag({ "1", "2", "3", "4", "5", "6" }, s, awful.layout.layouts[1])
+  elseif s.index == 2 then
+    awful.tag({ "7", "8", "9" }, s, awful.layout.layouts[1])
+  else
+    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+  end
 
   -- Create a promptbox for each screen
   s.mypromptbox = awful.widget.prompt()
@@ -438,20 +444,38 @@ for i = 1, 9 do
     -- View tag only.
     awful.key({ modkey }, "#" .. i + 9,
       function ()
-        local screen = awful.screen.focused()
-        local tag = screen.tags[i]
-        if tag then
-          tag:view_only()
+        local s, tag_idx
+        if i <= 6 then
+          s = screen[1]
+          tag_idx = i
+        else
+          s = screen[2]
+          tag_idx = i - 6
+        end
+        if s then
+          local tag = s.tags[tag_idx]
+          if tag then
+            tag:view_only()
+          end
         end
       end,
       {description = "view tag #"..i, group = "tag"}),
     -- Toggle tag display.
     awful.key({ modkey, "Control" }, "#" .. i + 9,
       function ()
-        local screen = awful.screen.focused()
-        local tag = screen.tags[i]
-        if tag then
-          awful.tag.viewtoggle(tag)
+        local s, tag_idx
+        if i <= 6 then
+          s = screen[1]
+          tag_idx = i
+        else
+          s = screen[2]
+          tag_idx = i - 6
+        end
+        if s then
+          local tag = s.tags[tag_idx]
+          if tag then
+            awful.tag.viewtoggle(tag)
+          end
         end
       end,
       {description = "toggle tag #" .. i, group = "tag"}),
@@ -459,9 +483,19 @@ for i = 1, 9 do
     awful.key({ modkey, "Shift" }, "#" .. i + 9,
       function ()
         if client.focus then
-          local tag = client.focus.screen.tags[i]
-          if tag then
-            client.focus:move_to_tag(tag)
+          local s, tag_idx
+          if i <= 6 then
+            s = screen[1]
+            tag_idx = i
+          else
+            s = screen[2]
+            tag_idx = i - 6
+          end
+          if s then
+            local tag = s.tags[tag_idx]
+            if tag then
+              client.focus:move_to_tag(tag)
+            end
           end
         end
       end,
@@ -470,9 +504,19 @@ for i = 1, 9 do
     awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
       function ()
         if client.focus then
-          local tag = client.focus.screen.tags[i]
-          if tag then
-            client.focus:toggle_tag(tag)
+          local s, tag_idx
+          if i <= 6 then
+            s = screen[1]
+            tag_idx = i
+          else
+            s = screen[2]
+            tag_idx = i - 6
+          end
+          if s then
+            local tag = s.tags[tag_idx]
+            if tag then
+              client.focus:toggle_tag(tag)
+            end
           end
         end
       end,
