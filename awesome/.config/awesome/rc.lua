@@ -343,6 +343,8 @@ globalkeys = gears.table.join(
     {description = "open email (work)", group = "launcher"}),
   awful.key({ modkey,           }, "y", function () awful.spawn("flatpak run org.chromium.Chromium --app=https://youtube.com/ --class=youtube") end,
     {description = "open youtube", group = "launcher"}),
+  awful.key({ modkey, "Shift"   }, "w", function () awful.spawn("flatpak run org.chromium.Chromium --app=https://web.whatsapp.com/ --class=whatsapp") end,
+    {description = "open whatsapp", group = "launcher"}),
 
   awful.key({ modkey, "Control" }, "r", awesome.restart,
     {description = "reload awesome", group = "awesome"}),
@@ -587,6 +589,9 @@ awful.rules.rules = {
     properties = { focus = true, raise = true, switchtotag = true }
   },
   { rule = { class = "youtube" },
+    properties = { focus = true, raise = true, switchtotag = true }
+  },
+  { rule = { class = "whatsapp" },
     properties = { focus = true, raise = true, switchtotag = true }
   },
 
