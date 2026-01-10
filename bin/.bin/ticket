@@ -11,8 +11,9 @@ def run(args)
     description = url.split("/").last
   end
 
-  if url.match(/R2D2-(\d+)/i)
-    ticket = $1
+  matches = url.match(/((R2D2|ENG)-(\d+))/i)
+  if matches
+    ticket = matches[1]
   end
 
   if args.length > 0
@@ -22,7 +23,7 @@ def run(args)
   description ||= "missing description"
   description = description.gsub("-", " ")
 
-  command = "create-branch R2D2-#{ticket} #{description}"
+  command = "create-branch #{ticket} #{description}"
   puts "Executing #{command}"
   `#{command}`
 end

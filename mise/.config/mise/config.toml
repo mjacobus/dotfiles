@@ -7,4 +7,5 @@ idiomatic_version_file_enable_tools = ["ruby"]
 compile = true
 
 [tools]
-neovim = "0.11.2"
+neovim = "0.11.5"
+rust = "1.88.0"
