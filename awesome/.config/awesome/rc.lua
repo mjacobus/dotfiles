@@ -247,8 +247,6 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
-  awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
-    {description="show help", group="awesome"}),
   awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
     {description = "view previous", group = "tag"}),
   awful.key({ modkey,           }, "Right",  awful.tag.viewnext,
@@ -317,10 +315,29 @@ globalkeys = gears.table.join(
   -- Standard program
   awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
     {description = "open a terminal", group = "launcher"}),
-  awful.key({ modkey,           }, "b", function () awful.spawn("chromium") end,
+  awful.key({ modkey,           }, "b", function () awful.spawn("flatpak run org.chromium.Chromium") end,
     {description = "open browser", group = "launcher"}),
-  awful.key({ modkey,           }, "z", function () awful.spawn("zoom") end,
+  awful.key({ modkey,           }, "z", function () awful.spawn("flatpak run us.zoom.Zoom") end,
     {description = "open zoom", group = "launcher"}),
+
+  -- Web apps (standalone chromium windows)
+  awful.key({ modkey,           }, "a", function () awful.spawn("flatpak run org.chromium.Chromium --app=https://chatgpt.com --class=chatgpt") end,
+    {description = "open chatgpt", group = "launcher"}),
+  awful.key({ modkey,           }, "c", function () awful.spawn("flatpak run org.chromium.Chromium --app=https://calendar.google.com/calendar/u/0/r --class=calendar-personal") end,
+    {description = "open calendar (personal)", group = "launcher"}),
+  awful.key({ modkey, "Shift"   }, "c", function () awful.spawn("flatpak run org.chromium.Chromium --app=https://calendar.google.com/calendar/u/1/r --class=calendar-work") end,
+    {description = "open calendar (work)", group = "launcher"}),
+  awful.key({ modkey,           }, "s", function () awful.spawn("flatpak run org.chromium.Chromium --app=https://app.slack.com/client/T090AJD0EAG/C090AJD8J4C --class=slack-credclub") end,
+    {description = "open credclub slack", group = "launcher"}),
+  awful.key({ modkey, "Shift"   }, "s", function () awful.spawn("flatpak run org.chromium.Chromium --app=https://app.slack.com/client/T0KHRPJJJ --class=slack-work") end,
+    {description = "open work slack", group = "launcher"}),
+  awful.key({ modkey,           }, "e", function () awful.spawn("flatpak run org.chromium.Chromium --app=https://mail.google.com/mail/u/0/#inbox --class=gmail-personal") end,
+    {description = "open email (personal)", group = "launcher"}),
+  awful.key({ modkey, "Shift"   }, "e", function () awful.spawn("flatpak run org.chromium.Chromium --app=https://mail.google.com/mail/u/1/#inbox --class=gmail-work") end,
+    {description = "open email (work)", group = "launcher"}),
+  awful.key({ modkey,           }, "y", function () awful.spawn("flatpak run org.chromium.Chromium --app=https://youtube.com/ --class=youtube") end,
+    {description = "open youtube", group = "launcher"}),
+
   awful.key({ modkey, "Control" }, "r", awesome.restart,
     {description = "reload awesome", group = "awesome"}),
   awful.key({ modkey, "Shift"   }, "q", awesome.quit,
@@ -361,14 +378,9 @@ globalkeys = gears.table.join(
 
   awful.key({ modkey }, "x",
     function ()
-      awful.prompt.run {
-        prompt       = "Run Lua code: ",
-        textbox      = awful.screen.focused().mypromptbox.widget,
-        exe_callback = awful.util.eval,
-        history_path = awful.util.get_cache_dir() .. "/history_eval"
-      }
+      awful.spawn.with_shell("maim -s | xclip -selection clipboard -t image/png")
     end,
-    {description = "lua execute prompt", group = "awesome"}),
+    {description = "screenshot region to clipboard", group = "launcher"}),
   -- Menubar
   awful.key({ modkey }, "p", function() menubar.show() end,
     {description = "show the menubar", group = "launcher"})
@@ -500,6 +512,38 @@ awful.rules.rules = {
       screen = awful.screen.preferred,
       placement = awful.placement.no_overlap+awful.placement.no_offscreen
     }
+  },
+
+  -- Flatpak apps (Chromium, Zoom, webapps)
+  { rule = { class = "org.chromium.Chromium" },
+    properties = { focus = true, raise = true, switchtotag = true }
+  },
+  { rule = { class = "us.zoom.Zoom" },
+    properties = { focus = true, raise = true, switchtotag = true }
+  },
+  { rule = { class = "chatgpt" },
+    properties = { focus = true, raise = true, switchtotag = true }
+  },
+  { rule = { class = "calendar-personal" },
+    properties = { focus = true, raise = true, switchtotag = true }
+  },
+  { rule = { class = "calendar-work" },
+    properties = { focus = true, raise = true, switchtotag = true }
+  },
+  { rule = { class = "slack-credclub" },
+    properties = { focus = true, raise = true, switchtotag = true }
+  },
+  { rule = { class = "slack-work" },
+    properties = { focus = true, raise = true, switchtotag = true }
+  },
+  { rule = { class = "gmail-personal" },
+    properties = { focus = true, raise = true, switchtotag = true }
+  },
+  { rule = { class = "gmail-work" },
+    properties = { focus = true, raise = true, switchtotag = true }
+  },
+  { rule = { class = "youtube" },
+    properties = { focus = true, raise = true, switchtotag = true }
   },
 
   -- Floating clients.
