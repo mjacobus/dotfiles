@@ -371,29 +371,29 @@ globalkeys = gears.table.join(
   awful.key({ modkey,           }, "d", function () awful.spawn("ulauncher-toggle") end,
     {description = "application launcher", group = "launcher"}),
 
-  awful.key({ modkey,           }, "b", function () awful.spawn("flatpak run org.chromium.Chromium") end,
+  awful.key({ modkey,           }, "b", function () awful.spawn("google-chrome") end,
     {description = "open browser", group = "launcher"}),
   awful.key({ modkey,           }, "z", function () awful.spawn("flatpak run us.zoom.Zoom") end,
     {description = "open zoom", group = "launcher"}),
 
   -- Web apps (standalone chromium windows)
-  awful.key({ modkey,           }, "a", function () awful.spawn("flatpak run org.chromium.Chromium --new-window https://chatgpt.com") end,
+  awful.key({ modkey,           }, "a", function () awful.spawn("google-chrome --app=https://chatgpt.com") end,
     {description = "open chatgpt", group = "launcher"}),
-  awful.key({ modkey,           }, "c", function () awful.spawn("flatpak run org.chromium.Chromium --new-window https://calendar.google.com/calendar/u/0/r") end,
+  awful.key({ modkey,           }, "c", function () awful.spawn("google-chrome --app=https://calendar.google.com/calendar/u/0/r") end,
     {description = "open calendar (personal)", group = "launcher"}),
-  awful.key({ modkey, "Shift"   }, "c", function () awful.spawn("flatpak run org.chromium.Chromium --new-window https://calendar.google.com/calendar/u/1/r") end,
+  awful.key({ modkey, "Shift"   }, "c", function () awful.spawn("google-chrome --app=https://calendar.google.com/calendar/u/1/r") end,
     {description = "open calendar (work)", group = "launcher"}),
-  awful.key({ modkey,           }, "s", function () awful.spawn("flatpak run org.chromium.Chromium --new-window https://app.slack.com/client/T090AJD0EAG/C090AJD8J4C") end,
+  awful.key({ modkey,           }, "s", function () awful.spawn("google-chrome --app=https://app.slack.com/client/T090AJD0EAG/C090AJD8J4C") end,
     {description = "open credclub slack", group = "launcher"}),
-  awful.key({ modkey, "Shift"   }, "s", function () awful.spawn("flatpak run org.chromium.Chromium --new-window https://app.slack.com/client/T0KHRPJJJ") end,
+  awful.key({ modkey, "Shift"   }, "s", function () awful.spawn("google-chrome --app=https://app.slack.com/client/T0KHRPJJJ") end,
     {description = "open work slack", group = "launcher"}),
-  awful.key({ modkey,           }, "e", function () awful.spawn("flatpak run org.chromium.Chromium --new-window https://mail.google.com/mail/u/0/#inbox") end,
+  awful.key({ modkey,           }, "e", function () awful.spawn("google-chrome --app=https://mail.google.com/mail/u/0/#inbox") end,
     {description = "open email (personal)", group = "launcher"}),
-  awful.key({ modkey, "Shift"   }, "e", function () awful.spawn("flatpak run org.chromium.Chromium --new-window https://mail.google.com/mail/u/1/#inbox") end,
+  awful.key({ modkey, "Shift"   }, "e", function () awful.spawn("google-chrome --app=https://mail.google.com/mail/u/1/#inbox") end,
     {description = "open email (work)", group = "launcher"}),
-  awful.key({ modkey,           }, "y", function () awful.spawn("flatpak run org.chromium.Chromium --new-window https://youtube.com/") end,
+  awful.key({ modkey,           }, "y", function () awful.spawn("google-chrome --app=https://youtube.com/") end,
     {description = "open youtube", group = "launcher"}),
-  awful.key({ modkey, "Shift"   }, "w", function () awful.spawn("flatpak run org.chromium.Chromium --new-window https://web.whatsapp.com/") end,
+  awful.key({ modkey, "Shift"   }, "w", function () awful.spawn("google-chrome --app=https://web.whatsapp.com/") end,
     {description = "open whatsapp", group = "launcher"}),
 
   awful.key({ modkey, "Control" }, "r", awesome.restart,
@@ -612,7 +612,7 @@ awful.rules.rules = {
 
   -- Flatpak apps (Chromium, Zoom, webapps)
   -- Force ALL Chromium windows (including webapps) to tile properly
-  { rule = { class = "Org.chromium.Chromium" },
+  { rule = { class = "Google-chrome" },
     properties = {
       focus = true,
       raise = true,
@@ -690,7 +690,7 @@ client.connect_signal("manage", function (c)
   end
 
   -- Force Chromium webapps to honor tiling layouts
-  if c.class == "Org.chromium.Chromium" then
+  if c.class == "Google-chrome" then
     c.size_hints_honor = false
     c.maximized = false
     c.maximized_horizontal = false
