@@ -69,49 +69,45 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-# bindsym $mod+Return exec i3-sensible-terminal
-# bindsym $mod+Return exec kitty
 bindsym $mod+Return exec gnome-terminal
-bindsym $mod+u exec i3lock
+
+# application launcher (rofi)
+bindsym $mod+d exec rofi -show drun
+
+# browser
+bindsym $mod+b exec google-chrome
+
+# zoom
+bindsym $mod+z exec flatpak run us.zoom.Zoom
+
+# Web apps (Chrome windows)
+bindsym $mod+a exec google-chrome --new-window https://chatgpt.com
+bindsym $mod+c exec google-chrome --new-window https://calendar.google.com/calendar/u/0/r
+bindsym $mod+Shift+c exec google-chrome --new-window https://calendar.google.com/calendar/u/1/r
+bindsym $mod+s exec google-chrome --new-window https://app.slack.com/client/T090AJD0EAG/C090AJD8J4C
+bindsym $mod+Shift+s exec google-chrome --new-window https://app.slack.com/client/T0KHRPJJJ
+bindsym $mod+e exec google-chrome --new-window https://mail.google.com/mail/u/0/#inbox
+bindsym $mod+Shift+e exec google-chrome --new-window https://mail.google.com/mail/u/1/#inbox
+bindsym $mod+y exec google-chrome --new-window https://youtube.com/
+bindsym $mod+Shift+w exec google-chrome --new-window https://web.whatsapp.com/
 
 # file explorer
 bindsym $mod+Shift+f exec nautilus
 
-# slack
-bindsym $mod+Shift+s exec slack
+# screenshot
+bindsym --release $mod+x exec /home/mjacobus/.bin/screenshot-selection.sh > /tmp/screenshot_log.txt 2>&1
 
-# browser
-# bindsym $mod+Shift+g exec google-chrome
-# bindsym $mod+Shift+g exec firefox
-bindsym $mod+Shift+g exec brave-browser
-
-# calendar
-bindsym $mod+Shifg+c exec gnome-calendar
+# lock screen
+bindsym $mod+u exec i3lock
 
 # kill focused window
-bindsym $mod+Shift+q kill
-bindsym $mod+q kill
+bindsym $mod+w kill
 
 # Volume control
 bindsym $mod+m exec pavucontrol
 
-# Volume control
-bindsym $mod+N exec ~/.bin/toggle-notifications
-
-# screenshot? not working why?
-# bindsym $mod+x exec screenshot-selection.sh
-
-# bindsym $mod+x exec /home/mjacobus/.bin/screenshot-selection.sh
-
-bindsym --release $mod+x exec /home/mjacobus/.bin/screenshot-selection.sh > /tmp/screenshot_log.txt 2>&1
-
-# start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
-# A more modern dmenu replacement is rofi:
-# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
-# There also is i3-dmenu-desktop which only displays applications shipping a
-# .desktop file. It is a wrapper around dmenu, so you need that installed.
-# bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+# Notifications
+bindsym $mod+Shift+n exec ~/.bin/toggle-notifications
 
 # change focus
 bindsym $mod+h focus left
