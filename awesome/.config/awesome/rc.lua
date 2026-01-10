@@ -280,8 +280,15 @@ globalkeys = gears.table.join(
         end,
         {description = "focus right", group = "client"}
     ),
-    awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
-              {description = "show main menu", group = "awesome"}),
+    awful.key({ modkey,           }, "w",
+        function ()
+            local c = client.focus
+            if c then
+                c:kill()
+            end
+        end,
+        {description = "close active window", group = "client"}
+    ),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "h", function () awful.client.swap.bydirection("left")    end,
@@ -310,6 +317,10 @@ globalkeys = gears.table.join(
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
+    awful.key({ modkey,           }, "b", function () awful.spawn("chromium") end,
+              {description = "open browser", group = "launcher"}),
+    awful.key({ modkey,           }, "z", function () awful.spawn("zoom") end,
+              {description = "open zoom", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
