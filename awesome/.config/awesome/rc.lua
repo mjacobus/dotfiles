@@ -2,9 +2,13 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
+
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
+
+awful.spawn.with_shell("pgrep -x ulauncher || ulauncher") -- make sure launcher is running
+
 require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
@@ -295,14 +299,56 @@ globalkeys = gears.table.join(
   ),
 
   -- Layout manipulation
-  awful.key({ modkey, "Shift"   }, "h", function () awful.client.swap.bydirection("left")    end,
-    {description = "swap window to the left", group = "client"}),
+  awful.key({ modkey, "Shift"   }, "h",
+    function ()
+      local c = client.focus
+      if not c then return end
+
+      -- Count tiled/visible clients on current tag
+      local clients = c.first_tag:clients()
+      local visible_count = 0
+      for _, cl in ipairs(clients) do
+        if cl.valid and not cl.minimized and not cl.hidden then
+          visible_count = visible_count + 1
+        end
+      end
+
+      if visible_count > 1 then
+        -- Multiple windows, swap left
+        awful.client.swap.bydirection("left")
+      elseif c.screen.index == 2 and screen[1] then
+        -- Only one window on right screen, move to left screen
+        c:move_to_screen(screen[1])
+      end
+    end,
+    {description = "swap left or move to left screen", group = "client"}),
   awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.bydirection("down")    end,
     {description = "swap window down", group = "client"}),
   awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.bydirection("up")    end,
     {description = "swap window up", group = "client"}),
-  awful.key({ modkey, "Shift"   }, "l", function () awful.client.swap.bydirection("right")    end,
-    {description = "swap window to the right", group = "client"}),
+  awful.key({ modkey, "Shift"   }, "l",
+    function ()
+      local c = client.focus
+      if not c then return end
+
+      -- Count tiled/visible clients on current tag
+      local clients = c.first_tag:clients()
+      local visible_count = 0
+      for _, cl in ipairs(clients) do
+        if cl.valid and not cl.minimized and not cl.hidden then
+          visible_count = visible_count + 1
+        end
+      end
+
+      if visible_count > 1 then
+        -- Multiple windows, swap right
+        awful.client.swap.bydirection("right")
+      elseif c.screen.index == 1 and screen[2] then
+        -- Only one window on left screen, move to right screen
+        c:move_to_screen(screen[2])
+      end
+    end,
+    {description = "swap right or move to right screen", group = "client"}),
   awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end,
     {description = "focus the next screen", group = "screen"}),
   awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end,
@@ -321,6 +367,10 @@ globalkeys = gears.table.join(
   -- Standard program
   awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
     {description = "open a terminal", group = "launcher"}),
+
+  awful.key({ modkey,           }, "d", function () awful.spawn("ulauncher-toggle") end,
+    {description = "application launcher", group = "launcher"}),
+
   awful.key({ modkey,           }, "b", function () awful.spawn("flatpak run org.chromium.Chromium") end,
     {description = "open browser", group = "launcher"}),
   awful.key({ modkey,           }, "z", function () awful.spawn("flatpak run us.zoom.Zoom") end,
@@ -458,6 +508,7 @@ for i = 1, 9 do
           local tag = s.tags[tag_idx]
           if tag then
             tag:view_only()
+            awful.screen.focus(s)
           end
         end
       end,
