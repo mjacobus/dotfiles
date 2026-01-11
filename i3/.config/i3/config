@@ -19,9 +19,10 @@ set $mod Mod4
 # Right alt
 # set $mod Mod5
 
-# Gaps between windows (requires i3-gaps)
-gaps inner 8
-gaps outer 4
+# Note: Gaps require i3 version 4.22+ or i3-gaps fork
+# Uncomment below if you upgrade i3:
+# gaps inner 8
+# gaps outer 4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
