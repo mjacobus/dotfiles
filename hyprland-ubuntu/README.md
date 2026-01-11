@@ -7,14 +7,15 @@ Standalone Hyprland configuration for Ubuntu 25.10 (Wayland), without omarchy de
 ```bash
 sudo apt install -y \
     hyprland \
+    xdg-desktop-portal-hyprland \
     wofi \
     grim \
     slurp \
     wl-clipboard \
     dunst \
-    hyprlock \
-    hypridle \
-    polkit-gnome \
+    swaylock \
+    swayidle \
+    policykit-1-gnome \
     gnome-terminal \
     nautilus \
     pavucontrol \
@@ -26,14 +27,15 @@ sudo apt install -y \
 | Package | Purpose |
 |---------|---------|
 | `hyprland` | Wayland compositor |
+| `xdg-desktop-portal-hyprland` | Screen sharing, file pickers, etc. |
 | `wofi` | Application launcher (Wayland-native rofi alternative) |
 | `grim` | Screenshot utility for Wayland |
 | `slurp` | Region selection tool (used with grim) |
 | `wl-clipboard` | Clipboard utilities (wl-copy, wl-paste) |
 | `dunst` | Notification daemon |
-| `hyprlock` | Lock screen for Hyprland |
-| `hypridle` | Idle daemon (screen lock, DPMS, suspend timers) |
-| `polkit-gnome` | Authentication agent for GUI sudo prompts |
+| `swaylock` | Screen locker (hyprlock not in Ubuntu repos) |
+| `swayidle` | Idle daemon (hypridle not in Ubuntu repos) |
+| `policykit-1-gnome` | Authentication agent for GUI sudo prompts |
 | `gnome-terminal` | Terminal emulator |
 | `nautilus` | File manager |
 | `pavucontrol` | PulseAudio volume control |
@@ -45,10 +47,12 @@ sudo apt install -y \
 # Bluetooth TUI
 sudo apt install -y bluetuith
 
-# Status bar (if you want one)
+# Status bar
 sudo apt install -y waybar
 
 # Wallpaper setter
+sudo apt install -y hyprpaper
+# or
 sudo apt install -y swaybg
 
 # Clipboard history manager
@@ -131,18 +135,21 @@ $browser = /snap/bin/chromium
 
 ### No authentication prompts
 
-Ensure polkit agent is running. Check `autostart.conf` path:
+Ensure polkit agent is running:
 
 ```bash
-ls /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-# or try
-ls /usr/libexec/polkit-gnome-authentication-agent-1
+ls /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 ```
 
 ### Screen not locking
 
-Ensure hypridle is running:
+Ensure swayidle is running:
 
 ```bash
-pgrep hypridle || hypridle &
+pgrep swayidle || swayidle -w timeout 300 'swaylock -f -c 000000' &
 ```
+
+## Notes
+
+- `hyprlock` and `hypridle` are not available in Ubuntu 25.10 repos, so we use `swaylock` and `swayidle` instead
+- The polkit package is `policykit-1-gnome` (not `polkit-gnome`)
