@@ -82,6 +82,7 @@ bindsym $mod+d exec rofi -show drun
 
 # browser
 bindsym $mod+b exec flatpak run org.chromium.Chromium
+bindsym $mod+Shift+b exec gnome-terminal -- bluetuith
 
 # zoom
 bindsym $mod+z exec flatpak run us.zoom.Zoom
