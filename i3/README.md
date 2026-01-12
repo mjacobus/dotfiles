@@ -12,7 +12,7 @@ sudo apt install i3 i3status i3lock dmenu rofi
 Install additional utilities:
 
 ```bash
-sudo apt install xautolock dunst nautilus gnome-terminal flatpak
+sudo apt install xautolock dunst nautilus gnome-terminal flatpak scrot xclip
 ```
 
 Install Flatpak applications:
