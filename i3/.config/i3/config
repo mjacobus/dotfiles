@@ -161,13 +161,13 @@ set $ws9 "9"
 set $ws10 "10"
 
 # Assign workspaces to specific monitors
-# Workspaces 8-10 will fall back to DisplayPort-0 if DisplayPort-1 is disconnected
+# Some Workspaces will fall back to DisplayPort-0 if DisplayPort-1 is disconnected
 workspace 1 output DisplayPort-0
 workspace 2 output DisplayPort-0
 workspace 3 output DisplayPort-0
 workspace 4 output DisplayPort-0
-workspace 5 output DisplayPort-0
-workspace 6 output DisplayPort-0
+workspace 5 output DisplayPort-1 DisplayPort-0
+workspace 6 output DisplayPort-1 DisplayPort-0
 workspace 7 output DisplayPort-0
 workspace 8 output DisplayPort-1 DisplayPort-0
 workspace 9 output DisplayPort-1 DisplayPort-0
