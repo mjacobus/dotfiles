@@ -109,7 +109,7 @@ bindsym $mod+Shift+f exec nautilus
 bindsym --release $mod+x exec /home/mjacobus/.bin/screenshot-selection.sh > /tmp/screenshot_log.txt 2>&1
 
 # lock screen
-bindsym $mod+u exec i3lock
+bindsym $mod+Escape exec i3lock
 
 # kill focused window
 bindsym $mod+w kill
@@ -182,6 +182,9 @@ bindsym $mod+5 workspace number $ws5
 bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
+bindsym $mod+u workspace number $ws8
+bindsym $mod+i workspace number $ws9
+bindsym $mod+o workspace number $ws10
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
