@@ -5,6 +5,10 @@ Xft.hinting: true
 Xft.hintstyle: hintslight
 Xft.rgba: rgb
 
+! Cursor theme
+Xcursor.theme: Adwaita
+Xcursor.size: 24
+
 ! URxvt.font: xft:Liberation Mono:size=11
 ! or try one of the others:
 URxvt.font: xft:DejaVu Sans Mono:size=11

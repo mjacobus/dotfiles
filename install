@@ -14,6 +14,7 @@ fi
 
 stow $flags pop-shell # Pop!_OS
 stow $flags omarchy
+stow $flags awesome
 stow $flags tmux
 stow $flags zshell
 stow $flags shells --adopt
