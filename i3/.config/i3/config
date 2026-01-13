@@ -115,7 +115,11 @@ bindsym $mod+Escape exec i3lock
 bindsym $mod+w kill
 
 # Volume control
-bindsym $mod+m exec pavucontrol
+# bindsym $mod+m exec pavucontrol
+
+# Development and work apps
+bindsym $mod+m exec flatpak run org.chromium.Chromium --new-window http://localhost:8080/
+bindsym $mod+Shift+m exec flatpak run org.chromium.Chromium --new-window https://app.monograph.com
 
 # Notifications
 bindsym $mod+Shift+n exec ~/.bin/toggle-notifications
