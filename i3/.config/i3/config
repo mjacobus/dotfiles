@@ -100,7 +100,7 @@ bindsym $mod+Shift+w exec flatpak run org.chromium.Chromium --app=https://web.wh
 # Projects
 bindsym $mod+p exec flatpak run org.chromium.Chromium --new-window https://github.com/users/mjacobus/projects/4
 bindsym $mod+Shift+p exec flatpak run org.chromium.Chromium --new-window https://linear.app/monograph/team/R2D2/cycle/active
-bindsym $mod+y exec flatpak run org.chromium.Chromium --new-window=https://youtube.com/
+bindsym $mod+Shift+v exec flatpak run org.chromium.Chromium --new-window https://youtube.com/
 
 # file explorer
 bindsym $mod+Shift+f exec nautilus
@@ -163,6 +163,10 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+set $ws14 "14"
 
 # Assign workspaces to specific monitors
 # Some Workspaces will fall back to DisplayPort-0 if DisplayPort-1 is disconnected
@@ -173,9 +177,13 @@ workspace 4 output DisplayPort-0
 workspace 5 output DisplayPort-0
 workspace 6 output DisplayPort-0
 workspace 7 output DisplayPort-0
-workspace 8 output DisplayPort-1 DisplayPort-0
-workspace 9 output DisplayPort-1 DisplayPort-0
-workspace 10 output DisplayPort-1 DisplayPort-0
+workspace 8 output DisplayPort-0
+workspace 9 output DisplayPort-0
+workspace 10 output DisplayPort-0
+workspace 11 output DisplayPort-1 DisplayPort-0
+workspace 12 output DisplayPort-1 DisplayPort-0
+workspace 13 output DisplayPort-1 DisplayPort-0
+workspace 14 output DisplayPort-1 DisplayPort-0
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -188,14 +196,12 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
-bindsym $mod+u workspace number $ws8
-bindsym $mod+i workspace number $ws9
-bindsym $mod+o workspace number $ws10
+bindsym $mod+y workspace number $ws11
+bindsym $mod+u workspace number $ws12
+bindsym $mod+i workspace number $ws13
+bindsym $mod+o workspace number $ws14
 
 # move focused container to workspace
-bindsym $mod+Shift+u move container to workspace number $ws8
-bindsym $mod+Shift+i move container to workspace number $ws9
-bindsym $mod+Shift+o move container to workspace number $ws10
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
@@ -206,6 +212,10 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+y move container to workspace number $ws11
+bindsym $mod+Shift+u move container to workspace number $ws12
+bindsym $mod+Shift+i move container to workspace number $ws13
+bindsym $mod+Shift+o move container to workspace number $ws14
 
 # reload the configuration file
 bindsym $mod+Control+r reload
