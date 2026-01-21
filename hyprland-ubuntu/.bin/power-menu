@@ -1,0 +1,24 @@
+#!/bin/bash
+# Power menu using wofi
+
+options="Lock\nLogout\nSuspend\nReboot\nShutdown"
+
+selected=$(echo -e "$options" | wofi --dmenu --prompt "Power" --width 200 --height 200)
+
+case "$selected" in
+    Lock)
+        swaylock -f -c 000000
+        ;;
+    Logout)
+        hyprctl dispatch exit
+        ;;
+    Suspend)
+        systemctl suspend
+        ;;
+    Reboot)
+        systemctl reboot
+        ;;
+    Shutdown)
+        systemctl poweroff
+        ;;
+esac
