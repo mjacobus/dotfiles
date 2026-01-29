@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Create today's note filename
+today=$(date +%Y-%m-%d)
+note_file="$today.md"
+dir="$HOME/Projects/notes/"
+
+cd $dir
+
+# Set nvim config and open with mise
+NVIM_APPNAME="mjvim" exec mise exec -- nvim "$note_file"
