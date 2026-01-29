@@ -123,8 +123,13 @@ bindsym $mod+w kill
 bindsym $mod+m exec flatpak run org.chromium.Chromium --new-window http://localhost:8080/
 bindsym $mod+Shift+m exec flatpak run org.chromium.Chromium --new-window https://app.monograph.com
 
+# Notes
+bindsym $mod+n exec gnome-terminal -- ~/.bin/open-daily-note
+bindsym $mod+Shift+n exec xdg-open "obsidian://daily?vault=Marcelo"
+bindsym $mod+comma exec obsidian
+
 # Notifications
-bindsym $mod+Shift+n exec ~/.bin/toggle-notifications
+bindsym $mod+Control+n exec ~/.bin/toggle-notifications
 
 # change focus
 bindsym $mod+h focus left
