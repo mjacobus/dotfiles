@@ -111,7 +111,7 @@ bindsym $mod+Shift+f exec nautilus
 bindsym --release $mod+x exec /home/mjacobus/.bin/screenshot-selection.sh > /tmp/screenshot_log.txt 2>&1
 
 # lock screen
-bindsym $mod+Escape exec i3lock -c 0a0a0a
+bindsym $mod+Shift+Escape exec i3lock -c 0a0a0a
 
 # kill focused window
 bindsym $mod+w kill
