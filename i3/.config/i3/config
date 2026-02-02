@@ -91,6 +91,7 @@ bindsym $mod+z exec flatpak run us.zoom.Zoom
 
 # Web apps (Chrome windows)
 bindsym $mod+a exec flatpak run org.chromium.Chromium --app=https://chatgpt.com
+bindsym $mod+Shift+a exec flatpak run org.chromium.Chromium --app=https://getunblocked.com/dashboard
 bindsym $mod+c exec flatpak run org.chromium.Chromium --app=https://calendar.google.com/calendar/u/0/r
 bindsym $mod+Shift+c exec flatpak run org.chromium.Chromium --app=https://calendar.google.com/calendar/u/1/r
 bindsym $mod+s exec flatpak run org.chromium.Chromium --app=https://app.slack.com/client/T090AJD0EAG/C090AJD8J4C
