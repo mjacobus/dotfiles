@@ -1,106 +1,118 @@
+# Dunst notification daemon configuration
 # vim: ft=ini
 
-# -----------------------
-# ---- NOTIFICATIONS ----
-# -----------------------
-
 [global]
-    # Set the position to bottom right
-    geometry = "300x5-10-30"
-    # Set the notification to disappear after 2 seconds
-    linger_time = 10
+    ### Display ###
+    monitor = 0
+    follow = mouse
 
-    # Define the format of the notification, including a link
-    # %a is the app name, %s is the summary, %b is the body, %U is the URL
-    # format = "<b>%s</b>\n%b\n"
-    format = "<img src='%i'>%s\n\n<small>%b</small>%p"
+    ### Geometry ###
+    width = (300, 450)
+    height = 300
+    origin = top-right
+    offset = 15x55
 
-[frame]
-  width = 4
-  color = "#063355"
-  padding = 4
+    scale = 0
+    notification_limit = 4
+
+    ### Progress bar ###
+    progress_bar = true
+    progress_bar_height = 10
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 400
+    highlight = "#89b4fa"
+
+    ### Appearance ###
+    transparency = 5
+    separator_height = 2
+    padding = 16
+    horizontal_padding = 16
+    text_icon_padding = 16
+    frame_width = 2
+    frame_color = "#4c7899"
+    gap_size = 8
+    separator_color = frame
+    sort = yes
+
+    ### Text ###
+    font = DejaVu Sans Mono 11
+    line_height = 4
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    ellipsize = end
+    word_wrap = yes
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+
+    ### Icons ###
+    enable_recursive_icon_lookup = true
+    icon_position = left
+    min_icon_size = 48
+    max_icon_size = 64
+    icon_path = /usr/share/icons/gnome/48x48/status/:/usr/share/icons/gnome/48x48/devices/:/usr/share/icons/gnome/48x48/actions/
+
+    ### History ###
+    sticky_history = yes
+    history_length = 20
+
+    ### Misc ###
+    dmenu = /usr/bin/rofi -dmenu -p dunst:
+    browser = /usr/bin/google-chrome --new-window
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    corner_radius = 10
+    ignore_dbusclose = false
+    force_xwayland = false
+    force_xinerama = false
+
+    ### Mouse ###
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = close_current
+    mouse_right_click = close_all
+
+[experimental]
+    per_monitor_dpi = false
 
 [urgency_low]
-    # Low urgency notifications settings
-    background = "#222222"
-    foreground = "#888888"
+    background = "#1e1e2eDD"
+    foreground = "#a6adc8"
     timeout = 5
+    frame_color = "#45475a"
 
 [urgency_normal]
-    background = "#285577"
-    foreground = "#FFFFFF"
-    timeout = 5
+    background = "#1e1e2eDD"
+    foreground = "#cdd6f4"
+    timeout = 10
+    frame_color = "#89b4fa"
 
 [urgency_critical]
-    background = "#900000"
-    foreground = "#FFFFFF"
+    background = "#1e1e2eDD"
+    foreground = "#f38ba8"
+    frame_color = "#f38ba8"
     timeout = 0
 
-[keybindings]
-    # Set 'ctrl+shift+period' to open the URL in the notification
-    # You can change the keybinding to your preference
-    browser = "ctrl+shift+period"
+# Application specific rules
+[slack]
+    appname = Slack
+    urgency = normal
+    new_icon = slack
+    background = "#1e1e2eDD"
+    frame_color = "#4c7899"
 
-# [global]
-#     font = DejaVu Sans Mono 10
-#     allow_markup = yes
-#     indicate_hidden = yes
+[zoom]
+    appname = zoom
+    urgency = normal
+    new_icon = zoom
+    background = "#1e1e2eDD"
+    frame_color = "#2d88ff"
 
-#     #   %a  appname
-#     #   %s  summary
-#     #   %b  body
-#     #   %i  iconname (including its path)
-#     #   %I  iconname (without its path)
-#     #   %p  progress value if set ([  0%] to [100%]) or nothing
-#     format = "<img src='%i'>%s\n<small>%b</small>%p"
-
-#     sort = yes
-#     # "left", "center" and "right"
-#     alignment = right
-#     bounce_freq = 0
-#     show_age_threshold = 60
-#     word_wrap = yes
-#     ignore_newline = no
-
-#     geometry = "300x5-10-30"
-#     transparency = 0
-#     idle_threshold = 120
-#     monitor = 0
-#     follow = mouse
-#     sticky_history = yes
-#     line_height = 0
-#     separator_height = 2
-#     padding = 8
-#     horizontal_padding = 8
-#     separator_color = frame
-#     startup_notification = false
-#     dmenu = /usr/bin/dmenu -p dunst:
-#     browser = /usr/bin/firefox -new-tab
-
-# [frame]
-#     width = 2
-#     color = "#4C9ED9"
-
-# [shortcuts]
-#     # 'ctrl', 'mod1' (the alt-key), 'mod2', 'mod3'
-#     close = mod1+n
-#     close_all = mod1+ctrl+n
-#     history = mod1+shift+n
-
-#     # context menu
-#     context = ctrl+shift+period
-
-# [urgency_low]
-#     background = "#2D5B7D"
-#     foreground = "#CCCCCC"
-#     timeout = 10
-
-# [urgency_normal]
-#     background = "#2D5B7D"
-#     foreground = "#FFFFFF"
-#     timeout = 10
-
-# [urgency_critical]
-#     background = "#DD0000"
-#     foreground = "#FFFFFF"
-#     timeout = 0
+[chromium]
+    appname = Chromium
+    markup = strip

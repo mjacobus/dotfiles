@@ -1,5 +1,5 @@
 # Dunst notification daemon configuration
-# Modern, clean design
+# vim: ft=ini
 
 [global]
     ### Display ###
@@ -7,48 +7,51 @@
     follow = mouse
 
     ### Geometry ###
-    width = (300, 400)
+    width = (300, 450)
     height = 300
     origin = top-right
-    offset = 10x50
+    offset = 15x55
 
     scale = 0
-    notification_limit = 3
+    notification_limit = 4
 
     ### Progress bar ###
     progress_bar = true
     progress_bar_height = 10
     progress_bar_frame_width = 1
     progress_bar_min_width = 150
-    progress_bar_max_width = 300
+    progress_bar_max_width = 400
+    highlight = "#89b4fa"
 
     ### Appearance ###
-    transparency = 0
+    transparency = 5
     separator_height = 2
-    padding = 12
-    horizontal_padding = 12
-    text_icon_padding = 0
+    padding = 16
+    horizontal_padding = 16
+    text_icon_padding = 16
     frame_width = 2
     frame_color = "#4c7899"
-    gap_size = 5
+    gap_size = 8
     separator_color = frame
     sort = yes
 
     ### Text ###
     font = DejaVu Sans Mono 11
-    line_height = 3
+    line_height = 4
     markup = full
     format = "<b>%s</b>\n%b"
     alignment = left
     vertical_alignment = center
     show_age_threshold = 60
-    ellipsize = middle
+    ellipsize = end
+    word_wrap = yes
     ignore_newline = no
     stack_duplicates = true
     hide_duplicate_count = false
     show_indicators = yes
 
     ### Icons ###
+    enable_recursive_icon_lookup = true
     icon_position = left
     min_icon_size = 48
     max_icon_size = 64
@@ -64,7 +67,7 @@
     always_run_script = true
     title = Dunst
     class = Dunst
-    corner_radius = 8
+    corner_radius = 10
     ignore_dbusclose = false
     force_xwayland = false
     force_xinerama = false
@@ -78,33 +81,38 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#1e1e2e"
-    foreground = "#cdd6f4"
+    background = "#1e1e2eDD"
+    foreground = "#a6adc8"
     timeout = 5
-    frame_color = "#4c7899"
+    frame_color = "#45475a"
 
 [urgency_normal]
-    background = "#1e1e2e"
+    background = "#1e1e2eDD"
     foreground = "#cdd6f4"
     timeout = 10
     frame_color = "#89b4fa"
 
 [urgency_critical]
-    background = "#1e1e2e"
+    background = "#1e1e2eDD"
     foreground = "#f38ba8"
     frame_color = "#f38ba8"
     timeout = 0
-    icon = dialog-error
 
 # Application specific rules
 [slack]
     appname = Slack
     urgency = normal
-    background = "#4c7899"
-    foreground = "#ffffff"
+    new_icon = slack
+    background = "#1e1e2eDD"
+    frame_color = "#4c7899"
 
 [zoom]
     appname = zoom
     urgency = normal
-    background = "#2d88ff"
-    foreground = "#ffffff"
+    new_icon = zoom
+    background = "#1e1e2eDD"
+    frame_color = "#2d88ff"
+
+[chromium]
+    appname = Chromium
+    markup = strip
