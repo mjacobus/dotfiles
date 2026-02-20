@@ -1,5 +1,6 @@
 # Dunst notification daemon configuration
 # vim: ft=ini
+# Compatible with dunst 1.5.x
 
 [global]
     ### Display ###
@@ -7,31 +8,18 @@
     follow = mouse
 
     ### Geometry ###
-    width = (300, 450)
-    height = 300
-    origin = top-right
-    offset = 15x55
-
-    scale = 0
-    notification_limit = 4
-
-    ### Progress bar ###
-    progress_bar = true
-    progress_bar_height = 10
-    progress_bar_frame_width = 1
-    progress_bar_min_width = 150
-    progress_bar_max_width = 400
-    highlight = "#89b4fa"
+    # Format: {width}x{max_notifications}-{x_offset}-{y_offset}
+    # Negative offsets = from right/bottom edge
+    geometry = "400x4-15-35"
+    shrink = no
 
     ### Appearance ###
     transparency = 5
     separator_height = 2
     padding = 16
     horizontal_padding = 16
-    text_icon_padding = 16
     frame_width = 2
     frame_color = "#4c7899"
-    gap_size = 8
     separator_color = frame
     sort = yes
 
@@ -51,7 +39,6 @@
     show_indicators = yes
 
     ### Icons ###
-    enable_recursive_icon_lookup = true
     icon_position = left
     min_icon_size = 48
     max_icon_size = 64
@@ -67,9 +54,7 @@
     always_run_script = true
     title = Dunst
     class = Dunst
-    corner_radius = 10
     ignore_dbusclose = false
-    force_xwayland = false
     force_xinerama = false
 
     ### Mouse ###
@@ -81,19 +66,19 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#1e1e2eDD"
+    background = "#1e1e2e"
     foreground = "#a6adc8"
     timeout = 5
     frame_color = "#45475a"
 
 [urgency_normal]
-    background = "#1e1e2eDD"
+    background = "#1e1e2e"
     foreground = "#cdd6f4"
     timeout = 10
     frame_color = "#89b4fa"
 
 [urgency_critical]
-    background = "#1e1e2eDD"
+    background = "#1e1e2e"
     foreground = "#f38ba8"
     frame_color = "#f38ba8"
     timeout = 0
@@ -102,15 +87,13 @@
 [slack]
     appname = Slack
     urgency = normal
-    new_icon = slack
-    background = "#1e1e2eDD"
+    background = "#1e1e2e"
     frame_color = "#4c7899"
 
 [zoom]
     appname = zoom
     urgency = normal
-    new_icon = zoom
-    background = "#1e1e2eDD"
+    background = "#1e1e2e"
     frame_color = "#2d88ff"
 
 [chromium]
