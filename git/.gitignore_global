@@ -32,5 +32,5 @@ app/models/m.rb
 .cache/
 shell_test.old
 /.tmp
-.claude
+# .claude
 .prompts

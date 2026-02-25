@@ -36,3 +36,4 @@ tmp
 /neovim/.config/nvim/pack/github/start/copilot.vim
 /nvim/.config/nvim/pack/
 /asdf/.asdf
+.claude/settings.local.json
