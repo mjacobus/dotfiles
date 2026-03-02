@@ -96,6 +96,8 @@ bindsym $mod+Return exec gnome-terminal
 
 # application launcher (rofi)
 bindsym $mod+d exec rofi -show drun
+# window switcher (rofi)
+bindsym $mod+Tab exec rofi -show window
 
 # browser
 bindsym $mod+b exec flatpak run org.chromium.Chromium
