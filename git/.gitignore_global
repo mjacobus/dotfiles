@@ -34,3 +34,4 @@ shell_test.old
 /.tmp
 # .claude
 .prompts
+/.superpowers
