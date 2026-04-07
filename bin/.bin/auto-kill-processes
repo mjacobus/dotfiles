@@ -1,0 +1,41 @@
+#!/usr/bin/env ruby
+# sudo nice -n -20 ruby bin/.bin/auto-kill-processes
+
+CPU_LIMIT = 100.0     # %
+MEM_LIMIT = 20.0      # % (ajusta conforme tua máquina)
+DURATION  = 5         # segundos que precisa ficar acima do limite
+INTERVAL  = 1         # intervalo entre checks
+
+violations = Hash.new { |h, k| h[k] = 0 }
+
+loop do
+  output = `ps -eo pid,pcpu,pmem,comm --no-headers`
+
+  output.each_line do |line|
+    pid, cpu, mem, cmd = line.split(nil, 4)
+    pid = pid.to_i
+    cpu = cpu.to_f
+    mem = mem.to_f
+
+    next if pid == Process.pid # não se matar 😄
+
+    if cpu > CPU_LIMIT || mem > MEM_LIMIT
+      violations[pid] += INTERVAL
+
+      if violations[pid] >= DURATION
+        puts "Killing PID #{pid} (#{cmd.strip}) CPU=#{cpu}% MEM=#{mem}%"
+        begin
+          Process.kill("TERM", pid)
+        rescue
+          # fallback caso não morra
+          Process.kill("KILL", pid) rescue nil
+        end
+        violations.delete(pid)
+      end
+    else
+      violations.delete(pid)
+    end
+  end
+
+  sleep INTERVAL
+end
