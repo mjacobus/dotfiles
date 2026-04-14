@@ -35,3 +35,4 @@ shell_test.old
 # .claude
 .prompts
 /.superpowers
+/.codex
