@@ -36,3 +36,7 @@ shell_test.old
 .prompts
 /.superpowers
 /.codex
+/apps/appi/.tmp
+/apps/api/.tmp
+.claude/scheduled_tasks.lock
+.local-screenshots
