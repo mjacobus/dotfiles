@@ -294,6 +294,7 @@ bar {
   status_command i3status
   position bottom
   workspace_min_width 80
+  tray_output primary
   font pango:DejaVu Sans Mono 12
 
   colors {
