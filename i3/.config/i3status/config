@@ -1,5 +1,5 @@
-# Copy of /etc/i3status.conf without the ipv6 module (the fe80:: address
-# looked like a MAC in the bar).
+# Minimal status for a desktop: no battery, no ipv6, no load average.
+# Everything labeled so it's obvious what each number is.
 
 general {
         colors = true
@@ -8,40 +8,30 @@ general {
 
 order += "wireless _first_"
 order += "ethernet _first_"
-order += "battery all"
 order += "disk /"
-order += "load"
 order += "memory"
 order += "tztime local"
 
 wireless _first_ {
-        format_up = "W: (%quality at %essid) %ip"
-        format_down = "W: down"
+        format_up = "wifi: %ip (%quality)"
+        format_down = ""
 }
 
 ethernet _first_ {
-        format_up = "E: %ip (%speed)"
-        format_down = "E: down"
-}
-
-battery all {
-        format = "%status %percentage %remaining"
+        format_up = "eth: %ip"
+        format_down = "eth: down"
 }
 
 disk "/" {
-        format = "%avail"
-}
-
-load {
-        format = "%1min"
+        format = "disk: %avail"
 }
 
 memory {
-        format = "%used | %available"
+        format = "ram: %available"
         threshold_degraded = "1G"
-        format_degraded = "MEMORY < %available"
+        format_degraded = "RAM BAIXA: %available"
 }
 
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+        format = "%Y-%m-%d %H:%M"
 }

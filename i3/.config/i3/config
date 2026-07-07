@@ -286,7 +286,7 @@ client.focused_inactive #333333 #333333 #888888 #333333   #333333
 client.unfocused        #222222 #222222 #888888 #222222   #222222
 client.urgent           #900000 #900000 #ffffff #900000   #900000
 
-default_border pixel 5
+default_border pixel 3
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -300,10 +300,10 @@ bar {
   colors {
     background #222222
     statusline #dddddd
-    separator  #00ff0jk
+    separator  #444444
 
       # Color settings for workspace buttons
-    focused_workspace  #4c7899 #4c7899 #ffffff
+    focused_workspace  #ff8800 #ff8800 #ffffff
     active_workspace   #333333 #333333 #ffffff
     inactive_workspace #333333 #333333 #888888
     urgent_workspace   #2f343a #900000 #ffffff
