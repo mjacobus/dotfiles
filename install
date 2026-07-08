@@ -23,6 +23,7 @@ stow $flags alacritty --adopt
 stow $flags git
 stow $flags bin --adopt
 stow $flags mise --adopt
+stow $flags claude
 
 # stow $flags i3
 # stow $flags ag

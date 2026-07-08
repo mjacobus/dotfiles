@@ -40,3 +40,4 @@ shell_test.old
 /apps/api/.tmp
 .claude/scheduled_tasks.lock
 .local-screenshots
+graphify-out/
