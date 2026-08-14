@@ -116,6 +116,7 @@ bindsym $mod+Shift+s exec flatpak run org.chromium.Chromium --app=https://app.sl
 bindsym $mod+e exec flatpak run org.chromium.Chromium --app=https://mail.google.com/mail/u/0/#inbox
 bindsym $mod+Shift+e exec flatpak run org.chromium.Chromium --app=https://mail.google.com/mail/u/1/#inbox
 bindsym $mod+Shift+w exec flatpak run org.chromium.Chromium --app=https://web.whatsapp.com/
+bindsym $mod+Shift+t exec flatpak run org.chromium.Chromium --app=https://web.telegram.org
 
 # Projects
 bindsym $mod+p exec flatpak run org.chromium.Chromium --new-window https://github.com/users/mjacobus/projects/4
