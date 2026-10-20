@@ -19,3 +19,7 @@ dart = "3.7.2"
 flutter = "3.29.0"
 # neovim = "stable"
 neovim = "0.11.5"
+
+[env]
+# libvips compilado por ~/Projects/os/libvips.sh; precisa vir junto do lib do postgres, que o plugin sobrescreve
+LD_LIBRARY_PATH = "{{env.HOME}}/.local/vips/lib:{{env.HOME}}/.local/share/mise/installs/postgres/17.5/lib"
