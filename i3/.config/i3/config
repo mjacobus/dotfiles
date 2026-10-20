@@ -115,10 +115,12 @@ bindsym $mod+a exec flatpak run org.chromium.Chromium --app=https://chatgpt.com
 bindsym $mod+Shift+a exec flatpak run org.chromium.Chromium --app=https://getunblocked.com/dashboard
 bindsym $mod+c exec flatpak run org.chromium.Chromium --app=https://calendar.google.com/calendar/u/0/r
 bindsym $mod+Shift+c exec flatpak run org.chromium.Chromium --app=https://calendar.google.com/calendar/u/1/r
+bindsym $mod+Ctrl+c exec flatpak run org.chromium.Chromium --app=https://outlook.office.com/calendar/view/workweek
 bindsym $mod+s exec flatpak run org.chromium.Chromium --app=https://app.slack.com/client/T090AJD0EAG/C090AJD8J4C
 bindsym $mod+Shift+s exec flatpak run org.chromium.Chromium --app=https://app.slack.com/client/T0KHRPJJJ
 bindsym $mod+e exec flatpak run org.chromium.Chromium --app=https://mail.google.com/mail/u/0/#inbox
 bindsym $mod+Shift+e exec flatpak run org.chromium.Chromium --app=https://mail.google.com/mail/u/1/#inbox
+bindsym $mod+Ctrl+e exec flatpak run org.chromium.Chromium --app=https://outlook.office.com/mail/
 bindsym $mod+Shift+w exec flatpak run org.chromium.Chromium --app=https://web.whatsapp.com/
 bindsym $mod+Shift+t exec flatpak run org.chromium.Chromium --app=https://web.telegram.org
 
